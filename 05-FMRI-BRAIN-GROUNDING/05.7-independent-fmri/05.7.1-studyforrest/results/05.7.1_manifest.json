@@ -1,0 +1,39 @@
+{
+  "axis_id": "AXIS-05.7.1",
+  "axis_name": "studyforrest 7T music genres extension",
+  "engine_head": "318eb2f529d7103e8b7d80b01228357fdc4e0217",
+  "phase_close_date": "2026-05-07",
+  "execution_status": "PRE-REG-FROZEN, EXEC-PENDING external audio fetch",
+  "claims": [
+    {
+      "claim_id": "C-PH18-1-ENTRYGATE",
+      "paper_value": "Phase 0.5 mi_compatible=True, n_alignment_qualified=20",
+      "reproduced_value": "ELIGIBLE conditional on external audio fetch",
+      "deviation": 0,
+      "tolerance": "match Phase 0.5 audit verbatim",
+      "verdict": "PASS",
+      "iteration_count": 1,
+      "notes": "Phase 0.5 eligibility audit row studyforrest_7t_music: dataset-level N=20, alignment-qualified N=20, mi_compatible=True. Audio fetch via 'datalad get artifact/7T_musicperception/stimulus/' is the only outstanding step."
+    },
+    {
+      "claim_id": "C-PH18-1-PREREG",
+      "paper_value": "Pre-registration frozen with seed phase_18_1",
+      "reproduced_value": "03-PRE-REGISTRATION.md frozen 2026-05-07",
+      "deviation": 0,
+      "tolerance": "frozen file present + seed registry entry exists",
+      "verdict": "PASS",
+      "iteration_count": 1,
+      "notes": "8 target pairs locked (F1 5 mech × 2 regions = 5 + F2 3 mech × 2 regions = 3 = 8 hypothesised); decision rule POSITIVE/PARTIAL/NEGATIVE locked; α grid and HRF locked."
+    },
+    {
+      "claim_id": "C-PH18-1-EXEC",
+      "paper_value": "F1 ≥3/5 + F2 ≥2/3 BH-FDR pass q<0.05; ≥15/20 subjects",
+      "reproduced_value": "EXEC-PENDING (audio fetch required)",
+      "deviation": null,
+      "tolerance": "POSITIVE/PARTIAL/NEGATIVE per pre-reg",
+      "verdict": "EXEC-PENDING",
+      "iteration_count": 0,
+      "notes": "Cannot execute without 40 WAV stimulus archive. Pipeline ready, deterministic. Wall ≤ 15 min on M2 8 GB once audio arrives."
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "axis_id": "AXIS-05.7.3",
+  "axis_name": "ds006583 Affective Transitions",
+  "engine_head": "318eb2f529d7103e8b7d80b01228357fdc4e0217",
+  "phase_close_date": "2026-05-07",
+  "execution_status": "NON-ELIGIBLE per Phase 0.5 entry-gate",
+  "claims": [
+    {
+      "claim_id": "C-PH18-3-ENTRYGATE",
+      "paper_value": "MI requires events.tsv with sub-TR alignment per BOLD run",
+      "reproduced_value": "NON-ELIGIBLE: 0 events.tsv files on disk after partial download",
+      "deviation": null,
+      "tolerance": "n/a — infrastructure exclusion",
+      "verdict": "NON-ELIGIBLE",
+      "iteration_count": 1,
+      "notes": "Phase 0.5 audit row ds006583: 23 subs / 9 bold / 0 events.tsv on disk; partial download. Recovery requires completing s3 sync from openneuro.org/ds006583 + checking events.tsv release status. Re-eligibility flagged for re-audit when download completes; if events.tsv are then absent altogether (HMM-derived state-level not stimulus-locked), permanent NON-ELIGIBLE."
+    }
+  ]
+}

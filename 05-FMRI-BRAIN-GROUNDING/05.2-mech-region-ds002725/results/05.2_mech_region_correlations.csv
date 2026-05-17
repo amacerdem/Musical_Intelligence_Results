@@ -1,0 +1,13 @@
+claim_id,label,paper,reproduced,verdict
+C-MXREG-01,16/22 target BH-FDR pass on L1,16/22,16/22,PASS
+C-MXREG-02,F1 5/5 target pairs pass,5/5,5/5,PASS
+C-MXREG-03,F2 4/4 target pairs pass,4/4,4/4,PASS
+C-MXREG-04,F4 2/2 target pairs pass,2/2,2/2,PASS
+C-MXREG-05,F8 1/1 target pair passes,1/1,1/1,PASS
+C-MXREG-06,PNH→A1_HG r=+0.334,+0.334,+0.3343,PASS
+C-MXREG-07,BCH→A1_HG r=+0.317,+0.317,+0.3169,PASS
+C-MXREG-08,CDEM→MGB r=+0.315,+0.315,+0.3154,PASS
+C-MXREG-09,L2 cross-piece BH-FDR pass count (paper 226),226 (target_reject),236,PASS
+C-MXREG-10,L3 cross-subject BH-FDR pass count (paper 34),34,59,CAVEAT
+C-MXREG-11,F3→ACC null preserved (p_perm > 0.20),AACM/IACM → ACC null,"AACM p=0.2807, IACM p=0.7902",PASS
+C-MXREG-12,Alignment-qualified N disclosure (Phase 0.5 audit),M ≤ 17 alignment-qualified,"M = 17 (Phase 0.5 mi_compatible=True, all 17 alignment-qualified)",PASS

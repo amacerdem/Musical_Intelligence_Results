@@ -1,0 +1,39 @@
+{
+  "axis_id": "AXIS-05.7.5",
+  "axis_name": "ds000171 Affective music in depression",
+  "engine_head": "318eb2f529d7103e8b7d80b01228357fdc4e0217",
+  "phase_close_date": "2026-05-07",
+  "execution_status": "PRE-REG-FROZEN, EXEC-PENDING external audio fetch",
+  "claims": [
+    {
+      "claim_id": "C-PH18-5-ENTRYGATE",
+      "paper_value": "Phase 0.5 mi_compatible=True, n_alignment_qualified=28",
+      "reproduced_value": "ELIGIBLE conditional on external audio fetch",
+      "deviation": 0,
+      "tolerance": "match Phase 0.5 audit verbatim",
+      "verdict": "PASS",
+      "iteration_count": 1,
+      "notes": "Phase 0.5 eligibility audit row ds000171: dataset-level N=39, alignment-qualified N=28, mi_compatible=True. Audio is referenced via Lepping 2016 Sci. Rep. supplementary, not on OpenNeuro."
+    },
+    {
+      "claim_id": "C-PH18-5-PREREG",
+      "paper_value": "Pre-registration frozen with seed phase_18_5",
+      "reproduced_value": "03-PRE-REGISTRATION.md frozen 2026-05-07",
+      "deviation": 0,
+      "tolerance": "frozen file present + seed registry entry exists",
+      "verdict": "PASS",
+      "iteration_count": 1,
+      "notes": "4 hypotheses locked (F5 emotion routing, F6 reward attenuation, F5 group invariance, F6 lag bonus); decision rule locked; α grid + HRF + TR + bootstrap N locked."
+    },
+    {
+      "claim_id": "C-PH18-5-EXEC",
+      "paper_value": "F5 ≥2/3 + F6 d>+0.4 anhedonia + F5 |d|<0.3 group-invariance",
+      "reproduced_value": "EXEC-PENDING (audio fetch required)",
+      "deviation": null,
+      "tolerance": "POSITIVE/PARTIAL/NEGATIVE per pre-reg",
+      "verdict": "EXEC-PENDING",
+      "iteration_count": 0,
+      "notes": "Cannot execute without ~18 stimulus WAVs from Lepping 2016 Sci Rep supplementary. Pipeline ready, deterministic. Wall ≤ 20 min on M2 8 GB once audio arrives."
+    }
+  ]
+}

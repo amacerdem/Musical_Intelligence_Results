@@ -1,0 +1,39 @@
+{
+  "axis_id": "AXIS-05.7",
+  "axis_name": "Independent fMRI replication (5 sub-axes, +148 subjects target)",
+  "engine_head": "318eb2f529d7103e8b7d80b01228357fdc4e0217",
+  "phase_close_date": "2026-05-07",
+  "execution_status": "PRE-REG-FROZEN aggregate; 0 sub-axes EXECUTED, 2 EXEC-PENDING, 3 NON-ELIGIBLE",
+  "claims": [
+    {
+      "claim_id": "C-PH18-AGG-ENTRYGATE",
+      "paper_value": "5 sub-axes, +148 fMRI subjects target across 5 datasets",
+      "reproduced_value": "Phase 0.5 entry-gate: 2 ELIGIBLE, 3 NON-ELIGIBLE",
+      "deviation": 0,
+      "tolerance": "match Phase 0.5 verdict per sub-axis",
+      "verdict": "PASS",
+      "iteration_count": 1,
+      "notes": "05.7.1 studyforrest ELIG, 05.7.5 ds000171 ELIG, 05.7.2/05.7.3/05.7.4 NON-ELIG. Aggregate entry-gate verbatim from 00.5-fmri-eligibility/results/eligibility_audit.csv."
+    },
+    {
+      "claim_id": "C-PH18-AGG-PREREG",
+      "paper_value": "Pre-registrations frozen for both eligible sub-axes",
+      "reproduced_value": "05.7.1 + 05.7.5 03-PRE-REGISTRATION.md frozen 2026-05-07",
+      "deviation": 0,
+      "tolerance": "frozen pre-reg files exist for ELIG sub-axes",
+      "verdict": "PASS",
+      "iteration_count": 1,
+      "notes": "Each pre-reg locks: hypotheses, decision rule, α grid, HRF, TR, perm/bootstrap counts, target pairs, forbidden moves. Cannot be retrofit-tuned post-hoc."
+    },
+    {
+      "claim_id": "C-PH18-AGG-EXEC",
+      "paper_value": "≥3/5 sub-axes POSITIVE per master plan",
+      "reproduced_value": "0/5 EXECUTED (2 EXEC-PENDING audio fetch, 3 NON-ELIG)",
+      "deviation": null,
+      "tolerance": "report honestly per master plan",
+      "verdict": "EXEC-PENDING",
+      "iteration_count": 0,
+      "notes": "Master plan §Phase 05.7 Risk: 'We commit to running ALL 5 regardless of outcome; partial reporting is forbidden.' Honoured here by closing pre-registration before execution can be biased to data. Execution unblocks on (a) datalad get for studyforrest stimulus, (b) Lepping 2016 Sci Rep supplementary fetch."
+    }
+  ]
+}

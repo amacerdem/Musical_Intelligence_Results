@@ -1,0 +1,81 @@
+{
+  "_schema": "05.5-ds003720-region-ceiling-N4 paper-time baseline",
+  "_frozen_at": "2026-05-13",
+  "_engine_sha": "e537f90e6d14595a0cddb580ee3975f6f9a431151d5d18b09b4c80e1ffcb0098",
+  "_engine_commit": "318eb2f5",
+  "_source_data": {
+    "bold_per_region_per_run": "Science/V2/reviewer-sims/divan-major-revision-2026-04-22/computing-phase/T-AP-v2-08-nakai/RunPod-Exp-01/ckpt_bold/sub-XXX_*.npy (cycle-17 26-region BOLD aggregate)",
+    "encoder_r_per_subject_per_region": "Science/Bold-fMRI/ds003720/06_encoding/per_subject_per_region_r.csv (cycle-17 mi_ram_26d ridge LOSO)"
+  },
+  "_relationship_to_v_repro_12": "Companion package. V-Repro 12 (CLOSED 2026-05-07, 11/11 PASS) is paper-canonical voxelwise routing-ablation test (MI r=0.165 top-5%, matched-dim controls). V-Repro 26 adds per-region cross-subject LOSO BOLD ceiling at the cycle-17 ckpt_bold scale. Different granularity (per-region vs voxelwise), different metric (ceiling vs encoder), complementary evidence.",
+
+  "per_region_ceiling_ds003720": {
+    "_description": "Per-region cross-subject inter-rater predictability ceiling on ds003720 N=4 paper-canonical cohort (sub-001, sub-003, sub-004, sub-005); cycle-17 ckpt_bold 6150 TRs per subject (15 runs × 410 TRs at TR=1.5s)",
+    "n_subjects": 4,
+    "n_regions_tested": 26,
+    "n_non_brainstem": 21,
+    "ci_bootstrap_n": 5000,
+    "n_perm_null": 5000,
+    "n_pass_floor_q05_non_brainstem": 16,
+    "top5_regions": [
+      {"name": "hippocampus", "r_ceiling": 0.3543, "ci_95": [0.301, 0.405], "p_null": 0.0002},
+      {"name": "dlPFC", "r_ceiling": 0.3188, "ci_95": [0.269, 0.371], "p_null": 0.0002},
+      {"name": "AG", "r_ceiling": 0.2430, "ci_95": [0.207, 0.279], "p_null": 0.0002},
+      {"name": "IFG", "r_ceiling": 0.2325, "ci_95": [0.138, 0.313], "p_null": 0.0002},
+      {"name": "PMC", "r_ceiling": 0.1932, "ci_95": [0.135, 0.234], "p_null": 0.0002}
+    ],
+    "_brainstem_top": [
+      {"name": "IC", "r_ceiling": 0.2057, "ci_95": [0.162, 0.259], "p_null": 0.0002, "is_brainstem": true},
+      {"name": "PAG", "r_ceiling": 0.2058, "ci_95": [0.158, 0.235], "p_null": 0.0002, "is_brainstem": true}
+    ],
+    "_interpretation": "ds003720 BOLD shows reliable cross-subject stimulus-driven structure at N=4 (15-16/21 regions pass effect floor + BH-FDR q<0.05). hippocampus +0.354 is the strongest cross-subject ceiling — reflects the dataset's 540-clip stimulus-presentation paradigm engaging memory + clip-recognition systems."
+  },
+
+  "saturation_ds003720": {
+    "_description": "Saturation verdict per region: MI cycle-17 per-clip encoder r (cycle-17 ridge LOSO) vs per-TR cross-subject ceiling",
+    "_scale_caveat": "Encoder r computed at per-clip scale (cycle-17 Ridge LOSO over clips). Ceiling computed at per-TR scale. Different temporal granularities; saturation comparison is qualitative not strict.",
+    "n_at_ceiling": 3,
+    "n_exceeds": 2,
+    "n_below_ceiling": 4,
+    "n_at_floor": 12,
+    "n_ceiling_saturating_non_brainstem": 5,
+    "saturating_regions_non_brainstem": ["STG", "vmPFC", "NAcc", "OFC", "TP"],
+    "_note": "Two EXCEEDS regions (OFC, TP) have near-zero or negative ceiling; their EXCEEDS verdict is an artifact of small denominator, not a substantive paradigm finding."
+  },
+
+  "paradigm_comparison_with_v_repro_25": {
+    "_description": "Direct comparison between ds002725 N=17 (V-Repro 25) and ds003720 N=4 (this V-Repro 26)",
+    "v_repro_25_ds002725": {
+      "n_subjects": 17,
+      "ceiling_top_putamen": 0.4422,
+      "ceiling_top_amygdala": 0.3825,
+      "saturation_ceiling_saturating": 16,
+      "saturation_denominator": 21
+    },
+    "v_repro_05.5_ds003720": {
+      "n_subjects": 4,
+      "ceiling_top_hippocampus": 0.3543,
+      "ceiling_top_dlPFC": 0.3188,
+      "saturation_ceiling_saturating": 5,
+      "saturation_denominator": 21
+    },
+    "_interpretation": "Both datasets show reliable cross-subject stimulus-driven BOLD per region. ds002725 N=17 continuous-listening paradigm produces 16/21 ceiling-saturating MI encoder; ds003720 N=4 sparse-clip paradigm produces 5/21 ceiling-saturating (lower N power + per-clip vs per-TR scale mismatch). The complementary finding: BOTH paradigms confirm per-region BOLD reliability, and the ceiling values are similar magnitude (0.3-0.45 top regions) despite very different cohort sizes."
+  },
+
+  "tolerance": {
+    "ceiling_abs": 0.03,
+    "n_pass_min": 12,
+    "_note": "Tolerance is wider than V-Repro 25 because N=4 cohort produces wider CI variation. n_pass_min=12 = paper baseline 16 - 4."
+  },
+
+  "stimulus_metadata": {
+    "dataset": "ds003720 (Nakai 2021 GTZAN-fMRI)",
+    "task": "Sparse-clip presentation, 540 clips × ~15s each, 10 genres × 24 clips",
+    "n_subjects_qc_pass": 4,
+    "tr_s": 1.5,
+    "trs_per_run": 410,
+    "runs_per_subject": 15,
+    "total_trs_per_subject": 6150,
+    "bold_aggregation_method": "Cycle-17 Harvard-Oxford 4mm γ-tier spheres around MI MNI centroids (preserves 26-region atlas alignment with V-Repro 11 mech×region test on ds002725)"
+  }
+}

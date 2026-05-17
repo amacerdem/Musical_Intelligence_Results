@@ -1,0 +1,101 @@
+{
+  "axis_id": "AXIS-8",
+  "axis_name": "Pre-Registered Mech\u00d7Region Encoding (ds002725)",
+  "engine_head": "318eb2f529d7103e8b7d80b01228357fdc4e0217",
+  "seed_registry": {
+    "primary": 20260503,
+    "permutation": 1000
+  },
+  "phase_close_date": "2026-05-07",
+  "git_commit_hash": "PENDING_AT_CLOSE",
+  "claims": [
+    {
+      "claim_id": "C-MXREG-01",
+      "label": "16/22 target BH-FDR pass on L1",
+      "paper": "16/22",
+      "reproduced": "16/22",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-MXREG-02",
+      "label": "F1 5/5 target pairs pass",
+      "paper": "5/5",
+      "reproduced": "5/5",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-MXREG-03",
+      "label": "F2 4/4 target pairs pass",
+      "paper": "4/4",
+      "reproduced": "4/4",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-MXREG-04",
+      "label": "F4 2/2 target pairs pass",
+      "paper": "2/2",
+      "reproduced": "2/2",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-MXREG-05",
+      "label": "F8 1/1 target pair passes",
+      "paper": "1/1",
+      "reproduced": "1/1",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-MXREG-06",
+      "label": "PNH\u2192A1_HG r=+0.334",
+      "paper": "+0.334",
+      "reproduced": "+0.3343",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-MXREG-07",
+      "label": "BCH\u2192A1_HG r=+0.317",
+      "paper": "+0.317",
+      "reproduced": "+0.3169",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-MXREG-08",
+      "label": "CDEM\u2192MGB r=+0.315",
+      "paper": "+0.315",
+      "reproduced": "+0.3154",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-MXREG-09",
+      "label": "L2 cross-piece BH-FDR pass count (paper 226)",
+      "paper": "226 (target_reject)",
+      "reproduced": "236",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-MXREG-10",
+      "label": "L3 cross-subject BH-FDR pass count (paper 34)",
+      "paper": "34",
+      "reproduced": "59",
+      "verdict": "CAVEAT"
+    },
+    {
+      "claim_id": "C-MXREG-11",
+      "label": "F3\u2192ACC null preserved (p_perm > 0.20)",
+      "paper": "AACM/IACM \u2192 ACC null",
+      "reproduced": "AACM p=0.2807, IACM p=0.7902",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-MXREG-12",
+      "label": "Alignment-qualified N disclosure (Phase 0.5 audit)",
+      "paper": "M \u2264 17 alignment-qualified",
+      "reproduced": "M = 17 (Phase 0.5 mi_compatible=True, all 17 alignment-qualified)",
+      "verdict": "PASS"
+    }
+  ],
+  "external_artefacts": [
+    "Science/V3/results/pair_evidence_ds002725.csv",
+    "Science/V3/V3-comprehensive/results/comprehensive_summary.md"
+  ]
+}

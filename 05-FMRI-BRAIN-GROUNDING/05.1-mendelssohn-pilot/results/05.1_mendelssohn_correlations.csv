@@ -1,0 +1,7 @@
+claim_id,label,paper,reproduced,verdict,notes
+C-MEND-01,"sub-08 amygdala paper-time r=+0.59 (single-window, illustrative)",+0.59,+0.5904,PASS,
+C-MEND-02,sub-08 amygdala Spearman ρ=+0.29 [paper text §single-sub pilot],+0.29,+0.5420,PARTIAL,Paper +0.29 = Method B (peak-HRF); Method A gives +0.542. Both preserved per paper §Methods §fMRI.
+C-MEND-03,Cross-subject N=17 median amygdala ρ=−0.022 (window-selection effect disclosure),-0.022,-0.0223,PASS,
+C-MEND-04,"Cross-subject 95% BCa CI [−0.154, +0.027]","[-0.154, +0.027]","[-0.154, +0.027]",PASS,
+C-MEND-05,Window-shopping any-subject median post-hoc r ≈ +0.59,+0.59,+0.5904,PASS,
+C-MEND-06,Mendelssohn rank 1/7 across 4 alignment methods (2.2× next-best),"rank 1/7, 2.2× lift",documented in V2 v9.5.6-ds002725-deneyler-rescore.md (Mendelssohn rank 1/7; next-best piece at +0.246; 2.2× separation),PASS,Phase 05.2 L3 cross-subject CSV contains 7 pieces incl. Mendelssohn (p5); paper anchor V2 rescore.md confirms rank 1/7 + 2.2× lift

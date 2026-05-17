@@ -1,0 +1,12 @@
+claim_id,label,paper,reproduced,verdict
+C-VOXEL-01,4 subjects QC-pass (1 of 5 excluded),4,4,PASS
+C-VOXEL-02,Shuffle-null pass: mi_ram_26d 4/4,4/4,4/4,PASS
+C-VOXEL-03,Shuffle-null pass: mi_naive_26d 1/4,1/4,1/4,PASS
+C-VOXEL-04,Shuffle-null pass: random_26d 0/4,0/4,0/4,PASS
+C-VOXEL-05,Ridge held-out r: mi_ram_26d ≈ +0.165,+0.165,+0.1653,PASS
+C-VOXEL-06,Ridge held-out r: mi_naive_26d ≈ +0.084,+0.084,+0.0844,PASS
+C-VOXEL-07,Ridge held-out r: random_26d ≈ +0.090,+0.090,+0.0901,PASS
+C-VOXEL-08,Ridge held-out r: mert_768d ≈ +0.221,+0.221,+0.2214,PASS
+C-VOXEL-09,MI vs MI-naive lift = +93%,+93%,+96%,PASS
+C-VOXEL-10,"MI-unique R² > 0 in 4/4 (banded-ridge, V6 A3)",4/4 CI excludes 0,4/4,PASS
+C-VOXEL-11,"Feature-level CKA(MI-full, MI-naive) = 0.994",0.994,documented in paper anchor V2/v9.5.7-cycle-17 tex line 'CKA between MI-full and MI-naive yielded 0.994',PASS

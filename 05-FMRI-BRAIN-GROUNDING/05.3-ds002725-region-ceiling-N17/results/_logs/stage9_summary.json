@@ -1,0 +1,304 @@
+{
+  "_meta": {
+    "phase": "21-mi-fmri-rigorous-mapping",
+    "stage": 9,
+    "timestamp": "2026-05-13T15:21:40.467543Z",
+    "pre_reg_version": "v1.4",
+    "wallclock_s": 0.003197908401489258,
+    "n_regions_non_brainstem": 21
+  },
+  "headline": {
+    "DS002725_ONLY": 11,
+    "STRONG": 1,
+    "MIXED": 5,
+    "NULL_BOTH": 4
+  },
+  "per_region": [
+    {
+      "region_idx": 0,
+      "region_name": "A1_HG",
+      "is_brainstem": false,
+      "ds002725_ceiling": 0.12866813328795576,
+      "ds002725_encoder": 0.5087905158414078,
+      "ds002725_verdict": "AT_CEILING",
+      "ds003720_encoder": -0.00983752396377542,
+      "ds003720_verdict": "AT_FLOOR",
+      "cross_paradigm_verdict": "DS002725_ONLY"
+    },
+    {
+      "region_idx": 1,
+      "region_name": "STG",
+      "is_brainstem": false,
+      "ds002725_ceiling": -0.006621392628568509,
+      "ds002725_encoder": 0.37474685048260886,
+      "ds002725_verdict": "AT_CEILING",
+      "ds003720_encoder": 0.056023613225104824,
+      "ds003720_verdict": "AT_OR_ABOVE_CEILING",
+      "cross_paradigm_verdict": "STRONG"
+    },
+    {
+      "region_idx": 2,
+      "region_name": "STS",
+      "is_brainstem": false,
+      "ds002725_ceiling": 0.10874490074804857,
+      "ds002725_encoder": 0.12370657180562349,
+      "ds002725_verdict": "AT_CEILING",
+      "ds003720_encoder": -0.03212356153352281,
+      "ds003720_verdict": "AT_FLOOR",
+      "cross_paradigm_verdict": "DS002725_ONLY"
+    },
+    {
+      "region_idx": 3,
+      "region_name": "IFG",
+      "is_brainstem": false,
+      "ds002725_ceiling": 0.034623631287570136,
+      "ds002725_encoder": 0.21127113721793941,
+      "ds002725_verdict": "EXCEEDS",
+      "ds003720_encoder": 0.006978275148997323,
+      "ds003720_verdict": "BELOW_FLOOR",
+      "cross_paradigm_verdict": "MIXED"
+    },
+    {
+      "region_idx": 4,
+      "region_name": "dlPFC",
+      "is_brainstem": false,
+      "ds002725_ceiling": 0.04739358909914921,
+      "ds002725_encoder": 0.11139221916717722,
+      "ds002725_verdict": "AT_CEILING",
+      "ds003720_encoder": -0.02399634539550872,
+      "ds003720_verdict": "AT_FLOOR",
+      "cross_paradigm_verdict": "NULL_BOTH"
+    },
+    {
+      "region_idx": 5,
+      "region_name": "vmPFC",
+      "is_brainstem": false,
+      "ds002725_ceiling": 0.04021113368087089,
+      "ds002725_encoder": -0.04014485986165806,
+      "ds002725_verdict": "AT_FLOOR",
+      "ds003720_encoder": 0.007507179197792312,
+      "ds003720_verdict": "BELOW_FLOOR",
+      "cross_paradigm_verdict": "NULL_BOTH"
+    },
+    {
+      "region_idx": 6,
+      "region_name": "OFC",
+      "is_brainstem": false,
+      "ds002725_ceiling": 0.24895330522043052,
+      "ds002725_encoder": 0.12241137906264243,
+      "ds002725_verdict": "AT_CEILING",
+      "ds003720_encoder": 0.009970868816340132,
+      "ds003720_verdict": "BELOW_FLOOR",
+      "cross_paradigm_verdict": "MIXED"
+    },
+    {
+      "region_idx": 7,
+      "region_name": "ACC",
+      "is_brainstem": false,
+      "ds002725_ceiling": 0.3035636313141979,
+      "ds002725_encoder": 0.10924596914036573,
+      "ds002725_verdict": "EXCEEDS",
+      "ds003720_encoder": -0.016967139758095467,
+      "ds003720_verdict": "AT_FLOOR",
+      "cross_paradigm_verdict": "DS002725_ONLY"
+    },
+    {
+      "region_idx": 8,
+      "region_name": "SMA",
+      "is_brainstem": false,
+      "ds002725_ceiling": -0.028887163222735993,
+      "ds002725_encoder": 0.32665012150967193,
+      "ds002725_verdict": "AT_CEILING",
+      "ds003720_encoder": -0.01228239551796217,
+      "ds003720_verdict": "AT_FLOOR",
+      "cross_paradigm_verdict": "NULL_BOTH"
+    },
+    {
+      "region_idx": 9,
+      "region_name": "PMC",
+      "is_brainstem": false,
+      "ds002725_ceiling": -0.0040037888849768595,
+      "ds002725_encoder": 0.20113183211612104,
+      "ds002725_verdict": "EXCEEDS",
+      "ds003720_encoder": -0.010974444241240125,
+      "ds003720_verdict": "AT_FLOOR",
+      "cross_paradigm_verdict": "NULL_BOTH"
+    },
+    {
+      "region_idx": 10,
+      "region_name": "AG",
+      "is_brainstem": false,
+      "ds002725_ceiling": 0.09230089348098439,
+      "ds002725_encoder": -0.0407879291571946,
+      "ds002725_verdict": "AT_FLOOR",
+      "ds003720_encoder": -0.028835729256661363,
+      "ds003720_verdict": "AT_FLOOR",
+      "cross_paradigm_verdict": "DS002725_ONLY"
+    },
+    {
+      "region_idx": 11,
+      "region_name": "TP",
+      "is_brainstem": false,
+      "ds002725_ceiling": 0.11270245595894932,
+      "ds002725_encoder": -0.05034204546013871,
+      "ds002725_verdict": "AT_FLOOR",
+      "ds003720_encoder": 0.040122703102310565,
+      "ds003720_verdict": "BELOW_FLOOR",
+      "cross_paradigm_verdict": "DS002725_ONLY"
+    },
+    {
+      "region_idx": 12,
+      "region_name": "VTA",
+      "is_brainstem": false,
+      "ds002725_ceiling": 0.17879626937279952,
+      "ds002725_encoder": 0.20012257682087708,
+      "ds002725_verdict": "AT_CEILING",
+      "ds003720_encoder": -0.03396225942659201,
+      "ds003720_verdict": "AT_FLOOR",
+      "cross_paradigm_verdict": "DS002725_ONLY"
+    },
+    {
+      "region_idx": 13,
+      "region_name": "NAcc",
+      "is_brainstem": false,
+      "ds002725_ceiling": 0.23941825276697118,
+      "ds002725_encoder": -0.036258514941541045,
+      "ds002725_verdict": "AT_FLOOR",
+      "ds003720_encoder": 0.009125655408073034,
+      "ds003720_verdict": "BELOW_FLOOR",
+      "cross_paradigm_verdict": "DS002725_ONLY"
+    },
+    {
+      "region_idx": 14,
+      "region_name": "caudate",
+      "is_brainstem": false,
+      "ds002725_ceiling": 0.10857825784976692,
+      "ds002725_encoder": 0.17221972404341887,
+      "ds002725_verdict": "EXCEEDS",
+      "ds003720_encoder": -0.022220414064790837,
+      "ds003720_verdict": "AT_FLOOR",
+      "cross_paradigm_verdict": "DS002725_ONLY"
+    },
+    {
+      "region_idx": 15,
+      "region_name": "amygdala",
+      "is_brainstem": false,
+      "ds002725_ceiling": 0.3825374309262368,
+      "ds002725_encoder": 0.02573815911427739,
+      "ds002725_verdict": "AT_CEILING",
+      "ds003720_encoder": -0.06423365539247798,
+      "ds003720_verdict": "AT_FLOOR",
+      "cross_paradigm_verdict": "DS002725_ONLY"
+    },
+    {
+      "region_idx": 16,
+      "region_name": "hippocampus",
+      "is_brainstem": false,
+      "ds002725_ceiling": 0.1769731014475245,
+      "ds002725_encoder": 0.06554186420782977,
+      "ds002725_verdict": "BELOW_CEILING",
+      "ds003720_encoder": -0.04237544609855505,
+      "ds003720_verdict": "AT_FLOOR",
+      "cross_paradigm_verdict": "DS002725_ONLY"
+    },
+    {
+      "region_idx": 17,
+      "region_name": "putamen",
+      "is_brainstem": false,
+      "ds002725_ceiling": 0.4421555728555394,
+      "ds002725_encoder": 0.06893404677543115,
+      "ds002725_verdict": "AT_CEILING",
+      "ds003720_encoder": -0.029620419187736443,
+      "ds003720_verdict": "AT_FLOOR",
+      "cross_paradigm_verdict": "DS002725_ONLY"
+    },
+    {
+      "region_idx": 18,
+      "region_name": "MGB",
+      "is_brainstem": false,
+      "ds002725_ceiling": 0.34642089206104515,
+      "ds002725_encoder": 0.36387120760430697,
+      "ds002725_verdict": "EXCEEDS",
+      "ds003720_encoder": 0.015317897012053584,
+      "ds003720_verdict": "BELOW_FLOOR",
+      "cross_paradigm_verdict": "MIXED"
+    },
+    {
+      "region_idx": 19,
+      "region_name": "hypothalamus",
+      "is_brainstem": false,
+      "ds002725_ceiling": 0.25865459122103995,
+      "ds002725_encoder": 0.16777074115280674,
+      "ds002725_verdict": "AT_CEILING",
+      "ds003720_encoder": 0.017405862271141475,
+      "ds003720_verdict": "BELOW_FLOOR",
+      "cross_paradigm_verdict": "MIXED"
+    },
+    {
+      "region_idx": 20,
+      "region_name": "insula",
+      "is_brainstem": false,
+      "ds002725_ceiling": 0.23412259903799595,
+      "ds002725_encoder": 0.2424439041075814,
+      "ds002725_verdict": "AT_CEILING",
+      "ds003720_encoder": 0.012030072172926435,
+      "ds003720_verdict": "BELOW_FLOOR",
+      "cross_paradigm_verdict": "MIXED"
+    },
+    {
+      "region_idx": 21,
+      "region_name": "IC",
+      "is_brainstem": true,
+      "ds002725_ceiling": 0.1942019268233375,
+      "ds002725_encoder": 0.1819541395961877,
+      "ds002725_verdict": "AT_CEILING",
+      "ds003720_encoder": -0.011839476557673773,
+      "ds003720_verdict": "AT_FLOOR",
+      "cross_paradigm_verdict": "DS002725_ONLY"
+    },
+    {
+      "region_idx": 22,
+      "region_name": "AN",
+      "is_brainstem": true,
+      "ds002725_ceiling": 0.39711957768334194,
+      "ds002725_encoder": 0.002133009370734861,
+      "ds002725_verdict": "BELOW_CEILING",
+      "ds003720_encoder": -0.0008625700616445171,
+      "ds003720_verdict": "AT_FLOOR",
+      "cross_paradigm_verdict": "DS002725_ONLY"
+    },
+    {
+      "region_idx": 23,
+      "region_name": "CN",
+      "is_brainstem": true,
+      "ds002725_ceiling": 0.2401777830317501,
+      "ds002725_encoder": 0.31165831080466594,
+      "ds002725_verdict": "AT_CEILING",
+      "ds003720_encoder": 0.0268325842704399,
+      "ds003720_verdict": "BELOW_FLOOR",
+      "cross_paradigm_verdict": "MIXED"
+    },
+    {
+      "region_idx": 24,
+      "region_name": "SOC",
+      "is_brainstem": true,
+      "ds002725_ceiling": 0.2578489571264566,
+      "ds002725_encoder": 0.34690422425314665,
+      "ds002725_verdict": "AT_CEILING",
+      "ds003720_encoder": 0.009473516572058157,
+      "ds003720_verdict": "BELOW_FLOOR",
+      "cross_paradigm_verdict": "MIXED"
+    },
+    {
+      "region_idx": 25,
+      "region_name": "PAG",
+      "is_brainstem": true,
+      "ds002725_ceiling": 0.19002386086437997,
+      "ds002725_encoder": 0.2620591441427116,
+      "ds002725_verdict": "AT_CEILING",
+      "ds003720_encoder": -0.04018037522042777,
+      "ds003720_verdict": "AT_FLOOR",
+      "cross_paradigm_verdict": "DS002725_ONLY"
+    }
+  ]
+}

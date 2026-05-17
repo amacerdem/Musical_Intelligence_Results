@@ -1,0 +1,19 @@
+{
+  "axis_id": "AXIS-05.7.4",
+  "axis_name": "ds006564 Naturalistic film w/ controlled music",
+  "engine_head": "318eb2f529d7103e8b7d80b01228357fdc4e0217",
+  "phase_close_date": "2026-05-07",
+  "execution_status": "NON-ELIGIBLE per Phase 0.5 entry-gate",
+  "claims": [
+    {
+      "claim_id": "C-PH18-4-ENTRYGATE",
+      "paper_value": "MI requires events.tsv with stimulus-locked alignment",
+      "reproduced_value": "NON-ELIGIBLE: 0 events.tsv on disk; naturalistic film paradigm",
+      "deviation": null,
+      "tolerance": "n/a — infrastructure exclusion",
+      "verdict": "NON-ELIGIBLE",
+      "iteration_count": 1,
+      "notes": "Phase 0.5 audit row ds006564: 41 subs / 56 bold / 0 events.tsv on disk; partial download. Naturalistic film paradigm typically uses continuous audio without per-trial events.tsv. Recovery requires (a) completing download, (b) confirming continuous audio is available, (c) constructing pseudo-events from scene boundaries. Even after recovery, the variance-partitioning pre-registration would need adaptation — currently scope-deferred to follow-up Zenodo bundle."
+    }
+  ]
+}

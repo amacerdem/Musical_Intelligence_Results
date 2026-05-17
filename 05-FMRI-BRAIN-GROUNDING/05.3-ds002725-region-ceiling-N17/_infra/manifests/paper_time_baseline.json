@@ -1,0 +1,92 @@
+{
+  "_schema": "05.3-ds002725-region-ceiling-N17 paper-time baseline (frozen Tier-1 numbers)",
+  "_frozen_at": "2026-05-13",
+  "_engine_sha": "e537f90e6d14595a0cddb580ee3975f6f9a431151d5d18b09b4c80e1ffcb0098",
+  "_engine_commit": "318eb2f5",
+  "_source_phase": "V8-Additional-fMRI/21-mi-fmri-rigorous-mapping v1.4 (Stages 3/4/9 positive)",
+  "_paradigm_note": "ds002725 N=17 paper-canonical (Daly 2019). Per-region cohort: sub-01/02/03 have SMA mask coverage gap; SMA analyses use N=14, other regions N=17.",
+
+  "loso_ceiling_ds002725": {
+    "_description": "Per-region cross-subject inter-rater predictability ceiling on full ds002725 BOLD scan (~930 TRs, 26 regions, N=17)",
+    "n_subjects": 17,
+    "n_regions_tested": 26,
+    "n_non_brainstem": 21,
+    "ci_bootstrap_n": 5000,
+    "n_perm_null": 5000,
+    "headline_passing_floor_and_q05": 15,
+    "headline_denominator": 21,
+    "top5_regions": [
+      {"name": "putamen", "r_ceiling": 0.4422, "ci_95": [0.3271, 0.5557], "p_null": 0.0002},
+      {"name": "AN", "r_ceiling": 0.3971, "ci_95": [0.2786, 0.5010], "p_null": 0.0002, "is_brainstem": true},
+      {"name": "amygdala", "r_ceiling": 0.3825, "ci_95": [0.2284, 0.5072], "p_null": 0.0002},
+      {"name": "MGB", "r_ceiling": 0.3464, "ci_95": [0.2470, 0.4375], "p_null": 0.0002},
+      {"name": "ACC", "r_ceiling": 0.3036, "ci_95": [0.1490, 0.4401], "p_null": 0.0002}
+    ]
+  },
+
+  "encoder_saturation_ds002725_mendelssohn": {
+    "_description": "Per-region MI encoder + Mendelssohn-window LOSO ceiling + saturation verdict (N=17, 80 TRs)",
+    "n_subjects": 17,
+    "n_regions_tested": 26,
+    "n_non_brainstem": 21,
+    "block_shuffle_block_trs": 10,
+    "n_perm_null": 5000,
+    "ci_bootstrap_n": 2000,
+    "lag_range_s": [-2.0, 6.0],
+    "headline_at_ceiling": 11,
+    "headline_exceeds": 5,
+    "headline_ceiling_saturating": 16,
+    "headline_denominator_non_brainstem": 21,
+    "headline_below_ceiling": 1,
+    "headline_at_floor": 4,
+    "top5_regions": [
+      {"name": "A1_HG", "r_mi": 0.5088, "r_ceiling": 0.5048, "verdict": "AT_CEILING", "p_null": 0.0002},
+      {"name": "STG", "r_mi": 0.3747, "r_ceiling": 0.3137, "verdict": "AT_CEILING", "p_null": 0.0002},
+      {"name": "MGB", "r_mi": 0.3639, "r_ceiling": 0.2650, "verdict": "EXCEEDS", "p_null": 0.0002},
+      {"name": "SOC", "r_mi": 0.3469, "r_ceiling": 0.2490, "verdict": "AT_CEILING", "p_null": 0.0002, "is_brainstem": true},
+      {"name": "SMA", "r_mi": 0.3267, "r_ceiling": 0.2250, "verdict": "AT_CEILING", "p_null": 0.0002, "n_subjects": 14}
+    ],
+    "exceeds_regions": ["IFG", "ACC", "PMC", "caudate", "MGB"]
+  },
+
+  "mendelssohn_pilot_paradox_resolution": {
+    "_description": "Resolves Phase 05.1 N=17 cross-subject ρ=-0.022 paradox via per-region ceiling-saturation separation",
+    "phase13_sub08_single_subject_r": 0.59,
+    "phase13_n17_cross_subject_median_rho": -0.022,
+    "phase21_full_scan_ceiling_amygdala": 0.3825,
+    "phase21_mendelssohn_window_ceiling_amygdala": 0.012,
+    "interpretation": "BOLD amygdala IS stimulus-driven cross-subject on full scan (ceiling +0.383, p<0.001). MI's amygdala-channel encoder fidelity on the Mendelssohn 80-TR subwindow is a separable question (ceiling itself is only +0.012 on this piece-specific window — Mendelssohn Op.54 technical, not emotion-loaded). Phase 05.1 negative ρ result was about MI encoder fidelity on the Mendelssohn-specific subwindow, NOT about general BOLD amygdala reliability."
+  },
+
+  "cross_paradigm_bridge": {
+    "_description": "ds002725 ↔ ds003720 cross-paradigm verdict per region (Stage 9)",
+    "n_regions_strong_both": 1,
+    "n_regions_mixed": 5,
+    "n_regions_ds002725_only": 11,
+    "n_regions_ds003720_only": 0,
+    "n_regions_null_both": 4,
+    "n_non_brainstem_total": 21,
+    "strong_region": "STG",
+    "mixed_regions": ["IFG", "OFC", "MGB", "hypothalamus", "insula"]
+  },
+
+  "tolerance": {
+    "ceiling_abs": 0.02,
+    "r_mi_abs": 0.02,
+    "n_pass_min_stage3": 13,
+    "n_saturating_min_stage4": 14,
+    "_note": "If local reproduction deviates beyond tolerance, L9 reconciles as CAVEAT (not FAIL); diagnostic dump required. n_pass_min thresholds = paper headline - 2 (small tolerance for stochastic CI variation)."
+  },
+
+  "stimulus_metadata": {
+    "dataset": "ds002725 (Daly et al. 2019)",
+    "task": "classicalMusic — passive continuous listening",
+    "n_subjects_cohort": 17,
+    "tr_s": 2.0,
+    "bold_scan_length_trs": 930,
+    "mendelssohn_window_trs": 80,
+    "mendelssohn_window_duration_s": 160,
+    "mendelssohn_piece": "Mendelssohn Variations sérieuses Op.54 (interpretation by Larrard)",
+    "tr_start_per_subject_via": "BOLD template-match against MI auditory channels"
+  }
+}

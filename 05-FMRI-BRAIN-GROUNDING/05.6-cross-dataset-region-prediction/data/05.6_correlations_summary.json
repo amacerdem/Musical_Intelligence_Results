@@ -1,0 +1,59 @@
+{
+  "_meta": {
+    "phase": "05.6-cross-dataset-region-prediction",
+    "timestamp": "2026-05-13T15:57:09.417420Z",
+    "engine_sha_pin": "318eb2f529d7103e8b7d80b01228357fdc4e0217",
+    "n_perm": 5000,
+    "seed": 20260424,
+    "n_non_brainstem_regions": 21,
+    "wallclock_s": 13.677488088607788
+  },
+  "A_bold_ceiling_cross_dataset": {
+    "status": "OK",
+    "n_pairs": 21,
+    "pearson_r": -0.1612049859856409,
+    "pearson_p_parametric": 0.48512344319630113,
+    "pearson_p_permutation": 0.7536492701459708,
+    "spearman_r": -0.1987012987012987,
+    "spearman_p_parametric": 0.3878822634645567,
+    "spearman_p_permutation": 0.8048390321935612,
+    "null_pearson_mean": 0.0015539145097136497,
+    "null_pearson_std": 0.22364318370819092
+  },
+  "B_mi_encoder_cross_dataset": {
+    "status": "OK",
+    "n_pairs": 21,
+    "pearson_r": 0.2369664996794437,
+    "pearson_p_parametric": 0.3010203514755996,
+    "pearson_p_permutation": 0.14917016596680663,
+    "spearman_r": 0.27792207792207796,
+    "spearman_p_parametric": 0.22253206527884467,
+    "spearman_p_permutation": 0.11177764447110577,
+    "null_pearson_mean": -0.0021007442846894264,
+    "null_pearson_std": 0.22570842504501343
+  },
+  "C1_mi_feature_mean_cross_dataset": {
+    "status": "OK",
+    "n_pairs": 21,
+    "pearson_r": 0.9980016645878669,
+    "pearson_p_parametric": 2.9488151142738513e-24,
+    "pearson_p_permutation": 0.0001999600079984003,
+    "spearman_r": 0.9883116883116884,
+    "spearman_p_parametric": 5.504414354849043e-17,
+    "spearman_p_permutation": 0.0001999600079984003,
+    "null_pearson_mean": 0.001470850664190948,
+    "null_pearson_std": 0.22006337344646454
+  },
+  "C2_mi_feature_variance_cross_dataset": {
+    "status": "OK",
+    "n_pairs": 21,
+    "pearson_r": 0.9683940977183758,
+    "pearson_p_parametric": 6.475887971630391e-13,
+    "pearson_p_permutation": 0.0001999600079984003,
+    "spearman_r": 0.9519480519480519,
+    "spearman_p_parametric": 3.249554352565228e-11,
+    "spearman_p_permutation": 0.0001999600079984003,
+    "null_pearson_mean": 0.0002380944206379354,
+    "null_pearson_std": 0.22277286648750305
+  }
+}

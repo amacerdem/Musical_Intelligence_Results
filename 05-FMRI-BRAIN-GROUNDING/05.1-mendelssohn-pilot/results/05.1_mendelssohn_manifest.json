@@ -1,0 +1,58 @@
+{
+  "axis_id": "AXIS-7",
+  "axis_name": "Mendelssohn Single-Subject Pilot (CAVEAT-PRESERVING)",
+  "engine_head": "318eb2f529d7103e8b7d80b01228357fdc4e0217",
+  "framing": "Illustrative single-window pilot, NOT population-level evidence. Paper itself flags as such. V-Reproduction preserves both the illustrative sub-08 number AND the cross-subject median disclosure.",
+  "phase_close_date": "2026-05-07",
+  "git_commit_hash": "PENDING_AT_CLOSE",
+  "claims": [
+    {
+      "claim_id": "C-MEND-01",
+      "label": "sub-08 amygdala paper-time r=+0.59 (single-window, illustrative)",
+      "paper": "+0.59",
+      "reproduced": "+0.5904",
+      "verdict": "PASS",
+      "notes": ""
+    },
+    {
+      "claim_id": "C-MEND-02",
+      "label": "sub-08 amygdala Spearman \u03c1=+0.29 [paper text \u00a7single-sub pilot]",
+      "paper": "+0.29",
+      "reproduced": "+0.5420",
+      "verdict": "PARTIAL",
+      "notes": "Paper +0.29 = Method B (peak-HRF); Method A gives +0.542. Both preserved per paper \u00a7Methods \u00a7fMRI."
+    },
+    {
+      "claim_id": "C-MEND-03",
+      "label": "Cross-subject N=17 median amygdala \u03c1=\u22120.022 (window-selection effect disclosure)",
+      "paper": "-0.022",
+      "reproduced": "-0.0223",
+      "verdict": "PASS",
+      "notes": ""
+    },
+    {
+      "claim_id": "C-MEND-04",
+      "label": "Cross-subject 95% BCa CI [\u22120.154, +0.027]",
+      "paper": "[-0.154, +0.027]",
+      "reproduced": "[-0.154, +0.027]",
+      "verdict": "PASS",
+      "notes": ""
+    },
+    {
+      "claim_id": "C-MEND-05",
+      "label": "Window-shopping any-subject median post-hoc r \u2248 +0.59",
+      "paper": "+0.59",
+      "reproduced": "+0.5904",
+      "verdict": "PASS",
+      "notes": ""
+    },
+    {
+      "claim_id": "C-MEND-06",
+      "label": "Mendelssohn rank 1/7 across 4 alignment methods (2.2\u00d7 next-best)",
+      "paper": "rank 1/7, 2.2\u00d7 lift",
+      "reproduced": "documented in V2 v9.5.6-ds002725-deneyler-rescore.md (Mendelssohn rank 1/7; next-best piece at +0.246; 2.2\u00d7 separation)",
+      "verdict": "PASS",
+      "notes": "Phase 05.2 L3 cross-subject CSV contains 7 pieces incl. Mendelssohn (p5); paper anchor V2 rescore.md confirms rank 1/7 + 2.2\u00d7 lift"
+    }
+  ]
+}

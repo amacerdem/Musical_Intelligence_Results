@@ -1,0 +1,19 @@
+{
+  "axis_id": "AXIS-05.7.2",
+  "axis_name": "ds005880 Diminished 7th Chord",
+  "engine_head": "318eb2f529d7103e8b7d80b01228357fdc4e0217",
+  "phase_close_date": "2026-05-07",
+  "execution_status": "NON-ELIGIBLE per Phase 0.5 entry-gate",
+  "claims": [
+    {
+      "claim_id": "C-PH18-2-ENTRYGATE",
+      "paper_value": "MI requires sub-TR onset alignment for frame-level encoding",
+      "reproduced_value": "NON-ELIGIBLE: events.tsv stores integer-second (TR-only) onsets",
+      "deviation": null,
+      "tolerance": "n/a — infrastructure exclusion",
+      "verdict": "NON-ELIGIBLE",
+      "iteration_count": 1,
+      "notes": "Phase 0.5 audit row ds005880: events_tsv_TR_only — onsets are integer seconds, MI requires sub-TR (172.27 Hz frame-level) alignment. Excluded per master plan §0 ENTRY-GATE rule. Recovery would require psychopy-log mining for sub-TR onset; not in V-Reproduction scope. Re-eligibility requires upstream BIDS curation."
+    }
+  ]
+}

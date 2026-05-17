@@ -1,0 +1,98 @@
+{
+  "axis_id": "AXIS-9",
+  "axis_name": "Cross-subject voxelwise ds003720 (ROUTING-ABLATION TEST, NOT POPULATION ESTIMATE)",
+  "engine_head": "318eb2f529d7103e8b7d80b01228357fdc4e0217",
+  "framing": "ds003720 (N=4 QC-pass) is a routing-ablation test under stimulus-locking constraints \u2014 4 encoders \u00d7 4 subjects = 16 cells. NOT a population-level neural effect estimate.",
+  "seed_registry": {
+    "primary": 42,
+    "shuffle_null_perms": 500,
+    "ridge_folds": 5
+  },
+  "phase_close_date": "2026-05-07",
+  "git_commit_hash": "PENDING_AT_CLOSE",
+  "claims": [
+    {
+      "claim_id": "C-VOXEL-01",
+      "label": "4 subjects QC-pass (1 of 5 excluded)",
+      "paper": "4",
+      "reproduced": "4",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-VOXEL-02",
+      "label": "Shuffle-null pass: mi_ram_26d 4/4",
+      "paper": "4/4",
+      "reproduced": "4/4",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-VOXEL-03",
+      "label": "Shuffle-null pass: mi_naive_26d 1/4",
+      "paper": "1/4",
+      "reproduced": "1/4",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-VOXEL-04",
+      "label": "Shuffle-null pass: random_26d 0/4",
+      "paper": "0/4",
+      "reproduced": "0/4",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-VOXEL-05",
+      "label": "Ridge held-out r: mi_ram_26d \u2248 +0.165",
+      "paper": "+0.165",
+      "reproduced": "+0.1653",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-VOXEL-06",
+      "label": "Ridge held-out r: mi_naive_26d \u2248 +0.084",
+      "paper": "+0.084",
+      "reproduced": "+0.0844",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-VOXEL-07",
+      "label": "Ridge held-out r: random_26d \u2248 +0.090",
+      "paper": "+0.090",
+      "reproduced": "+0.0901",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-VOXEL-08",
+      "label": "Ridge held-out r: mert_768d \u2248 +0.221",
+      "paper": "+0.221",
+      "reproduced": "+0.2214",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-VOXEL-09",
+      "label": "MI vs MI-naive lift = +93%",
+      "paper": "+93%",
+      "reproduced": "+96%",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-VOXEL-10",
+      "label": "MI-unique R\u00b2 > 0 in 4/4 (banded-ridge, V6 A3)",
+      "paper": "4/4 CI excludes 0",
+      "reproduced": "4/4",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-VOXEL-11",
+      "label": "Feature-level CKA(MI-full, MI-naive) = 0.994",
+      "paper": "0.994",
+      "reproduced": "documented in paper anchor V2/v9.5.7-cycle-17 tex line 'CKA between MI-full and MI-naive yielded 0.994'",
+      "verdict": "PASS"
+    }
+  ],
+  "external_artefacts": [
+    "Science/Bold-fMRI/ds003720/06_encoding/C17_deney_1_shuffle_null_results.csv",
+    "Science/Bold-fMRI/ds003720/06_encoding/C17_deney_2_ridge_loso.csv",
+    "Science/V6/results/A3_per_subject.csv",
+    "Science/V6/results/A3_summary.json"
+  ]
+}

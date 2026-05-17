@@ -1,0 +1,22 @@
+{
+  "phase": "05.5-ds003720-region-ceiling-N4",
+  "timestamp": "2026-05-13T15:51:21.570012Z",
+  "engine_sha_pin": "318eb2f529d7103e8b7d80b01228357fdc4e0217",
+  "cohort_used": [
+    "sub-001",
+    "sub-003",
+    "sub-004",
+    "sub-005"
+  ],
+  "n_subjects": 4,
+  "n_bootstrap": 5000,
+  "n_perm": 5000,
+  "seed": 20260424,
+  "headline_ceiling_pass_floor_q05_non_brainstem": 16,
+  "headline_saturation_at_ceiling": 3,
+  "headline_saturation_exceeds": 2,
+  "headline_saturation_below": 4,
+  "headline_saturation_floor": 12,
+  "headline_saturation_total_non_brainstem": 5,
+  "wallclock_s": 276.1698000431061
+}
