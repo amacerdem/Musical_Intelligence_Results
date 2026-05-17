@@ -1,0 +1,230 @@
+{
+  "axis_id": "AXIS-3",
+  "axis_name": "C\u00b3 Functional Anchors (F1\u2013F8)",
+  "engine_head": "318eb2f529d7103e8b7d80b01228357fdc4e0217",
+  "seed_registry": {
+    "primary": 2026050702,
+    "bootstrap": null,
+    "permutation": null
+  },
+  "phase_close_date": "2026-05-07",
+  "git_commit_hash": "PENDING_AT_CLOSE",
+  "claims": [
+    {
+      "claim_id": "C-C3-F1-01",
+      "function": "F1",
+      "claim_label": "132/139 dimensions p<0.05",
+      "paper_value": "132/139",
+      "v1_match": "matched",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-C3-F1-02",
+      "function": "F1",
+      "claim_label": "22/22 FDR-selected",
+      "paper_value": "22/22",
+      "v1_match": "matched",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-C3-F1-03",
+      "function": "F1",
+      "claim_label": "TPIO |\u03c1|=0.978",
+      "paper_value": "0.978",
+      "v1_match": "matched",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-C3-F2-01",
+      "function": "F2",
+      "claim_label": "107/110 dimensions p<0.05",
+      "paper_value": "107/110",
+      "v1_match": "matched",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-C3-F2-02",
+      "function": "F2",
+      "claim_label": "50/50 FDR-selected",
+      "paper_value": "50/50",
+      "v1_match": "matched",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-C3-F2-03",
+      "function": "F2",
+      "claim_label": "OOS Marjieh 39/50 (78%)",
+      "paper_value": "39/50",
+      "v1_match": "matched",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-C3-F2-04",
+      "function": "F2",
+      "claim_label": "UDP |\u03c1|=0.973",
+      "paper_value": "0.973",
+      "v1_match": "matched",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-C3-F3-01",
+      "function": "F3",
+      "claim_label": "39/56 primary FDR (70%)",
+      "paper_value": "39/56",
+      "v1_match": "matched",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-C3-F3-02",
+      "function": "F3",
+      "claim_label": "5/5 SNEM,BARM,DGTP,NEWMD pass primary",
+      "paper_value": "4\u00d75/5",
+      "v1_match": "matched",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-C3-F3-03",
+      "function": "F3",
+      "claim_label": "STANM 1/5 + SDL 0/5 (function-separation)",
+      "paper_value": "1/5 0/5",
+      "v1_match": "matched",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-C3-F4-01",
+      "function": "F4",
+      "claim_label": "450/450 DEAM (100%)",
+      "paper_value": "450/450",
+      "v1_match": "matched",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-C3-F4-02",
+      "function": "F4",
+      "claim_label": "MMP |\u03c1|=0.581",
+      "paper_value": "0.581",
+      "v1_match": "matched",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-C3-F5-01",
+      "function": "F5",
+      "claim_label": "135/142 (95%) significant",
+      "paper_value": "135/142",
+      "v1_match": "matched",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-C3-F5-02",
+      "function": "F5",
+      "claim_label": "VMM perceived_happy \u03c1=+0.918",
+      "paper_value": "0.918",
+      "v1_match": "matched",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-C3-F5-03",
+      "function": "F5",
+      "claim_label": "TenseMusic 38/38 |\u03c1|>0.1",
+      "paper_value": "38/38",
+      "v1_match": "matched",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-C3-F6-01",
+      "function": "F6",
+      "claim_label": "70/70 (100%)",
+      "paper_value": "70/70",
+      "v1_match": "matched",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-C3-F6-02",
+      "function": "F6",
+      "claim_label": "11/11 pharma cross-validation",
+      "paper_value": "11/11",
+      "v1_match": "matched",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-C3-F6-03",
+      "function": "F6",
+      "claim_label": "antic_da\u2194caudate \u03c1=+0.933",
+      "paper_value": "0.933",
+      "v1_match": "matched",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-C3-F6-04",
+      "function": "F6",
+      "claim_label": "consum_da\u2194nacc \u03c1=+0.836",
+      "paper_value": "0.836",
+      "v1_match": "matched",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-C3-F7-01",
+      "function": "F7",
+      "claim_label": "15/17 FDR mechanisms",
+      "paper_value": "15/17",
+      "v1_match": "matched",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-C3-F7-02",
+      "function": "F7",
+      "claim_label": "NSCP |\u03c1|=0.945",
+      "paper_value": "0.945",
+      "v1_match": "matched",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-C3-F8-01",
+      "function": "F8",
+      "claim_label": "14/14 FDR",
+      "paper_value": "14/14",
+      "v1_match": "matched",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-C3-F8-02",
+      "function": "F8",
+      "claim_label": "d\u0304=1.84 mean effect size",
+      "paper_value": "1.84",
+      "v1_match": "matched",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-C3-F3-04-N",
+      "function": "F3",
+      "claim_label": "F3 dim-level enumeration n_tests=290",
+      "paper_value": "290",
+      "v1_match": "GT-0019 290",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-C3-F3-04-BB",
+      "function": "F3",
+      "claim_label": "F3 hierarchical BB-FDR 131/290",
+      "paper_value": "131/290",
+      "v1_match": "GT-0019 131/290",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-C3-F3-04-BH",
+      "function": "F3",
+      "claim_label": "F3 global BH \u2248151/290 (\u00b11)",
+      "paper_value": "151/290",
+      "v1_match": "GT-0019 152/290",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-C3-DETERM-01",
+      "function": "F1",
+      "claim_label": "BCH Group A determinism on V1 13-dyad anchor WAVs",
+      "paper_value": "|\u0394\u03c1| \u2264 8.8e-5 (paper engine bound)",
+      "v1_match": "max |\u0394\u03c1| = 4.725275e-05",
+      "verdict": "PASS"
+    }
+  ]
+}

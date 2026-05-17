@@ -1,0 +1,28 @@
+claim_id,function,claim_label,paper_value,v1_match,verdict
+C-C3-F1-01,F1,132/139 dimensions p<0.05,132/139,matched,PASS
+C-C3-F1-02,F1,22/22 FDR-selected,22/22,matched,PASS
+C-C3-F1-03,F1,TPIO |ρ|=0.978,0.978,matched,PASS
+C-C3-F2-01,F2,107/110 dimensions p<0.05,107/110,matched,PASS
+C-C3-F2-02,F2,50/50 FDR-selected,50/50,matched,PASS
+C-C3-F2-03,F2,OOS Marjieh 39/50 (78%),39/50,matched,PASS
+C-C3-F2-04,F2,UDP |ρ|=0.973,0.973,matched,PASS
+C-C3-F3-01,F3,39/56 primary FDR (70%),39/56,matched,PASS
+C-C3-F3-02,F3,"5/5 SNEM,BARM,DGTP,NEWMD pass primary",4×5/5,matched,PASS
+C-C3-F3-03,F3,STANM 1/5 + SDL 0/5 (function-separation),1/5 0/5,matched,PASS
+C-C3-F4-01,F4,450/450 DEAM (100%),450/450,matched,PASS
+C-C3-F4-02,F4,MMP |ρ|=0.581,0.581,matched,PASS
+C-C3-F5-01,F5,135/142 (95%) significant,135/142,matched,PASS
+C-C3-F5-02,F5,VMM perceived_happy ρ=+0.918,0.918,matched,PASS
+C-C3-F5-03,F5,TenseMusic 38/38 |ρ|>0.1,38/38,matched,PASS
+C-C3-F6-01,F6,70/70 (100%),70/70,matched,PASS
+C-C3-F6-02,F6,11/11 pharma cross-validation,11/11,matched,PASS
+C-C3-F6-03,F6,antic_da↔caudate ρ=+0.933,0.933,matched,PASS
+C-C3-F6-04,F6,consum_da↔nacc ρ=+0.836,0.836,matched,PASS
+C-C3-F7-01,F7,15/17 FDR mechanisms,15/17,matched,PASS
+C-C3-F7-02,F7,NSCP |ρ|=0.945,0.945,matched,PASS
+C-C3-F8-01,F8,14/14 FDR,14/14,matched,PASS
+C-C3-F8-02,F8,d̄=1.84 mean effect size,1.84,matched,PASS
+C-C3-F3-04-N,F3,F3 dim-level enumeration n_tests=290,290,GT-0019 290,PASS
+C-C3-F3-04-BB,F3,F3 hierarchical BB-FDR 131/290,131/290,GT-0019 131/290,PASS
+C-C3-F3-04-BH,F3,F3 global BH ≈151/290 (±1),151/290,GT-0019 152/290,PASS
+C-C3-DETERM-01,F1,BCH Group A determinism on V1 13-dyad anchor WAVs,|Δρ| ≤ 8.8e-5 (paper engine bound),max |Δρ| = 4.725275e-05,PASS
