@@ -1,0 +1,26 @@
+{
+  "p50_ms": 12.426477,
+  "p95_ms": 14.111854,
+  "p99_ms": 16.24318,
+  "real_time_line_ms": 5.804988662131519,
+  "p95_margin_factor": 0.41135549319965464,
+  "n_runs": 15,
+  "all_latencies_ms": [
+    14.111854,
+    12.847752,
+    11.884516,
+    16.24318,
+    12.426477,
+    12.716001,
+    11.677039,
+    11.72697,
+    12.96913,
+    11.841435,
+    12.182842,
+    12.10775,
+    11.695607,
+    13.117106,
+    12.983534
+  ],
+  "approximation_note": "Per-frame latency = wall_per_run / n_frames_per_run, aggregated across 15 runs. Engine returns batched (T, D) arrays; no per-frame timing hook exists in the frozen API. See 00-METHODOLOGY.md \u00a76."
+}

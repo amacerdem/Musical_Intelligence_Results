@@ -1,0 +1,33 @@
+dataset_id,modality,n_dataset_level,audio_available,exact_timing,mni_derivative,n_qc_pass,n_alignment_qualified,mi_compatible,exclusion_reason,phase_consumer,notes
+ds002725,fMRI,17,yes_in_dataset,events_tsv_sub_TR,runnable_via_fmriprep,17,17,True,,Phase 11,"Daly 2019. 7 classical pieces (Chopin, Rachmaninoff, Mendelssohn Op.54, Beethoven). 12 trial starts in shared events.tsv (some pieces repeat). 17/21 subs have classical bold + shared events.tsv applies. Phase 11 verifies per-subject onset matching. NOTE: no T1w on disk; preproc uses EPI-based normalization."
+ds003720,fMRI,5,yes_in_dataset,events_tsv_sub_TR,runnable_via_fmriprep,5,5,True,,Phase 12,"Nakai 2021 Music Genre fMRI. 5 subs, 1720 stimulus WAVs, 90 events.tsv (18/sub). Used for routing-ablation framing in Phase 12 (NOT a population estimate — 93% lift over MI-naive)."
+putkinen2025,PET,15,summary_only,none_recoverable,not_applicable,-1,-1,False,Closed-access PET; summary-only convergence with paper Putkinen 2025 µ-opioid 7/7 regions,Phase 8,Used as published-result convergence cross-validation only.
+mallik2017,fMRI,0,summary_only,none_recoverable,not_applicable,-1,-1,False,Subject-level data not deposited; summary-only naltrexone block,Phase 8,
+salimpoor2011,fMRI,8,no_recoverable,none_recoverable,not_applicable,-1,-1,False,Closed-access; uses caudate-NAcc temporal sequence claim only via Salimpoor's published lag (+0.9 s),Phase 8,
+ferreri2019,fMRI,27,no_recoverable,none_recoverable,not_applicable,-1,-1,False,Closed-access pharmacology trial; uses dose-ordering claim (levodopa>placebo>risperidone) only,Phase 8,
+blood2001,PET,10,no_recoverable,none_recoverable,not_applicable,-1,-1,False,Old PET study; uses peak coordinates only for RAM topology,Phase 9 (RAM),
+salimpoor2013,fMRI,19,no_recoverable,none_recoverable,not_applicable,-1,-1,False,Used for RAM peak-coordinate convergence only,Phase 9 (RAM),
+grahn2007,fMRI,14,no_recoverable,none_recoverable,not_applicable,-1,-1,False,RAM topology peaks-only,Phase 9 (RAM),
+koelsch2005,fMRI,18,no_recoverable,none_recoverable,not_applicable,-1,-1,False,RAM topology peaks-only,Phase 9 (RAM),
+brattico2011,fMRI,16,no_recoverable,none_recoverable,not_applicable,-1,-1,False,RAM topology peaks-only,Phase 9 (RAM),
+zatorre2005,fMRI,12,no_recoverable,none_recoverable,not_applicable,-1,-1,False,RAM topology peaks-only,Phase 9 (RAM),
+studyforrest_7t_music,fMRI,20,yes_external_DOI,events_tsv_sub_TR,runnable_via_fmriprep,6,20,True,,Phase 18.1,studyforrest 7T music-genre extension. 37 subs/148 events.tsv/750 bold on disk. Audio = Forrest Gump score (external DOI: 10.18112/openneuro.ds000113). 7T sub-set is N≈20. Phase 18.1 entry-gate verdict: ELIGIBLE conditional on external audio fetch.
+ds005880,fMRI,20,yes_external_DOI,events_tsv_TR_only,not_feasible,15,0,False,PARTIAL DOWNLOAD (~710 MB / 6 GB); events.tsv onsets are integer-second only (TR-only). Phase 18.2 entry-gate verdict: NON-ELIGIBLE pending download + psychopy-log recovery for sub-TR onset,Phase 18.2,Diminished 7th chord. 20 subs/40 events.tsv/15 bold on disk. Re-audit when download completes.
+ds006583,fMRI,23,yes_external_DOI,none_recoverable,runnable_via_fmriprep,9,0,False,PARTIAL DOWNLOAD; 23 subs/9 bold/0 events.tsv on disk. Phase 18.3 entry-gate verdict: NON-ELIGIBLE pending download,Phase 18.3,Affective Transitions. Re-audit when download completes.
+ds006564,fMRI,41,yes_external_DOI,none_recoverable,runnable_via_fmriprep,41,0,False,PARTIAL DOWNLOAD; 41 subs/56 bold/0 events.tsv on disk. Phase 18.4 entry-gate verdict: NON-ELIGIBLE pending download,Phase 18.4,Naturalistic film with controlled musical information. Re-audit when download completes.
+ds000171,fMRI,39,yes_external_DOI,events_tsv_sub_TR,runnable_via_fmriprep,26,28,True,,Phase 18.5,Music + depression (39 = 19 MDD + 20 ND). 39 subs / 141 events.tsv / 89 bold on disk. Audio referenced via paper supplementary (Lepping 2016 Sci. Rep.). Phase 18.5 entry-gate verdict: ELIGIBLE conditional on external audio fetch.
+nmedh_hindi_eeg,EEG,48,yes_in_dataset,events_tsv_sub_TR,not_applicable,48,0,False,EEG modality not directly compatible with MI's audio→fMRI BOLD architecture; requires source-localization adapter (companion paper #2),Companion paper #2 (EEG/MEG),
+musin_g,EEG,20,yes_in_dataset,events_tsv_sub_TR,not_applicable,20,0,False,EEG modality requires source-localization adapter (companion paper #2),Companion paper #2 (EEG/MEG),
+daly_ds002721,EEG,31,yes_external_DOI,events_tsv_sub_TR,not_applicable,31,0,False,EEG twin of ds002725; companion paper #2,Companion paper #2 (EEG/MEG),
+di_liberto_bach,EEG,20,yes_external_DOI,events_tsv_sub_TR,not_applicable,20,0,False,EEG note-level; companion paper #2,Companion paper #2,
+marion_meg,MEG,40,yes_external_DOI,events_tsv_sub_TR,not_applicable,40,0,False,MEG modality; companion paper #2,Companion paper #2,
+bellier_ecog,ECoG,29,yes_external_DOI,events_tsv_sub_TR,not_applicable,29,0,False,iEEG modality; sub-cm electrode validation = companion paper #1,Companion paper #1 (iEEG),Bellier 2023 Pink Floyd ECoG (Zenodo 7876019).
+music_expertise_ieeg,ECoG,6,yes_external_DOI,events_tsv_sub_TR,not_applicable,6,0,False,iEEG modality; companion paper #1,Companion paper #1 (iEEG),
+mehr2019_nhs,behavioral_only,86,yes_in_dataset,not_applicable,not_applicable,-1,-1,False,Behavioral-only; no neuroimaging — Phase 14 V5 marked out-of-scope for MI fMRI core,Phase 14 (cross-cultural),
+aam,behavioral_only,0,no_recoverable,none_recoverable,not_applicable,-1,-1,False,Path not on disk; documenting completeness only,(none),
+pmemo,behavioral_only,794,yes_in_dataset,not_applicable,not_applicable,-1,-1,False,Audio-only; no fMRI,(none),
+deam,behavioral_only,1802,yes_in_dataset,not_applicable,not_applicable,-1,-1,False,Audio-only behavioral ratings; used in Phase 5 ECE belief calibration only,Phase 5 ECE only,
+groove_midi,behavioral_only,1150,no_recoverable,events_tsv_sub_TR,not_applicable,-1,-1,False,MIDI-only (no audio rendered); used in Phase 7 functional anchors,Phase 7 F3+F7,
+emotify,behavioral_only,400,yes_in_dataset,not_applicable,not_applicable,-1,-1,False,Audio-only behavioral; no fMRI,(none),
+gold2019_absolute_pitch,fMRI,0,no_recoverable,none_recoverable,not_applicable,-1,-1,False,Audit-only entry; closed-access AP fMRI study,(none),
+ds001417,fMRI,0,no_recoverable,none_recoverable,not_applicable,-1,-1,False,Audit-only entry; not on local disk,(none),

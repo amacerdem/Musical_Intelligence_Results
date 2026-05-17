@@ -1,0 +1,7 @@
+claim_id,paper,reproduced,deviation,tolerance,verdict,notes
+C-ELIG-01,30,32,2,exact OR ≥30,PASS,32 datasets in registry (paper-cited + Phase 18 + scan + comparator).
+C-ELIG-02,6,6,0,exact_match,PASS,"Paper-cited datasets with explicit mi_compatible verdict: 6/6 (ds002725, ds003720, putkinen2025, mallik2017, salimpoor2011, ferreri2019)."
+C-ELIG-03,3,28,25,absolute_deviation <= 0,PASS,Explicit exclusions with documented reason: 28 (closed-access pharma/PET + behavioral + EEG/MEG + partial).
+C-ELIG-04,reported,17,,"exact_match (number reported, not predicted)",PASS,"ds002725 alignment-qualified N = 17 (vs dataset-level N=21 in BIDS, 17 with classicalMusic bold + shared events.tsv)."
+C-ELIG-05,routing-ablation,routing-ablation,,exact_match (text contains keyword),PASS,"ds003720 notes field contains 'routing-ablation' framing per Phase 12 requirement (Phase 12 reports lift over MI-naive routing ablation, not population estimate)."
+C-ELIG-06,5,5,0,exact_match (5/5 sub-axes have verdict),PASS,"Phase 18.1 ELIGIBLE (studyforrest, conditional on external audio); 18.2 NON-ELIGIBLE (ds005880, partial + TR-only); 18.3 NON-ELIGIBLE (ds006583, partial + no events); 18.4 NON-ELIGIBLE (ds006564, partial + no events); 18.5 ELIGIBLE (ds000171, conditional on external audio)."

@@ -1,0 +1,86 @@
+{
+  "axis_id": "AXIS-13",
+  "axis_name": "Compute Profile (3.31x real-time, 570 fps, 465 MB, latency p50/p95/p99)",
+  "engine_head": "318eb2f529d7103e8b7d80b01228357fdc4e0217",
+  "seed_registry": {
+    "primary": 2026050604,
+    "bootstrap": 1729,
+    "permutation": 42
+  },
+  "phase_close_date": "2026-05-06",
+  "git_commit_hash": "3e112a13b25ea22bcde5e6ad57f8635723b19704",
+  "claims": [
+    {
+      "claim_id": "C-COMPUTE-01",
+      "paper_value": 3.31,
+      "tolerance": "relative_deviation <= 0.15",
+      "reproduced_value": 0.4671,
+      "deviation": -0.8589,
+      "verdict": "CAVEAT",
+      "iteration_count": 1,
+      "notes": "Median real-time ratio over 15 sequential 30s runs on M2 8GB (Mac14,2) single-threaded. Mean rtr=0.460\u00d7."
+    },
+    {
+      "claim_id": "C-COMPUTE-02",
+      "paper_value": 570.0,
+      "tolerance": "relative_deviation <= 0.15",
+      "reproduced_value": 80.47,
+      "deviation": -0.8588,
+      "verdict": "CAVEAT",
+      "iteration_count": 1,
+      "notes": "Median fps over 15 runs of 30s clips. Mean fps=79.29. Engine frame rate = 172.27 Hz, so 570 fps \u21d2 3.31\u00d7 real-time."
+    },
+    {
+      "claim_id": "C-COMPUTE-03",
+      "paper_value": 465.0,
+      "tolerance": "relative_deviation <= 0.20",
+      "reproduced_value": 1553.81,
+      "deviation": 2.3415,
+      "verdict": "CAVEAT",
+      "iteration_count": 1,
+      "notes": "resource.getrusage(RUSAGE_SELF).ru_maxrss on single fresh run (1629290496 bytes). Platform: darwin. Clip: Beethoven - Pathetique Sonata Op13 I. Grave - Allegro.wav, T=5168 frames."
+    },
+    {
+      "claim_id": "C-COMPUTE-04",
+      "paper_value": [
+        1.753,
+        1.972,
+        1.99
+      ],
+      "tolerance": "relative_deviation <= 0.15",
+      "reproduced_value": [
+        12.4265,
+        14.1119,
+        16.2432
+      ],
+      "deviation": [
+        6.0887,
+        6.1561,
+        7.1624
+      ],
+      "verdict": "CAVEAT",
+      "iteration_count": 1,
+      "notes": "Per-frame latency = wall_per_run / n_frames_per_run, percentiles across 15 runs. Approximation per 00-METHODOLOGY.md \u00a76: frozen engine API returns batched (T,D) arrays without per-frame timing hook. Worst-axis abs(rel-dev) = 7.1624."
+    },
+    {
+      "claim_id": "C-COMPUTE-05",
+      "paper_value": 2.94,
+      "tolerance": "relative_deviation <= 0.15",
+      "reproduced_value": 0.4114,
+      "deviation": -0.8601,
+      "verdict": "CAVEAT",
+      "iteration_count": 1,
+      "notes": "Margin factor = real-time line (5.805 ms) / p95 (14.1119 ms). Headroom factor 2.94\u00d7 in paper means engine has ~3\u00d7 spare time per frame at worst-case 95th percentile."
+    },
+    {
+      "claim_id": "C-COMPUTE-06",
+      "paper_value": "|\u0394\u03c1| \u2264 8.8\u00d710\u207b\u2075",
+      "tolerance": "exact_match (bit-identical stronger than paper bound)",
+      "reproduced_value": "MD5 match: d8f10dc465fc... = d8f10dc465fc..., max-abs-diff = 0.0",
+      "deviation": "0 (bit-identical)",
+      "verdict": "PASS",
+      "iteration_count": 1,
+      "notes": "2-run determinism check on r3 layer of clip 'Beethoven - Pathetique Sonata Op13 I. Grave - Allegro.wav'. PASS condition: MD5 hashes identical (stronger than paper |\u0394\u03c1|\u22648.8e-5). Inherits Phase 0 finding."
+    }
+  ]
+}

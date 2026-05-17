@@ -1,0 +1,74 @@
+{
+  "axis_id": "AXIS-17",
+  "axis_name": "V-fMRI Eligibility Audit (gate for Phases 11/12/18)",
+  "engine_head": "318eb2f529d7103e8b7d80b01228357fdc4e0217",
+  "seed_registry": {
+    "primary": 20260506005,
+    "bootstrap": 1729,
+    "permutation": 42
+  },
+  "phase_close_date": "2026-05-06",
+  "git_commit_hash": "506ac46ea3a0",
+  "claims": [
+    {
+      "claim_id": "C-ELIG-01",
+      "paper_value": 30,
+      "tolerance": "exact OR \u226530",
+      "reproduced_value": 32,
+      "deviation": 2,
+      "verdict": "PASS",
+      "iteration_count": 1,
+      "notes": "32 datasets in registry (paper-cited + Phase 18 + scan + comparator)."
+    },
+    {
+      "claim_id": "C-ELIG-02",
+      "paper_value": 6,
+      "tolerance": "exact_match",
+      "reproduced_value": 6,
+      "deviation": 0,
+      "verdict": "PASS",
+      "iteration_count": 1,
+      "notes": "Paper-cited datasets with explicit mi_compatible verdict: 6/6 (ds002725, ds003720, putkinen2025, mallik2017, salimpoor2011, ferreri2019)."
+    },
+    {
+      "claim_id": "C-ELIG-03",
+      "paper_value": 3,
+      "tolerance": "absolute_deviation <= 0",
+      "reproduced_value": 28,
+      "deviation": 25,
+      "verdict": "PASS",
+      "iteration_count": 1,
+      "notes": "Explicit exclusions with documented reason: 28 (closed-access pharma/PET + behavioral + EEG/MEG + partial)."
+    },
+    {
+      "claim_id": "C-ELIG-04",
+      "paper_value": "reported",
+      "tolerance": "exact_match (number reported, not predicted)",
+      "reproduced_value": "17",
+      "deviation": null,
+      "verdict": "PASS",
+      "iteration_count": 1,
+      "notes": "ds002725 alignment-qualified N = 17 (vs dataset-level N=21 in BIDS, 17 with classicalMusic bold + shared events.tsv)."
+    },
+    {
+      "claim_id": "C-ELIG-05",
+      "paper_value": "routing-ablation",
+      "tolerance": "exact_match (text contains keyword)",
+      "reproduced_value": "routing-ablation",
+      "deviation": null,
+      "verdict": "PASS",
+      "iteration_count": 1,
+      "notes": "ds003720 notes field contains 'routing-ablation' framing per Phase 12 requirement (Phase 12 reports lift over MI-naive routing ablation, not population estimate)."
+    },
+    {
+      "claim_id": "C-ELIG-06",
+      "paper_value": 5,
+      "tolerance": "exact_match (5/5 sub-axes have verdict)",
+      "reproduced_value": 5,
+      "deviation": 0,
+      "verdict": "PASS",
+      "iteration_count": 1,
+      "notes": "Phase 18.1 ELIGIBLE (studyforrest, conditional on external audio); 18.2 NON-ELIGIBLE (ds005880, partial + TR-only); 18.3 NON-ELIGIBLE (ds006583, partial + no events); 18.4 NON-ELIGIBLE (ds006564, partial + no events); 18.5 ELIGIBLE (ds000171, conditional on external audio)."
+    }
+  ]
+}

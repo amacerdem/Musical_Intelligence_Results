@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "V-fMRI eligibility audit row",
+  "type": "object",
+  "required": [
+    "dataset_id",
+    "modality",
+    "n_dataset_level",
+    "audio_available",
+    "exact_timing",
+    "mni_derivative",
+    "n_qc_pass",
+    "n_alignment_qualified",
+    "mi_compatible",
+    "exclusion_reason",
+    "phase_consumer",
+    "notes"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "dataset_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9_]+$"
+    },
+    "modality": {
+      "enum": ["fMRI", "PET", "ECoG", "EEG", "MEG", "behavioral_only"]
+    },
+    "n_dataset_level": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "audio_available": {
+      "enum": ["yes_in_dataset", "yes_external_DOI", "summary_only", "no_recoverable"]
+    },
+    "exact_timing": {
+      "enum": [
+        "events_tsv_sub_TR",
+        "events_tsv_TR_only",
+        "recoverable_from_logs",
+        "none_recoverable",
+        "not_applicable"
+      ]
+    },
+    "mni_derivative": {
+      "enum": ["present", "runnable_via_fmriprep", "not_feasible", "not_applicable"]
+    },
+    "n_qc_pass": {
+      "type": "integer",
+      "minimum": -1
+    },
+    "n_alignment_qualified": {
+      "type": "integer",
+      "minimum": -1
+    },
+    "mi_compatible": {
+      "type": "boolean"
+    },
+    "exclusion_reason": {
+      "type": "string"
+    },
+    "phase_consumer": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

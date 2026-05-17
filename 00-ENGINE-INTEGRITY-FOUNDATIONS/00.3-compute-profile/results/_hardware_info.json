@@ -1,0 +1,23 @@
+{
+  "observed": {
+    "Hardware": "",
+    "Hardware Overview": "",
+    "Model Name": "MacBook Air",
+    "Model Identifier": "Mac14,2",
+    "Model Number": "MLY33LL/A",
+    "Chip": "Apple M2",
+    "Total Number of Cores": "8 (4 Performance and 4 Efficiency)",
+    "Memory": "8 GB",
+    "System Firmware Version": "13822.81.10",
+    "OS Loader Version": "13822.81.10",
+    "Serial Number (system)": "YYJNJT6KD6",
+    "Hardware UUID": "A45335FD-21EA-5113-89B3-38CC37B5AAB1",
+    "Provisioning UDID": "00008112-000C45C93645401E",
+    "Activation Lock Status": "Enabled"
+  },
+  "expected": {
+    "Chip": "Apple M2 Max",
+    "Memory": "64 GB"
+  },
+  "match": false
+}

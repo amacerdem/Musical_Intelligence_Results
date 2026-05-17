@@ -1,0 +1,28 @@
+{
+  "n_runs": 15,
+  "fps_median": 80.473,
+  "fps_mean": 79.29459999999999,
+  "rtr_median": 0.4671,
+  "rtr_mean": 0.4602866666666666,
+  "lat_p50_ms": 12.426477,
+  "lat_p95_ms": 14.111854,
+  "lat_p99_ms": 16.24318,
+  "wall_total_s": 984.6652060000001,
+  "clip_list": [
+    "Beethoven - Pathetique Sonata Op13 I. Grave - Allegro.wav",
+    "Cello Suite No. 1 in G Major, BWV 1007 I. Pr\u00e9lude.wav",
+    "Cello_Suite_No._1_in_G_Major__BWV_1007_I._Pr\u00e9lude_9fb7a346.wav",
+    "Duel of the Fates - Epic Version.wav",
+    "Enigma in The Veil-Eclipse-Segment I - Ama\u00e7 Erdem.wav",
+    "Herald of the Change - Hans Zimmer.wav",
+    "299.mp3",
+    "1924.mp3",
+    "767.mp3",
+    "1374.mp3",
+    "503.mp3",
+    "1432.mp3",
+    "1853.mp3",
+    "714.mp3",
+    "43.mp3"
+  ]
+}
