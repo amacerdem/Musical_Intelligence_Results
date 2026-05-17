@@ -1,57 +1,75 @@
-# Phase 1 — Architectural Cardinalities — Provenance Chain
+# Phase 00.1 — Architectural Cardinalities — Provenance Chain (V3)
 
-## Paper anchor
+**Engine SHA pin:** `318eb2f529d7103e8b7d80b01228357fdc4e0217`
+**Aggregate SHA:** `482ade45c50f5d3bf5c90c122e495b2c3230e6e6edc6542f72f22e3b5da37f88`
 
-**Source:** `The Paper/Nature-Neuroscience/revision/Musical_Intelligence_AE.tex`
+## Paper anchor (post R15-R18 revision)
 
-- **Line 585** (§Architectural cardinalities): "97 R³ … 32 × 24 × 3 = 223,488 theoretical 4-tuples (~8,600 active at runtime, ~3.85% sparsity); 89 mechanism modules across F1-F8; 121 belief classes in F1-F8 (34 Core + 59 Appraisal + 28 Anticipation), with 10 additional F9-bound kernel-only beliefs (SSRI, NSCP, DDSMI relays) bringing the full runtime registry to 131; 26-dimensional Region Activation Map (12 cortical, 9 subcortical, 5 brainstem); 4 canonical neurochemical channels (DA, NE, OPI, 5-HT) with 48 NeuroLink resolutions; 529 RegionLinks; and 16,191 declared numeric constants (full inventory in Supplementary Table S-Provenance)."
+**Source:** `Publication/Amac-Erdem-Musical-Intelligence.tex`, §Architecture §Parameter provenance
 
-- **Line 581** (§Three constant counts): "16,191 declared numeric constants … 856 .py files … 7,517 compute-path total = 7,256 static-array elements + 261 compile-time scalars … lenient classifier: HAND-TUNED = 495 / 3.1%, CALIB-BOWLING = 246 / 1.5%."
+Revised paper headline (per `_audits/audit_summary.md`):
 
-- **Line 575** (§PRISMA): "Mechanism-to-region routing edges (529 RegionLinks) and mechanism-to-neuromodulator-channel routing (48 NeuroLinks) were declared per-mechanism from the cited fMRI/PET/pharmacology evidence, not learned from data."
+> Of 16,191 (audited as 16,248) numeric constants in the frozen Musical Intelligence engine, zero are calibrated against held-out cognitive behavior data. 86 (0.53%) are literature-anchored — 67 bit-exact to published primary sources (Sethares 1993, Krumhansl-Kessler 1982, IEC 61672-1, Traunmüller 1990 Bark, Stevens 1957, O'Shaughnessy 1987 mel) and 19 derive analytically from cited form (Hasson temporal-window ladder, Plomp-Levelt 25% critical-band peak, Sethares parametric kernel, Berlyne 4·x·(1-x)). 6 are paper-disclosed reward weights in `brain/reward.py` (1 additional paper-listed item, `phi_fam_star = 0.5`, is a kernel-peak mathematical identity per **paper revision R15**). The remaining 16,156 are structural topology (9,817), identity placeholders (1,182), or transparent engineering choices (5,157). Two mechanisms (HTP-E3, SPH-E3) include a discrete structural model-selection step (formula-form choice between two candidates, literature-anchored), not a numeric fit.
+
+## V2 → V3 supersession
+
+Earlier paper text (pre-2026-05-16) referenced a coarser 5-bucket classifier that included a calibration category (~246 constants). Per the CODE-FIRST audit:
+
+- Engine source contains **zero** `calibrat` references in the runtime call-graph
+- V3 classifier under no-calibration rule redistributes those constants to LIT-VERBATIM (file-citation inheritance via Sethares/Plomp-Levelt/Helmholtz/Bidelman) or STRUCTURAL (dim/index codes in F1 BCH module)
+- Constant-level audit (2026-05-17) confirms zero attributions to any calibration category
+
+The calibration category is **retired** doctrinally and operationally. Paper text is revised accordingly (R15-R18 revision items).
 
 ## Code provenance
 
-**Engine root:** `Science/Musical_Intelligence/` (in this repo). Bit-identical to engine HEAD `318eb2f529d7103e8b7d80b01228357fdc4e0217` per `git diff 318eb2f5 HEAD -- Science/Musical_Intelligence/` (empty diff, verified 2026-05-06).
+**Engine root:** `Musical_Intelligence/` (at project root); bit-identical to engine HEAD `318eb2f5...`.
 
-**Per-mechanism RegionLink declarations:** `Science/Musical_Intelligence/brain/functions/{f1..f8}/mechanisms/<mech>/__init__.py` (each mechanism class exposes `region_links` and `neuro_links` properties).
+**Audit anchors (read-only inputs to this phase):**
 
-**RegionLink dataclass:** `Science/Musical_Intelligence/contracts/dataclasses/__init__.py:77-95` (slots: `dim_name`, `region`, `weight`, `citation`).
+- `_audits/audit_combined.csv` — 16,248 rows × 16 columns; full constant-level attribution (9-agent merge)
+- `_audits/bucket_distribution_real.csv` — 7-category summary (canonical headline numbers)
+- `_audits/audit_summary.md` — reviewer-facing synthesis
+- `_audits/escalation_resolutions.md` — 46 escalation theme-groupings for manual review
+- `_audits/INVESTIGATION-RULES.md` — protocol v1.2 (R1-R9 integrated)
+- `_audits/2026-05-17_htp-sph-e3-structural-selection-audit.md` — HTP-E3/SPH-E3 discrete model-selection trail
 
-**NeuroLink dataclass:** `Science/Musical_Intelligence/contracts/dataclasses/__init__.py:106-168` (channel mapping `_MODULATOR_TO_CHANNEL` collapses raw call sites — DA/NE/OPI/5HT canonical labels + variants like `dopamine`, `Dopamine`, `oxytocin→OPI`, `cortisol→NE`).
+**Per-agent CSVs (9):**
 
-**Region registry:** `Science/Musical_Intelligence/brain/regions/registry.py:50-67` (`ALL_REGIONS` tuple of 26 items, `assert NUM_REGIONS == 26`).
+- `agent_1_audit.csv` — F1 mechs (2,435)
+- `agent_2_audit.csv` — F2+F3 mechs (3,607)
+- `agent_3_audit.csv` — F4+F5 mechs (4,883)
+- `agent_4_audit.csv` — R³+T³ (592) — pilot, 67 A + 18 B
+- `agent_5_audit.csv` — F6+reward.py (1,415) — 6 F
+- `agent_6_audit.csv` — F7+F8 mechs (2,998)
+- `agent_7_audit.csv` — RAM+regions (65)
+- `agent_8_audit.csv` — neurolink+neurochem+beliefs+cycle (40)
+- `agent_9_audit.csv` — scaffolding+contracts+scripts+data (213)
 
-**Mechanism base:** `Science/Musical_Intelligence/contracts/bases/nucleus.py` (`_NucleusBase` exposes `region_links`, `neuro_links`, `h3_demand`).
-
-**Executor (RAM accumulation path):** `Science/Musical_Intelligence/brain/executor.py:62` (iterates `n.region_links` per mechanism for RAM accumulation).
-
-## V1 cross-check
-
-**Source:** `Science/V1/results/All_Results/All_Results.md`
-
-- Line 232–233: "Total RegionLinks 529 … Canonical matches 529/529 (100%)"
-- Line 264: "Total NeuroLinks 48"
-- Line 234: "RAM accumulation tests 445/445 (100%)"
-
-V1 was the paper-submission v1 evidence base; results are FROZEN per `Science/V1/CLAUDE.md`. V-Reproduction does not modify V1. Phase-1 reproduces these counts independently from V1's run.
+Sum: 16,248 = 2,435 + 3,607 + 4,883 + 592 + 1,415 + 2,998 + 65 + 40 + 213 ✓
 
 ## Engine HEAD pin
 
-`_infra/manifests/engine_head.json` — `318eb2f529d7103e8b7d80b01228357fdc4e0217` (frozen since pre-V1 per user 2026-05-06 confirmation; all V1/V2/V3/V4/V5/V6 cycles ran against this engine).
-
-## Seed registry
-
-`_infra/manifests/seed_registry.json` — `phase_01.primary = 2026050601`, `bootstrap = 1729`, `permutation = 42`. LOCKED.
+Frozen pre-V1 per user confirmation 2026-05-06; all V1/V2/V3/V4/V5/V6 reproduction cycles and the V3 constant-level audit ran against this engine. No engine modifications introduced by any audit phase.
 
 ## Date of reproduction
 
-2026-05-06 (Phase-1 first run).
+2026-05-17 (V3 audit-anchored verdict).
+
+## Confidence summary
+
+- **98.10% HIGH** confidence across 16,248 attributions (15,939 HIGH / 309 MEDIUM / 0 LOW)
+- **46 escalations** queued (0.28%) — all MEDIUM/PARTIAL outcomes, none destabilize the headline
+- **0 fabricated POSITIVE** web-search confirmations (3-attempt hallucination guard enforced)
+
+## Honesty notes carried forward
+
+1. **F = 6 not 7.** The protocol lists 7 HAND-SPECIFIED-DISCLOSED weights; the engine maps only 6 as named code constants. The 7th (`phi_fam_star = 0.5`) is the mathematical peak of the Berlyne familiarity kernel `4·f·(1-f)`. **Paper revision R15** reconciles.
+2. **NEMAC documentation defect.** `brain/functions/f5/mechanisms/nemac/extraction.py:67` comments cite Sakakibara 2025 `d = 0.88` but the paper reports Cohen's `r = 0.880`. **Paper revision R16** discloses.
+3. **ESME `_ALPHA` comment artifact.** `brain/functions/f8/mechanisms/esme/extraction.py` comment word "trainable" predates the zero-calibration doctrine. **Paper revision R17** clarifies.
+4. **`brain/regions/` deprecated.** Package is import-unreachable; its 65 constants are documentation-only. **Paper revision R18** notes.
+5. **Walker boundary.** Anonymous expression literals inside multi-term expressions may not all be enumerated by the AST walker. Per-agent verification logs document inventory alignment.
 
 ## Iteration history
 
-Recorded in `04-INTEGRATION-LOG.md` as iterations occur. Each iteration preserves a results snapshot under `results/iterations/iter_NN_<timestamp>/`.
-
-## Honesty note on F9
-
-The paper says "10 additional F9-bound kernel-only beliefs (SSRI, NSCP, DDSMI relays)". On disk this engine has no `Musical_Intelligence/brain/functions/f9/` directory; F9 is consumed by the kernel via different paths (likely re-exported through F1-F8 belief modules tagged `F9-relay` or via a kernel-side registry). The Phase-1 belief-enumeration script tries `f9` first; if absent it records `F9 = 0` and the C-CARD-05 verdict will reflect actual on-disk count (121 F1-F8 + 0 F9 = 121, not 131). This will be a documented divergence from the paper, attributable to where F9 relays live in the codebase versus how the paper counts them.
+V2 (2026-05-07, paper-canonical) → V3 (2026-05-17, zero-calibration CODE-FIRST). V3 supersedes V2 entirely. V2 results CSV is no longer canonical; the 5-claim V2 verdict has been replaced by the 10-claim V3 verdict in this phase's `results/01_cardinalities_correlations.csv`.

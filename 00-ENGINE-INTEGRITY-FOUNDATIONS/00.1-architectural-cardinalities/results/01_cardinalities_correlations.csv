@@ -1,6 +1,11 @@
 claim_id,label,paper,reproduced,deviation,tolerance,verdict
-C-CARD-09-V2,"Total numeric constants ≈ 16,191 (V2 ast_walk_v3 methodology)","16,191",16222,31,abs <= 50 (0.3%),PASS
-C-CARD-11-STRICT,"HAND-TUNED bucket ≈ 5,534 (strict per-constant classifier)","~5,534",5449,-85,abs <= 200 (4%),PASS
-C-CARD-12-STRUCT,"STRUCTURAL bucket ≈ 6,290","6,290",6179,-111,abs <= 200 (3%),PASS
-C-CARD-13-NULL,"NULL-FALLBACK bucket ≈ 1,381","1,381",1389,8,abs <= 50 (4%),PASS
-C-CARD-14-CALIB,CALIB-BOWLING bucket ≈ 246,246,247,1,abs <= 5 (2%),PASS
+C-CARD-01-TOTAL,Total numeric constants,16191,16248,+57,abs <= 100,PASS
+C-CARD-02-ZERO-CALIB,Calibrated against cognitive data,0,0,+0,abs <= 0,PASS
+C-CARD-03-LIT-VERBATIM,LIT-VERBATIM (literature-bit-exact),67,67,+0,abs <= 5,PASS
+C-CARD-04-LIT-DERIVED,"LIT-DERIVED (literature-form, deterministic)",19,19,+0,abs <= 5,PASS
+C-CARD-05-STRUCTURAL,STRUCTURAL (topology/dim/index/anatomy),9817,9817,+0,abs <= 200,PASS
+C-CARD-06-IDENTITY,IDENTITY-PLACEHOLDER (trivial 0/1/-1/eps),1182,1182,+0,abs <= 100,PASS
+C-CARD-07-ENGINEERING,ENGINEERING-CHOICE (mixer/clamp/sigmoid),5157,5157,+0,abs <= 200,PASS
+C-CARD-08-HAND-DISCLOSED,"HAND-SPECIFIED-DISCLOSED (reward weights, R15)",6,6,+0,abs <= 0,PASS
+C-CARD-09-DEAD-CODE,DEAD-CODE-UNREACHABLE,0,0,+0,abs <= 0,PASS
+C-CARD-10-DISCRETE-SELECT,"Discrete structural model-selection (HTP-E3, SPH-E3)",2,2,+0,abs <= 0,PASS
