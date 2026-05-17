@@ -1,0 +1,71 @@
+{
+  "rating_dyh3dd": {
+    "hits": 0,
+    "files": []
+  },
+  "rating_flute_harmonic_harflt": {
+    "hits": 0,
+    "files": []
+  },
+  "rating_guitar_harmonic_hargtr": {
+    "hits": 0,
+    "files": []
+  },
+  "rating_piano_harmonic_harpno": {
+    "hits": 0,
+    "files": []
+  },
+  "pure_dyad_purdyrt": {
+    "hits": 0,
+    "files": []
+  },
+  "bidelman2009_ffr": {
+    "hits": 0,
+    "files": []
+  },
+  "schwartz2003_speech_harmonics": {
+    "hits": 0,
+    "files": []
+  },
+  "sethares1993_dissonance": {
+    "hits": 0,
+    "files": []
+  },
+  "indian_tension_ratings": {
+    "hits": 0,
+    "files": []
+  },
+  "Bidelman": {
+    "hits": 16,
+    "files": [
+      "Musical_Intelligence/brain/functions/f1/mechanisms/bch/__init__.py",
+      "Musical_Intelligence/brain/functions/f1/mechanisms/mpg/__init__.py",
+      "Musical_Intelligence/brain/functions/f1/mechanisms/pccr/__init__.py",
+      "Musical_Intelligence/brain/functions/f1/mechanisms/pnh/__init__.py",
+      "Musical_Intelligence/brain/functions/f1/mechanisms/pnh/extraction.py",
+      "Musical_Intelligence/brain/functions/f1/mechanisms/pscl/__init__.py",
+      "Musical_Intelligence/brain/functions/f1/mechanisms/sded/__init__.py",
+      "Musical_Intelligence/brain/functions/f1/mechanisms/sded/temporal_integration.py",
+      "Musical_Intelligence/brain/functions/f1/mechanisms/sdnps/__init__.py",
+      "Musical_Intelligence/brain/functions/f1/mechanisms/tprd/__init__.py",
+      "Musical_Intelligence/brain/functions/f4/mechanisms/pnh/__init__.py",
+      "Musical_Intelligence/brain/functions/f4/mechanisms/pnh/extraction.py",
+      "Musical_Intelligence/brain/functions/f4/mechanisms/pnh/temporal_integration.py",
+      "Musical_Intelligence/brain/functions/f4/mechanisms/tprd/__init__.py",
+      "Musical_Intelligence/brain/functions/f4/mechanisms/tprd/temporal_integration.py",
+      "Musical_Intelligence/ear/r3/groups/a_consonance/group.py"
+    ]
+  },
+  "Schwartz": {
+    "hits": 0,
+    "files": []
+  },
+  "Marjieh": {
+    "hits": 0,
+    "files": []
+  },
+  "Lahdelma": {
+    "hits": 0,
+    "files": []
+  }
+}

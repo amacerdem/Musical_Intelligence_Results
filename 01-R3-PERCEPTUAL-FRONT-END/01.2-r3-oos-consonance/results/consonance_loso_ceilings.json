@@ -1,0 +1,39 @@
+{
+  "_schema": "R\u00b3 OOS Consonance LOSO ceilings \u2014 chill-standard upgrade",
+  "_computed_at": "2026-05-12T20:36:21.635230+00:00",
+  "_seed": 2026051221,
+  "_n_bootstrap": 5000,
+  "_n_bins_semitones": 13,
+  "marjieh_2024": {
+    "n_loso_trials": 147,
+    "point_estimate": 0.27952649816510167,
+    "ci_95": [
+      0.2221440628455859,
+      0.3382335420917582
+    ],
+    "n_bins": 13,
+    "mi_rho_roughness": -0.7363,
+    "ceiling_relative_pct": 263.40973211244756
+  },
+  "harrison_2024_carillon": {
+    "n_loso_trials": 113,
+    "point_estimate": 0.36121995595985823,
+    "ci_95": [
+      0.30242651762867184,
+      0.41844892827828156
+    ],
+    "n_bins": 13,
+    "mi_rho_inharmonicity": -0.8297,
+    "ceiling_relative_pct": 229.69384340775548
+  },
+  "dyad_anchor_2018": {
+    "n_dyads": 13,
+    "n_subjects_per_dyad": 30,
+    "icc_estimate": 0.633270946155975,
+    "mean_within_sd": 1.110769230769231,
+    "between_dyad_sd": 1.5071419717720436,
+    "mi_rho_roughness": -0.8846,
+    "ceiling_relative_pct": 111.16092533020617,
+    "_note": "Aggregate-only data; LOSO not computable. ICC(1,1) estimate is a proxy for inter-rater reliability."
+  }
+}

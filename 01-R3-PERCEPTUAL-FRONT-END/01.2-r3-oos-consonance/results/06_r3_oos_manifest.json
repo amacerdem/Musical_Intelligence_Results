@@ -1,0 +1,137 @@
+{
+  "axis_id": "AXIS-1-OOS",
+  "axis_name": "R\u00b3 OOS Consonance Generalisation",
+  "engine_head": "318eb2f529d7103e8b7d80b01228357fdc4e0217",
+  "seed_registry": {
+    "primary": 2026050701,
+    "bootstrap": null,
+    "permutation": null
+  },
+  "phase_close_date": "2026-05-07",
+  "git_commit_hash": "PENDING_AT_CLOSE",
+  "claims": [
+    {
+      "claim_id": "C-R3OOS-EEROLA-STUMPF",
+      "dataset": "eerola",
+      "paper_label": "stumpf (old anchor)",
+      "engine_channel": "roughness",
+      "anchor": "C4 V1-default",
+      "paper_value": -0.581,
+      "reproduced_value": -0.5825,
+      "deviation": -0.0015,
+      "tolerance": "PASS abs <= 0.05; PARTIAL abs <= 0.1",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-R3OOS-EEROLA-AUTOCORR",
+      "dataset": "eerola",
+      "paper_label": "autocorr (old anchor)",
+      "engine_channel": "sensory_pleasantness",
+      "anchor": "C4 V1-default",
+      "paper_value": 0.518,
+      "reproduced_value": 0.5177,
+      "deviation": -0.0003,
+      "tolerance": "PASS abs <= 0.05; PARTIAL abs <= 0.1",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-R3OOS-EEROLA-ROUGH",
+      "dataset": "eerola",
+      "paper_label": "rough (old anchor)",
+      "engine_channel": "sethares_dissonance",
+      "anchor": "C4 V1-default",
+      "paper_value": -0.433,
+      "reproduced_value": -0.4337,
+      "deviation": -0.0007,
+      "tolerance": "PASS abs <= 0.05; PARTIAL abs <= 0.1",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-R3OOS-MARJIEH-STUMPF-FUSION",
+      "dataset": "marjieh",
+      "paper_label": "Stumpf fusion (Divan-Final \u00a73.1)",
+      "engine_channel": "stumpf_fusion",
+      "anchor": "rating_dyh3dd 13-bin C4 V1-default 6p 1/n",
+      "paper_value": 0.813,
+      "reproduced_value": 0.8132,
+      "deviation": 0.0002,
+      "tolerance": "PASS abs <= 0.05; PARTIAL abs <= 0.1",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-R3OOS-MARJIEH-PLEASANTNESS",
+      "dataset": "marjieh",
+      "paper_label": "pleasantness (Divan-Final \u00a73.1)",
+      "engine_channel": "sensory_pleasantness",
+      "anchor": "rating_dyh3dd 13-bin C4 V1-default 6p 1/n",
+      "paper_value": 0.89,
+      "reproduced_value": 0.8901,
+      "deviation": 0.0001,
+      "tolerance": "PASS abs <= 0.05; PARTIAL abs <= 0.1",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-R3OOS-MARJIEH-ROUGHNESS",
+      "dataset": "marjieh",
+      "paper_label": "roughness (Divan-Final Table L810)",
+      "engine_channel": "roughness",
+      "anchor": "rating_dyh3dd 13-bin C4 V1-default 6p 1/n",
+      "paper_value": -0.769,
+      "reproduced_value": -0.8352,
+      "deviation": -0.0662,
+      "tolerance": "PASS abs <= 0.05; PARTIAL abs <= 0.1",
+      "verdict": "PARTIAL"
+    },
+    {
+      "claim_id": "C-R3OOS-MARJIEH-INHARMONICITY",
+      "dataset": "marjieh",
+      "paper_label": "inharmonicity (Divan-Final Table L810)",
+      "engine_channel": "inharmonicity",
+      "anchor": "rating_dyh3dd 13-bin C4 V1-default 6p 1/n",
+      "paper_value": -0.813,
+      "reproduced_value": -0.8132,
+      "deviation": -0.0002,
+      "tolerance": "PASS abs <= 0.05; PARTIAL abs <= 0.1",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-R3OOS-CARILLON-STUMPF",
+      "dataset": "carillon",
+      "paper_label": "stumpf (old anchor)",
+      "engine_channel": "inharmonicity",
+      "anchor": "A5_880Hz SUSTAINED (V2 sweep)",
+      "paper_value": -0.824,
+      "reproduced_value": -0.8297,
+      "deviation": -0.0057,
+      "tolerance": "PASS abs <= 0.05; PARTIAL abs <= 0.1",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-R3OOS-CARILLON-CANONICAL",
+      "dataset": "carillon",
+      "paper_label": "Stumpf fusion (Divan-Final L330 + EDIT 3)",
+      "engine_channel": "stumpf_fusion",
+      "anchor": "A5_880Hz SUSTAINED (V2 sweep)",
+      "paper_value": 0.824,
+      "reproduced_value": 0.8297,
+      "deviation": 0.0057,
+      "tolerance": "PASS abs <= 0.05; PARTIAL abs <= 0.1",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-R3OOS-CARILLON-ROUGH",
+      "dataset": "carillon",
+      "paper_label": "rough (old anchor)",
+      "engine_channel": "roughness",
+      "anchor": "A5_880Hz SUSTAINED (V2 sweep)",
+      "paper_value": -0.731,
+      "reproduced_value": -0.6758,
+      "deviation": 0.0552,
+      "tolerance": "PASS abs <= 0.05; PARTIAL abs <= 0.1",
+      "verdict": "PARTIAL"
+    }
+  ],
+  "external_artefacts": [
+    "Science/V2/results/stumpf-relabel-audit/04_carillon_sweep.csv (Carillon paper magnitudes preserved at A5_880Hz SUSTAINED)"
+  ]
+}

@@ -1,0 +1,11 @@
+claim_id,dataset,paper_label,engine_channel,anchor,paper_value,reproduced_value,deviation,tolerance,verdict
+C-R3OOS-EEROLA-STUMPF,eerola,stumpf (old anchor),roughness,C4 V1-default,-0.581,-0.5825,-0.0015,PASS abs <= 0.05; PARTIAL abs <= 0.1,PASS
+C-R3OOS-EEROLA-AUTOCORR,eerola,autocorr (old anchor),sensory_pleasantness,C4 V1-default,0.518,0.5177,-0.0003,PASS abs <= 0.05; PARTIAL abs <= 0.1,PASS
+C-R3OOS-EEROLA-ROUGH,eerola,rough (old anchor),sethares_dissonance,C4 V1-default,-0.433,-0.4337,-0.0007,PASS abs <= 0.05; PARTIAL abs <= 0.1,PASS
+C-R3OOS-MARJIEH-STUMPF-FUSION,marjieh,Stumpf fusion (Divan-Final §3.1),stumpf_fusion,rating_dyh3dd 13-bin C4 V1-default 6p 1/n,0.813,0.8132,0.0002,PASS abs <= 0.05; PARTIAL abs <= 0.1,PASS
+C-R3OOS-MARJIEH-PLEASANTNESS,marjieh,pleasantness (Divan-Final §3.1),sensory_pleasantness,rating_dyh3dd 13-bin C4 V1-default 6p 1/n,0.89,0.8901,0.0001,PASS abs <= 0.05; PARTIAL abs <= 0.1,PASS
+C-R3OOS-MARJIEH-ROUGHNESS,marjieh,roughness (Divan-Final Table L810),roughness,rating_dyh3dd 13-bin C4 V1-default 6p 1/n,-0.769,-0.8352,-0.0662,PASS abs <= 0.05; PARTIAL abs <= 0.1,PARTIAL
+C-R3OOS-MARJIEH-INHARMONICITY,marjieh,inharmonicity (Divan-Final Table L810),inharmonicity,rating_dyh3dd 13-bin C4 V1-default 6p 1/n,-0.813,-0.8132,-0.0002,PASS abs <= 0.05; PARTIAL abs <= 0.1,PASS
+C-R3OOS-CARILLON-STUMPF,carillon,stumpf (old anchor),inharmonicity,A5_880Hz SUSTAINED (V2 sweep),-0.824,-0.8297,-0.0057,PASS abs <= 0.05; PARTIAL abs <= 0.1,PASS
+C-R3OOS-CARILLON-CANONICAL,carillon,Stumpf fusion (Divan-Final L330 + EDIT 3),stumpf_fusion,A5_880Hz SUSTAINED (V2 sweep),0.824,0.8297,0.0057,PASS abs <= 0.05; PARTIAL abs <= 0.1,PASS
+C-R3OOS-CARILLON-ROUGH,carillon,rough (old anchor),roughness,A5_880Hz SUSTAINED (V2 sweep),-0.731,-0.6758,0.0552,PASS abs <= 0.05; PARTIAL abs <= 0.1,PARTIAL

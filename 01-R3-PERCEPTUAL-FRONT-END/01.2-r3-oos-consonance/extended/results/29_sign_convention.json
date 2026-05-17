@@ -1,0 +1,47 @@
+{
+  "C-R3EXT-01": {
+    "polarity": 1,
+    "target_column": "rating",
+    "rationale": "consonance column \u2014 sign preserved"
+  },
+  "C-R3EXT-02": {
+    "polarity": 1,
+    "target_column": "rating",
+    "rationale": "consonance column \u2014 sign preserved"
+  },
+  "C-R3EXT-03": {
+    "polarity": 1,
+    "target_column": "rating",
+    "rationale": "consonance column \u2014 sign preserved"
+  },
+  "C-R3EXT-04": {
+    "polarity": 1,
+    "target_column": "rating",
+    "rationale": "consonance column \u2014 sign preserved"
+  },
+  "C-R3EXT-05": {
+    "polarity": 1,
+    "target_column": "rating",
+    "rationale": "consonance column \u2014 sign preserved"
+  },
+  "C-R3EXT-06": {
+    "polarity": 1,
+    "target_column": "behavioral_consonance",
+    "rationale": "consonance column \u2014 sign preserved"
+  },
+  "C-R3EXT-07": {
+    "polarity": 1,
+    "target_column": "percent_similar",
+    "rationale": "consonance column \u2014 sign preserved"
+  },
+  "C-R3EXT-08": {
+    "polarity": -1,
+    "target_column": "relative_dissonance",
+    "rationale": "tension/dissonance column \u2014 sign inverted"
+  },
+  "C-R3EXT-09": {
+    "polarity": -1,
+    "target_column": "tensionrating",
+    "rationale": "tension/dissonance column \u2014 sign inverted"
+  }
+}

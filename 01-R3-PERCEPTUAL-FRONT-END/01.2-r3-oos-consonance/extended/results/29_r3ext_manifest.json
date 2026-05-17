@@ -1,0 +1,516 @@
+{
+  "axis_id": "AXIS-1-OOS-EXT",
+  "axis_name": "Phase 29 \u2014 R\u00b3 Extended OOS Consonance Battery",
+  "engine_head": "318eb2f529d7103e8b7d80b01228357fdc4e0217",
+  "phase_close_date": null,
+  "seed_registry": {
+    "primary": 2026051601,
+    "bootstrap": null,
+    "permutation": null
+  },
+  "axis_verdict": "CLOSED-PASS",
+  "claims": [
+    {
+      "claim_id": "C-R3EXT-01",
+      "source": "Science/datasets/consonance/marjieh2024/data-csv/rating_dyh3dd.csv",
+      "input_sha256": "6352c0b7bc4e3101c7042420ad8ab263cbb70f6bca6c56aeab668dd34fda94af",
+      "polarity": 1,
+      "n_raw": 7500,
+      "n_intervals_or_bins": 13,
+      "headline_channel_rhos": {
+        "stumpf_fusion": 0.8132,
+        "sensory_pleasantness": 0.8901,
+        "roughness": -0.8352
+      },
+      "verdict": "PASS",
+      "verdict_detail": {
+        "verdict": "PASS",
+        "n_strong_channels": 3,
+        "n_weak_channels": 0,
+        "sign_consistent_channels": 3,
+        "strong_channels": [
+          "stumpf_fusion",
+          "sensory_pleasantness",
+          "roughness"
+        ],
+        "weak_channels": []
+      }
+    },
+    {
+      "claim_id": "C-R3EXT-02",
+      "source": "Science/datasets/consonance/marjieh2024/data-csv/rating_flute_harmonic_harflt.csv",
+      "input_sha256": "c23deaf789f3b979bc3471da060c403cf6d5a5430e8ab3c49e1588831183ff01",
+      "polarity": 1,
+      "n_raw": 15000,
+      "n_intervals_or_bins": 13,
+      "headline_channel_rhos": {
+        "stumpf_fusion": 0.533,
+        "sensory_pleasantness": 0.7692,
+        "roughness": -0.7747
+      },
+      "verdict": "PASS",
+      "verdict_detail": {
+        "verdict": "PASS",
+        "n_strong_channels": 2,
+        "n_weak_channels": 1,
+        "sign_consistent_channels": 3,
+        "strong_channels": [
+          "sensory_pleasantness",
+          "roughness"
+        ],
+        "weak_channels": [
+          "stumpf_fusion"
+        ]
+      }
+    },
+    {
+      "claim_id": "C-R3EXT-03",
+      "source": "Science/datasets/consonance/marjieh2024/data-csv/rating_guitar_harmonic_hargtr.csv",
+      "input_sha256": "3a31e971e13015a990fb5e6c7fccc3e95034671ba596fc94e67fc83233f178e8",
+      "polarity": 1,
+      "n_raw": 15000,
+      "n_intervals_or_bins": 13,
+      "headline_channel_rhos": {
+        "stumpf_fusion": 0.4396,
+        "sensory_pleasantness": 0.5989,
+        "roughness": -0.533
+      },
+      "verdict": "PARTIAL",
+      "verdict_detail": {
+        "verdict": "PARTIAL",
+        "n_strong_channels": 0,
+        "n_weak_channels": 3,
+        "sign_consistent_channels": 3,
+        "strong_channels": [],
+        "weak_channels": [
+          "stumpf_fusion",
+          "sensory_pleasantness",
+          "roughness"
+        ]
+      }
+    },
+    {
+      "claim_id": "C-R3EXT-04",
+      "source": "Science/datasets/consonance/marjieh2024/data-csv/rating_piano_harmonic_harpno.csv",
+      "input_sha256": "1fefb9b5014a1e379a14ad2224648aca8c92f151b14343ed87e7f780be6ce09b",
+      "polarity": 1,
+      "n_raw": 15000,
+      "n_intervals_or_bins": 13,
+      "headline_channel_rhos": {
+        "stumpf_fusion": 0.6154,
+        "sensory_pleasantness": 0.6923,
+        "roughness": -0.7363
+      },
+      "verdict": "PASS",
+      "verdict_detail": {
+        "verdict": "PASS",
+        "n_strong_channels": 3,
+        "n_weak_channels": 0,
+        "sign_consistent_channels": 3,
+        "strong_channels": [
+          "stumpf_fusion",
+          "sensory_pleasantness",
+          "roughness"
+        ],
+        "weak_channels": []
+      }
+    },
+    {
+      "claim_id": "C-R3EXT-05",
+      "source": "Science/datasets/consonance/marjieh2024/data-csv/pure_dyad_purdyrt.csv",
+      "input_sha256": "2047fd83ba6f481179d4abae648e01a464d529858471969e2a08841ed08f0e99",
+      "polarity": 1,
+      "n_raw": 7500,
+      "n_intervals_or_bins": 13,
+      "headline_channel_rhos": {
+        "stumpf_fusion": 0.4505,
+        "sensory_pleasantness": 0.3571,
+        "roughness": -0.7253
+      },
+      "verdict": "PARTIAL",
+      "verdict_detail": {
+        "verdict": "PARTIAL",
+        "n_strong_channels": 1,
+        "n_weak_channels": 1,
+        "sign_consistent_channels": 3,
+        "strong_channels": [
+          "roughness"
+        ],
+        "weak_channels": [
+          "stumpf_fusion"
+        ]
+      }
+    },
+    {
+      "claim_id": "C-R3EXT-06",
+      "source": "Science/datasets/consonance/bidelman2009_ffr.csv",
+      "input_sha256": "6d95bd9292d59202dda0f2da2e49a56018d2c35ad93907f9673fae42a9e53be9",
+      "polarity": 1,
+      "n_raw": 6,
+      "n_intervals_or_bins": 6,
+      "headline_channel_rhos": {
+        "stumpf_fusion": 1.0,
+        "sensory_pleasantness": 1.0,
+        "roughness": -0.8857
+      },
+      "verdict": "PASS",
+      "verdict_detail": {
+        "verdict": "PASS",
+        "n_strong_channels": 3,
+        "n_weak_channels": 0,
+        "sign_consistent_channels": 3,
+        "strong_channels": [
+          "stumpf_fusion",
+          "sensory_pleasantness",
+          "roughness"
+        ],
+        "weak_channels": []
+      }
+    },
+    {
+      "claim_id": "C-R3EXT-07",
+      "source": "Science/datasets/consonance/schwartz2003_speech_harmonics.csv",
+      "input_sha256": "2c7dfec539ed2c525b44293f6fd39ac0d39f7058a7d0696948786e9323eb0392",
+      "polarity": 1,
+      "n_raw": 13,
+      "n_intervals_or_bins": 13,
+      "headline_channel_rhos": {
+        "stumpf_fusion": 0.9231,
+        "sensory_pleasantness": 0.8791,
+        "roughness": -0.8132
+      },
+      "verdict": "PASS",
+      "verdict_detail": {
+        "verdict": "PASS",
+        "n_strong_channels": 3,
+        "n_weak_channels": 0,
+        "sign_consistent_channels": 3,
+        "strong_channels": [
+          "stumpf_fusion",
+          "sensory_pleasantness",
+          "roughness"
+        ],
+        "weak_channels": []
+      }
+    },
+    {
+      "claim_id": "C-R3EXT-08",
+      "source": "Science/datasets/consonance/sethares1993_dissonance.csv",
+      "input_sha256": "e7f01175549bbfa68a8f7100a7861648a80887dab4634addcf4563bb42e0f752",
+      "polarity": -1,
+      "n_raw": 13,
+      "n_intervals_or_bins": 13,
+      "headline_channel_rhos": {
+        "stumpf_fusion": 0.9231,
+        "sensory_pleasantness": 0.8791,
+        "roughness": -0.8132
+      },
+      "verdict": "PASS",
+      "verdict_detail": {
+        "verdict": "PASS",
+        "n_strong_channels": 3,
+        "n_weak_channels": 0,
+        "sign_consistent_channels": 3,
+        "strong_channels": [
+          "stumpf_fusion",
+          "sensory_pleasantness",
+          "roughness"
+        ],
+        "weak_channels": []
+      }
+    },
+    {
+      "claim_id": "C-R3EXT-09",
+      "source": "Science/datasets/consonance/interval_tension/data/indian_tension_ratings.csv",
+      "input_sha256": "ce753925a32af8315f45441e8d70696c72649a345e28fd217f537930c798dc55",
+      "polarity": -1,
+      "n_raw": 852,
+      "n_intervals_or_bins": 12,
+      "headline_channel_rhos": {
+        "stumpf_fusion": 0.8042,
+        "sensory_pleasantness": 0.5804,
+        "roughness": -0.5245
+      },
+      "verdict": "PARTIAL",
+      "verdict_detail": {
+        "verdict": "PARTIAL",
+        "n_strong_channels": 1,
+        "n_weak_channels": 2,
+        "sign_consistent_channels": 3,
+        "strong_channels": [
+          "stumpf_fusion"
+        ],
+        "weak_channels": [
+          "sensory_pleasantness",
+          "roughness"
+        ]
+      }
+    }
+  ],
+  "invariants": {
+    "cross_dataset_consistency": {
+      "stumpf_fusion": {
+        "n_sign_consistent": 9,
+        "n_datasets": 9,
+        "per_dataset": {
+          "C-R3EXT-01": {
+            "rho": 0.8131868131868131,
+            "sign_ok": true
+          },
+          "C-R3EXT-02": {
+            "rho": 0.532967032967033,
+            "sign_ok": true
+          },
+          "C-R3EXT-03": {
+            "rho": 0.43956043956043955,
+            "sign_ok": true
+          },
+          "C-R3EXT-04": {
+            "rho": 0.6153846153846153,
+            "sign_ok": true
+          },
+          "C-R3EXT-05": {
+            "rho": 0.4505494505494505,
+            "sign_ok": true
+          },
+          "C-R3EXT-06": {
+            "rho": 1.0,
+            "sign_ok": true
+          },
+          "C-R3EXT-07": {
+            "rho": 0.9230769230769231,
+            "sign_ok": true
+          },
+          "C-R3EXT-08": {
+            "rho": 0.9230769230769231,
+            "sign_ok": true
+          },
+          "C-R3EXT-09": {
+            "rho": 0.8041958041958043,
+            "sign_ok": true
+          }
+        },
+        "pass": true
+      },
+      "sensory_pleasantness": {
+        "n_sign_consistent": 9,
+        "n_datasets": 9,
+        "per_dataset": {
+          "C-R3EXT-01": {
+            "rho": 0.8901098901098902,
+            "sign_ok": true
+          },
+          "C-R3EXT-02": {
+            "rho": 0.7692307692307693,
+            "sign_ok": true
+          },
+          "C-R3EXT-03": {
+            "rho": 0.5989010989010989,
+            "sign_ok": true
+          },
+          "C-R3EXT-04": {
+            "rho": 0.6923076923076923,
+            "sign_ok": true
+          },
+          "C-R3EXT-05": {
+            "rho": 0.35714285714285715,
+            "sign_ok": true
+          },
+          "C-R3EXT-06": {
+            "rho": 1.0,
+            "sign_ok": true
+          },
+          "C-R3EXT-07": {
+            "rho": 0.8791208791208791,
+            "sign_ok": true
+          },
+          "C-R3EXT-08": {
+            "rho": 0.8791208791208791,
+            "sign_ok": true
+          },
+          "C-R3EXT-09": {
+            "rho": 0.5804195804195805,
+            "sign_ok": true
+          }
+        },
+        "pass": true
+      },
+      "roughness": {
+        "n_sign_consistent": 9,
+        "n_datasets": 9,
+        "per_dataset": {
+          "C-R3EXT-01": {
+            "rho": -0.8351648351648352,
+            "sign_ok": true
+          },
+          "C-R3EXT-02": {
+            "rho": -0.7747252747252747,
+            "sign_ok": true
+          },
+          "C-R3EXT-03": {
+            "rho": -0.532967032967033,
+            "sign_ok": true
+          },
+          "C-R3EXT-04": {
+            "rho": -0.7362637362637362,
+            "sign_ok": true
+          },
+          "C-R3EXT-05": {
+            "rho": -0.7252747252747254,
+            "sign_ok": true
+          },
+          "C-R3EXT-06": {
+            "rho": -0.8857142857142858,
+            "sign_ok": true
+          },
+          "C-R3EXT-07": {
+            "rho": -0.8131868131868131,
+            "sign_ok": true
+          },
+          "C-R3EXT-08": {
+            "rho": -0.8131868131868131,
+            "sign_ok": true
+          },
+          "C-R3EXT-09": {
+            "rho": -0.5244755244755246,
+            "sign_ok": true
+          }
+        },
+        "pass": true
+      },
+      "cdc_pass": true
+    },
+    "hierarchy_reproduction": {
+      "per_dataset": {
+        "C-R3EXT-01": {
+          "headline_channel": "sensory_pleasantness",
+          "subset_semitones": [
+            0,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "subset_n": 6,
+          "ranking_rho": 0.942857142857143,
+          "pass": true
+        },
+        "C-R3EXT-02": {
+          "headline_channel": "sensory_pleasantness",
+          "subset_semitones": [
+            0,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "subset_n": 6,
+          "ranking_rho": 0.2,
+          "pass": false
+        },
+        "C-R3EXT-03": {
+          "headline_channel": "sensory_pleasantness",
+          "subset_semitones": [
+            0,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "subset_n": 6,
+          "ranking_rho": -0.08571428571428573,
+          "pass": false
+        },
+        "C-R3EXT-04": {
+          "headline_channel": "sensory_pleasantness",
+          "subset_semitones": [
+            0,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "subset_n": 6,
+          "ranking_rho": 0.3714285714285715,
+          "pass": false
+        },
+        "C-R3EXT-05": {
+          "headline_channel": "stumpf_fusion",
+          "subset_semitones": [
+            0,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "subset_n": 6,
+          "ranking_rho": -0.2,
+          "pass": false
+        },
+        "C-R3EXT-06": {
+          "headline_channel": "stumpf_fusion",
+          "subset_semitones": [
+            0,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "subset_n": 6,
+          "ranking_rho": 1.0,
+          "pass": true
+        },
+        "C-R3EXT-07": {
+          "headline_channel": "stumpf_fusion",
+          "subset_semitones": [
+            0,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "subset_n": 6,
+          "ranking_rho": 1.0,
+          "pass": true
+        },
+        "C-R3EXT-08": {
+          "headline_channel": "stumpf_fusion",
+          "subset_semitones": [
+            0,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "subset_n": 6,
+          "ranking_rho": 1.0,
+          "pass": true
+        },
+        "C-R3EXT-09": {
+          "headline_channel": "stumpf_fusion",
+          "subset_semitones": [
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          "subset_n": 5,
+          "ranking_rho": 0.7,
+          "pass": false
+        }
+      },
+      "n_pass": 4,
+      "n_total": 9,
+      "hri_pass": false
+    }
+  }
+}

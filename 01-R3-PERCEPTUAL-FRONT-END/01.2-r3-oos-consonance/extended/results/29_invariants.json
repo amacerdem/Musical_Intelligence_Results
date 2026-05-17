@@ -1,0 +1,267 @@
+{
+  "cross_dataset_consistency": {
+    "stumpf_fusion": {
+      "n_sign_consistent": 9,
+      "n_datasets": 9,
+      "per_dataset": {
+        "C-R3EXT-01": {
+          "rho": 0.8131868131868131,
+          "sign_ok": true
+        },
+        "C-R3EXT-02": {
+          "rho": 0.532967032967033,
+          "sign_ok": true
+        },
+        "C-R3EXT-03": {
+          "rho": 0.43956043956043955,
+          "sign_ok": true
+        },
+        "C-R3EXT-04": {
+          "rho": 0.6153846153846153,
+          "sign_ok": true
+        },
+        "C-R3EXT-05": {
+          "rho": 0.4505494505494505,
+          "sign_ok": true
+        },
+        "C-R3EXT-06": {
+          "rho": 1.0,
+          "sign_ok": true
+        },
+        "C-R3EXT-07": {
+          "rho": 0.9230769230769231,
+          "sign_ok": true
+        },
+        "C-R3EXT-08": {
+          "rho": 0.9230769230769231,
+          "sign_ok": true
+        },
+        "C-R3EXT-09": {
+          "rho": 0.8041958041958043,
+          "sign_ok": true
+        }
+      },
+      "pass": true
+    },
+    "sensory_pleasantness": {
+      "n_sign_consistent": 9,
+      "n_datasets": 9,
+      "per_dataset": {
+        "C-R3EXT-01": {
+          "rho": 0.8901098901098902,
+          "sign_ok": true
+        },
+        "C-R3EXT-02": {
+          "rho": 0.7692307692307693,
+          "sign_ok": true
+        },
+        "C-R3EXT-03": {
+          "rho": 0.5989010989010989,
+          "sign_ok": true
+        },
+        "C-R3EXT-04": {
+          "rho": 0.6923076923076923,
+          "sign_ok": true
+        },
+        "C-R3EXT-05": {
+          "rho": 0.35714285714285715,
+          "sign_ok": true
+        },
+        "C-R3EXT-06": {
+          "rho": 1.0,
+          "sign_ok": true
+        },
+        "C-R3EXT-07": {
+          "rho": 0.8791208791208791,
+          "sign_ok": true
+        },
+        "C-R3EXT-08": {
+          "rho": 0.8791208791208791,
+          "sign_ok": true
+        },
+        "C-R3EXT-09": {
+          "rho": 0.5804195804195805,
+          "sign_ok": true
+        }
+      },
+      "pass": true
+    },
+    "roughness": {
+      "n_sign_consistent": 9,
+      "n_datasets": 9,
+      "per_dataset": {
+        "C-R3EXT-01": {
+          "rho": -0.8351648351648352,
+          "sign_ok": true
+        },
+        "C-R3EXT-02": {
+          "rho": -0.7747252747252747,
+          "sign_ok": true
+        },
+        "C-R3EXT-03": {
+          "rho": -0.532967032967033,
+          "sign_ok": true
+        },
+        "C-R3EXT-04": {
+          "rho": -0.7362637362637362,
+          "sign_ok": true
+        },
+        "C-R3EXT-05": {
+          "rho": -0.7252747252747254,
+          "sign_ok": true
+        },
+        "C-R3EXT-06": {
+          "rho": -0.8857142857142858,
+          "sign_ok": true
+        },
+        "C-R3EXT-07": {
+          "rho": -0.8131868131868131,
+          "sign_ok": true
+        },
+        "C-R3EXT-08": {
+          "rho": -0.8131868131868131,
+          "sign_ok": true
+        },
+        "C-R3EXT-09": {
+          "rho": -0.5244755244755246,
+          "sign_ok": true
+        }
+      },
+      "pass": true
+    },
+    "cdc_pass": true
+  },
+  "hierarchy_reproduction": {
+    "per_dataset": {
+      "C-R3EXT-01": {
+        "headline_channel": "sensory_pleasantness",
+        "subset_semitones": [
+          0,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "subset_n": 6,
+        "ranking_rho": 0.942857142857143,
+        "pass": true
+      },
+      "C-R3EXT-02": {
+        "headline_channel": "sensory_pleasantness",
+        "subset_semitones": [
+          0,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "subset_n": 6,
+        "ranking_rho": 0.2,
+        "pass": false
+      },
+      "C-R3EXT-03": {
+        "headline_channel": "sensory_pleasantness",
+        "subset_semitones": [
+          0,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "subset_n": 6,
+        "ranking_rho": -0.08571428571428573,
+        "pass": false
+      },
+      "C-R3EXT-04": {
+        "headline_channel": "sensory_pleasantness",
+        "subset_semitones": [
+          0,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "subset_n": 6,
+        "ranking_rho": 0.3714285714285715,
+        "pass": false
+      },
+      "C-R3EXT-05": {
+        "headline_channel": "stumpf_fusion",
+        "subset_semitones": [
+          0,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "subset_n": 6,
+        "ranking_rho": -0.2,
+        "pass": false
+      },
+      "C-R3EXT-06": {
+        "headline_channel": "stumpf_fusion",
+        "subset_semitones": [
+          0,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "subset_n": 6,
+        "ranking_rho": 1.0,
+        "pass": true
+      },
+      "C-R3EXT-07": {
+        "headline_channel": "stumpf_fusion",
+        "subset_semitones": [
+          0,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "subset_n": 6,
+        "ranking_rho": 1.0,
+        "pass": true
+      },
+      "C-R3EXT-08": {
+        "headline_channel": "stumpf_fusion",
+        "subset_semitones": [
+          0,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "subset_n": 6,
+        "ranking_rho": 1.0,
+        "pass": true
+      },
+      "C-R3EXT-09": {
+        "headline_channel": "stumpf_fusion",
+        "subset_semitones": [
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "subset_n": 5,
+        "ranking_rho": 0.7,
+        "pass": false
+      }
+    },
+    "n_pass": 4,
+    "n_total": 9,
+    "hri_pass": false
+  },
+  "axis_verdict": "CLOSED-PASS"
+}
