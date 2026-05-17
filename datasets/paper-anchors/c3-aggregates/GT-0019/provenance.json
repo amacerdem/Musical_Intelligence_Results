@@ -1,0 +1,74 @@
+{
+  "ticket": "GT-0019-global-fdr-multiverse",
+  "script": "V2/code/GT-0019/global_fdr.py",
+  "q_level": 0.05,
+  "n_tests": 1935,
+  "n_mechanisms": 89,
+  "n_families": 8,
+  "n_sig_local_bh": 1567,
+  "n_sig_global_bh": 1590,
+  "n_sig_hier_bh": 1564,
+  "hierarchical": {
+    "n_families_total": 8,
+    "n_families_level1_pass": 8,
+    "level2_adjusted_q": 0.05,
+    "n_hier_sig": 1564,
+    "per_family": {
+      "f1": {
+        "n_tests": 322,
+        "simes_min_p": 0.0,
+        "level1_pass": true,
+        "level2_n_sig": 308
+      },
+      "f2": {
+        "n_tests": 160,
+        "simes_min_p": 0.0,
+        "level1_pass": true,
+        "level2_n_sig": 157
+      },
+      "f3": {
+        "n_tests": 290,
+        "simes_min_p": 0.0,
+        "level1_pass": true,
+        "level2_n_sig": 131
+      },
+      "f4": {
+        "n_tests": 328,
+        "simes_min_p": 0.0,
+        "level1_pass": true,
+        "level2_n_sig": 256
+      },
+      "f5": {
+        "n_tests": 312,
+        "simes_min_p": 0.0,
+        "level1_pass": true,
+        "level2_n_sig": 297
+      },
+      "f6": {
+        "n_tests": 79,
+        "simes_min_p": 0.0,
+        "level1_pass": true,
+        "level2_n_sig": 79
+      },
+      "f7": {
+        "n_tests": 315,
+        "simes_min_p": 0.0,
+        "level1_pass": true,
+        "level2_n_sig": 208
+      },
+      "f8": {
+        "n_tests": 129,
+        "simes_min_p": 0.0,
+        "level1_pass": true,
+        "level2_n_sig": 128
+      }
+    }
+  },
+  "runtime_s": 0.08017992973327637,
+  "outputs": [
+    "V2/results/GT-0019/all_pvalues.csv",
+    "V2/results/GT-0019/global_fdr_table.csv",
+    "V2/results/GT-0019/report.md",
+    "V2/results/GT-0019/provenance.json"
+  ]
+}

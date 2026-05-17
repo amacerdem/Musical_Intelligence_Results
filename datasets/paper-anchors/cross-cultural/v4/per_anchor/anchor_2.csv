@@ -1,0 +1,11 @@
+pair_id,test,rho,p_perm,ci_lo,ci_hi,n,anchor_id,note,pass
+P2.Shree,mi_pccr_vs_empirical_f0_rotation_max,0.6606060606060608,,,,3,2,rotation-invariant ρ (max over 11 cyclic shifts) across 3 recordings,
+P2.Bhairabi,mi_pccr_vs_empirical_f0_rotation_max,0.4333333333333334,,,,3,2,rotation-invariant ρ (max over 11 cyclic shifts) across 3 recordings,
+P2.Jog,mi_pccr_vs_empirical_f0_rotation_max,0.5909090909090909,,,,3,2,rotation-invariant ρ (max over 11 cyclic shifts) across 3 recordings,
+P2.Lalat,mi_pccr_vs_empirical_f0_rotation_max,0.5545454545454546,,,,3,2,rotation-invariant ρ (max over 11 cyclic shifts) across 3 recordings,
+P2.Marwa,mi_pccr_vs_empirical_f0_rotation_max,0.6090909090909092,,,,3,2,rotation-invariant ρ (max over 11 cyclic shifts) across 3 recordings,
+P2.composite,mean_rho_top5,0.5696969696969698,,,,5,2,"top-5 ragas, 5/5 with ρ>0",True
+S5,spearman,-0.1272727272727273,0.7302697302697303,-0.8278320641552664,0.7089878807730102,11,2,S5 Yaman: MI PCCR mean vs empirical f0 histogram mean (2 MI / 2 empirical),
+S6,spearman,-0.013415892672858616,0.961038961038961,-0.4552614056773671,0.4689381425682796,18,2,split-half consistency (target acquisition deferred),
+S7,spearman,-0.17440660474716205,0.4975024975024975,-0.6953549060542796,0.40929567983527143,18,2,split-half consistency (target acquisition deferred),
+S8,spearman,0.013415892672858616,0.958041958041958,-0.4869352694211046,0.4863461732888483,18,2,split-half consistency (target acquisition deferred),

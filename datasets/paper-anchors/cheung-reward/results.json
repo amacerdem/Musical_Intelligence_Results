@@ -1,0 +1,186 @@
+{
+  "seed": 42,
+  "bootstrap_B": 5000,
+  "meta": {
+    "csv_path": "/Volumes/SRC-9/SRC Musical Intelligence/Science/datasets/reward/cheung2024/data_pleasure_2023.csv",
+    "n_trials_raw": 39351,
+    "n_trials_dropped_nan": 0,
+    "n_trials_used": 39351,
+    "n_subjects": 39,
+    "n_songs": 30,
+    "n_rhythms": 3,
+    "n_chord_level_rows": 1009,
+    "mi_reward_formula": "1.5*|IC_z| + 0.8*(1-|IC_z|) + 0.5*|IC_z|*(1-pi) - 0.6*pi^2; pi = sigmoid(-ENTROPY_z)"
+  },
+  "full_data_fit": {
+    "M0_null_controls": {
+      "model": "M0_null_controls",
+      "n": 1009,
+      "k": 6,
+      "r2": 0.3510119127924821,
+      "r2_adj": 0.3471257565816587,
+      "aic": 2441.185973685532,
+      "bic": 2475.6029788280075,
+      "f_pvalue": 1.3356223170543305e-90
+    },
+    "M1_additive_IC_ENTROPY": {
+      "model": "M1_additive_IC_ENTROPY",
+      "n": 1009,
+      "k": 8,
+      "r2": 0.4579323293694739,
+      "r2_adj": 0.4535957880044297,
+      "aic": 2263.54224834687,
+      "bic": 2307.7926835300527,
+      "f_pvalue": 2.168688774702227e-127
+    },
+    "M2_interaction_IC_x_ENTROPY": {
+      "model": "M2_interaction_IC_x_ENTROPY",
+      "n": 1009,
+      "k": 9,
+      "r2": 0.4766921283505663,
+      "r2_adj": 0.47197764302039125,
+      "aic": 2230.0043687058587,
+      "bic": 2279.1715189093948,
+      "f_pvalue": 6.060190024864057e-134
+    },
+    "M3_MI_Eq5_composite": {
+      "model": "M3_MI_Eq5_composite",
+      "n": 1009,
+      "k": 7,
+      "r2": 0.42578843498907026,
+      "r2_adj": 0.4217729694994833,
+      "aic": 2319.6677732601743,
+      "bic": 2359.001493423003,
+      "f_pvalue": 5.273907714867633e-116
+    }
+  },
+  "held_out_cv_summary": {
+    "M0_null_controls": {
+      "r2_heldout_mean": 0.2231174333292838,
+      "r2_heldout_std": 0.17973329818801084,
+      "pearson_r_mean": 0.5431678140555001,
+      "spearman_rho_mean": 0.524516554740126,
+      "aic_train_mean": 1946.795278115304,
+      "bic_train_mean": 1979.650275389828,
+      "rmse_heldout_mean": 0.8401091969617672
+    },
+    "M1_additive_IC_ENTROPY": {
+      "r2_heldout_mean": 0.3363264697637862,
+      "r2_heldout_std": 0.18038441005405184,
+      "pearson_r_mean": 0.6382186971431334,
+      "spearman_rho_mean": 0.5936323398729266,
+      "aic_train_mean": 1804.6748666587082,
+      "bic_train_mean": 1846.9170060116678,
+      "rmse_heldout_mean": 0.7727058820777986
+    },
+    "M2_interaction_IC_x_ENTROPY": {
+      "r2_heldout_mean": 0.3638084211319743,
+      "r2_heldout_std": 0.17128903554381603,
+      "pearson_r_mean": 0.6525638094965525,
+      "spearman_rho_mean": 0.5955752673149469,
+      "aic_train_mean": 1778.408819443442,
+      "bic_train_mean": 1825.3445298356196,
+      "rmse_heldout_mean": 0.7574130922322879
+    },
+    "M3_MI_Eq5_composite": {
+      "r2_heldout_mean": 0.3178445042862527,
+      "r2_heldout_std": 0.16589766813123843,
+      "pearson_r_mean": 0.614901009253314,
+      "spearman_rho_mean": 0.5558986265030996,
+      "aic_train_mean": 1850.685557101699,
+      "bic_train_mean": 1888.234125415441,
+      "rmse_heldout_mean": 0.7868490729698763
+    }
+  },
+  "bootstrap": {
+    "B": 5000,
+    "valid_draws": 5000,
+    "interaction_mean": -0.15495169964760203,
+    "interaction_median": -0.15463971326626397,
+    "interaction_ci95": [
+      -0.2277211285183578,
+      -0.08387949790257751
+    ],
+    "interaction_p_two_sided_vs_zero": 0.0,
+    "delta_r2_mean": 0.01857120525891507,
+    "delta_r2_ci95": [
+      0.005510147467116686,
+      0.03494382852803762
+    ],
+    "draws_path": "bootstrap_interaction.npy"
+  },
+  "lmm_sensitivity": {
+    "ok": true,
+    "n_used": 20000,
+    "n_subjects": 39,
+    "interaction_beta": -0.057726838737178134,
+    "interaction_se": 0.007437695777328506,
+    "interaction_p": 8.400524327255827e-15,
+    "ic_beta": -0.12033716976576367,
+    "entropy_beta": -0.06996732033344036,
+    "converged": true
+  },
+  "quadrant_analysis": [
+    {
+      "quadrant": "low_U_low_S",
+      "n": 109,
+      "rating_z_mean_obs": 0.3671714726626767,
+      "rating_z_mean_pred": 0.44746498495233017
+    },
+    {
+      "quadrant": "low_U_high_S",
+      "n": 130,
+      "rating_z_mean_obs": -0.04641958208233714,
+      "rating_z_mean_pred": 0.018840716429789642
+    },
+    {
+      "quadrant": "high_U_low_S",
+      "n": 47,
+      "rating_z_mean_obs": 0.1808111337522076,
+      "rating_z_mean_pred": 0.4295588405595754
+    },
+    {
+      "quadrant": "high_U_high_S",
+      "n": 410,
+      "rating_z_mean_obs": -0.3367639250698056,
+      "rating_z_mean_pred": -0.3740029308671499
+    }
+  ],
+  "cheung_vs_MI_proxy": {
+    "IC": {
+      "MI_proxy_beta": -0.36359322976203995,
+      "MI_proxy_sign": "-",
+      "cheung_published_sign": "+",
+      "cheung_published_magnitude": 0.09,
+      "sign_match": false
+    },
+    "ENTROPY": {
+      "MI_proxy_beta": -0.18022011556827333,
+      "MI_proxy_sign": "-",
+      "cheung_published_sign": "-",
+      "cheung_published_magnitude": 0.12,
+      "sign_match": true
+    },
+    "IC_x_ENTROPY": {
+      "MI_proxy_beta": -0.15776474656807904,
+      "MI_proxy_sign": "-",
+      "cheung_published_sign": "-",
+      "cheung_published_magnitude": 0.09,
+      "sign_match": true
+    }
+  },
+  "delta_aic": {
+    "M2_minus_M1": -33.537879641011386,
+    "M3_minus_M1": 56.12552491330416,
+    "M3_minus_M0": -121.51820042535792
+  },
+  "cheung_published_reference": {
+    "IC_sign": "+",
+    "IC_magnitude": 0.09,
+    "ENTROPY_sign": "-",
+    "ENTROPY_magnitude": 0.12,
+    "IC_ENTROPY_sign": "-",
+    "IC_ENTROPY_magnitude": 0.09,
+    "notes": "Pleasure peaks at low-uncertainty + high-surprise OR high-uncertainty + low-surprise -> negative interaction coefficient."
+  }
+}

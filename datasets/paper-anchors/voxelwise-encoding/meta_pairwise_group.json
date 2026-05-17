@@ -1,0 +1,26 @@
+{
+  "seed": 20260424,
+  "alpha": 100.0,
+  "n_folds": 5,
+  "n_boot": 2000,
+  "n_subjects": 4,
+  "subjects": [
+    "sub-001",
+    "sub-003",
+    "sub-004",
+    "sub-005"
+  ],
+  "n_regions": 26,
+  "training_only": true,
+  "n_shared_clips_group": 480,
+  "mi_individual_mean_r": -0.007012315094470978,
+  "mi_group_mean_r": -0.0068277944810688496,
+  "group_gt_individual": true,
+  "mi_vs_mert_regions_mi_wins": 18,
+  "mi_vs_mert_regions_sig_95CI": 4,
+  "mi_vs_mert_regions_bh_fdr_q01": 0,
+  "mi_vs_naive_regions_mi_wins": 14,
+  "mi_vs_naive_regions_sig_95CI": 3,
+  "mi_vs_naive_regions_bh_fdr_q01": 0,
+  "runtime_s": 0.5
+}

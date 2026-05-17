@@ -1,0 +1,7 @@
+null_design,radius_mm,observed,n_tests,null_mean,null_std,null_p05,null_p95,p_value,n_permutations,seed,mask_source
+Null-1 coord shuffle,8.0,28,31,0.0389,0.31905637385416663,0.0,0.0,9.999000099990002e-05,10000,42,nilearn_mni152_brain_mask
+Null-2 label shuffle,8.0,28,31,1.0672,1.6704380252854734,0.0,4.0,9.999000099990002e-05,10000,42,nilearn_mni152_brain_mask
+Null-1 coord shuffle,10.0,28,31,0.0691,0.4156229832990768,0.0,0.0,9.999000099990002e-05,10000,42,nilearn_mni152_brain_mask
+Null-2 label shuffle,10.0,28,31,1.0672,1.6704380252854734,0.0,4.0,9.999000099990002e-05,10000,42,nilearn_mni152_brain_mask
+Null-1 coord shuffle,12.0,28,31,0.118,0.5410224307060223,0.0,1.0,9.999000099990002e-05,10000,42,nilearn_mni152_brain_mask
+Null-2 label shuffle,12.0,28,31,1.4805,1.9935940388452138,0.0,5.0,9.999000099990002e-05,10000,42,nilearn_mni152_brain_mask

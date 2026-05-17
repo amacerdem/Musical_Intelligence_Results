@@ -1,0 +1,20 @@
+{
+  "experiment": "C17_deney_2_ridge_loso",
+  "seed": 20260424,
+  "n_folds": 5,
+  "subjects": [
+    "sub-001",
+    "sub-003",
+    "sub-004",
+    "sub-005"
+  ],
+  "encoders": [
+    "clap_music_512d",
+    "mert_768d",
+    "mi_naive_26d",
+    "mi_ram_26d",
+    "random_26d",
+    "random_768d"
+  ],
+  "runtime_s": 31.48270606994629
+}

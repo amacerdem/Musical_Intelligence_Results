@@ -1,0 +1,4 @@
+subject,observed_mi_minus_mert_top5pct,bootstrap_mean,bootstrap_ci95_lo,bootstrap_ci95_hi,n_boot,sig_95
+sub-001,0.0094,0.0094,0.0074,0.0114,2000,True
+sub-003,0.0064,0.0064,0.0043,0.0085,2000,True
+sub-004,0.0064,0.0064,0.0044,0.0085,2000,True

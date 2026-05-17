@@ -1,0 +1,9 @@
+category,name,count,percent,description
+A,LIT-VERBATIM,67,0.4124%,LIT-VERBATIM (bit-exact published literature values)
+B,LIT-DERIVED,19,0.1169%,LIT-DERIVED (analytical derivation from cited literature)
+C,STRUCTURAL,9817,60.4197%,STRUCTURAL (topology/dim/index/anatomy/citation-metadata)
+D,IDENTITY-PLACEHOLDER,1182,7.2747%,IDENTITY-PLACEHOLDER (trivial 0/1/-1/epsilon/midpoint)
+E,ENGINEERING-CHOICE,5157,31.7393%,ENGINEERING-CHOICE (mixer/clamp/sigmoid/threshold author choice)
+F,HAND-SPECIFIED-DISCLOSED,6,0.0369%,HAND-SPECIFIED-DISCLOSED (paper-disclosed reward weights)
+G,DEAD-CODE-UNREACHABLE,0,0.0000%,DEAD-CODE-UNREACHABLE
+TOTAL,,16248,100.0000%,

@@ -1,0 +1,9 @@
+pair_id,rho,p_perm,ci_lo,ci_hi,n,anchor_id,note,pass
+P2.Shree,0.7030303030303031,,,,3,2,"rotation-max ρ across 3 recordings, 3-seg averaged",
+P2.Bhairabi,0.4333333333333334,,,,3,2,"rotation-max ρ across 3 recordings, 3-seg averaged",
+P2.Jog,0.593939393939394,,,,3,2,"rotation-max ρ across 3 recordings, 3-seg averaged",
+P2.Lalat,0.5484848484848485,,,,3,2,"rotation-max ρ across 3 recordings, 3-seg averaged",
+P2.Marwa,0.584848484848485,,,,3,2,"rotation-max ρ across 3 recordings, 3-seg averaged",
+P2.Miya malhar,0.38636363636363635,,,,2,2,"rotation-max ρ across 2 recordings, 3-seg averaged",
+P2.Todi,0.706060606060606,,,,3,2,"rotation-max ρ across 3 recordings, 3-seg averaged",
+P2.composite,0.5651515151515152,,,,7,2,"top-7 ragas (data-limited from top-10), 7/7 with ρ>0; PASS = mean≥0.4 AND ≥5/7 positive",True

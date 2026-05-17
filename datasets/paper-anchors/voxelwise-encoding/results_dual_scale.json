@@ -1,0 +1,37 @@
+{
+  "group_mean_r_mi_vs_group_composite": 0.5588,
+  "individual_mean_r_mi_vs_composite": 0.4257,
+  "group_greater_than_individual": true,
+  "per_subject": [
+    {
+      "subject": "sub-001",
+      "r_mi_vs_composite": 0.3277
+    },
+    {
+      "subject": "sub-003",
+      "r_mi_vs_composite": 0.4902
+    },
+    {
+      "subject": "sub-004",
+      "r_mi_vs_composite": 0.4591
+    }
+  ],
+  "cross_subject_composite_r": [
+    {
+      "pair": "sub-001\u2194sub-003",
+      "n_shared_clips": 540,
+      "pearson_r": 0.3125
+    },
+    {
+      "pair": "sub-001\u2194sub-004",
+      "n_shared_clips": 540,
+      "pearson_r": 0.3396
+    },
+    {
+      "pair": "sub-003\u2194sub-004",
+      "n_shared_clips": 540,
+      "pearson_r": 0.4122
+    }
+  ],
+  "n_shared_clips": 540
+}

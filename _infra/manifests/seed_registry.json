@@ -1,0 +1,32 @@
+{
+  "convention": "Seeds are integers formed by concatenation: int('2026' + MM + DD + NN). NN = phase id (zero-padded). Example: phase 1 frozen 2026-05-06 → 2026050601.",
+  "frozen_date": "2026-05-06",
+  "phases": {
+    "phase_00": {"primary": 2026050600, "bootstrap": 1729, "permutation": 42, "scope": "infrastructure"},
+    "phase_00_5": {"primary": 20260506005, "bootstrap": 1729, "permutation": 42, "scope": "V-fMRI eligibility audit (gate for Phases 11/12/18)"},
+    "phase_01": {"primary": 2026050601, "bootstrap": 1729, "permutation": 42, "scope": "architectural cardinalities"},
+    "phase_02": {"primary": 2026050602, "bootstrap": 1729, "permutation": 42, "scope": "R3 unit tests"},
+    "phase_03": {"primary": 2026050603, "bootstrap": 1729, "permutation": 42, "scope": "H3 analytical"},
+    "phase_04": {"primary": 2026050604, "bootstrap": 1729, "permutation": 42, "scope": "compute profile"},
+    "phase_05": {"primary": 2026050502, "bootstrap": 1729, "permutation": 42, "scope": "ECE refinement (inherits V6 A2)"},
+    "phase_06": {"primary": 2026050606, "bootstrap": 1729, "permutation": 42, "scope": "R3 OOS consonance"},
+    "phase_07": {"primary": 2026050607, "bootstrap": 1729, "permutation": 42, "scope": "C3 functional anchors"},
+    "phase_08": {"primary": 2026050608, "bootstrap": 1729, "permutation": 42, "scope": "neurochemistry pharma"},
+    "phase_09": {"primary": 2026050609, "bootstrap": 1729, "permutation": 42, "scope": "RAM topology"},
+    "phase_10": {"primary": 2026050610, "bootstrap": 1729, "permutation": 42, "scope": "Cheung emergent"},
+    "phase_11": {"primary": 20260503, "bootstrap": 1729, "permutation": 42, "scope": "mech×region (inherits V3)"},
+    "phase_12": {"primary": 2026050612, "bootstrap": 1729, "permutation": 42, "scope": "voxelwise ds003720"},
+    "phase_13": {"primary": 2026050613, "bootstrap": 1729, "permutation": 42, "scope": "Mendelssohn pilot"},
+    "phase_14": {"primary": 2026050505, "bootstrap": 1729, "permutation": 42, "scope": "cross-cultural V5 (inherits V5)"},
+    "phase_15": {"primary": 2026050615, "bootstrap": 1729, "permutation": 42, "scope": "falsifiable Table 5"},
+    "phase_16": {"primary": 2026050616, "bootstrap": 1729, "permutation": 42, "scope": "paper-wide BB-FDR"},
+    "phase_17": {"primary": 2026050617, "bootstrap": 1729, "permutation": 42, "scope": "Zenodo bundle"},
+    "phase_18": {"primary": 2026050618, "bootstrap": 1729, "permutation": 42, "scope": "independent fMRI replication (5 Tier-1 datasets, +148 subjects)"},
+    "phase_18_1": {"primary": 20260506181, "bootstrap": 1729, "permutation": 42, "scope": "studyforrest 7T music genres ext (N=20)"},
+    "phase_18_2": {"primary": 20260506182, "bootstrap": 1729, "permutation": 42, "scope": "ds005880 Diminished 7th (N=20)"},
+    "phase_18_3": {"primary": 20260506183, "bootstrap": 1729, "permutation": 42, "scope": "ds006583 Affective Transitions (N=39)"},
+    "phase_18_4": {"primary": 20260506184, "bootstrap": 1729, "permutation": 42, "scope": "ds006564 Naturalistic film w/ music (N=~30)"},
+    "phase_18_5": {"primary": 20260506185, "bootstrap": 1729, "permutation": 42, "scope": "ds000171 Music+depression (N=39)"}
+  },
+  "policy": "Seeds are LOCKED. Any change requires MASTER-VERDICT.md note + user authorization. 2026-05-06: Phase 18 + 5 sub-axes added per user-approved master-plan revision 1 (companion of 5-agent literature scan). 2026-05-06: Phase 0.5 V-fMRI Eligibility Audit added per master-plan revision 2 (user-validated MI_fMRI_validasyon_notlari.md framing — Phase 0.5 gates Phases 11/12/18)."
+}

@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "V-Reproduction per-axis claim manifest",
+  "type": "object",
+  "required": ["axis_id", "axis_name", "engine_head", "seed_registry", "phase_close_date", "git_commit_hash", "claims"],
+  "additionalProperties": false,
+  "properties": {
+    "axis_id": {"type": "string", "pattern": "^AXIS-[0-9]+$"},
+    "axis_name": {"type": "string"},
+    "engine_head": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "seed_registry": {
+      "type": "object",
+      "required": ["primary", "bootstrap", "permutation"],
+      "properties": {
+        "primary": {"type": "integer"},
+        "bootstrap": {"type": "integer"},
+        "permutation": {"type": "integer"}
+      }
+    },
+    "phase_close_date": {"type": "string", "format": "date"},
+    "git_commit_hash": {"type": "string", "pattern": "^[0-9a-f]{7,40}$"},
+    "claims": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["claim_id", "paper_value", "tolerance", "reproduced_value", "deviation", "verdict", "iteration_count"],
+        "additionalProperties": false,
+        "properties": {
+          "claim_id": {"type": "string", "pattern": "^C-[A-Z0-9]+(-[A-Z0-9]+)*$"},
+          "paper_value": {"type": ["number", "string", "array"]},
+          "tolerance": {
+            "type": "string",
+            "minLength": 8,
+            "pattern": "^(absolute_deviation|relative_deviation|exact_match|exact OR|within_one_sigma_of_paper_CI|paper_value_inside_reproduced_CI|reproduced_p|sign_consistent).*"
+          },
+          "reproduced_value": {"type": ["number", "string", "array"]},
+          "deviation": {"type": ["number", "string", "array", "null"]},
+          "verdict": {"enum": ["PASS", "FAIL", "PARTIAL", "CAVEAT"]},
+          "iteration_count": {"type": "integer", "minimum": 1, "maximum": 5},
+          "notes": {"type": "string"}
+        }
+      }
+    }
+  }
+}

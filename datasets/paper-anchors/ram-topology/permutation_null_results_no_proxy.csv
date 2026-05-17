@@ -1,0 +1,7 @@
+subset,null_design,radius_mm,observed,n_tests,null_mean,null_std,p_value
+excluding_atlas_centroid_proxy,Null-1 coord shuffle,8.0,26,29,0.0371,0.3129430992022893,9.999000099990002e-05
+excluding_atlas_centroid_proxy,Null-2 label shuffle,8.0,26,29,0.9878,1.6122999445236954,9.999000099990002e-05
+excluding_atlas_centroid_proxy,Null-1 coord shuffle,10.0,26,29,0.0653,0.40651252778177,9.999000099990002e-05
+excluding_atlas_centroid_proxy,Null-2 label shuffle,10.0,26,29,0.9878,1.6122999445236954,9.999000099990002e-05
+excluding_atlas_centroid_proxy,Null-1 coord shuffle,12.0,26,29,0.1106,0.5276319546312134,9.999000099990002e-05
+excluding_atlas_centroid_proxy,Null-2 label shuffle,12.0,26,29,1.3273,1.9112665967887366,9.999000099990002e-05

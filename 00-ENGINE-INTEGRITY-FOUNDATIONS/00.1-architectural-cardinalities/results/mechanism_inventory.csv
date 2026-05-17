@@ -1,0 +1,90 @@
+function,mech_name,file,doc_first_line,in_all,has_class
+F1,BCH,Musical_Intelligence.brain.functions.f1.mechanisms.bch,"Brainstem Consonance Hierarchy — SPU Relay (depth 0, 16D).",True,True
+F1,CSG,Musical_Intelligence.brain.functions.f1.mechanisms.csg,"Consonance-Salience Gradient — ASU Relay (depth 0, 12D).",True,True
+F1,MIAA,Musical_Intelligence.brain.functions.f1.mechanisms.miaa,"Musical Imagery Auditory Activation — SPU Relay (depth 0, 11D).",True,True
+F1,MPG,Musical_Intelligence.brain.functions.f1.mechanisms.mpg,"Melodic Processing Gradient — NDU Relay (depth 0, 10D).",True,True
+F1,PCCR,Musical_Intelligence.brain.functions.f1.mechanisms.pccr,"Pitch Chroma Cortical Representation — SPU Associator (depth 2, 11D).",True,True
+F1,PNH,Musical_Intelligence.brain.functions.f1.mechanisms.pnh,"Pythagorean Neural Hierarchy — IMU Relay (depth 0, 11D).",True,True
+F1,PSCL,Musical_Intelligence.brain.functions.f1.mechanisms.pscl,"Pitch Salience in Cortical Lateralization — SPU Encoder (depth 1, 16D).",True,True
+F1,SDED,Musical_Intelligence.brain.functions.f1.mechanisms.sded,"Sensory Dissonance Early Detection — SPU Relay (depth 0, 10D).",True,True
+F1,SDNPS,Musical_Intelligence.brain.functions.f1.mechanisms.sdnps,"Stimulus-Dependent Neural Pitch Salience — SPU Relay (depth 0, 10D).",True,True
+F1,STAI,Musical_Intelligence.brain.functions.f1.mechanisms.stai,"Spectral-Temporal Aesthetic Integration — SPU Relay (depth 0, 12D).",False,True
+F1,TPIO,Musical_Intelligence.brain.functions.f1.mechanisms.tpio,"Timbre Perception-Imagery Overlap -- SPU Relay (depth 0, 10D).",True,True
+F1,TPRD,Musical_Intelligence.brain.functions.f1.mechanisms.tprd,"Tonotopy-Pitch Representation Dissociation — IMU Relay (depth 0, 10D).",True,True
+F2,CHPI,Musical_Intelligence.brain.functions.f2.mechanisms.chpi,"Cross-Modal Harmonic Predictive Integration -- PCU Integrator (depth 3, 11D).",True,True
+F2,HTP,Musical_Intelligence.brain.functions.f2.mechanisms.htp,"Hierarchical Temporal Prediction — PCU Relay (depth 0, 12D).",True,True
+F2,ICEM,Musical_Intelligence.brain.functions.f2.mechanisms.icem,"Information Content Emotion Model — PCU Relay (depth 0, 13D).",True,True
+F2,IGFE,Musical_Intelligence.brain.functions.f2.mechanisms.igfe,"Individual Gamma Frequency Enhancement -- PCU Integrator (depth 3, 9D).",True,True
+F2,MAA,Musical_Intelligence.brain.functions.f2.mechanisms.maa,"Multifactorial Atonal Appreciation — PCU Hub (depth 4, 10D).",True,True
+F2,PSH,Musical_Intelligence.brain.functions.f2.mechanisms.psh,"Prediction Silencing Hypothesis — PCU Hub (depth 5, 10D).",True,True
+F2,PWUP,Musical_Intelligence.brain.functions.f2.mechanisms.pwup,"Precision-Weighted Uncertainty Processing -- PCU Encoder (depth 1, 10D).",True,True
+F2,SPH,Musical_Intelligence.brain.functions.f2.mechanisms.sph,"Spatiotemporal Prediction Hierarchy — PCU Relay (depth 0, 14D).",True,True
+F2,UDP,Musical_Intelligence.brain.functions.f2.mechanisms.udp,"Uncertainty-Driven Pleasure -- PCU Integrator (depth 3, 10D).",True,True
+F2,WMED,Musical_Intelligence.brain.functions.f2.mechanisms.wmed,"Working Memory-Entrainment Dissociation -- PCU Associator (depth 2, 11D).",True,True
+F3,AACM,Musical_Intelligence.brain.functions.f3.mechanisms.aacm,"Aesthetic-Attention Coupling Model -- ASU Encoder (depth 1, 10D).",True,True
+F3,AMSS,Musical_Intelligence.brain.functions.f3.mechanisms.amss,"Attention-Modulated Stream Segregation -- STU Encoder (depth 1, 11D).",True,True
+F3,BARM,Musical_Intelligence.brain.functions.f3.mechanisms.barm,"Brainstem Auditory Response Modulation -- ASU Encoder (depth 1, 10D).",True,True
+F3,DGTP,Musical_Intelligence.brain.functions.f3.mechanisms.dgtp,"Domain-General Temporal Processing -- ASU Associator (depth 2, 9D).",True,True
+F3,ETAM,Musical_Intelligence.brain.functions.f3.mechanisms.etam,"Entrainment, Tempo and Attention Modulation -- STU Encoder (depth 1, 11D).",True,True
+F3,IACM,Musical_Intelligence.brain.functions.f3.mechanisms.iacm,"Inharmonicity-Attention Capture Model — ASU Relay (depth 0, 11D).",True,True
+F3,IGFE,Musical_Intelligence.brain.functions.f3.mechanisms.igfe,"Individual Gamma Frequency Enhancement -- PCU Associator (depth 2, 9D).",True,True
+F3,NEWMD,Musical_Intelligence.brain.functions.f3.mechanisms.newmd,"Neural Entrainment-Working Memory Dissociation -- STU Associator (depth 2, 10D).",True,True
+F3,PWSM,Musical_Intelligence.brain.functions.f3.mechanisms.pwsm,"Precision-Weighted Salience Model -- ASU Associator (depth 2, 9D).",True,True
+F3,SDL,Musical_Intelligence.brain.functions.f3.mechanisms.sdl,"Salience-Dependent Lateralization -- ASU Associator (depth 2, 9D).",True,True
+F3,SNEM,Musical_Intelligence.brain.functions.f3.mechanisms.snem,"Sensory Novelty and Expectation Model — ASU Relay (depth 0, 12D).",True,True
+F3,STANM,Musical_Intelligence.brain.functions.f3.mechanisms.stanm,"Spectrotemporal Attention Network Model -- ASU Encoder (depth 1, 11D).",True,True
+F4,CDEM,Musical_Intelligence.brain.functions.f4.mechanisms.cdem,"Context-Dependent Emotional Memory -- IMU Associator (depth 2, 10D).",True,True
+F4,CMAPCC,Musical_Intelligence.brain.functions.f4.mechanisms.cmapcc,"Cross-Modal Action-Perception Common Code -- IMU Associator (depth 2, 10D).",True,True
+F4,CSSL,Musical_Intelligence.brain.functions.f4.mechanisms.cssl,"Cross-Species Song Learning -- IMU Associator (depth 2, 10D).",True,True
+F4,DMMS,Musical_Intelligence.brain.functions.f4.mechanisms.dmms,"Developmental Music Memory Scaffold -- IMU Associator (depth 2, 10D).",True,True
+F4,HCMC,Musical_Intelligence.brain.functions.f4.mechanisms.hcmc,"Hippocampal-Cortical Memory Circuit -- IMU Encoder (depth 1, 11D).",True,True
+F4,MEAMN,Musical_Intelligence.brain.functions.f4.mechanisms.meamn,"Music-Evoked Autobiographical Memory Network -- IMU Relay (depth 0, 12D).",True,True
+F4,MMP,Musical_Intelligence.brain.functions.f4.mechanisms.mmp,"Musical Mnemonic Preservation -- IMU Relay (depth 0, 12D).",True,True
+F4,MSPBA,Musical_Intelligence.brain.functions.f4.mechanisms.mspba,"Musical Syntax Processing in Broca's Area -- IMU Encoder (depth 1, 11D).",True,True
+F4,OII,Musical_Intelligence.brain.functions.f4.mechanisms.oii,"Oscillatory Intelligence Integration -- IMU Encoder (depth 1, 10D).",True,True
+F4,PMIM,Musical_Intelligence.brain.functions.f4.mechanisms.pmim,"Predictive Memory Integration Model -- IMU Encoder (depth 1, 11D).",True,True
+F4,PNH,Musical_Intelligence.brain.functions.f4.mechanisms.pnh,"Pythagorean Neural Hierarchy — IMU Relay (depth 0, 11D).",True,True
+F4,RASN,Musical_Intelligence.brain.functions.f4.mechanisms.rasn,"Rhythmic Auditory Stimulation Neuroplasticity -- IMU Encoder (depth 1, 11D).",True,True
+F4,RIRI,Musical_Intelligence.brain.functions.f4.mechanisms.riri,"RAS-Intelligent Rehabilitation Integration -- IMU Encoder (depth 1, 10D).",True,True
+F4,TPRD,Musical_Intelligence.brain.functions.f4.mechanisms.tprd,"Tonotopy-Pitch Representation Dissociation -- IMU Associator (depth 2, 10D).",True,True
+F4,VRIAP,Musical_Intelligence.brain.functions.f4.mechanisms.vriap,"VR-Integrated Analgesia Paradigm -- IMU Associator (depth 2, 10D).",True,True
+F5,AAC,Musical_Intelligence.brain.functions.f5.mechanisms.aac,"Autonomic-Arousal Circuit -- ARU Relay (depth 0, 14D).",True,True
+F5,CLAM,Musical_Intelligence.brain.functions.f5.mechanisms.clam,"Closed-Loop Affective Modulation -- ARU Encoder (depth 1, 11D).",True,True
+F5,CMAT,Musical_Intelligence.brain.functions.f5.mechanisms.cmat,"Cross-Modal Affective Transfer -- ARU Associator (depth 2, 10D).",True,True
+F5,DAP,Musical_Intelligence.brain.functions.f5.mechanisms.dap,"Developmental Affective Plasticity -- ARU Associator (depth 2, 10D).",True,True
+F5,MAA,Musical_Intelligence.brain.functions.f5.mechanisms.maa,"Musical Appreciation of Atonality -- PCU Associator (depth 2, 10D).",True,True
+F5,MAD,Musical_Intelligence.brain.functions.f5.mechanisms.mad,"Musical Anhedonia Disconnection -- ARU Encoder (depth 1, 11D).",True,True
+F5,NEMAC,Musical_Intelligence.brain.functions.f5.mechanisms.nemac,"Nostalgia-Evoked Memory-Affect Circuit -- ARU Encoder (depth 1, 11D).",True,True
+F5,PUPF,Musical_Intelligence.brain.functions.f5.mechanisms.pupf,"Pleasure-Uncertainty Prediction Function -- ARU Encoder (depth 1, 12D).",True,True
+F5,SRP,Musical_Intelligence.brain.functions.f5.mechanisms.srp,"Striatal Reward Prediction -- ARU Relay (depth 0, 19D).",True,True
+F5,STAI,Musical_Intelligence.brain.functions.f5.mechanisms.stai,"Spectral-Temporal Aesthetic Integration -- SPU Encoder (depth 1, 12D).",True,True
+F5,TAR,Musical_Intelligence.brain.functions.f5.mechanisms.tar,"Therapeutic Affective Resonance -- ARU Associator (depth 2, 10D).",True,True
+F5,VMM,Musical_Intelligence.brain.functions.f5.mechanisms.vmm,"Valence-Mode Mapping -- ARU Relay (depth 0, 12D).",True,True
+F6,DAED,Musical_Intelligence.brain.functions.f6.mechanisms.daed,"Dopamine Anticipation-Experience Dissociation -- RPU Relay (depth 0, 8D).",True,True
+F6,IOTMS,Musical_Intelligence.brain.functions.f6.mechanisms.iotms,"Individual Opioid Tone Music Sensitivity -- RPU Associator (depth 2, 5D).",True,True
+F6,IUCP,Musical_Intelligence.brain.functions.f6.mechanisms.iucp,"Inverted-U Complexity Preference -- RPU Encoder (depth 1, 6D).",True,True
+F6,LDAC,Musical_Intelligence.brain.functions.f6.mechanisms.ldac,"Liking-Dependent Auditory Cortex -- RPU Associator (depth 2, 6D).",True,True
+F6,MCCN,Musical_Intelligence.brain.functions.f6.mechanisms.mccn,"Musical Chills Cortical Network -- RPU Encoder (depth 1, 7D).",True,True
+F6,MEAMR,Musical_Intelligence.brain.functions.f6.mechanisms.meamr,"Music-Evoked Autobiographical Memory Reward -- RPU Encoder (depth 1, 6D).",True,True
+F6,MORMR,Musical_Intelligence.brain.functions.f6.mechanisms.mormr,"mu-Opioid Receptor Music Reward -- RPU Relay (depth 0, 7D).",True,True
+F6,RPEM,Musical_Intelligence.brain.functions.f6.mechanisms.rpem,"Reward Prediction Error in Music -- RPU Relay (depth 0, 8D).",True,True
+F6,SSPS,Musical_Intelligence.brain.functions.f6.mechanisms.ssps,"Saddle-Shaped Preference Surface -- RPU Associator (depth 2, 6D).",True,True
+F6,SSRI,Musical_Intelligence.brain.functions.f6.mechanisms.ssri,"Social Synchrony Reward Integration -- RPU Encoder (depth 1, 11D).",True,True
+F7,ASAP,Musical_Intelligence.brain.functions.f7.mechanisms.asap,"Action Simulation for Auditory Prediction -- MPU Encoder (depth 1, 11D).",True,True
+F7,CTBB,Musical_Intelligence.brain.functions.f7.mechanisms.ctbb,"Cerebellar Theta-Burst Balance -- MPU Associator (depth 2, 11D).",True,True
+F7,DDSMI,Musical_Intelligence.brain.functions.f7.mechanisms.ddsmi,"Dyadic Dance Social Motor Integration -- MPU Encoder (depth 1, 11D).",True,True
+F7,GSSM,Musical_Intelligence.brain.functions.f7.mechanisms.gssm,"Gait-Synchronized Stimulation Model -- MPU Relay (depth 0, 11D).",True,True
+F7,HGSIC,Musical_Intelligence.brain.functions.f7.mechanisms.hgsic,"Hierarchical Groove State Integration Circuit -- STU Encoder (depth 1, 11D).",True,True
+F7,HMCE,Musical_Intelligence.brain.functions.f7.mechanisms.hmce,"Hierarchical Musical Context Encoding -- STU Relay (depth 0, 11D).",True,True
+F7,MSR,Musical_Intelligence.brain.functions.f7.mechanisms.msr,"Musician Sensorimotor Reorganization -- MPU Relay (depth 0, 11D).",True,True
+F7,NSCP,Musical_Intelligence.brain.functions.f7.mechanisms.nscp,"Neural Synchrony Commercial Prediction -- MPU Associator (depth 2, 11D).",True,True
+F7,PEOM,Musical_Intelligence.brain.functions.f7.mechanisms.peom,"Period Entrainment Optimization Model -- MPU Relay (depth 0, 11D).",True,True
+F7,SPMC,Musical_Intelligence.brain.functions.f7.mechanisms.spmc,"SMA-Premotor-M1 Motor Circuit -- MPU Encoder (depth 1, 11D).",True,True
+F7,STC,Musical_Intelligence.brain.functions.f7.mechanisms.stc,"Singing Training Connectivity -- MPU Associator (depth 2, 11D).",True,True
+F7,VRMSME,Musical_Intelligence.brain.functions.f7.mechanisms.vrmsme,"VR Music Stimulation Motor Enhancement -- MPU Encoder (depth 1, 11D).",True,True
+F8,CDMR,Musical_Intelligence.brain.functions.f8.mechanisms.cdmr,"Context-Dependent Mismatch Response -- NDU Encoder (depth 1, 11D).",True,True
+F8,ECT,Musical_Intelligence.brain.functions.f8.mechanisms.ect,"Expertise Compartmentalization Trade-off -- NDU Associator (depth 2, 12D).",True,True
+F8,EDNR,Musical_Intelligence.brain.functions.f8.mechanisms.ednr,"Expertise-Dependent Network Reorganization -- NDU Relay (depth 0, 10D).",True,True
+F8,ESME,Musical_Intelligence.brain.functions.f8.mechanisms.esme,"Error-Signal Modulated Encoding -- SPU Associator (depth 2, 11D).",True,True
+F8,SLEE,Musical_Intelligence.brain.functions.f8.mechanisms.slee,"Synaptic Long-term Encoding Engine -- NDU Encoder (depth 1, 13D).",True,True
+F8,TSCP,Musical_Intelligence.brain.functions.f8.mechanisms.tscp,"Temporal Synaptic Consolidation Processor -- SPU Encoder (depth 1, 10D).",True,True

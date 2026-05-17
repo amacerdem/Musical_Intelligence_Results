@@ -1,0 +1,8 @@
+engine_index,engine_name,spearman_rho,p_spearman,ci95_lo,ci95_hi,pearson_r,n
+0,roughness,-0.7967,0.001114,-0.9366,-0.438,-0.7031,13
+1,sethares_dissonance,-0.7527,0.002982,-0.9215,-0.3447,-0.7187,13
+2,helmholtz_kang,0.6154,0.02517,0.0974,0.871,0.7212,13
+3,stumpf_fusion,0.8846,5.906e-05,0.6509,0.9652,0.8501,13
+4,sensory_pleasantness,0.9121,1.398e-05,0.7259,0.9737,0.8681,13
+5,inharmonicity,-0.8846,5.906e-05,-0.9652,-0.6509,-0.8501,13
+6,harmonic_deviation,0.2088,0.4936,-0.3867,0.6814,0.3472,13

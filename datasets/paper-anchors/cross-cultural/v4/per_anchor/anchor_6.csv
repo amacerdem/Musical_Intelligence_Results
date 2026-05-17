@@ -1,0 +1,6 @@
+pair_id,test,rho,p_perm,ci_lo,ci_hi,n,anchor_id,pass,note
+P6,5fold_stroke_classify_logreg,0.9794871794871794,,,,195,6,True,"P6 PIVOTED: 3-way stroke classification, chance=0.333, best classifier=logreg acc=0.979, threshold=1.5×chance=0.500"
+S21,sign_match,,,,,0,6,,INFEASIBLE per Pivot D: IEMPDC Manjanin audio not acquired
+S22,sign_match,,,,,0,6,,INFEASIBLE per Pivot D: IEMPDC Maraka audio not acquired
+S23,sign_match,,,,,0,6,,INFEASIBLE per Pivot D: Carnatic Rhythm audio not acquired
+S24,spearman,-0.21562980030721968,0.09290709290709291,-0.45203303568936815,0.04417267696170996,63,6,,PEOM peak split-half within stroke type 'dheem' (n=127)

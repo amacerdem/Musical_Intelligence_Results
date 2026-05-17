@@ -1,0 +1,55 @@
+function,mechanism,dim_name,channel,modulator,effect,weight,citation
+F1,BCH,P0:consonance_signal,3,Serotonin,produce,0.3,Blood & Zatorre 2001
+F1,BCH,P0:consonance_signal,0,Dopamine,produce,0.15,Salimpoor 2011
+F1,CSG,M2:aesthetic_appreciation,0,Dopamine,produce,0.15,Koelsch
+F1,MIAA,E1:novelty_response,0,Dopamine,produce,0.1,Kraemer 2005
+F1,MPG,P0:onset_state,1,Cortisol,amplify,0.15,Samiee 2022
+F1,PCCR,P0:chroma_identity_signal,1,Cortisol,amplify,0.15,Weinberger 2004
+F1,PSCL,P0:pitch_prominence_sig,1,Cortisol,amplify,0.2,Zatorre 2002
+F1,STAI,P2:aesthetic_response,0,Dopamine,produce,0.25,Blood & Zatorre 2001
+F1,STAI,P2:aesthetic_response,3,Serotonin,produce,0.2,Blood & Zatorre 2001
+F2,ICEM,P0:surprise_signal,1,Cortisol,amplify,0.75,Aston-Jones & Cohen 2005
+F2,ICEM,E1:arousal_response,1,Cortisol,amplify,0.6,Chanda & Levitin 2013
+F3,PWSM,P1:precision_estimate,0,acetylcholine,produce,0.45,Friston 2005
+F3,PWSM,P0:weighted_error,1,Cortisol,amplify,0.5,Feldman & Friston 2010
+F5,AAC,E0:emotional_arousal,1,Cortisol,amplify,0.75,Chanda & Levitin 2013
+F5,AAC,I0:chills_intensity,1,Cortisol,amplify,0.5,Chanda & Levitin 2013
+F5,MAD,D1:nacc_music_resp,0,dopamine,produce,0.8,Martinez-Molina 2016
+F5,PUPF,G0:pleasure_P,0,dopamine,produce,0.75,Salimpoor 2011
+F5,TAR,T3:depression_improv,0,DA,produce,0.75,Chanda 2013
+F5,TAR,T2:anxiety_reduction,1,Cortisol,inhibit,0.45,Chanda & Levitin 2013
+F6,DAED,f01:anticipatory_da,0,Dopamine,produce,0.9,Salimpoor 2011
+F6,DAED,f02:consummatory_da,0,Dopamine,produce,0.9,Salimpoor 2011
+F6,DAED,f03:wanting_index,0,Dopamine,produce,0.85,Berridge 2007
+F6,DAED,f04:liking_index,2,Mu-opioid,produce,0.8,Mallik 2017
+F6,IOTMS,E0:mor_baseline_proxy,2,endorphin,produce,0.9,Putkinen 2025
+F6,IOTMS,E2:reward_propensity,0,dopamine,produce,0.75,Mas-Herrero 2014
+F6,IUCP,P0:current_preference_state,0,dopamine,produce,0.7,Gold 2023b
+F6,LDAC,E1:pleasure_gating,0,dopamine,produce,0.7,Martinez-Molina et al. 2016
+F6,MCCN,F0:chills_onset_pred,0,dopamine,produce,0.8,Salimpoor 2011
+F6,MCCN,E3:chills_magnitude,2,opioid,produce,0.75,Putkinen 2025
+F6,MCCN,E2:arousal_index,1,Cortisol,amplify,0.55,Chanda & Levitin 2013
+F6,MEAMR,E3:positive_affect,0,dopamine,produce,0.75,Salimpoor 2011
+F6,MORMR,f01:opioid_release,2,endorphin,produce,0.95,Putkinen 2025
+F6,MORMR,f02:chills_count,2,endorphin,produce,0.85,Mallik 2017
+F6,RPEM,current_rpe,0,dopamine,produce,0.9,Gold 2023
+F6,RPEM,rpe_magnitude,0,dopamine,produce,0.85,Salimpoor 2011
+F6,SSPS,f04:peak_proximity,0,dopamine,produce,0.7,Gold 2023
+F6,SSPS,optimal_zone_pred,0,dopamine,produce,0.65,Gold 2023
+F6,SSRI,P1:endorphin_proxy,2,beta-endorphin,produce,0.8,Dunbar 2012
+F6,SSRI,f01:synchrony_reward,0,dopamine,produce,0.75,Kokal 2011
+F6,SSRI,f02:social_bonding_index,2,oxytocin,produce,0.7,Ni 2024
+F7,ASAP,F0:beat_when_pred_0_5s,0,dopamine,produce,0.65,Grahn & Brett 2007
+F7,DDSMI,P0:partner_sync,2,oxytocin,produce,0.6,Wohltjen 2023
+F7,HGSIC,M0:groove_index,0,dopamine,produce,0.55,Janata 2012
+F7,SPMC,M0:circuit_flow,0,dopamine,produce,0.7,Grahn & Brett 2007
+F7,VRMSME,P0:motor_drive,0,dopamine,produce,0.7,Li 2025
+F8,CDMR,P0:mismatch_signal,0,glutamate,produce,0.7,Fong 2020
+F8,ECT,f04:flexibility_index,0,BDNF,produce,0.65,Wu-Chung 2025
+F8,EDNR,f01:within_connectivity,0,BDNF,produce,0.7,Leipold 2021
+F8,EDNR,f04:expertise_signature,0,Glutamate,produce,0.65,Papadaki 2023
+F8,ESME,M0:mmn_expertise_function,0,glutamate,produce,0.7,Yu et al. 2015
+F8,SLEE,f02:detection_accuracy,0,acetylcholine,produce,0.7,Paraskevopoulos 2022
+F8,SLEE,F0:next_probability,0,dopamine,produce,0.65,Carbajal & Malmierca 2018
+F8,TSCP,f03:plasticity_magnitude,0,acetylcholine,produce,0.7,Whiteford 2025
+F8,TSCP,F1:cortical_enhancement_pred,0,BDNF,produce,0.65,Leipold 2021

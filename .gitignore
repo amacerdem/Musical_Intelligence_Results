@@ -1,0 +1,45 @@
+# Heavy data — vendored separately (Zenodo / R2)
+# 141 GB MI engine pre-compute (per_frame .npz feature caches)
+engine_outputs/
+
+# 702 MB ds002725 mech×region BOLD intermediates + MI features
+datasets/paper-anchors/mech-region/
+
+# Non-audio dataset metadata (3 GB; vendored separately due to size)
+datasets/emotion/chillsdb/
+datasets/emotion/TenseMusic/
+datasets/emotion/PMEmo/
+datasets/emotion/eerola_film/
+datasets/emotion/emotify/
+
+# Raw audio (license-restricted; not vendored here)
+*.wav
+*.mp3
+*.flac
+*.ogg
+*.m4a
+
+# MI engine pre-compute artefacts
+*.npz
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+
+# macOS
+.DS_Store
+
+# Tmp / backup
+*.tmp
+*.bak
+*.swp
+*.swo
+*~
+
+# Editor
+.vscode/
+.idea/

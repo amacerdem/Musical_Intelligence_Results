@@ -1,0 +1,46 @@
+{
+  "pinned_commit": "318eb2f529d7103e8b7d80b01228357fdc4e0217",
+  "pinned_date": "2026-05-08",
+  "pinned_repo": "Science",
+  "engine_path": "Science/Musical_Intelligence",
+  "vendored_path": "engine/Musical_Intelligence",
+  "rationale": "Paper-validated canonical engine. Commit 318eb2f is the most recent commit in Science/.git that touches Musical_Intelligence/; it removed the decorative brain/dimensions (12D Flow) module that was never validated against the paper. Engine source on disk at this HEAD = the engine the paper's experimental claims were measured against. V-Reproduction phases reproduce every paper claim against this same engine state.",
+  "content_aggregate_sha256": "482ade45c50f5d3bf5c90c122e495b2c3230e6e6edc6542f72f22e3b5da37f88",
+  "content_aggregate_method": "find <path>/Musical_Intelligence -type f -name '*.py' -not -path '*/__pycache__/*' | sort | xargs shasum -a 256 | awk '{print $1}' | shasum -a 256 | awk '{print $1}'",
+  "verification": {
+    "frame_rate_hz": 172.27,
+    "mel_bins": 128,
+    "r3_dim": 97,
+    "h3_horizons": 32,
+    "h3_morphs": 24,
+    "h3_laws": 3,
+    "c3_mechanisms": 89,
+    "c3_beliefs_f1_f8": 121,
+    "c3_beliefs_full_registry": 131,
+    "ram_regions": 26,
+    "region_links": 529,
+    "neuro_links": 48,
+    "n_python_files": 852,
+    "brain_dimensions_removed": true
+  },
+  "engine_history": [
+    {
+      "commit": "c145af1",
+      "summary": "feat: add Musical Intelligence engine (93K LOC, 856 Python files)",
+      "note": "Initial engine import."
+    },
+    {
+      "commit": "5fd40c9",
+      "summary": "feat(MI pipeline): expose ram + neuro + mechanisms in run() return dict"
+    },
+    {
+      "commit": "9ad9d70",
+      "summary": "feat(V2): Final-Verdict v10.0.0 lock + Divan-Figure-Suggestion sample set"
+    },
+    {
+      "commit": "318eb2f",
+      "summary": "chore(engine): remove brain/dimensions (12D Flow) — decorative, never validated",
+      "note": "PINNED: this is the canonical paper-validated engine state. 4 .py files removed (brain/dimensions/). Total: 856 → 852 .py files."
+    }
+  ]
+}

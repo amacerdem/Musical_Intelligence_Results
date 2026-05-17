@@ -1,0 +1,121 @@
+{
+  "sub-01": {
+    "status": "ok",
+    "reason": null,
+    "tr_start": 740,
+    "anchor_r": 0.4659300772582792,
+    "n_trs_mendelssohn": 80
+  },
+  "sub-02": {
+    "status": "ok",
+    "reason": null,
+    "tr_start": 817,
+    "anchor_r": 0.6046635828498784,
+    "n_trs_mendelssohn": 80
+  },
+  "sub-03": {
+    "status": "ok",
+    "reason": null,
+    "tr_start": 702,
+    "anchor_r": 0.42946202872108846,
+    "n_trs_mendelssohn": 80
+  },
+  "sub-05": {
+    "status": "ok",
+    "reason": null,
+    "tr_start": 841,
+    "anchor_r": 0.5386785197032952,
+    "n_trs_mendelssohn": 80
+  },
+  "sub-06": {
+    "status": "ok",
+    "reason": null,
+    "tr_start": 689,
+    "anchor_r": 0.4843698459633702,
+    "n_trs_mendelssohn": 80
+  },
+  "sub-07": {
+    "status": "ok",
+    "reason": null,
+    "tr_start": 668,
+    "anchor_r": 0.44414184914504806,
+    "n_trs_mendelssohn": 80
+  },
+  "sub-08": {
+    "status": "ok",
+    "reason": null,
+    "tr_start": 324,
+    "anchor_r": 0.41016770549355286,
+    "n_trs_mendelssohn": 80
+  },
+  "sub-09": {
+    "status": "ok",
+    "reason": null,
+    "tr_start": 0,
+    "anchor_r": 0.684296407115953,
+    "n_trs_mendelssohn": 80
+  },
+  "sub-11": {
+    "status": "ok",
+    "reason": null,
+    "tr_start": 666,
+    "anchor_r": 0.409665535298681,
+    "n_trs_mendelssohn": 80
+  },
+  "sub-12": {
+    "status": "ok",
+    "reason": null,
+    "tr_start": 320,
+    "anchor_r": 0.6284244574064591,
+    "n_trs_mendelssohn": 80
+  },
+  "sub-13": {
+    "status": "ok",
+    "reason": null,
+    "tr_start": 548,
+    "anchor_r": 0.4298668843602174,
+    "n_trs_mendelssohn": 80
+  },
+  "sub-14": {
+    "status": "ok",
+    "reason": null,
+    "tr_start": 678,
+    "anchor_r": 0.4935568795391737,
+    "n_trs_mendelssohn": 80
+  },
+  "sub-15": {
+    "status": "ok",
+    "reason": null,
+    "tr_start": 172,
+    "anchor_r": 0.3509687101400532,
+    "n_trs_mendelssohn": 80
+  },
+  "sub-17": {
+    "status": "ok",
+    "reason": null,
+    "tr_start": 813,
+    "anchor_r": 0.42323064047285736,
+    "n_trs_mendelssohn": 80
+  },
+  "sub-18": {
+    "status": "ok",
+    "reason": null,
+    "tr_start": 1,
+    "anchor_r": 0.49268042440822946,
+    "n_trs_mendelssohn": 80
+  },
+  "sub-19": {
+    "status": "ok",
+    "reason": null,
+    "tr_start": 0,
+    "anchor_r": 0.3903953790832852,
+    "n_trs_mendelssohn": 80
+  },
+  "sub-20": {
+    "status": "ok",
+    "reason": null,
+    "tr_start": 215,
+    "anchor_r": 0.44770834953265304,
+    "n_trs_mendelssohn": 80
+  }
+}

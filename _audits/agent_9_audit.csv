@@ -1,0 +1,214 @@
+constant_id,file_path,line_number,name,value,kind,category,reason,citation,verification_method,verification_outcome,verification_source,confidence,escalation_flag,notes
+A9_0001,brain/beliefs.py,54,normalize_mechanism_outputs.pct_lo,2.0,kw-default,E,"Lower percentile bound (2nd) for per-mechanism robust contrast stretching; engineering choice for outlier-robust normalization. Not in any cited primary source.",NONE,inspection,N/A,,HIGH,FALSE,E3 threshold
+A9_0002,brain/beliefs.py,55,normalize_mechanism_outputs.pct_hi,98.0,kw-default,E,"Upper percentile bound (98th) for per-mechanism robust contrast stretching; engineering choice symmetric to pct_lo.",NONE,inspection,N/A,,HIGH,FALSE,E3 threshold
+A9_0003,brain/beliefs.py,56,normalize_mechanism_outputs.min_range,0.01,kw-default,E,"Minimum dynamic range threshold below which percentile-stretching is skipped; engineering numerical guard.",NONE,inspection,N/A,,HIGH,FALSE,E3 threshold/numerical guard
+A9_0004,brain/beliefs.py,73,np.clip.arg1,0.0,call-posarg1,D,"Lower clip endpoint at 0.0 for output of percentile-stretch — identity placeholder for unit-interval lower bound.",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER
+A9_0005,brain/beliefs.py,73,np.clip.arg2,1.0,call-posarg2,D,"Upper clip endpoint at 1.0 — identity placeholder for unit-interval upper bound.",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER
+A9_0006,brain/beliefs.py,101,T,0,module-assign,D,"Initial accumulator for time-frame count; trivial zero initialization.",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER: init sentinel
+A9_0007,brain/beliefs.py,136,<expr-L>,1.0,expr-literal,D,"Inversion expression ""1.0 - dim_val"" when belief source dim is ""1-""-prefixed; identity for unit-interval flip.",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER: unit-interval inversion
+A9_0008,brain/beliefs.py,139,np.clip.arg1,0.0,call-posarg1,D,"Lower clip endpoint at 0.0 for final belief value; identity placeholder.",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER
+A9_0009,brain/beliefs.py,139,np.clip.arg2,1.0,call-posarg2,D,"Upper clip endpoint at 1.0 for final belief value; identity placeholder.",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER
+A9_0010,brain/executor.py,35,_NUM_REGIONS,26,module-assign,C,"RAM cardinality: 12 cortical + 9 subcortical + 5 brainstem = 26 anatomical regions. Structural topology.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: RAM region count
+A9_0011,brain/executor.py,36,_NUM_NEURO,4,module-assign,C,"Neurochemical channel count (DA, NE, OPI, 5HT). Structural type-signature.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: neurochem channel count
+A9_0012,brain/executor.py,134,torch.clamp.min,0.0,call-kw,D,"ReLU lower bound (no negative region activation) — identity placeholder for non-negativity floor.",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER: ReLU floor
+A9_0013,contracts/bases/base_spectral_group.py,60,OUTPUT_DIM,0,ann-assign,D,"ABC default annotation for OUTPUT_DIM (overridden in subclass; validate() asserts > 0). Trivial placeholder.",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER: ABC default
+A9_0014,contracts/bases/base_spectral_group.py,61,INDEX_RANGE,"[0, 0]",ann-assign,D,"ABC default INDEX_RANGE (0,0) → empty range; overridden in subclass.",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER: ABC default
+A9_0015,contracts/bases/base_spectral_group.py,62,STAGE,1,ann-assign,C,"Default DAG stage = 1 (compute-from-mel-only). Structural classification for R³ DAG ordering.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: DAG stage index
+A9_0016,contracts/bases/base_spectral_group.py,112,compute_from_audio.sr,44100,arg-default,C,"Default sample rate 44.1 kHz — CD-quality audio standard (IEC 60908 / Red Book). Engine-canonical.",IEC 60908 (1987),websearch-google,POSITIVE,"IEC 60908 CD-DA standard, ubiquitous audio engineering canon",HIGH,FALSE,STRUCTURAL: SP canonical sample rate
+A9_0017,contracts/bases/belief.py,57,BASELINE,0.5,ann-assign,D,"Default belief baseline = unit-interval midpoint (0.5). Neutral prior for [0,1]-valued beliefs.",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER: midpoint as neutral prior
+A9_0018,contracts/bases/belief.py,58,PRECISION_SCALE,12.0,ann-assign,E,"Tanh denominator scaling in π_pred = tanh(...·fill/12) — engineering choice for shape of precision saturation. Not in Friston 2005 or cited sources.",NONE,inspection,N/A,,HIGH,FALSE,E5 operational scaling (precision tanh denominator)
+A9_0019,contracts/bases/belief.py,59,PRECISION_WINDOW,16,ann-assign,E,"Rolling PE buffer window = 16 frames (~93 ms at 172.27 Hz). Engineering choice for prediction-history horizon.",NONE,inspection,N/A,,HIGH,FALSE,E3 buffer-window size
+A9_0020,contracts/bases/belief.py,127,torch.full.arg1,0.5,call-posarg1,D,"Fallback precision = 0.5 (neutral midpoint) when no PRECISION_H3_TUPLES defined.",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER: midpoint default
+A9_0021,contracts/bases/belief.py,139,torch.full.arg1,0.5,call-posarg1,D,"Fallback precision = 0.5 when H³ stabilities empty.",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER: midpoint fallback
+A9_0022,contracts/bases/belief.py,147,<expr-L>,6.0,expr-literal,E,"Sigmoid slope in precision = σ(6·(0.5 - x·3)). Engineering choice for steepness (docstring §145 labels as ""scale"" choice).",NONE,inspection,N/A,,HIGH,FALSE,E5 operational sigmoid slope
+A9_0023,contracts/bases/belief.py,147,<expr-L>,0.5,expr-literal,D,"Sigmoid midpoint in σ(6·(0.5 - x·3)) — identity-form unit-interval center.",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER: midpoint at 0.5
+A9_0024,contracts/bases/belief.py,147,<expr-R>,3.0,expr-literal,E,"Variability multiplier in σ(6·(0.5 - x·3)) — engineering scaling for H³ M2 range mapping (docstring §144).",NONE,inspection,N/A,,HIGH,FALSE,E5 operational scaling factor
+A9_0025,contracts/bases/belief.py,148,precision.clamp.arg0,0.05,call-posarg0,E,"Observation-precision lower clamp 0.05 — engineering safeguard preventing zero precision.",NONE,inspection,N/A,,HIGH,FALSE,E2 clamp bound
+A9_0026,contracts/bases/belief.py,148,precision.clamp.arg1,0.95,call-posarg1,E,"Observation-precision upper clamp 0.95 — engineering safeguard symmetric to lower clamp.",NONE,inspection,N/A,,HIGH,FALSE,E2 clamp bound
+A9_0027,contracts/bases/belief.py,172,<cmp-threshold>,3,expr-literal,E,"PE-buffer warmup threshold (fewer than 3 frames → fallback). Engineering choice.",NONE,inspection,N/A,,HIGH,FALSE,E3 warmup threshold
+A9_0028,contracts/bases/belief.py,173,torch.tensor.arg0,[0.5],call-posarg0,D,"Defensive fallback sample tensor [0.5] when pe_buffer empty — neutral midpoint.",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER: defensive midpoint
+A9_0029,contracts/bases/belief.py,174,torch.full.arg1,0.5,call-posarg1,D,"Fallback precision midpoint 0.5 when warmup unsatisfied.",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER
+A9_0030,contracts/bases/belief.py,179,<expr-L>,1.0,expr-literal,D,"Numerator in stability = 1.0/(mean(|PE|) + 0.1) — multiplicative identity.",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER: reciprocal identity
+A9_0031,contracts/bases/belief.py,179,<expr-R>,0.1,expr-literal,E,"Denominator-floor epsilon 0.1 in stability formula. Engineering numerical guard (bounds stability ≤ 10).",NONE,inspection,N/A,,HIGH,FALSE,E1 numerical stability epsilon (chosen value)
+A9_0032,contracts/bases/belief.py,180,<expr-L>,1.0,expr-literal,D,"Numerator in consistency = 1.0/(std(|PE|) + 0.1) — multiplicative identity.",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER
+A9_0033,contracts/bases/belief.py,180,<expr-R>,0.1,expr-literal,E,"Denominator-floor epsilon 0.1 in consistency formula. Same shape as line 179.",NONE,inspection,N/A,,HIGH,FALSE,E1 numerical stability epsilon
+A9_0034,contracts/bases/belief.py,181,<expr-L>,0.5,expr-literal,E,"tau_factor = 0.5 + τ — engineering offset shifting per-belief τ into positive range. Author-selected.",NONE,inspection,N/A,,HIGH,FALSE,E4 mixer offset
+A9_0035,contracts/bases/belief.py,203,<expr-R>,1e-08,expr-literal,E,"Numerical-stability epsilon 1e-8 in Bayesian gain denominator: gain = π_obs/(π_obs+π_pred+ε).",NONE,inspection,N/A,,HIGH,FALSE,E1 numerical stability epsilon
+A9_0036,contracts/bases/belief.py,204,raw_gain.clamp.arg0,0.2,call-posarg0,E,"Bayesian gain lower clamp 0.20 — explicit engineering safeguard (context_brief §2 + docstring §192-194). Documented as engineering not calibrated.",NONE,inspection,N/A,,HIGH,FALSE,E2 explicit safeguard clamp (Bayesian gain floor)
+A9_0037,contracts/bases/belief.py,204,raw_gain.clamp.arg1,0.8,call-posarg1,E,"Bayesian gain upper clamp 0.80 — explicit engineering safeguard. Documented as engineering not calibrated.",NONE,inspection,N/A,,HIGH,FALSE,E2 explicit safeguard clamp (Bayesian gain ceiling)
+A9_0038,contracts/bases/belief.py,219,(pred + gain * pe).clamp.arg0,0.0,call-posarg0,D,"Posterior lower clip 0.0 — unit-interval identity.",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER
+A9_0039,contracts/bases/belief.py,219,(pred + gain * pe).clamp.arg1,1.0,call-posarg1,D,"Posterior upper clip 1.0 — unit-interval identity.",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER
+A9_0040,contracts/bases/belief.py,301,(pred_t + gain_t * pe_t).clamp.arg0,0.0,call-posarg0,D,"Per-frame posterior lower clip 0.0 — identity placeholder.",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER
+A9_0041,contracts/bases/belief.py,301,(pred_t + gain_t * pe_t).clamp.arg1,1.0,call-posarg1,D,"Per-frame posterior upper clip 1.0 — identity placeholder.",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER
+A9_0042,contracts/bases/nucleus.py,68,PROCESSING_DEPTH,0,ann-assign,C,"Default depth-0 for Relay role. Structural ordering integer in 0→5 depth hierarchy.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: depth-ordering integer
+A9_0043,contracts/bases/nucleus.py,158,PROCESSING_DEPTH,3,class-attr,C,"Integrator depth = 3 in depth-ordered hierarchy.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: depth-ordering integer
+A9_0044,contracts/bases/nucleus.py,187,PROCESSING_DEPTH,4,class-attr,C,"Hub depth = 4 in depth-ordered hierarchy.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: depth-ordering integer
+A9_0045,contracts/dataclasses/__init__.py,99,DA,0,module-assign,C,"Dopamine channel index = 0 in (B,T,4) neuro tensor. Structural index.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: channel index
+A9_0046,contracts/dataclasses/__init__.py,100,NE,1,module-assign,C,"Norepinephrine channel index = 1.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: channel index
+A9_0047,contracts/dataclasses/__init__.py,101,OPI,2,module-assign,C,"Opioid channel index = 2.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: channel index
+A9_0048,contracts/dataclasses/__init__.py,102,_5HT,3,module-assign,C,"Serotonin channel index = 3.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: channel index
+A9_0049,contracts/dataclasses/__init__.py,103,NUM_CHANNELS,4,module-assign,C,"Total neurochem channels = 4 (DA, NE, OPI, 5HT). Structural cardinality.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: channel cardinality
+A9_0050,contracts/dataclasses/__init__.py,141,<cmp-threshold>,5,expr-literal,C,"Arg-count branch ""if len(args) == 5"" in NeuroLink.__init__. Structural API-shape constant.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: arg-count discriminator
+A9_0051,contracts/dataclasses/__init__.py,150,<cmp-threshold>,4,expr-literal,C,"Arg-count branch ""elif len(args) >= 4"". Structural API-shape constant.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: arg-count discriminator
+A9_0052,contracts/dataclasses/__init__.py,162,<cmp-threshold>,2,expr-literal,C,"Positional-arg index 2 (weight) in kwargs-fallback. Structural index.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: positional-arg index
+A9_0053,contracts/dataclasses/__init__.py,163,<cmp-threshold>,3,expr-literal,C,"Positional-arg index 3 (citation) in kwargs-fallback. Structural index.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: positional-arg index
+A9_0054,data/augmentation.py,39,__init__.freq_mask_param,20,arg-default,E,"SpecAugment max frequency bands to mask (Park 2019). Engine choice; Park 2019 publishes F=27 LibriSpeech. Training utility, not engine runtime.",Park et al. 2019,websearch-google,PARTIAL,"Park 2019 SpecAugment F=27 LibriSpeech; 20 is engine choice",HIGH,FALSE,E3 training hyperparameter; not engine runtime
+A9_0055,data/augmentation.py,40,__init__.time_mask_param,50,arg-default,E,"SpecAugment max time frames to mask. Engine choice differs from Park 2019 T=100. Training-only.",Park et al. 2019,websearch-google,PARTIAL,"Park 2019 T=100 LibriSpeech; 50 is engine choice",HIGH,FALSE,E3 training hyperparameter
+A9_0056,data/augmentation.py,41,__init__.n_freq_masks,2,arg-default,E,"SpecAugment number of frequency masks. Matches Park 2019 mF=2.",Park et al. 2019,websearch-google,PARTIAL,Park 2019 mF=2,HIGH,FALSE,E3 training hyperparameter
+A9_0057,data/augmentation.py,42,__init__.n_time_masks,2,arg-default,E,"SpecAugment number of time masks. Matches Park 2019 mT=2 common config.",Park et al. 2019,websearch-google,PARTIAL,Park 2019 mT=2,HIGH,FALSE,E3 training hyperparameter
+A9_0058,data/augmentation.py,62,<cmp-threshold>,2,expr-literal,C,"Tensor rank check ""mel.dim() == 2"". Structural discriminator.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: tensor-rank check
+A9_0059,data/augmentation.py,70,torch.randint.arg2,[1],call-posarg2,C,"torch.randint output shape (1,). Structural shape spec.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: shape spec
+A9_0060,data/augmentation.py,71,torch.randint.arg2,[1],call-posarg2,C,"torch.randint output shape (1,). Structural.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: shape spec
+A9_0061,data/augmentation.py,72,"mel[:, f0:f0 + f, :]",0.0,module-assign,D,"Mel frequency-mask fill = 0.0. Identity floor for SpecAugment mask.",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER: mask fill
+A9_0062,data/augmentation.py,75,torch.randint.arg2,[1],call-posarg2,C,"torch.randint shape (1,). Structural.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: shape spec
+A9_0063,data/augmentation.py,76,torch.randint.arg2,[1],call-posarg2,C,"torch.randint shape (1,). Structural.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: shape spec
+A9_0064,data/augmentation.py,77,"mel[:, :, t0:t0 + t]",0.0,module-assign,D,"Mel time-mask fill = 0.0. Identity placeholder.",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER: mask fill
+A9_0065,data/augmentation.py,93,__init__.std,0.01,arg-default,E,"GaussianNoise default std=0.01. Engine training augmentation magnitude.",NONE,inspection,N/A,,HIGH,FALSE,E5 training hyperparameter
+A9_0066,data/augmentation.py,99,(x + noise).clamp.arg0,0.0,call-posarg0,D,"Post-noise clamp lower bound. Unit-interval identity.",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER
+A9_0067,data/augmentation.py,99,(x + noise).clamp.arg1,1.0,call-posarg1,D,"Post-noise clamp upper bound. Unit-interval identity.",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER
+A9_0068,data/augmentation.py,113,__init__.min_gain,0.8,arg-default,E,"RandomGain minimum scale 0.8. Engine training augmentation, symmetric to max_gain about 1.0.",NONE,inspection,N/A,,HIGH,FALSE,E5 training hyperparameter
+A9_0069,data/augmentation.py,113,__init__.max_gain,1.2,arg-default,E,"RandomGain maximum scale 1.2. Symmetric to min_gain.",NONE,inspection,N/A,,HIGH,FALSE,E5 training hyperparameter
+A9_0070,data/augmentation.py,122,(x * gain).clamp.arg0,0.0,call-posarg0,D,"Post-gain clamp lower bound. Identity.",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER
+A9_0071,data/augmentation.py,122,(x * gain).clamp.arg1,1.0,call-posarg1,D,"Post-gain clamp upper bound. Identity.",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER
+A9_0072,data/augmentation.py,146,__init__.noise_std,0.005,arg-default,E,"MIAugmentationPipeline default noise_std=0.005. Engine training hyperparameter.",NONE,inspection,N/A,,HIGH,FALSE,E5 training hyperparameter
+A9_0073,data/collator.py,32,__init__.pad_value,0.0,arg-default,D,"MICollator default padding value 0.0 — standard zero-pad identity for variable-length batches. citation_author=ding is AST walker false-positive (R8). Training-only.",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER: zero-pad default; R8 AST false-positive
+A9_0074,data/mi_dataset.py,48,__init__.segment_frames,2048,arg-default,E,"MIDataset default segment 2048 frames (~12s at 172.27 Hz). Engine training segment size.",NONE,inspection,N/A,,HIGH,FALSE,E5 training segment length
+A9_0075,data/mi_dataset.py,90,offset,0,module-assign,D,"Default offset = 0 when not training or segment fits. Trivial init.",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER: init sentinel
+A9_0076,data/precompute_cache.py,149,json.dumps.indent,2,call-kw,E,"JSON pretty-print indent = 2. Standard formatting.",NONE,inspection,N/A,,HIGH,FALSE,E5 JSON formatting
+A9_0077,data/preprocessing.py,19,SAMPLE_RATE,44100,module-assign,C,"Canonical 44.1 kHz (IEC 60908 CD-DA). Module docstring §5 labels these as ""canonical MI parameters"".",IEC 60908 (1987),websearch-google,POSITIVE,CD-DA 44.1 kHz standard,HIGH,FALSE,STRUCTURAL: SP canonical sample rate
+A9_0078,data/preprocessing.py,20,HOP_LENGTH,256,module-assign,C,"Mel hop 256 samples → frame rate ~172.27 Hz at 44.1 kHz. Power-of-2 STFT canonical hop.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: STFT hop length
+A9_0079,data/preprocessing.py,21,N_MELS,128,module-assign,C,"Mel filterbank size 128. Power-of-2 canonical.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: mel filterbank size
+A9_0080,data/preprocessing.py,22,N_FFT,2048,module-assign,C,"STFT window 2048 (~46ms at 44.1 kHz). Power-of-2 canonical.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: FFT size
+A9_0081,data/preprocessing.py,101,torchaudio.transforms.MelSpectrogram.power,2.0,call-kw,C,"Mel-spectrogram power=2.0 → power-spectrogram (|X|²). Mathematical identity.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: power-spec exponent (math identity)
+A9_0082,data/preprocessing.py,108,"mel.amax(dim=(-2, -1), keepdim=True).clamp.min",1e-08,call-kw,E,"Numerical-stability epsilon 1e-8 in log-normalize. Engineering guard.",NONE,inspection,N/A,,HIGH,FALSE,E1 numerical epsilon
+A9_0083,data/preprocessing.py,108,mel.amax.dim,"[-2, -1]",call-kw,C,"Reduction dims (-2,-1) = (mel-bin, time). Structural axis spec.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: axis spec
+A9_0084,scripts/cleanup_dataset.py,186,subprocess.run.timeout,30,call-kw,E,"subprocess timeout 30s for yt-dlp metadata. CLI utility, not engine runtime.",NONE,inspection,N/A,,HIGH,FALSE,E3 timeout (CLI; unreachable from engine)
+A9_0085,scripts/cleanup_dataset.py,202,subprocess.run.timeout,300,call-kw,E,"subprocess timeout 5min for yt-dlp download.",NONE,inspection,N/A,,HIGH,FALSE,E3 timeout (CLI)
+A9_0086,scripts/cleanup_dataset.py,230,<expr-L>,1024,expr-literal,C,"Byte unit conversion 1024 (binary KiB). Structural.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: binary unit
+A9_0087,scripts/cleanup_dataset.py,230,<expr-R>,1024,expr-literal,C,"Byte unit conversion 1024 → MiB. Structural.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: binary unit
+A9_0088,scripts/cleanup_dataset.py,234,<expr-L>,1024,expr-literal,C,"Byte unit 1024. citation_author=ding false-positive (R8).",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: binary unit (R8 false-positive)
+A9_0089,scripts/cleanup_dataset.py,234,<expr-R>,1024,expr-literal,C,"Byte unit 1024. (R8 false-positive).",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: binary unit (R8)
+A9_0090,scripts/cleanup_dataset.py,240,<expr-L>,1024,expr-literal,C,"Byte unit 1024.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: binary unit
+A9_0091,scripts/cleanup_dataset.py,240,<expr-R>,1024,expr-literal,C,"Byte unit 1024.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: binary unit
+A9_0092,scripts/cleanup_dataset.py,251,freed,0,module-assign,D,"Disk-space-freed accumulator init = 0.",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER: accumulator init
+A9_0093,scripts/cleanup_dataset.py,265,<expr-L>,1024,expr-literal,C,"Byte unit 1024.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: binary unit
+A9_0094,scripts/cleanup_dataset.py,265,<expr-R>,3,expr-literal,C,"Power 3 → 1024**3 = GiB. Structural unit exponent.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: unit exponent (GiB)
+A9_0095,scripts/cleanup_dataset.py,281,json.dump.indent,2,call-kw,E,"JSON indent = 2. citation_author=ding false-positive (R8).",NONE,inspection,N/A,,HIGH,FALSE,E5 JSON formatting; R8 false-positive
+A9_0096,scripts/cleanup_dataset.py,323,<expr-L>,1024,expr-literal,C,"Byte unit 1024. citation_author=large false-positive (R8).",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: binary unit (R8 false-positive)
+A9_0097,scripts/cleanup_dataset.py,323,<expr-R>,1024,expr-literal,C,"Byte unit 1024. (R8 false-positive).",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: binary unit (R8)
+A9_0098,scripts/cleanup_dataset.py,325,<expr-L>,1024,expr-literal,C,"Byte unit 1024.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: binary unit
+A9_0099,scripts/cleanup_dataset.py,325,<expr-R>,1024,expr-literal,C,"Byte unit 1024.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: binary unit
+A9_0100,scripts/cleanup_dataset.py,336,<expr-L>,1024,expr-literal,C,"Byte unit 1024.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: binary unit
+A9_0101,scripts/cleanup_dataset.py,336,<expr-R>,3,expr-literal,C,"Power 3 → 1024**3 = GiB.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: unit exponent
+A9_0102,scripts/download_playlist.py,275,urllib.request.urlopen.timeout,15,call-kw,E,"HTTP timeout 15s for Spotify oEmbed API. citation_author=deco AST false-positive (R8). CLI utility.",NONE,inspection,N/A,,HIGH,FALSE,E3 HTTP timeout; R8 false-positive
+A9_0103,scripts/download_playlist.py,323,json.dump.indent,2,call-kw,E,"JSON indent = 2.",NONE,inspection,N/A,,HIGH,FALSE,E5 JSON formatting
+A9_0104,scripts/download_playlist.py,326,time.sleep.arg0,0.3,call-posarg0,E,"Sleep 0.3s rate-limit between Spotify API calls.",NONE,inspection,N/A,,HIGH,FALSE,E3 rate-limit sleep
+A9_0105,scripts/download_playlist.py,344,subprocess.run.timeout,30,call-kw,E,"subprocess timeout 30s for yt-dlp metadata.",NONE,inspection,N/A,,HIGH,FALSE,E3 timeout
+A9_0106,scripts/download_playlist.py,370,subprocess.run.timeout,300,call-kw,E,"subprocess timeout 5min for yt-dlp download.",NONE,inspection,N/A,,HIGH,FALSE,E3 timeout
+A9_0107,scripts/download_playlist.py,386,parser.add_argument.default,1,call-kw,D,"CLI --start default = 1 (1-based index init).",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER: 1-based CLI default
+A9_0108,scripts/download_playlist.py,452,json.dump.indent,2,call-kw,E,"JSON indent = 2.",NONE,inspection,N/A,,HIGH,FALSE,E5 JSON formatting
+A9_0109,scripts/run_pipeline.py,29,SAMPLE_RATE,44100,module-assign,C,"Canonical 44.1 kHz (IEC 60908). Duplicated for CLI convenience.",IEC 60908 (1987),websearch-google,POSITIVE,CD-DA standard,HIGH,FALSE,STRUCTURAL: SP canonical sample rate
+A9_0110,scripts/run_pipeline.py,30,HOP_LENGTH,256,module-assign,C,"Mel hop 256.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: STFT hop
+A9_0111,scripts/run_pipeline.py,31,N_MELS,128,module-assign,C,"Mel filterbank 128.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: mel size
+A9_0112,scripts/run_pipeline.py,32,N_FFT,2048,module-assign,C,"STFT window 2048.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: FFT size
+A9_0113,scripts/run_pipeline.py,37,_ROLE_TO_DEPTH,"{'relay':0,'encoder':1,'associator':2,'integrator':3,'hub':4}",module-assign,C,"Role-to-depth mapping dict matching contracts/bases/nucleus.py depth ordering.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: nucleus role depths
+A9_0114,scripts/run_pipeline.py,96,torchaudio.transforms.MelSpectrogram.power,2.0,call-kw,C,"Power-spec exponent 2.0. Math identity.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: power-spec exponent
+A9_0115,scripts/run_pipeline.py,104,run.offset,0.0,kw-default,D,"Default audio offset 0.0s. Identity init.",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER: start-offset
+A9_0116,scripts/run_pipeline.py,138,"mel.amax(dim=(-2, -1), keepdim=True).clamp.min",1e-08,call-kw,E,"Numerical-stability epsilon.",NONE,inspection,N/A,,HIGH,FALSE,E1 numerical epsilon
+A9_0117,scripts/run_pipeline.py,138,mel.amax.dim,"[-2, -1]",call-kw,C,"Reduction axes (-2,-1). Structural axis spec.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: axis spec
+A9_0118,scripts/run_pipeline.py,282,<expr-R>,80,expr-literal,E,"Terminal output formatting width 80 columns. Engineering choice.",NONE,inspection,N/A,,HIGH,FALSE,E5 terminal formatting width
+A9_0119,scripts/run_pipeline.py,285,<expr-R>,80,expr-literal,E,"Terminal output width 80.",NONE,inspection,N/A,,HIGH,FALSE,E5 terminal formatting width
+A9_0120,scripts/run_pipeline.py,289,<expr-R>,30,expr-literal,E,"CLI default --duration 30s.",NONE,inspection,N/A,,HIGH,FALSE,E5 CLI default duration
+A9_0121,scripts/run_pipeline.py,290,<expr-L>,30,expr-literal,E,"CLI default --duration 30s.",NONE,inspection,N/A,,HIGH,FALSE,E5 CLI default duration
+A9_0122,scripts/run_pipeline.py,311,parser.add_argument.default,30,call-kw,E,"argparse --duration default 30s.",NONE,inspection,N/A,,HIGH,FALSE,E5 CLI default
+A9_0123,scripts/run_pipeline.py,312,parser.add_argument.default,30,call-kw,E,"argparse --offset default 30s.",NONE,inspection,N/A,,HIGH,FALSE,E5 CLI default
+A9_0124,scripts/runpod_train.py,35,SAMPLE_RATE,44100,module-assign,C,"Canonical 44.1 kHz.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: SP sample rate (training script)
+A9_0125,scripts/runpod_train.py,36,N_MELS,128,module-assign,C,"Mel filterbank 128.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: mel size
+A9_0126,scripts/runpod_train.py,37,HOP_LENGTH,256,module-assign,C,"Mel hop 256.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: STFT hop
+A9_0127,scripts/runpod_train.py,38,N_FFT,2048,module-assign,C,"STFT window 2048.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: FFT size
+A9_0128,scripts/runpod_train.py,70,torchaudio.transforms.MelSpectrogram.power,2.0,call-kw,C,"Power-spec exponent 2.0.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: power-spec exponent
+A9_0129,scripts/runpod_train.py,114,torch.zeros.arg2,637,call-posarg2,C,"H³ dense feature count 637 (97 R³ × 7 horizons × 2 morphs ×...). Structural CLI cardinality.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: H³ dense feature count (CLI)
+A9_0130,scripts/runpod_train.py,170,mel.transpose.arg1,2,call-posarg1,C,"Transpose dim index 2. Structural axis spec.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: axis index
+A9_0131,scripts/runpod_train.py,189,mt.pow.arg0,2,call-posarg0,C,"Power exponent 2 (squared magnitude). Math identity.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: power-spec exponent
+A9_0132,scripts/runpod_train.py,200,<expr-R>,1e-08,expr-literal,E,"Numerical-stability epsilon.",NONE,inspection,N/A,,HIGH,FALSE,E1 numerical epsilon
+A9_0133,scripts/runpod_train.py,201,(torch.arange(N device=device).float().unsqueeze(0).unsqueeze(0) / N - centroid).pow.arg0,2,call-posarg0,C,"Power exponent 2 in (x-centroid)² spread. Math identity for variance.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: variance exponent
+A9_0134,scripts/runpod_train.py,201,<expr-R>,1e-08,expr-literal,E,"Numerical-stability epsilon.",NONE,inspection,N/A,,HIGH,FALSE,E1 numerical epsilon
+A9_0135,scripts/runpod_train.py,202,<expr-R>,1e-08,expr-literal,E,"Numerical-stability epsilon.",NONE,inspection,N/A,,HIGH,FALSE,E1 numerical epsilon
+A9_0136,scripts/runpod_train.py,207,<expr-L>,0.85,expr-literal,E,"Spectral rolloff threshold 0.85 (fraction of energy below cutoff). MIR-standard convention (librosa default 0.85); CLI training-script reimplementation.",Tzanetakis & Cook 2002,websearch-google,PARTIAL,"Spectral rolloff 0.85 MIR-convention; librosa default",MEDIUM,TRUE,R9: form-LIT (MIR convention) coeff-author OK (matches widespread default 0.85); E with PARTIAL
+A9_0137,scripts/runpod_train.py,213,<expr-R>,1e-08,expr-literal,E,"Numerical-stability epsilon.",NONE,inspection,N/A,,HIGH,FALSE,E1 numerical epsilon
+A9_0138,scripts/runpod_train.py,219,"(mt[:, 1:] - mt[:, :-1]).pow.arg0",2,call-posarg0,C,"Power exponent 2 in L2 spectral flux. Math identity.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: L2-norm exponent
+A9_0139,scripts/runpod_train.py,220,<expr-R>,1e-08,expr-literal,E,"Numerical-stability epsilon.",NONE,inspection,N/A,,HIGH,FALSE,E1 numerical epsilon
+A9_0140,scripts/runpod_train.py,221,<expr-R>,1e-08,expr-literal,E,"Numerical-stability epsilon.",NONE,inspection,N/A,,HIGH,FALSE,E1 numerical epsilon
+A9_0141,scripts/runpod_train.py,224,<expr-L>,1.0,expr-literal,D,"Multiplicative identity in normalization.",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER
+A9_0142,scripts/runpod_train.py,229,<expr-R>,12,expr-literal,C,"Chroma bin count 12 (pitch classes per octave). Music-theory cardinality.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: 12 pitch classes
+A9_0143,scripts/runpod_train.py,230,torch.zeros.arg2,12,call-posarg2,C,"Chroma tensor size 12.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: chroma size
+A9_0144,scripts/runpod_train.py,231,range.arg0,12,call-posarg0,C,"Chroma loop bound 12.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: chroma loop bound
+A9_0145,scripts/runpod_train.py,236,<expr-R>,1e-08,expr-literal,E,"Numerical-stability epsilon.",NONE,inspection,N/A,,HIGH,FALSE,E1 numerical epsilon
+A9_0146,scripts/runpod_train.py,238,math.log.arg0,12,call-posarg0,C,"log(12) for chroma entropy normalization (max entropy of uniform over 12 bins).",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: 12 = chroma cardinality
+A9_0147,scripts/runpod_train.py,238,<expr-R>,1e-08,expr-literal,E,"Numerical-stability epsilon.",NONE,inspection,N/A,,HIGH,FALSE,E1 numerical epsilon
+A9_0148,scripts/runpod_train.py,240,<expr-L>,1.0,expr-literal,D,"Multiplicative identity.",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER
+A9_0149,scripts/runpod_train.py,264,torch.zeros.arg2,6,call-posarg2,C,"6D Tonnetz tensor size (Harte/Sandler/Gasser 2006). Music-theory cardinality.",Harte/Sandler/Gasser 2006,websearch-google,POSITIVE,Harte et al. 2006 ACM MM Tonnetz 6-D,HIGH,FALSE,STRUCTURAL: 6D Tonnetz (LIT-anchored cardinality)
+A9_0150,scripts/runpod_train.py,265,range.arg0,6,call-posarg0,C,"Tonnetz loop bound 6 dims.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: 6D Tonnetz
+A9_0151,scripts/runpod_train.py,266,<expr-R>,12,expr-literal,C,"12 pitch classes in Tonnetz coordinate calculation.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: 12 pitch classes
+A9_0152,scripts/runpod_train.py,266,<expr-R>,6,expr-literal,C,"6D Tonnetz dim index.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: Tonnetz dim
+A9_0153,scripts/runpod_train.py,269,<expr-L>,1.0,expr-literal,D,"Multiplicative identity.",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER
+A9_0154,scripts/runpod_train.py,277,n_mfcc,13,module-assign,C,"MFCC coefficient count = 13 (Davis-Mermelstein 1980 canonical).",Davis & Mermelstein 1980,websearch-google,POSITIVE,"Davis & Mermelstein 1980 IEEE TASSP 28:357; 13-MFCC canonical",HIGH,FALSE,STRUCTURAL: MFCC cardinality (LIT-anchored)
+A9_0155,scripts/runpod_train.py,282,<expr-R>,1e-08,expr-literal,E,"Numerical-stability epsilon.",NONE,inspection,N/A,,HIGH,FALSE,E1 numerical epsilon
+A9_0156,scripts/runpod_train.py,285,<expr-R>,1e-08,expr-literal,E,"Numerical-stability epsilon.",NONE,inspection,N/A,,HIGH,FALSE,E1 numerical epsilon
+A9_0157,scripts/runpod_train.py,287,n_bands,7,module-assign,C,"Octave-spectral-contrast 7 bands (Jiang 2002 ICME).",Jiang et al. 2002,websearch-google,POSITIVE,Jiang et al. 2002 ICME 7-band spectral contrast,HIGH,FALSE,STRUCTURAL: 7-band spectral contrast (LIT-anchored)
+A9_0158,scripts/runpod_train.py,298,mod_rates,"[0.5, 1, 2, 4, 8, 16]",module-assign,E,"Modulation rate ladder octave-spaced 0.5-16 Hz (Houtgast 1985 / Sukittanon 2004). Form-LIT (octave canon) + author-chosen endpoints. R9 boundary.",Houtgast 1985 / Sukittanon 2004,websearch-google,PARTIAL,"Modulation-spec literature octave-spaced; endpoint set engine choice",MEDIUM,TRUE,R9: form-LIT + coeff-author → E with PARTIAL
+A9_0159,scripts/runpod_train.py,308,<expr-R>,1e-08,expr-literal,E,"Numerical-stability epsilon.",NONE,inspection,N/A,,HIGH,FALSE,E1 numerical epsilon
+A9_0160,scripts/runpod_train.py,309,<expr-R>,1e-08,expr-literal,E,"Numerical-stability epsilon.",NONE,inspection,N/A,,HIGH,FALSE,E1 numerical epsilon
+A9_0161,scripts/runpod_train.py,319,<cmp-threshold>,97,expr-literal,C,"R³ dim assertion 97.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: R³ output dim
+A9_0162,scripts/runpod_train.py,321,<cmp-threshold>,97,expr-literal,C,"R³ dim 97.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: R³ output dim
+A9_0163,scripts/runpod_train.py,322,<expr-L>,97,expr-literal,C,"R³ dim 97.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: R³ output dim
+A9_0164,scripts/runpod_train.py,338,horizons,"[4, 8, 16, 32, 64, 128, 256]",module-assign,E,"CLI training horizon ladder (7 power-of-2 horizons). Reduced from canonical 32-horizon engine ladder. R9 boundary.",Hasson 2008 inspiration,websearch-google,PARTIAL,"Hasson 2008 TRW concept; specific 7-horizon set is CLI choice",MEDIUM,TRUE,R9: form-LIT (octave ladder per Hasson 2008) + coeff-author (7-horizon reduction) → E with PARTIAL
+A9_0165,scripts/runpod_train.py,344,<expr-R>,3,expr-literal,C,"H³ laws count = 3 (L0/L1/L2). Structural cardinality.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: H³ laws count
+A9_0166,scripts/runpod_train.py,349,r3.transpose.arg1,2,call-posarg1,C,"Transpose dim index 2.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: axis index
+A9_0167,scripts/runpod_train.py,350,padded.unfold.arg0,2,call-posarg0,C,"Unfold dim index 2.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: axis index
+A9_0168,scripts/runpod_train.py,352,windows.mean(dim=-1).transpose.arg1,2,call-posarg1,C,"Transpose dim index 2.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: axis index
+A9_0169,scripts/runpod_train.py,353,windows.std(dim=-1).transpose.arg1,2,call-posarg1,C,"Transpose dim index 2.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: axis index
+A9_0170,scripts/runpod_train.py,364,n_h3,637,module-assign,C,"H³ dense feature count 637 (CLI training output cardinality). citation_author=chi false-positive (R8).",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: H³ dense feature count; R8 false-positive
+A9_0171,scripts/runpod_train.py,392,<cmp-threshold>,17,expr-literal,C,"Dim-count check 17 for tensor slicing.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: tensor dim check
+A9_0172,scripts/runpod_train.py,393,<expr-L>,17,expr-literal,C,"Dim-count 17.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: tensor dim check
+A9_0173,scripts/runpod_train.py,402,<cmp-threshold>,15,expr-literal,C,"Dim-count check 15.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: tensor dim check
+A9_0174,scripts/runpod_train.py,403,<expr-L>,15,expr-literal,C,"Dim-count 15.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: tensor dim check
+A9_0175,scripts/runpod_train.py,408,<cmp-threshold>,13,expr-literal,C,"Dim-count check 13.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: tensor dim check
+A9_0176,scripts/runpod_train.py,409,<expr-L>,13,expr-literal,C,"Dim-count 13.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: tensor dim check
+A9_0177,scripts/runpod_train.py,414,<cmp-threshold>,14,expr-literal,C,"Dim-count check 14.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: tensor dim check
+A9_0178,scripts/runpod_train.py,415,<expr-L>,14,expr-literal,C,"Dim-count 14.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: tensor dim check
+A9_0179,scripts/runpod_train.py,419,torch.zeros.arg2,16,call-posarg2,E,"Output tensor third-dim 16 = CLI training C³ output dimensionality. Engine output spec.",NONE,inspection,N/A,,HIGH,FALSE,E5 CLI training output spec
+A9_0180,scripts/runpod_train.py,419,<cmp-threshold>,32,expr-literal,C,"Dim-count check 32.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: tensor dim check
+A9_0181,scripts/runpod_train.py,424,<cmp-threshold>,17,expr-literal,C,"Dim-count check 17.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: tensor dim check
+A9_0182,scripts/runpod_train.py,425,<expr-L>,17,expr-literal,C,"Dim-count 17.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: tensor dim check
+A9_0183,scripts/runpod_train.py,430,<cmp-threshold>,14,expr-literal,C,"Dim-count check 14.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: tensor dim check
+A9_0184,scripts/runpod_train.py,431,<expr-L>,14,expr-literal,C,"Dim-count 14.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: tensor dim check
+A9_0185,scripts/runpod_train.py,436,<cmp-threshold>,10,expr-literal,C,"Dim-count check 10.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: tensor dim check
+A9_0186,scripts/runpod_train.py,437,<expr-L>,10,expr-literal,C,"Dim-count 10.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: tensor dim check
+A9_0187,scripts/runpod_train.py,498,<expr-R>,100,expr-literal,E,"Percentage conversion 100 — multiplicative scaling.",NONE,inspection,N/A,,HIGH,FALSE,E5 operational scaling (percent)
+A9_0188,scripts/runpod_train.py,525,round.arg1,4,call-posarg1,E,"JSON output rounding 4 decimals.",NONE,inspection,N/A,,HIGH,FALSE,E5 JSON precision
+A9_0189,scripts/runpod_train.py,528,round.arg1,4,call-posarg1,E,"JSON output rounding 4 decimals.",NONE,inspection,N/A,,HIGH,FALSE,E5 JSON precision
+A9_0190,scripts/runpod_train.py,535,round.arg1,2,call-posarg1,E,"JSON output rounding 2 decimals.",NONE,inspection,N/A,,HIGH,FALSE,E5 JSON precision
+A9_0191,scripts/runpod_train.py,537,round.arg1,2,call-posarg1,E,"JSON output rounding 2 decimals.",NONE,inspection,N/A,,HIGH,FALSE,E5 JSON precision
+A9_0192,scripts/runpod_train.py,545,json.dump.indent,1,call-kw,E,"JSON indent = 1 (compact).",NONE,inspection,N/A,,HIGH,FALSE,E5 JSON formatting
+A9_0193,scripts/runpod_train.py,549,<expr-R>,50,expr-literal,E,"Operational scaling constant 50.",NONE,inspection,N/A,,HIGH,FALSE,E5 operational scaling
+A9_0194,scripts/runpod_train.py,586,parser.add_argument.default,50,call-kw,E,"CLI default 50 (likely epoch count).",NONE,inspection,N/A,,HIGH,FALSE,E5 CLI training default
+A9_0195,scripts/runpod_train.py,587,parser.add_argument.default,256,call-kw,E,"CLI default 256 (likely batch size).",NONE,inspection,N/A,,HIGH,FALSE,E5 CLI training default
+A9_0196,scripts/segment_dataset.py,24,SEGMENT_DURATION,24,module-assign,E,"Audio-segment duration 24s. Engine training segment length matching MI analysis window.",NONE,inspection,N/A,,HIGH,FALSE,E5 training segment length (CLI)
+A9_0197,scripts/segment_dataset.py,25,SAMPLE_RATE,44100,module-assign,C,"Canonical 44.1 kHz.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: SP sample rate
+A9_0198,scripts/segment_dataset.py,26,CHANNELS,1,module-assign,C,"Mono = 1 channel (MI pipeline expects mono).",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: mono channel count
+A9_0199,scripts/segment_dataset.py,52,subprocess.run.timeout,10,call-kw,E,"subprocess timeout 10s for ffprobe.",NONE,inspection,N/A,,HIGH,FALSE,E3 timeout
+A9_0200,scripts/segment_dataset.py,62,<cmp-threshold>,5,expr-literal,E,"Minimum file duration 5s threshold. Engineering threshold.",NONE,inspection,N/A,,HIGH,FALSE,E3 duration threshold
+A9_0201,scripts/segment_dataset.py,74,<cmp-threshold>,12,expr-literal,E,"Maximum segment count or similar threshold 12. CLI gating.",NONE,inspection,N/A,,HIGH,FALSE,E3 threshold
+A9_0202,scripts/segment_dataset.py,81,created,0,module-assign,D,"Accumulator init = 0.",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER: counter init
+A9_0203,scripts/segment_dataset.py,104,subprocess.run.timeout,30,call-kw,E,"subprocess timeout 30s for ffmpeg.",NONE,inspection,N/A,,HIGH,FALSE,E3 timeout
+A9_0204,scripts/segment_dataset.py,159,new_count,0,module-assign,D,"Counter init = 0.",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER
+A9_0205,scripts/segment_dataset.py,160,total_segments,0,module-assign,D,"Counter init = 0.",NONE,inspection,N/A,,HIGH,FALSE,IDENTITY-PLACEHOLDER
+A9_0206,scripts/segment_dataset.py,179,<expr-L>,1024,expr-literal,C,"Byte unit 1024. citation_author=large false-positive (R8).",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: binary unit (R8)
+A9_0207,scripts/segment_dataset.py,179,<expr-R>,1024,expr-literal,C,"Byte unit 1024. (R8 false-positive).",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: binary unit (R8)
+A9_0208,scripts/segment_dataset.py,183,time.sleep.arg0,0.5,call-posarg0,E,"Sleep 0.5s polling interval.",NONE,inspection,N/A,,HIGH,FALSE,E3 sleep interval
+A9_0209,scripts/segment_dataset.py,211,json.dump.indent,2,call-kw,E,"JSON indent = 2.",NONE,inspection,N/A,,HIGH,FALSE,E5 JSON formatting
+A9_0210,scripts/segment_dataset.py,225,json.dump.indent,2,call-kw,E,"JSON indent = 2.",NONE,inspection,N/A,,HIGH,FALSE,E5 JSON formatting
+A9_0211,scripts/segment_dataset.py,236,time.sleep.arg0,30,call-posarg0,E,"Sleep 30s watch-mode polling. citation_author=chi false-positive (R8).",NONE,inspection,N/A,,HIGH,FALSE,E3 polling sleep; R8 false-positive
+A9_0212,scripts/segment_dataset.py,246,<expr-L>,1024,expr-literal,C,"Byte unit 1024.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: binary unit
+A9_0213,scripts/segment_dataset.py,246,<expr-R>,3,expr-literal,C,"Power 3 → GiB.",NONE,inspection,N/A,,HIGH,FALSE,STRUCTURAL: unit exponent

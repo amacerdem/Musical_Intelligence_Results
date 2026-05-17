@@ -1,0 +1,6 @@
+pair_id,test,rho,p_perm,ci_lo,ci_hi,n,anchor_id,pass,note
+P5,loso_4way_lda,0.3983050847457627,,,,118,5,True,"Rich-feature (228D) LOSO across 86 societies; all classifiers: {'logreg': 0.3728813559322034, 'lda': 0.3983050847457627, 'rf': 0.2966101694915254}; best=lda=0.398; threshold=0.375 (1.5× chance)"
+S17,spearman,0.008649912331969609,0.955044955044955,-0.2637194117421641,0.2685213183377816,59,5,,Split-half BCH consistency (proxy: NHS form features deferred)
+S18,loso_F1_F5_only,0.2542372881355932,,,,118,5,,
+S19,spearman,,,,,0,5,,INFEASIBLE: NHS naive-listener context-guess data not in this V4 acquisition
+S20,loso_accuracy_ids,,,,,0,5,,INFEASIBLE per Pivot C: Hilton 2022 audio not acquired

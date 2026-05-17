@@ -1,0 +1,25 @@
+{
+  "experiment": "C17_deney_1_shuffle_null_cross_subject",
+  "seed": 20260424,
+  "n_perm": 500,
+  "top_pct": 5,
+  "subjects": [
+    "sub-001",
+    "sub-003",
+    "sub-004",
+    "sub-005"
+  ],
+  "encoders": [
+    "mi_ram_26d",
+    "mi_naive_26d",
+    "mert_768d",
+    "clap_music_512d",
+    "musicfm_1024d",
+    "muq_1024d",
+    "random_26d",
+    "random_768d"
+  ],
+  "n_tests": 24,
+  "n_pass_bh_q05": 11,
+  "runtime_s": 1028.3760159015656
+}

@@ -1,0 +1,16 @@
+{
+  "experiment": "C17_deney_3_cka_architecture",
+  "h2_distinctness": 0.005521953105926514,
+  "h2_pass": false,
+  "pairs_computed": [
+    "MI-full vs MI-naive (H2 floor)",
+    "MI-full vs MERT",
+    "MI-naive vs MERT",
+    "MI-full vs CLAP",
+    "MI-naive vs CLAP",
+    "MI-full vs Random-26",
+    "MI-full vs Random-768",
+    "MI-naive vs Random-26",
+    "MI-full vs MI-full (sanity)"
+  ]
+}

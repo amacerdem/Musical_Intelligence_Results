@@ -1,0 +1,11 @@
+{
+  "experiment": "C17_deney_3b_cka_vs_bold",
+  "subjects": [
+    "sub-001",
+    "sub-003",
+    "sub-004",
+    "sub-005"
+  ],
+  "mean_delta_cka_full_minus_naive": 0.0012464045853303614,
+  "n_subjects_pass_h2_floor": 0
+}

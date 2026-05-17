@@ -1,0 +1,4 @@
+pair_id,rho,p_perm,ci_lo,ci_hi,n,anchor_id,note,pass
+P3.harmonic,0.4038461538461539,0.0384807596201899,-0.03374263387571457,0.6968337026420821,25,3,"BCH vs Marjieh harmonic ratings, n=25 intervals",
+P3.bonang,0.22076923076923075,0.29035482258870565,-0.21738121467778596,0.6668181515852338,25,3,"BCH vs Marjieh bonang ratings, n=25 intervals",
+P3.composite,0.22076923076923075,,,,0,3,"ρ_bonang=+0.221, ρ_harmonic=+0.404, |bonang|/|harmonic|=0.55; PASS = sign+ AND ρ_bonang≥0.4 AND ratio≥0.5",False

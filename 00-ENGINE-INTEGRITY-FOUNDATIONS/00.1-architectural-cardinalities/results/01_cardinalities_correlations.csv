@@ -1,0 +1,6 @@
+claim_id,label,paper,reproduced,deviation,tolerance,verdict
+C-CARD-09-V2,"Total numeric constants ≈ 16,191 (V2 ast_walk_v3 methodology)","16,191",16222,31,abs <= 50 (0.3%),PASS
+C-CARD-11-STRICT,"HAND-TUNED bucket ≈ 5,534 (strict per-constant classifier)","~5,534",5449,-85,abs <= 200 (4%),PASS
+C-CARD-12-STRUCT,"STRUCTURAL bucket ≈ 6,290","6,290",6179,-111,abs <= 200 (3%),PASS
+C-CARD-13-NULL,"NULL-FALLBACK bucket ≈ 1,381","1,381",1389,8,abs <= 50 (4%),PASS
+C-CARD-14-CALIB,CALIB-BOWLING bucket ≈ 246,246,247,1,abs <= 5 (2%),PASS

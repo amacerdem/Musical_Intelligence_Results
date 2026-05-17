@@ -1,0 +1,19 @@
+{
+  "seed": 20260424,
+  "alpha": 100.0,
+  "n_folds": 5,
+  "top_frac": 0.05,
+  "subjects": [
+    "sub-001",
+    "sub-003",
+    "sub-004"
+  ],
+  "encoders": [
+    "mi_ram_26d",
+    "mi_naive_26d",
+    "mert_768d",
+    "random_26d",
+    "random_768d"
+  ],
+  "runtime_total_s": 15.4
+}

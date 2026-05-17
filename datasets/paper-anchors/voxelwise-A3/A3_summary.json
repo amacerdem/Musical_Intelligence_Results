@@ -1,0 +1,16 @@
+{
+  "engine_head_pin": "5b9aba41",
+  "method": "plain ridge variance partitioning (single global alpha) \u2014 light version of pre-reg banded-ridge",
+  "n_subjects": 4,
+  "median_r2_mi_unique_top5pct": 0.008271548431366682,
+  "n_ci_excludes_0": 4,
+  "n_mert_unique_positive": 4,
+  "n_shared_gt_mi": 3,
+  "P1_median_mi_unique_positive": true,
+  "P2_ci_excludes_0_at_least_2": true,
+  "P3_mert_unique_positive_at_least_3_sanity": true,
+  "P4_shared_gt_mi_at_least_3_sanity": true,
+  "composite_pass": true,
+  "verdict": "PASS",
+  "wall_seconds": 0.13665485382080078
+}

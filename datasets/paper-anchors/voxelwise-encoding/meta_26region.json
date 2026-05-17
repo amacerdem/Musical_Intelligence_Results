@@ -1,0 +1,24 @@
+{
+  "seed": 20260424,
+  "alpha": 100.0,
+  "n_folds": 5,
+  "subjects": [
+    "sub-001",
+    "sub-003",
+    "sub-004",
+    "sub-005"
+  ],
+  "encoders": [
+    "mi_ram_26d",
+    "mi_naive_26d",
+    "mert_768d",
+    "random_26d"
+  ],
+  "bold_source": "/Volumes/SRC-9/SRC Musical Intelligence/Science/V2/reviewer-sims/divan-major-revision-2026-04-22/computing-phase/T-AP-v2-08-nakai/RunPod-Exp-01/ckpt_bold",
+  "atlas_note": "Harvard-Oxford labels + 4mm \u03b3-tier spheres (from RunPod ckpt_bold cache).",
+  "n_runs_per_subject_cached": 15,
+  "n_runs_per_subject_expected": 18,
+  "missing_runs": "Test run-04, run-05, run-06 (60 clips \u00d7 subject = 240 clips short)",
+  "simplification_note": "Local BIDS BOLD truncated for 58/72 runs; native-space 6mm MI-MNI-coord sphere extraction not possible. Used pre-cached HO-atlas ROI timecourses from RunPod as functional equivalent (same 26-channel order).",
+  "runtime_total_s": 1.2
+}

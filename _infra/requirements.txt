@@ -1,0 +1,16 @@
+# V-Reproduction infra requirements.
+#
+# Versions are pinned to those installed at engine HEAD verification
+# (1f0f68e82a764739adae260dd197060931c23ba5, 2026-05-06). When the engine
+# is bumped, re-verify these against `pip show <pkg>` and bump together.
+numpy==2.2.6
+scipy==1.15.3
+scikit-learn==1.7.2
+statsmodels==0.14.6
+nibabel==5.4.0
+nilearn==0.13.1
+matplotlib==3.10.8
+pytest==9.0.2
+jsonschema==4.26.0
+librosa==0.11.0
+himalaya==0.4.10
