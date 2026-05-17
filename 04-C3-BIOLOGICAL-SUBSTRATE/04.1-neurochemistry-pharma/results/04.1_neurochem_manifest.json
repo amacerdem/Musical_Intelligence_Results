@@ -1,0 +1,124 @@
+{
+  "axis_id": "AXIS-5",
+  "axis_name": "Neurochemistry + Pharmacological Cross-Validation",
+  "engine_head": "318eb2f529d7103e8b7d80b01228357fdc4e0217",
+  "seed_registry": {
+    "primary": 2026050703,
+    "bootstrap": null,
+    "permutation": null
+  },
+  "phase_close_date": "2026-05-07",
+  "git_commit_hash": "PENDING_AT_CLOSE",
+  "claims": [
+    {
+      "claim_id": "C-PHARMA-01",
+      "claim_label": "132/132 accumulation tests PASS",
+      "paper_value": "132",
+      "v1_source": "Science/V1/results/neurochemicals/neurochemical_validation.md",
+      "v1_match": "matched verbatim",
+      "tolerance": "regex_anchor",
+      "verdict": "PASS",
+      "iteration_count": 1
+    },
+    {
+      "claim_id": "C-PHARMA-02",
+      "claim_label": "11/11 pharmacological cross-validation",
+      "paper_value": "11/11",
+      "v1_source": "Science/V1/results/neurochemicals/neurochemical_validation.md",
+      "v1_match": "matched verbatim",
+      "tolerance": "regex_anchor",
+      "verdict": "PASS",
+      "iteration_count": 1
+    },
+    {
+      "claim_id": "C-PHARMA-03",
+      "claim_label": "antic_da\u2194caudate \u03c1=+0.933",
+      "paper_value": "0.933",
+      "v1_source": "Science/V1/results/neurochemicals/neurochemical_validation.md",
+      "v1_match": "matched verbatim",
+      "tolerance": "regex_anchor",
+      "verdict": "PASS",
+      "iteration_count": 1
+    },
+    {
+      "claim_id": "C-PHARMA-04",
+      "claim_label": "consum_da\u2194NAcc \u03c1=+0.836",
+      "paper_value": "0.836",
+      "v1_source": "Science/V1/results/neurochemicals/neurochemical_validation.md",
+      "v1_match": "matched verbatim",
+      "tolerance": "regex_anchor",
+      "verdict": "PASS",
+      "iteration_count": 1
+    },
+    {
+      "claim_id": "C-PHARMA-05",
+      "claim_label": "caudate-leads-NAcc 52/56 (93%)",
+      "paper_value": "52/56",
+      "v1_source": "Science/V1/results/neurochemicals/neurochemical_validation.md",
+      "v1_match": "matched verbatim",
+      "tolerance": "regex_anchor",
+      "verdict": "PASS",
+      "iteration_count": 1
+    },
+    {
+      "claim_id": "C-PHARMA-06",
+      "claim_label": "caudate\u2192NAcc temporal lag +0.9 s",
+      "paper_value": "+0.9 s",
+      "v1_source": "Science/V1/results/neurochemicals/neurochemical_validation.md",
+      "v1_match": "matched verbatim",
+      "tolerance": "regex_anchor",
+      "verdict": "PASS",
+      "iteration_count": 1
+    },
+    {
+      "claim_id": "C-PHARMA-07",
+      "claim_label": "Ferreri levodopa>placebo>risperidone",
+      "paper_value": "ordering",
+      "v1_source": "Science/V1/results/neurochemicals/neurochemical_validation.md",
+      "v1_match": "matched verbatim",
+      "tolerance": "regex_anchor",
+      "verdict": "PASS",
+      "iteration_count": 1
+    },
+    {
+      "claim_id": "C-PHARMA-08",
+      "claim_label": "Putkinen 7/7 \u03bc-opioid PET region match",
+      "paper_value": "7/7",
+      "v1_source": "Science/V1/results/neurochemicals/neurochemical_validation.md",
+      "v1_match": "matched verbatim",
+      "tolerance": "regex_anchor",
+      "verdict": "PASS",
+      "iteration_count": 1
+    },
+    {
+      "claim_id": "C-PHARMA-09",
+      "claim_label": "Mallik chills>neutral p=0.044",
+      "paper_value": "p=0.044",
+      "v1_source": "Science/V1/results/neurochemicals/neurochemical_validation.md",
+      "v1_match": "matched verbatim",
+      "tolerance": "regex_anchor",
+      "verdict": "PASS",
+      "iteration_count": 1
+    },
+    {
+      "claim_id": "C-PHARMA-10",
+      "claim_label": "NAcc-leads-caudate 0/56 (architectural null)",
+      "paper_value": "0/56",
+      "v1_source": "Science/V1/results/neurochemicals/neurochemical_validation.md",
+      "v1_match": "matched verbatim",
+      "tolerance": "regex_anchor",
+      "verdict": "PASS",
+      "iteration_count": 1
+    },
+    {
+      "claim_id": "C-PHARMA-DETERM-01",
+      "claim_label": "Live 4-channel neurochem determinism on V1 P5 WAV",
+      "paper_value": "|\u0394| = 0 (engine deterministic)",
+      "v1_source": "engine bit-state (live)",
+      "v1_match": "max |\u0394| = 0.00e+00",
+      "tolerance": "abs <= 1e-5",
+      "verdict": "PASS",
+      "iteration_count": 1
+    }
+  ]
+}

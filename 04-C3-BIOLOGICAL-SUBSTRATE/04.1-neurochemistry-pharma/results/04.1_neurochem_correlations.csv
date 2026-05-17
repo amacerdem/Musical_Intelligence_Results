@@ -1,0 +1,12 @@
+claim_id,claim_label,paper_value,v1_source,v1_match,tolerance,verdict,iteration_count
+C-PHARMA-01,132/132 accumulation tests PASS,132,Science/V1/results/neurochemicals/neurochemical_validation.md,matched verbatim,regex_anchor,PASS,1
+C-PHARMA-02,11/11 pharmacological cross-validation,11/11,Science/V1/results/neurochemicals/neurochemical_validation.md,matched verbatim,regex_anchor,PASS,1
+C-PHARMA-03,antic_da↔caudate ρ=+0.933,0.933,Science/V1/results/neurochemicals/neurochemical_validation.md,matched verbatim,regex_anchor,PASS,1
+C-PHARMA-04,consum_da↔NAcc ρ=+0.836,0.836,Science/V1/results/neurochemicals/neurochemical_validation.md,matched verbatim,regex_anchor,PASS,1
+C-PHARMA-05,caudate-leads-NAcc 52/56 (93%),52/56,Science/V1/results/neurochemicals/neurochemical_validation.md,matched verbatim,regex_anchor,PASS,1
+C-PHARMA-06,caudate→NAcc temporal lag +0.9 s,+0.9 s,Science/V1/results/neurochemicals/neurochemical_validation.md,matched verbatim,regex_anchor,PASS,1
+C-PHARMA-07,Ferreri levodopa>placebo>risperidone,ordering,Science/V1/results/neurochemicals/neurochemical_validation.md,matched verbatim,regex_anchor,PASS,1
+C-PHARMA-08,Putkinen 7/7 μ-opioid PET region match,7/7,Science/V1/results/neurochemicals/neurochemical_validation.md,matched verbatim,regex_anchor,PASS,1
+C-PHARMA-09,Mallik chills>neutral p=0.044,p=0.044,Science/V1/results/neurochemicals/neurochemical_validation.md,matched verbatim,regex_anchor,PASS,1
+C-PHARMA-10,NAcc-leads-caudate 0/56 (architectural null),0/56,Science/V1/results/neurochemicals/neurochemical_validation.md,matched verbatim,regex_anchor,PASS,1
+C-PHARMA-DETERM-01,Live 4-channel neurochem determinism on V1 P5 WAV,|Δ| = 0 (engine deterministic),engine bit-state (live),max |Δ| = 0.00e+00,abs <= 1e-5,PASS,1

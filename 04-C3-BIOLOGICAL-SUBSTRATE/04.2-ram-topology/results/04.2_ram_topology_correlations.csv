@@ -1,0 +1,6 @@
+claim_id,label,paper,reproduced,verdict
+C-RAM-COORD-28-31,Paper headline 28/31 @ ≤10mm coord criterion,28/31,28/31,PASS
+C-RAM-NULL-1-CENTROID,Null-1 centroid-relocation p<0.0001,p<0.0001,p=9.9990e-05,PASS
+C-RAM-NULL-2-LABEL,Null-2 label-shuffle p<0.0001,p<0.0001,p=9.9990e-05,PASS
+C-RAM-NO-PROXY-26-29,No-proxy robustness 26/29 (paper line 1322),26/29,26/29,PASS
+C-RAM-RADIUS-ROBUST,28 matches across 8/10/12 mm radii (paper Methods §Coord match),28 / 8mm = 28 / 10mm = 28 / 12mm,"[28, 28, 28]",PASS

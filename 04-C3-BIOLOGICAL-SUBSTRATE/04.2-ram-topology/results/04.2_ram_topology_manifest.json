@@ -1,0 +1,52 @@
+{
+  "axis_id": "AXIS-6",
+  "axis_name": "RAM Topology (28/31 \u226410mm + permutation nulls + hubs)",
+  "engine_head": "318eb2f529d7103e8b7d80b01228357fdc4e0217",
+  "seed_registry": {
+    "primary": 2026050704,
+    "permutation": 42,
+    "n_perm": 10000
+  },
+  "phase_close_date": "2026-05-07",
+  "git_commit_hash": "PENDING_AT_CLOSE",
+  "claims": [
+    {
+      "claim_id": "C-RAM-COORD-28-31",
+      "label": "Paper headline 28/31 @ \u226410mm coord criterion",
+      "paper": "28/31",
+      "reproduced": "28/31",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-RAM-NULL-1-CENTROID",
+      "label": "Null-1 centroid-relocation p<0.0001",
+      "paper": "p<0.0001",
+      "reproduced": "p=9.9990e-05",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-RAM-NULL-2-LABEL",
+      "label": "Null-2 label-shuffle p<0.0001",
+      "paper": "p<0.0001",
+      "reproduced": "p=9.9990e-05",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-RAM-NO-PROXY-26-29",
+      "label": "No-proxy robustness 26/29 (paper line 1322)",
+      "paper": "26/29",
+      "reproduced": "26/29",
+      "verdict": "PASS"
+    },
+    {
+      "claim_id": "C-RAM-RADIUS-ROBUST",
+      "label": "28 matches across 8/10/12 mm radii (paper Methods \u00a7Coord match)",
+      "paper": "28 / 8mm = 28 / 10mm = 28 / 12mm",
+      "reproduced": "[28, 28, 28]",
+      "verdict": "PASS"
+    }
+  ],
+  "external_artefacts": [
+    "Science/V2/reviewer-sims/divan-major-revision-2026-04-22/computing-phase/T-R1-08/"
+  ]
+}
