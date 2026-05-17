@@ -1,0 +1,202 @@
+[
+  {
+    "name": "FRAME_RATE",
+    "file": "ear/h3/constants/horizons.py",
+    "line": 18,
+    "type": "scalar",
+    "value": "172.27",
+    "cardinality": 1
+  },
+  {
+    "name": "FRAME_DURATION_MS",
+    "file": "ear/h3/constants/horizons.py",
+    "line": 21,
+    "type": "scalar",
+    "value": "5.804",
+    "cardinality": 1
+  },
+  {
+    "name": "N_HORIZONS",
+    "file": "ear/h3/constants/horizons.py",
+    "line": 27,
+    "type": "scalar",
+    "value": "32",
+    "cardinality": 1
+  },
+  {
+    "name": "HORIZON_MS",
+    "file": "ear/h3/constants/horizons.py",
+    "line": 32,
+    "type": "collection",
+    "value": "<32 elements>",
+    "cardinality": 32
+  },
+  {
+    "name": "HORIZON_FRAMES",
+    "file": "ear/h3/constants/horizons.py",
+    "line": 77,
+    "type": "collection",
+    "value": "<32 elements>",
+    "cardinality": 32
+  },
+  {
+    "name": "_BAND_NAMES",
+    "file": "ear/h3/constants/horizons.py",
+    "line": 91,
+    "type": "tuple/list",
+    "value": "<4 mixed elements>",
+    "cardinality": 4
+  },
+  {
+    "name": "BAND_ASSIGNMENTS",
+    "file": "ear/h3/constants/horizons.py",
+    "line": 93,
+    "type": "call",
+    "value": "tuple((_BAND_NAMES[i // 8] for i in range(N_HORIZONS)))",
+    "cardinality": 0
+  },
+  {
+    "name": "BAND_RANGES",
+    "file": "ear/h3/constants/horizons.py",
+    "line": 99,
+    "type": "collection",
+    "value": "<4 elements>",
+    "cardinality": 4
+  },
+  {
+    "name": "N_LAWS",
+    "file": "ear/h3/constants/laws.py",
+    "line": 17,
+    "type": "scalar",
+    "value": "3",
+    "cardinality": 1
+  },
+  {
+    "name": "LAW_MEMORY",
+    "file": "ear/h3/constants/laws.py",
+    "line": 22,
+    "type": "scalar",
+    "value": "0",
+    "cardinality": 1
+  },
+  {
+    "name": "LAW_PREDICTION",
+    "file": "ear/h3/constants/laws.py",
+    "line": 26,
+    "type": "scalar",
+    "value": "1",
+    "cardinality": 1
+  },
+  {
+    "name": "LAW_INTEGRATION",
+    "file": "ear/h3/constants/laws.py",
+    "line": 30,
+    "type": "scalar",
+    "value": "2",
+    "cardinality": 1
+  },
+  {
+    "name": "LAW_NAMES",
+    "file": "ear/h3/constants/laws.py",
+    "line": 37,
+    "type": "tuple/list",
+    "value": "<3 mixed elements>",
+    "cardinality": 3
+  },
+  {
+    "name": "ATTENTION_DECAY",
+    "file": "ear/h3/constants/laws.py",
+    "line": 42,
+    "type": "scalar",
+    "value": "3.0",
+    "cardinality": 1
+  },
+  {
+    "name": "N_MORPHS",
+    "file": "ear/h3/constants/morphs.py",
+    "line": 17,
+    "type": "scalar",
+    "value": "24",
+    "cardinality": 1
+  },
+  {
+    "name": "MORPH_NAMES",
+    "file": "ear/h3/constants/morphs.py",
+    "line": 22,
+    "type": "tuple/list",
+    "value": "<24 mixed elements>",
+    "cardinality": 24
+  },
+  {
+    "name": "MORPH_MIN_WINDOW",
+    "file": "ear/h3/constants/morphs.py",
+    "line": 66,
+    "type": "collection",
+    "value": "<24 elements>",
+    "cardinality": 24
+  },
+  {
+    "name": "SIGNED_MORPHS",
+    "file": "ear/h3/constants/morphs.py",
+    "line": 99,
+    "type": "call",
+    "value": "frozenset({6, 8, 9, 11, 12, 16, 18, 23})",
+    "cardinality": 0
+  },
+  {
+    "name": "MORPH_SCALE",
+    "file": "ear/h3/constants/scaling.py",
+    "line": 21,
+    "type": "collection",
+    "value": "<24 elements>",
+    "cardinality": 24
+  },
+  {
+    "name": "_T",
+    "file": "ear/h3/constants/scaling.py",
+    "line": 51,
+    "type": "call",
+    "value": "TypeVar('_T', float, 'torch.Tensor')",
+    "cardinality": 0
+  },
+  {
+    "name": "_THEORETICAL_SPACE",
+    "file": "ear/h3/demand/aggregator.py",
+    "line": 28,
+    "type": "scalar",
+    "value": "223488",
+    "cardinality": 1
+  },
+  {
+    "name": "_R3_IDX_MAX",
+    "file": "ear/h3/demand/demand_tree.py",
+    "line": 22,
+    "type": "scalar",
+    "value": "96",
+    "cardinality": 1
+  },
+  {
+    "name": "_HORIZON_MAX",
+    "file": "ear/h3/demand/demand_tree.py",
+    "line": 23,
+    "type": "scalar",
+    "value": "31",
+    "cardinality": 1
+  },
+  {
+    "name": "_MORPH_MAX",
+    "file": "ear/h3/demand/demand_tree.py",
+    "line": 24,
+    "type": "scalar",
+    "value": "23",
+    "cardinality": 1
+  },
+  {
+    "name": "_LAW_MAX",
+    "file": "ear/h3/demand/demand_tree.py",
+    "line": 25,
+    "type": "scalar",
+    "value": "2",
+    "cardinality": 1
+  }
+]

@@ -1,0 +1,975 @@
+{
+  "total_checks": 96,
+  "passed": 96,
+  "failed": 0,
+  "stimuli": [
+    "constant_07",
+    "silence",
+    "ramp_0_1",
+    "sinusoid_4Hz"
+  ],
+  "horizon": "H5 (8 frames)",
+  "law": "L0 memory",
+  "anchors": {
+    "constant_07__M0_value": {
+      "mid_value": 0.7,
+      "min": 0.7,
+      "max": 0.7,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "constant_07__M1_mean": {
+      "mid_value": 0.7,
+      "min": 0.7,
+      "max": 0.7,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "constant_07__M2_std": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "constant_07__M3_median": {
+      "mid_value": 0.7,
+      "min": 0.7,
+      "max": 0.7,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "constant_07__M4_max": {
+      "mid_value": 0.7,
+      "min": 0.7,
+      "max": 0.7,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "constant_07__M5_range": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "constant_07__M6_skewness": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": true,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "constant_07__M7_kurtosis": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "constant_07__M8_velocity": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": true,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "constant_07__M9_velocity_mean": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": true,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "constant_07__M10_velocity_std": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "constant_07__M11_acceleration": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": true,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "constant_07__M12_acceleration_mean": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": true,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "constant_07__M13_acceleration_std": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "constant_07__M14_periodicity": {
+      "mid_value": 0.021316,
+      "min": 0.0,
+      "max": 0.021316,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "constant_07__M15_smoothness": {
+      "mid_value": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "constant_07__M16_curvature": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": true,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "constant_07__M17_shape_period": {
+      "mid_value": 0.02,
+      "min": 0.02,
+      "max": 0.02,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "constant_07__M18_trend": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": true,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "constant_07__M19_stability": {
+      "mid_value": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "constant_07__M20_entropy": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "constant_07__M21_zero_crossings": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "constant_07__M22_peaks": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "constant_07__M23_symmetry": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": true,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "silence__M0_value": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "silence__M1_mean": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "silence__M2_std": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "silence__M3_median": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "silence__M4_max": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "silence__M5_range": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "silence__M6_skewness": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": true,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "silence__M7_kurtosis": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "silence__M8_velocity": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": true,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "silence__M9_velocity_mean": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": true,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "silence__M10_velocity_std": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "silence__M11_acceleration": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": true,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "silence__M12_acceleration_mean": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": true,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "silence__M13_acceleration_std": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "silence__M14_periodicity": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "silence__M15_smoothness": {
+      "mid_value": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "silence__M16_curvature": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": true,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "silence__M17_shape_period": {
+      "mid_value": 0.02,
+      "min": 0.02,
+      "max": 0.02,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "silence__M18_trend": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": true,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "silence__M19_stability": {
+      "mid_value": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "silence__M20_entropy": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "silence__M21_zero_crossings": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "silence__M22_peaks": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "silence__M23_symmetry": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": true,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "ramp_0_1__M0_value": {
+      "mid_value": 0.497846,
+      "min": 0.010566,
+      "max": 0.996867,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "ramp_0_1__M1_mean": {
+      "mid_value": 0.494129,
+      "min": 0.006849,
+      "max": 0.993151,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "ramp_0_1__M2_std": {
+      "mid_value": 0.019174,
+      "min": 0.019174,
+      "max": 0.019174,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "ramp_0_1__M3_median": {
+      "mid_value": 0.493151,
+      "min": 0.005871,
+      "max": 0.992172,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "ramp_0_1__M4_max": {
+      "mid_value": 0.500978,
+      "min": 0.013699,
+      "max": 1.0,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "ramp_0_1__M5_range": {
+      "mid_value": 0.013699,
+      "min": 0.013699,
+      "max": 0.013699,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "ramp_0_1__M6_skewness": {
+      "mid_value": 0.0,
+      "min": -3.7e-05,
+      "max": 3.3e-05,
+      "signed": true,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "ramp_0_1__M7_kurtosis": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "ramp_0_1__M8_velocity": {
+      "mid_value": 0.019569,
+      "min": 0.019569,
+      "max": 0.01957,
+      "signed": true,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "ramp_0_1__M9_velocity_mean": {
+      "mid_value": 0.039139,
+      "min": 0.039139,
+      "max": 0.039139,
+      "signed": true,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "ramp_0_1__M10_velocity_std": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "ramp_0_1__M11_acceleration": {
+      "mid_value": 0.0,
+      "min": -6e-06,
+      "max": 6e-06,
+      "signed": true,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "ramp_0_1__M12_acceleration_mean": {
+      "mid_value": 0.0,
+      "min": -2e-06,
+      "max": 2e-06,
+      "signed": true,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "ramp_0_1__M13_acceleration_std": {
+      "mid_value": 5e-06,
+      "min": 0.0,
+      "max": 8e-06,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "ramp_0_1__M14_periodicity": {
+      "mid_value": 0.273809,
+      "min": 0.273809,
+      "max": 0.273811,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "ramp_0_1__M15_smoothness": {
+      "mid_value": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "ramp_0_1__M16_curvature": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": true,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "ramp_0_1__M17_shape_period": {
+      "mid_value": 0.02,
+      "min": 0.02,
+      "max": 0.02,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "ramp_0_1__M18_trend": {
+      "mid_value": 1.0,
+      "min": 1.0,
+      "max": 1.0,
+      "signed": true,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "ramp_0_1__M19_stability": {
+      "mid_value": 0.995229,
+      "min": 0.995229,
+      "max": 0.995229,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "ramp_0_1__M20_entropy": {
+      "mid_value": 0.181188,
+      "min": 0.0,
+      "max": 0.333333,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "ramp_0_1__M21_zero_crossings": {
+      "mid_value": 0.05,
+      "min": 0.05,
+      "max": 0.05,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "ramp_0_1__M22_peaks": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "ramp_0_1__M23_symmetry": {
+      "mid_value": -1.0,
+      "min": -1.0,
+      "max": -1.0,
+      "signed": true,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "sinusoid_4Hz__M0_value": {
+      "mid_value": 0.111784,
+      "min": 0.016395,
+      "max": 0.983604,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "sinusoid_4Hz__M1_mean": {
+      "mid_value": 0.057511,
+      "min": 0.027481,
+      "max": 0.972519,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "sinusoid_4Hz__M2_std": {
+      "mid_value": 0.260722,
+      "min": 0.101929,
+      "max": 0.6916,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "sinusoid_4Hz__M3_median": {
+      "mid_value": 0.020238,
+      "min": 0.011974,
+      "max": 0.978484,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "sinusoid_4Hz__M4_max": {
+      "mid_value": 0.177228,
+      "min": 0.063891,
+      "max": 0.999998,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "sinusoid_4Hz__M5_range": {
+      "mid_value": 0.177218,
+      "min": 0.062578,
+      "max": 0.488719,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "sinusoid_4Hz__M6_skewness": {
+      "mid_value": 0.340857,
+      "min": -0.44676,
+      "max": 0.446766,
+      "signed": true,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "sinusoid_4Hz__M7_kurtosis": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.0,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "sinusoid_4Hz__M8_velocity": {
+      "mid_value": 0.520858,
+      "min": -0.728834,
+      "max": 0.728874,
+      "signed": true,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "sinusoid_4Hz__M9_velocity_mean": {
+      "mid_value": 0.489855,
+      "min": -1.0,
+      "max": 1.0,
+      "signed": true,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "sinusoid_4Hz__M10_velocity_std": {
+      "mid_value": 0.420103,
+      "min": 0.057078,
+      "max": 0.448108,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "sinusoid_4Hz__M11_acceleration": {
+      "mid_value": 0.796711,
+      "min": -1.0,
+      "max": 1.0,
+      "signed": true,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "sinusoid_4Hz__M12_acceleration_mean": {
+      "mid_value": 1.0,
+      "min": -1.0,
+      "max": 1.0,
+      "signed": true,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "sinusoid_4Hz__M13_acceleration_std": {
+      "mid_value": 0.207675,
+      "min": 0.060884,
+      "max": 0.569745,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "sinusoid_4Hz__M14_periodicity": {
+      "mid_value": 0.222932,
+      "min": 0.0,
+      "max": 0.277822,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "sinusoid_4Hz__M15_smoothness": {
+      "mid_value": 0.979427,
+      "min": 0.978086,
+      "max": 0.997154,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "sinusoid_4Hz__M16_curvature": {
+      "mid_value": 0.096424,
+      "min": 0.022834,
+      "max": 0.102969,
+      "signed": true,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "sinusoid_4Hz__M17_shape_period": {
+      "mid_value": 0.02,
+      "min": 0.02,
+      "max": 0.02,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "sinusoid_4Hz__M18_trend": {
+      "mid_value": 1.0,
+      "min": -1.0,
+      "max": 1.0,
+      "signed": true,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "sinusoid_4Hz__M19_stability": {
+      "mid_value": 0.938808,
+      "min": 0.852588,
+      "max": 0.975151,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "sinusoid_4Hz__M20_entropy": {
+      "mid_value": 0.432932,
+      "min": 0.181188,
+      "max": 1.0,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "sinusoid_4Hz__M21_zero_crossings": {
+      "mid_value": 0.05,
+      "min": 0.05,
+      "max": 0.1,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "sinusoid_4Hz__M22_peaks": {
+      "mid_value": 0.0,
+      "min": 0.0,
+      "max": 0.1,
+      "signed": false,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    },
+    "sinusoid_4Hz__M23_symmetry": {
+      "mid_value": -0.651513,
+      "min": -1.0,
+      "max": 1.0,
+      "signed": true,
+      "nan": false,
+      "inf": false,
+      "in_range": true,
+      "verdict": "PASS"
+    }
+  }
+}

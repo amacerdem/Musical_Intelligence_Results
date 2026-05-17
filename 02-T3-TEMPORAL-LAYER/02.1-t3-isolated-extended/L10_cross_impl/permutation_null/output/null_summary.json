@@ -1,0 +1,13 @@
+{
+  "experiment": "T6 \u2014 Permutation null on H\u00b3 output",
+  "n_permutations": 1000,
+  "n_rates": 28,
+  "null_mean": 0.16535591698184168,
+  "null_std": 0.08619035669324691,
+  "null_p95": 0.32313627298128755,
+  "null_p99": 0.3912667373466169,
+  "observed_pcm": 0.9606,
+  "z_score": 9.226601600553144,
+  "p_perm": 0.000999000999000999,
+  "verdict": "H\u00b3's cross-rate PCM = 0.961 lies 9.2\u03c3 above a random-phase permutation null with mean 0.165 \u00b1 0.086; p_perm < 0.0010. The phase concentration is therefore structural, not coincidental."
+}

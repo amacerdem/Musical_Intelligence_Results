@@ -1,0 +1,44 @@
+{
+  "L7.6": {
+    "claim": "T\u00b3 has no backward dependency on R\u00b3 and no downward dependency on C\u00b3 (data flow is R\u00b3 \u2192 T\u00b3 \u2192 C\u00b3 unidirectional)",
+    "actual": {
+      "total_imports_scanned": 213,
+      "forbidden_patterns": [
+        "ear.r3",
+        "Musical_Intelligence.ear.r3",
+        "brain",
+        "Musical_Intelligence.brain",
+        "Musical_Intelligence.contracts.bases"
+      ],
+      "violations_found": 0,
+      "violations": []
+    },
+    "verdict": "PASS"
+  },
+  "L7.5": {
+    "claim": "execute() implements documented 7-phase sequence: demand collection \u2192 tree ready \u2192 horizon loop \u2192 window selection \u2192 attention weighting \u2192 morph dispatch \u2192 result packing",
+    "actual": {
+      "phase_markers_found": {
+        "Phase 1-2 (demand collection / tree ready, input)": true,
+        "Phase 3 (horizon loop)": true,
+        "Phase 4 (window selection via law)": true,
+        "Phase 5 (attention weighting)": true,
+        "Phase 5 (kernel computed once per horizon)": true,
+        "Phase 6 (morph dispatch via batch_morph)": true,
+        "Phase 7 (result packing via normalize_morph)": true,
+        "Documented 7-phase sequence in module docstring": true
+      },
+      "all_seven_phases_present": true
+    },
+    "verdict": "PASS"
+  },
+  "L7.1": {
+    "claim": "Pipeline has no cycles: execute() does not recurse; no event loop; no callbacks",
+    "actual": {
+      "execute_recursive_calls_to_self": [],
+      "eventloop_or_callback_imports": [],
+      "is_acyclic": true
+    },
+    "verdict": "PASS"
+  }
+}

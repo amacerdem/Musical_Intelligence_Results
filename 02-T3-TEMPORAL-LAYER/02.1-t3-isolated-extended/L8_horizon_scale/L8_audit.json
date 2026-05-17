@@ -1,0 +1,170 @@
+{
+  "L8.1": {
+    "claim": "32 horizons; HORIZON_MS and HORIZON_FRAMES are 32-tuples; N_HORIZONS = 32",
+    "actual": {
+      "N_HORIZONS": 32,
+      "len(HORIZON_MS)": 32,
+      "len(HORIZON_FRAMES)": 32,
+      "len(BAND_ASSIGNMENTS)": 32
+    },
+    "verdict": "PASS"
+  },
+  "L8.2": {
+    "claim": "Log-coverage organised in four perceptual bands. NOT strictly log-spaced (intra-band ratios vary; band boundaries have larger gaps).",
+    "actual": {
+      "min_inter_horizon_ratio": 1.125,
+      "max_inter_horizon_ratio": 4.31,
+      "is_strictly_log_spaced": false,
+      "geometric_mean_ratio_if_uniform": 1.475,
+      "total_span_ratio_H31_over_H0": 169137.9,
+      "first_5_ratios": [
+        2.0,
+        1.5,
+        1.333,
+        1.5,
+        1.333
+      ],
+      "biggest_intra_band_jump": {
+        "from_idx": 5,
+        "ratio": 4.31,
+        "ms_pair": [
+          46.4,
+          200
+        ]
+      }
+    },
+    "verdict": "PASS (characterisation matches code; corrected from earlier 'strictly log-spaced' wording per L9)"
+  },
+  "L8.3": {
+    "claim": "Band partition: H0-H7=micro, H8-H15=meso, H16-H23=macro, H24-H31=ultra",
+    "actual": {
+      "BAND_ASSIGNMENTS": [
+        "micro",
+        "micro",
+        "micro",
+        "micro",
+        "micro",
+        "micro",
+        "micro",
+        "micro",
+        "meso",
+        "meso",
+        "meso",
+        "meso",
+        "meso",
+        "meso",
+        "meso",
+        "meso",
+        "macro",
+        "macro",
+        "macro",
+        "macro",
+        "macro",
+        "macro",
+        "macro",
+        "macro",
+        "ultra",
+        "ultra",
+        "ultra",
+        "ultra",
+        "ultra",
+        "ultra",
+        "ultra",
+        "ultra"
+      ],
+      "BAND_RANGES": {
+        "micro": [
+          0,
+          7
+        ],
+        "meso": [
+          8,
+          15
+        ],
+        "macro": [
+          16,
+          23
+        ],
+        "ultra": [
+          24,
+          31
+        ]
+      },
+      "all_assignments_match": true,
+      "BAND_RANGES_correct": true
+    },
+    "verdict": "PASS"
+  },
+  "L8.4": {
+    "claim": "H0 = 5.8 ms (single frame at 172.27 Hz); H31 = 981,000 ms = 981 s",
+    "actual": {
+      "FRAME_RATE": 172.27,
+      "FRAME_DURATION_MS": 5.804,
+      "FRAME_RATE_derivation": "44100 / 256",
+      "FRAME_RATE_derivation_check": true,
+      "FRAME_DURATION_MS_derivation": "1000 / FRAME_RATE",
+      "FRAME_DURATION_MS_derivation_check": true,
+      "HORIZON_MS[0]": 5.8,
+      "HORIZON_MS[31]": 981000,
+      "HORIZON_FRAMES[0]": 1,
+      "HORIZON_FRAMES[31]": 168999,
+      "H0_is_single_frame": true,
+      "H31_is_981_s": true
+    },
+    "verdict": "PASS"
+  },
+  "L8.5": {
+    "claim": "HORIZON_FRAMES[i] = max(1, round(HORIZON_MS[i] / 1000 * FRAME_RATE)) for all i in 0..31",
+    "actual": {
+      "n_horizons": 32,
+      "n_exact_match_with_formula": 26,
+      "n_within_1_frame": 29,
+      "max_diff": 4,
+      "non_exact_horizons": [
+        {
+          "i": 17,
+          "ms": 1500,
+          "in_table": 259,
+          "from_formula": 258,
+          "diff": 1
+        },
+        {
+          "i": 27,
+          "ms": 200000,
+          "in_table": 34453,
+          "from_formula": 34454,
+          "diff": -1
+        },
+        {
+          "i": 28,
+          "ms": 414000,
+          "in_table": 71319,
+          "from_formula": 71320,
+          "diff": -1
+        },
+        {
+          "i": 29,
+          "ms": 600000,
+          "in_table": 103359,
+          "from_formula": 103362,
+          "diff": -3
+        },
+        {
+          "i": 30,
+          "ms": 800000,
+          "in_table": 137812,
+          "from_formula": 137816,
+          "diff": -4
+        },
+        {
+          "i": 31,
+          "ms": 981000,
+          "in_table": 168999,
+          "from_formula": 168997,
+          "diff": 2
+        }
+      ]
+    },
+    "verdict": "PASS-WITH-CAVEAT (29/32 within 1 frame; 6 differ from formula due to authoritative HorizonCatalog.md)"
+  }
+}

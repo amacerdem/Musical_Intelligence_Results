@@ -1,0 +1,350 @@
+[
+  {
+    "file": "ear/h3/__init__.py",
+    "classes": [],
+    "compute_methods": [],
+    "init_attrs": [],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/attention/__init__.py",
+    "classes": [],
+    "compute_methods": [],
+    "init_attrs": [],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/attention/integration.py",
+    "classes": [
+      "IntegrationWindow"
+    ],
+    "compute_methods": [
+      "IntegrationWindow.select"
+    ],
+    "init_attrs": [],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/attention/kernel.py",
+    "classes": [
+      "AttentionKernel"
+    ],
+    "compute_methods": [
+      "AttentionKernel.compute_weights"
+    ],
+    "init_attrs": [],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/attention/memory.py",
+    "classes": [
+      "MemoryWindow"
+    ],
+    "compute_methods": [
+      "MemoryWindow.select"
+    ],
+    "init_attrs": [],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/attention/prediction.py",
+    "classes": [
+      "PredictionWindow"
+    ],
+    "compute_methods": [
+      "PredictionWindow.select"
+    ],
+    "init_attrs": [],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/bands/__init__.py",
+    "classes": [],
+    "compute_methods": [],
+    "init_attrs": [],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/bands/macro.py",
+    "classes": [
+      "MacroBand"
+    ],
+    "compute_methods": [],
+    "init_attrs": [],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/bands/meso.py",
+    "classes": [
+      "MesoBand"
+    ],
+    "compute_methods": [],
+    "init_attrs": [],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/bands/micro.py",
+    "classes": [
+      "MicroBand"
+    ],
+    "compute_methods": [],
+    "init_attrs": [],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/bands/ultra.py",
+    "classes": [
+      "UltraBand"
+    ],
+    "compute_methods": [],
+    "init_attrs": [],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/constants/__init__.py",
+    "classes": [],
+    "compute_methods": [],
+    "init_attrs": [],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/constants/horizons.py",
+    "classes": [],
+    "compute_methods": [],
+    "init_attrs": [],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/constants/laws.py",
+    "classes": [],
+    "compute_methods": [],
+    "init_attrs": [],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/constants/morphs.py",
+    "classes": [],
+    "compute_methods": [],
+    "init_attrs": [],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/constants/scaling.py",
+    "classes": [],
+    "compute_methods": [],
+    "init_attrs": [],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/demand/__init__.py",
+    "classes": [],
+    "compute_methods": [],
+    "init_attrs": [],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/demand/aggregator.py",
+    "classes": [],
+    "compute_methods": [],
+    "init_attrs": [],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/demand/demand_tree.py",
+    "classes": [
+      "DemandTree"
+    ],
+    "compute_methods": [
+      "DemandTree.build"
+    ],
+    "init_attrs": [],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/demand/event_horizon.py",
+    "classes": [
+      "EventHorizon"
+    ],
+    "compute_methods": [],
+    "init_attrs": [
+      "EventHorizon._index"
+    ],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/extractor.py",
+    "classes": [
+      "H3Output",
+      "H3Extractor"
+    ],
+    "compute_methods": [
+      "H3Extractor.extract"
+    ],
+    "init_attrs": [
+      "H3Extractor._executor",
+      "H3Extractor._warmup"
+    ],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/morphology/__init__.py",
+    "classes": [],
+    "compute_methods": [],
+    "init_attrs": [],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/morphology/batch.py",
+    "classes": [],
+    "compute_methods": [],
+    "init_attrs": [],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/morphology/computer.py",
+    "classes": [
+      "MorphComputer"
+    ],
+    "compute_methods": [
+      "MorphComputer.compute"
+    ],
+    "init_attrs": [
+      "MorphComputer._dispatch"
+    ],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/morphology/distribution/__init__.py",
+    "classes": [],
+    "compute_methods": [],
+    "init_attrs": [],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/morphology/distribution/central.py",
+    "classes": [],
+    "compute_methods": [],
+    "init_attrs": [],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/morphology/distribution/shape.py",
+    "classes": [],
+    "compute_methods": [],
+    "init_attrs": [],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/morphology/distribution/spread.py",
+    "classes": [],
+    "compute_methods": [],
+    "init_attrs": [],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/morphology/dynamics/__init__.py",
+    "classes": [],
+    "compute_methods": [],
+    "init_attrs": [],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/morphology/dynamics/derivatives.py",
+    "classes": [],
+    "compute_methods": [],
+    "init_attrs": [],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/morphology/dynamics/smoothness.py",
+    "classes": [],
+    "compute_methods": [],
+    "init_attrs": [],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/morphology/dynamics/trend.py",
+    "classes": [],
+    "compute_methods": [],
+    "init_attrs": [],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/morphology/information/__init__.py",
+    "classes": [],
+    "compute_methods": [],
+    "init_attrs": [],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/morphology/information/entropy.py",
+    "classes": [],
+    "compute_methods": [],
+    "init_attrs": [],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/morphology/rhythm/__init__.py",
+    "classes": [],
+    "compute_methods": [],
+    "init_attrs": [],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/morphology/rhythm/periodicity.py",
+    "classes": [],
+    "compute_methods": [],
+    "init_attrs": [],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/morphology/scaling.py",
+    "classes": [],
+    "compute_methods": [],
+    "init_attrs": [],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/morphology/symmetry/__init__.py",
+    "classes": [],
+    "compute_methods": [],
+    "init_attrs": [],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/morphology/symmetry/features.py",
+    "classes": [],
+    "compute_methods": [],
+    "init_attrs": [],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/pipeline/__init__.py",
+    "classes": [],
+    "compute_methods": [],
+    "init_attrs": [],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/pipeline/executor.py",
+    "classes": [
+      "H3Executor"
+    ],
+    "compute_methods": [
+      "H3Executor.execute"
+    ],
+    "init_attrs": [
+      "H3Executor._kernel"
+    ],
+    "violations": []
+  },
+  {
+    "file": "ear/h3/pipeline/warmup.py",
+    "classes": [
+      "WarmUpHandler"
+    ],
+    "compute_methods": [],
+    "init_attrs": [],
+    "violations": []
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "summary": {
+    "files_scanned": 42,
+    "L11.3_PRNG_imports": 0,
+    "L11.3_PRNG_calls": 0,
+    "L11.7_open_write_calls": 0,
+    "L11.7_pathlib_write_calls": 0,
+    "L11.8_network_imports": 0,
+    "L11.9_dynamic_code_calls": 0
+  },
+  "files_with_findings": []
+}

@@ -1,0 +1,115 @@
+{
+  "L12.1": {
+    "claim": "H3Extractor.extract(self, r3: Tensor, demand: Set[Tuple[int,int,int,int]]) -> H3Output",
+    "actual": {
+      "param_names": [
+        "self",
+        "r3",
+        "demand"
+      ],
+      "param_count": 3,
+      "param_annotations": {
+        "r3": "Tensor",
+        "demand": "Set[Tuple[int, int, int, int]]"
+      },
+      "return_annotation": "H3Output"
+    },
+    "verdict": "PASS"
+  },
+  "L12.2": {
+    "claim": "H3Output is @dataclass(frozen=True) with fields: features, n_tuples",
+    "actual": {
+      "is_dataclass": true,
+      "fields": [
+        "features",
+        "n_tuples"
+      ],
+      "field_count": 2,
+      "frozen": true,
+      "field_types": {
+        "features": "Dict[Tuple[int, int, int, int], Tensor]",
+        "n_tuples": "int"
+      }
+    },
+    "verdict": "PASS"
+  },
+  "L12.3": {
+    "claim": "H3DemandSpec is a frozen dataclass (per L9 + paper \u00a7Methods notes)",
+    "actual": {
+      "is_dataclass": false,
+      "has___slots__": true,
+      "slot_names": [
+        "r3_idx",
+        "r3_name",
+        "horizon",
+        "horizon_label",
+        "morph",
+        "morph_name",
+        "law",
+        "law_name",
+        "purpose",
+        "citation"
+      ],
+      "slot_count": 10,
+      "existing_slot_mutable": true,
+      "new_attribute_blocked_by_slots": true
+    },
+    "verdict": "DOC-FIX: NOT a @dataclass; slot-restricted regular class. Existing slots are mutable. New attributes blocked by __slots__. Documentation should describe as 'slot-restricted, not frozen' or class should be migrated to @dataclass(frozen=True, slots=True) for the stronger immutability guarantee."
+  },
+  "L12.6": {
+    "claim": "extract twice on same input \u2192 bit-identical output",
+    "actual": "Structurally guaranteed by L2.1 (zero non-init self-assigns) + L11.3 (zero PRNG) + L11.6 (zero env-var dependence). Empirical confirmation in L3 determinism canary (28-pair PASS).",
+    "verdict": "PASS by L2.1 + L11.3 structural composition"
+  },
+  "L12.7": {
+    "claim": "Only documented public methods (extract, warmup_handler) accessible without underscore",
+    "actual": {
+      "public_attributes_no_underscore": [
+        "warmup_handler"
+      ],
+      "public_methods_no_underscore": [
+        "extract"
+      ],
+      "private_attrs_present_single_underscore": [
+        "_executor",
+        "_warmup"
+      ],
+      "undocumented_public_surface": []
+    },
+    "verdict": "PASS"
+  },
+  "L12.8": {
+    "claim": "ear.h3.__init__ exports exactly H3Extractor + H3Output via __all__",
+    "actual": {
+      "__all__": [
+        "H3Extractor",
+        "H3Output"
+      ],
+      "all_public_names_in_module_namespace": [
+        "H3Extractor",
+        "H3Output",
+        "attention",
+        "constants",
+        "demand",
+        "extractor",
+        "morphology",
+        "pipeline"
+      ],
+      "all_matches_expected": true,
+      "extra_public_names_not_in___all__": [
+        "attention",
+        "constants",
+        "demand",
+        "extractor",
+        "morphology",
+        "pipeline"
+      ]
+    },
+    "verdict": "PASS"
+  },
+  "_cross_import_sanity": {
+    "from_init_path": "Musical_Intelligence.ear.h3.H3Extractor",
+    "from_module_path": "Musical_Intelligence.ear.h3.extractor.H3Extractor",
+    "identity": true
+  }
+}
