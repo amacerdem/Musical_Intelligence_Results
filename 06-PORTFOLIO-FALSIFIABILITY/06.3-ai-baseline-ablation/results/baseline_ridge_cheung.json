@@ -1,0 +1,21 @@
+{
+  "dataset": "Cheung 2019",
+  "baseline_panel": [
+    "ridge_idyom_only",
+    "ridge_idyom_plus_generic_spectral"
+  ],
+  "protocol": "5-fold leave-songs-out CV, chord-level aggregation",
+  "n_chord_rows": 1009,
+  "n_songs": 30,
+  "B1_strict_r": 0.5320828659676716,
+  "B1_strict_rho": 0.3821529693012338,
+  "B2_lenient_r": 0.56519289011506,
+  "B2_lenient_rho": 0.41691700504608104,
+  "mi_value_to_beat": 0.615,
+  "best_baseline_r": 0.56519289011506,
+  "mi_advantage": 0.04980710988493997,
+  "per_dataset_verdict": "MI_WINS",
+  "caveat": "IC/ENTROPY are IDyOM predictions trained on external corpus; both MI Eq.5 and the AI baselines depend on them. The strict no-external-priors rule cannot be satisfied for Cheung since the dataset ships no raw audio.",
+  "master_seed": 20260513,
+  "engine_pin": "318eb2f529d7103e8b7d80b01228357fdc4e0217"
+}

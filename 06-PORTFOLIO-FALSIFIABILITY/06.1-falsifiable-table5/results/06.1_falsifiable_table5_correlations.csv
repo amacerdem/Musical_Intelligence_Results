@@ -1,0 +1,6 @@
+table5_id,test,source_phase,paper_claim,reproduced,verdict
+FT5-#1,Carillon ρ_stumpf = −0.824 anti-overfitting invariant,Phase 01.2 / C-R3OOS-CARILLON-STUMPF,−0.824 (engine inharmonicity at A5_880Hz SUSTAINED),-0.8297,PASS
+FT5-#2,ds003720 voxelwise routing-ablation 4/4 vs 1/4 vs 0/4,Phase 05.4 / C-VOXEL-02..04,MI 4/4 vs MI-naive 1/4 vs Random-26 0/4 shuffle-null,MI 4/4 / MI-naive 1/4 / Random-26 0/4,PASS
+FT5-#3,"Cheung 2019 IC×ENTROPY interaction β=−0.158, Cheung's −0.124 inside CI",Phase 03.3 / C-CHEUNG-01 + C-CHEUNG-03,"β=−0.158, CI [−0.228, −0.084] containing Cheung's −0.124","β=-0.1578 / Cheung in CI: -0.124 ∈ [-0.2277, -0.0839]",PASS
+FT5-#4,"Mendelssohn piece-specificity rank 1/7, 2.2× lift",Phase 05.1 / C-MEND-06,"rank 1/7 across 7 pieces in TR 556 window, 2.2× over next-best (CAVEAT-PASS at rank-statistic level)",documented in V2 v9.5.6 deneyler-rescore.md (next-best +0.246; 2.2× separation),PASS
+FT5-#5,Pre-reg mech×region encoding ds002725: 16/22 target BH-FDR pass,Phase 05.2 / C-MXREG-01,"16/22 target pairs survive BH-FDR at q<0.05, separation +0.105 vs 2×SE 0.048",16/22,PASS

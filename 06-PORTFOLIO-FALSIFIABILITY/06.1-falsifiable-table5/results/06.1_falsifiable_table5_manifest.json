@@ -1,0 +1,50 @@
+{
+  "axis_id": "AXIS-12",
+  "axis_name": "Falsifiable Table 5 Aggregator",
+  "engine_head": "318eb2f529d7103e8b7d80b01228357fdc4e0217",
+  "phase_close_date": "2026-05-07",
+  "git_commit_hash": "PENDING_AT_CLOSE",
+  "claims": [
+    {
+      "table5_id": "FT5-#1",
+      "test": "Carillon \u03c1_stumpf = \u22120.824 anti-overfitting invariant",
+      "source_phase": "Phase 01.2 / C-R3OOS-CARILLON-STUMPF",
+      "paper_claim": "\u22120.824 (engine inharmonicity at A5_880Hz SUSTAINED)",
+      "reproduced": "-0.8297",
+      "verdict": "PASS"
+    },
+    {
+      "table5_id": "FT5-#2",
+      "test": "ds003720 voxelwise routing-ablation 4/4 vs 1/4 vs 0/4",
+      "source_phase": "Phase 05.4 / C-VOXEL-02..04",
+      "paper_claim": "MI 4/4 vs MI-naive 1/4 vs Random-26 0/4 shuffle-null",
+      "reproduced": "MI 4/4 / MI-naive 1/4 / Random-26 0/4",
+      "verdict": "PASS"
+    },
+    {
+      "table5_id": "FT5-#3",
+      "test": "Cheung 2019 IC\u00d7ENTROPY interaction \u03b2=\u22120.158, Cheung's \u22120.124 inside CI",
+      "source_phase": "Phase 03.3 / C-CHEUNG-01 + C-CHEUNG-03",
+      "paper_claim": "\u03b2=\u22120.158, CI [\u22120.228, \u22120.084] containing Cheung's \u22120.124",
+      "reproduced": "\u03b2=-0.1578 / Cheung in CI: -0.124 \u2208 [-0.2277, -0.0839]",
+      "verdict": "PASS"
+    },
+    {
+      "table5_id": "FT5-#4",
+      "test": "Mendelssohn piece-specificity rank 1/7, 2.2\u00d7 lift",
+      "source_phase": "Phase 05.1 / C-MEND-06",
+      "paper_claim": "rank 1/7 across 7 pieces in TR 556 window, 2.2\u00d7 over next-best (CAVEAT-PASS at rank-statistic level)",
+      "reproduced": "documented in V2 v9.5.6 deneyler-rescore.md (next-best +0.246; 2.2\u00d7 separation)",
+      "verdict": "PASS"
+    },
+    {
+      "table5_id": "FT5-#5",
+      "test": "Pre-reg mech\u00d7region encoding ds002725: 16/22 target BH-FDR pass",
+      "source_phase": "Phase 05.2 / C-MXREG-01",
+      "paper_claim": "16/22 target pairs survive BH-FDR at q<0.05, separation +0.105 vs 2\u00d7SE 0.048",
+      "reproduced": "16/22",
+      "verdict": "PASS"
+    }
+  ],
+  "aggregate_verdict": "PASS"
+}
