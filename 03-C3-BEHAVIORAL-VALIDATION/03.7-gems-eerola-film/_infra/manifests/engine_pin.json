@@ -1,0 +1,24 @@
+{
+  "pinned_commit": "318eb2f529d7103e8b7d80b01228357fdc4e0217",
+  "pinned_date": "2026-05-08",
+  "pinned_repo": "Science",
+  "engine_path": "Science/Musical_Intelligence",
+  "in_sync_at_root": "Musical_Intelligence",
+  "in_sync_commit": "c5cc0098018f4101eae27c67c3338ba27ee28dd8",
+  "in_sync_note": "root Musical_Intelligence/ synced bit-identical to Science/Musical_Intelligence/ at canonical pin (commit c5cc0098, 2026-05-08)",
+  "rationale": "24-h18-h25-eerola-film-gems pins to the same canonical paper-validated engine SHA used by all other V-Reproduction Tier-1 packages. SHA-256 of all .py files under Musical_Intelligence/ must equal content_aggregate_sha256 below.",
+  "content_aggregate_sha256": "482ade45c50f5d3bf5c90c122e495b2c3230e6e6edc6542f72f22e3b5da37f88",
+  "content_aggregate_method": "find <path>/Musical_Intelligence -type f -name '*.py' -not -path '*/__pycache__/*' | sort | xargs shasum -a 256 | awk '{print $1}' | shasum -a 256 | awk '{print $1}'",
+  "verification": {
+    "frame_rate_hz": 172.27,
+    "sample_rate_hz": 44100,
+    "hop_length_samples": 256,
+    "n_fft": 2048,
+    "r3_dim": 97,
+    "mech_clusters_min": 30,
+    "aac_dims_min": 12,
+    "vmm_dims_min": 6,
+    "srp_dims_min": 4
+  },
+  "downstream_canonical_manifest": "Science/V-Reproduction/_infra/manifests/engine_head.json"
+}

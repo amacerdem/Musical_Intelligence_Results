@@ -1,0 +1,45 @@
+{
+  "stage": "Phase 10 Audio-Native Upgrade \u2014 Angle 4",
+  "engine_pin_commit": "318eb2f529d7103e8b7d80b01228357fdc4e0217",
+  "engine_aggregate_sha256": "482ade45c50f5d3bf5c90c122e495b2c3230e6e6edc6542f72f22e3b5da37f88",
+  "n_stim": 30,
+  "n_rhythm_pairs": 3,
+  "channels": {
+    "HTP": "E0_high_level_lead",
+    "ICEM": "E0_information_content"
+  },
+  "alignment_window_ms": 200.0,
+  "r_HTP_cross_rhythm": {
+    "median": 0.993177758250414,
+    "ci95": [
+      0.9913886781358411,
+      0.9944689464730705
+    ],
+    "min": 0.9651728071558656,
+    "max": 0.9994879628977712,
+    "iqr": [
+      0.9904510296021222,
+      0.9989965978791258
+    ],
+    "n": 90
+  },
+  "r_ICEM_cross_rhythm": {
+    "median": 0.8275785818600652,
+    "ci95": [
+      0.8117466162426445,
+      0.8508484104338718
+    ],
+    "min": 0.6273405102073537,
+    "max": 0.9550975228707486,
+    "iqr": [
+      0.7655502396569015,
+      0.8931121688417868
+    ],
+    "n": 90
+  },
+  "decision": {
+    "verdict": "POSITIVE_RHYTHM_INVARIANT",
+    "rule_pos": "median r_HTP >= 0.7 AND median r_ICEM >= 0.7",
+    "rule_neg": "either median <= 0.3"
+  }
+}

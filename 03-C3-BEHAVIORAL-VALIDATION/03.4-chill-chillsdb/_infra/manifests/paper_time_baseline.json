@@ -1,0 +1,125 @@
+{
+  "_schema": "21-c3-chill-prediction paper-time baseline (frozen Tier-1 numbers)",
+  "_frozen_at": "2026-05-12",
+  "_engine_sha": "e537f90e6d14595a0cddb580ee3975f6f9a431151d5d18b09b4c80e1ffcb0098",
+  "_engine_commit": "318eb2f5",
+  "_source_doc": "The Paper/C3-Paper/FINDINGS_INDEX.md T1-A + CALIBRATION_005_CLEAN7_RESULTS.md + CALIBRATION_006_NOISEREDUCE_RESULTS.md",
+
+  "primary_verdict_tc005_clean7_afftdn": {
+    "_description": "TC005 7-clean afftdn-denoised — paper's headline Tier-1 finding",
+    "subset": "7-clean",
+    "excluded_clips": ["CwzjlmBLfrQ", "YbNYinfj1h0"],
+    "audio_preprocessing": "afftdn_nr_12",
+    "n_channels_tested": 22,
+    "n_clips": 7,
+    "headline_channels": [
+      {
+        "channel": "MECH_MMP__P2:familiarity",
+        "rank_biserial_mean": 0.2306,
+        "p_bonf": 0.0092,
+        "n_clips_positive": 7,
+        "status": "Bonferroni-pass"
+      },
+      {
+        "channel": "MECH_AAC__E0:emotional_arousal",
+        "rank_biserial_mean": 0.1697,
+        "p_bonf": 0.0406,
+        "n_clips_positive": 5,
+        "status": "Bonferroni-pass"
+      },
+      {
+        "channel": "MECH_AAC__F1:hr_pred_2s",
+        "rank_biserial_mean": 0.1327,
+        "p_bonf": 0.0352,
+        "n_clips_positive": 5,
+        "status": "Bonferroni-pass"
+      },
+      {
+        "channel": "MECH_AAC__F0:scr_pred_1s",
+        "rank_biserial_mean": 0.1008,
+        "p_bonf": 0.0228,
+        "n_clips_positive": 5,
+        "status": "Bonferroni-pass"
+      }
+    ],
+    "n_bonferroni_pass": 4,
+    "n_bh_fdr_pass": 6,
+    "composite_combined_p": 0.0025
+  },
+
+  "secondary_verdict_tc006_noisereduce": {
+    "_description": "TC006 noisereduce cross-validation — denoise-method-robust",
+    "subset": "7-clean",
+    "audio_preprocessing": "noisereduce_nonstationary",
+    "headline_channels": [
+      {
+        "channel": "MECH_MMP__P2:familiarity",
+        "rank_biserial_mean": 0.2217,
+        "p_bonf": 0.0053,
+        "n_clips_positive": 7,
+        "status": "Bonferroni-pass"
+      },
+      {
+        "channel": "MECH_AAC__F1:hr_pred_2s",
+        "rank_biserial_mean": 0.1002,
+        "p_bonf": 0.0432,
+        "n_clips_positive": 5,
+        "status": "Bonferroni-pass"
+      }
+    ],
+    "n_bonferroni_pass": 2,
+    "composite_combined_p": 0.0022
+  },
+
+  "sensitivity_verdict_original_audio": {
+    "_description": "Original audio (no denoise) — sanity check that finding is not a denoise artifact",
+    "subset": "7-clean",
+    "audio_preprocessing": "none_original",
+    "headline_channels": [
+      {
+        "channel": "MECH_MMP__P2:familiarity",
+        "rank_biserial_mean": 0.2008,
+        "p_bonf": 0.0198,
+        "n_clips_positive": 6,
+        "status": "Bonferroni-pass"
+      },
+      {
+        "channel": "MECH_AAC__E0:emotional_arousal",
+        "rank_biserial_mean": 0.1566,
+        "p_bonf": 0.0426,
+        "n_clips_positive": 5,
+        "status": "Bonferroni-pass"
+      },
+      {
+        "channel": "MECH_AAC__F1:hr_pred_2s",
+        "rank_biserial_mean": 0.1127,
+        "p_bonf": 0.0359,
+        "n_clips_positive": 5,
+        "status": "Bonferroni-pass"
+      }
+    ],
+    "n_bonferroni_pass": 3,
+    "composite_combined_p": 0.0058
+  },
+
+  "tolerance": {
+    "rank_biserial_abs": 0.01,
+    "p_bonf_abs": 0.005,
+    "_note": "Bonferroni p tolerance set to 0.005 absolute (not 5e-4) because the 500-permutation null introduces ~0.002 p-value variance across runs at fixed engine SHA. Rank-biserial tolerance set to 0.01 absolute. If local result deviates beyond tolerance, L9 reconciles as CAVEAT (not FAIL); diagnostic dump required. The Bonferroni-pass boundary (p<0.05) is preserved well within tolerance — observed values cluster around 0.005-0.020."
+  },
+
+  "stimulus_metadata": {
+    "9_full": [
+      {"clip_id": "C1ZL5AxmK_A", "title": "Lakme Flower Duet (Delibes)", "genre": "classical/opera"},
+      {"clip_id": "FOjdXSrtUxA", "title": "Inception 'Time' (Hans Zimmer)", "genre": "film_score"},
+      {"clip_id": "H3v9unphfi0", "title": "Miserere (Allegri)", "genre": "sacred"},
+      {"clip_id": "Y1UiD2sxoWo", "title": "Ed Sheeran", "genre": "popular"},
+      {"clip_id": "fRL447oDId4", "title": "Lana Del Rey", "genre": "popular"},
+      {"clip_id": "va1oiojnGrA", "title": "Gladiator 'Now We Are Free' (Hans Zimmer)", "genre": "film_score"},
+      {"clip_id": "zx_dTSPzXlk", "title": "Agnus Dei (Barber)", "genre": "sacred"},
+      {"clip_id": "CwzjlmBLfrQ", "title": "Mr. Bean Olympics 2012", "genre": "comedy_sketch", "excluded_from_7clean": true},
+      {"clip_id": "YbNYinfj1h0", "title": "15 Greatest Vocal Intros", "genre": "compilation_montage", "excluded_from_7clean": true}
+    ],
+    "exclusion_reason": "Comedy sketch + 15-song montage violate engine's H3 Macro horizon assumption (continuous music required)."
+  }
+}

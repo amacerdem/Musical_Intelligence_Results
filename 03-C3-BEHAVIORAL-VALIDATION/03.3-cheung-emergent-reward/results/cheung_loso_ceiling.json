@@ -1,0 +1,24 @@
+{
+  "_schema": "Cheung 2019 pleasure rating LOSO inter-rater ceiling",
+  "_computed_at": "2026-05-12T20:42:44.130298+00:00",
+  "_seed": 2026051222,
+  "_n_bootstrap": 5000,
+  "n_trials_total": 39351,
+  "n_vpids": 39,
+  "n_loso_trials": 39,
+  "loso_point_estimate": 0.21686172313444343,
+  "loso_ci_95": [
+    0.15879049717879948,
+    0.27004600710301
+  ],
+  "min_loso_rho": -0.19256580147453098,
+  "max_loso_rho": 0.460977091233756,
+  "cheung_published_beta": -0.124,
+  "mi_reproduction_beta": -0.158,
+  "mi_reproduction_ci": [
+    -0.228,
+    -0.084
+  ],
+  "mi_m3_held_out_r": 0.615,
+  "mi_m3_ceiling_relative_pct": 283.590848173207
+}

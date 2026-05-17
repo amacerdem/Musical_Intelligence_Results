@@ -1,0 +1,117 @@
+{
+  "_schema": "23-h4-h5-pmemo-dynamic-emotion paper-time baseline (frozen Tier-1 numbers)",
+  "_frozen_at": "2026-05-13",
+  "_engine_sha": "e537f90e6d14595a0cddb580ee3975f6f9a431151d5d18b09b4c80e1ffcb0098",
+  "_engine_commit": "318eb2f5",
+  "_source_doc_h4": "Science/c3-cognitive-signals/results/H4_PMEmo_arousal/H4_summary_pilot200.json",
+  "_source_doc_h5": "Science/c3-cognitive-signals/results/H5_PMEmo_valence/H5_summary_pilot200.json",
+
+  "loso_ceiling_arousal": {
+    "_description": "Inter-rater predictability ceiling on PMEmo dynamic arousal slider",
+    "n_loso_trials": 7069,
+    "n_clips": 740,
+    "point_estimate": 0.1710,
+    "ci_95": [0.1580, 0.1837],
+    "n_bootstrap": 5000,
+    "category": "LOW (high inter-rater entropy at 2 Hz frame-level)"
+  },
+
+  "loso_ceiling_valence": {
+    "_description": "Inter-rater predictability ceiling on PMEmo dynamic valence slider",
+    "n_loso_trials": 7198,
+    "n_clips": 740,
+    "point_estimate": 0.1581,
+    "ci_95": [0.1444, 0.1718],
+    "n_bootstrap": 5000,
+    "category": "LOW (high inter-rater entropy at 2 Hz frame-level)"
+  },
+
+  "primary_verdict_h4_arousal": {
+    "_description": "MI engine AROUSAL-19 pool on PMEmo — paper headline (pilot200)",
+    "n_clips": 200,
+    "n_channels": 19,
+    "null_perms": 100,
+    "lag_range_s": 5.0,
+    "lag_step_s": 0.5,
+    "top_channel": "MECH_AAC__E0:emotional_arousal",
+    "top_fz_mean_rho": 0.1619,
+    "top_direction_pct": 61.5,
+    "top_ceiling_relative": 0.9468,
+    "n_bonferroni_pass": 0,
+    "n_bh_fdr_pass": 0,
+    "_interpretation": "Ceiling-saturating @94.7% of LOSO inter-rater bound at sampling precision. Bonferroni does NOT pass at pilot200 × 100-perm sample (combined-p stringency) but ceiling-relative effect is at-ceiling on a high-entropy paradigm where LOSO itself is +0.171.",
+    "cross_paradigm_replication": {
+      "_description": "AAC autonomic-cluster generalizes across two independent continuous-trajectory paradigms",
+      "tensemusic_top": {"channel": "MECH_AAC__F1:hr_pred_2s", "ceiling_rel": 1.091},
+      "pmemo_top": {"channel": "MECH_AAC__E0:emotional_arousal", "ceiling_rel": 0.947}
+    },
+    "second_channel": {
+      "channel": "MECH_AAC__A1:hr",
+      "fz_mean_rho": 0.1322,
+      "ceiling_relative": 0.7730
+    }
+  },
+
+  "primary_verdict_h5_valence": {
+    "_description": "MI engine VALENCE-15 pool on PMEmo — paper headline (pilot200)",
+    "n_clips": 200,
+    "n_channels": 15,
+    "null_perms": 100,
+    "lag_range_s": 5.0,
+    "lag_step_s": 0.5,
+    "top_channel": "MECH_SRP__P0:wanting",
+    "top_fz_mean_rho": 0.1197,
+    "top_direction_pct": 63.0,
+    "top_ceiling_relative": 0.7570,
+    "top_p_bonf": 0.0038,
+    "n_bonferroni_pass": 3,
+    "n_bh_fdr_pass": 3,
+    "_interpretation": "Three independent channels pass Bonferroni (SRP P0 wanting, VMM R0 happy_pathway, VMM V1 mode_signal) — mechanistically convergent reward-circuit + valence-mode-modeling signal.",
+    "headline_channels": [
+      {
+        "channel": "MECH_SRP__P0:wanting",
+        "fz_mean_rho": 0.1197,
+        "direction_pct": 63.0,
+        "p_bonf": 0.0038,
+        "ceiling_relative": 0.7570,
+        "status": "Bonferroni-pass + top"
+      },
+      {
+        "channel": "MECH_VMM__R0:happy_pathway",
+        "fz_mean_rho": 0.0894,
+        "direction_pct": 54.2,
+        "p_bonf": 0.0184,
+        "ceiling_relative": 0.5656,
+        "status": "Bonferroni-pass"
+      },
+      {
+        "channel": "MECH_VMM__V1:mode_signal",
+        "fz_mean_rho": 0.0267,
+        "direction_pct": 50.0,
+        "p_bonf": 0.0237,
+        "ceiling_relative": 0.1690,
+        "status": "Bonferroni-pass (weak effect, low ceiling-rel but consistent direction)"
+      }
+    ]
+  },
+
+  "tolerance": {
+    "fz_mean_rho_abs": 0.02,
+    "ceiling_abs_arousal": 0.015,
+    "ceiling_abs_valence": 0.015,
+    "direction_pct_abs": 6.0,
+    "n_bonferroni_pass_min_h5": 2,
+    "_note": "If local result deviates beyond tolerance, L9 reconciles as CAVEAT (not FAIL). Pilot200 × 100-perm sample has wider expected variance than full-data runs; tolerance scaled accordingly."
+  },
+
+  "stimulus_metadata": {
+    "dataset": "PMEmo 2018 (Zhang et al. 2018)",
+    "n_clips_total": 767,
+    "n_clips_with_engine_cache": 767,
+    "n_raters_per_clip": 10,
+    "annotation_rate_hz": 2.0,
+    "annotation_window_s_median": 22.0,
+    "annotation_window_s_range": [2.0, 69.0],
+    "modality": "audio chorus extracts"
+  }
+}

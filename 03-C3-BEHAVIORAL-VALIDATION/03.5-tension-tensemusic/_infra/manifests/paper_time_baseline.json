@@ -1,0 +1,70 @@
+{
+  "_schema": "22-h8-tensemusic-tension-prediction paper-time baseline (frozen Tier-1 numbers)",
+  "_frozen_at": "2026-05-13",
+  "_engine_sha": "e537f90e6d14595a0cddb580ee3975f6f9a431151d5d18b09b4c80e1ffcb0098",
+  "_engine_commit": "318eb2f5",
+  "_source_doc": "Science/c3-cognitive-signals/results/H8_TenseMusic_tension/H8_summary_full.json",
+
+  "loso_ceiling": {
+    "_description": "Inter-rater predictability ceiling on TenseMusic tension slider",
+    "n_pieces": 38,
+    "n_loso_trials": 1051,
+    "point_estimate": 0.3857,
+    "ci_95_trial_level": [0.3601, 0.4120],
+    "ci_95_piece_cluster": [0.3256, 0.4402],
+    "n_bootstrap": 5000,
+    "category": "MEDIUM"
+  },
+
+  "primary_verdict_h8": {
+    "_description": "MI engine TENSION-15 pool on TenseMusic — paper headline",
+    "n_pieces": 38,
+    "n_channels": 15,
+    "null_perms": 200,
+    "lag_range_s": 5.0,
+    "lag_step_s": 0.5,
+    "top_channel": "MECH_AAC__F1:hr_pred_2s",
+    "top_fz_mean_rho": 0.4207,
+    "top_direction_pct": 89.5,
+    "top_ceiling_relative": 1.091,
+    "n_bonferroni_pass": 15,
+    "n_bh_fdr_pass": 15,
+    "headline_channels": [
+      {
+        "channel": "MECH_AAC__F1:hr_pred_2s",
+        "fz_mean_rho": 0.4207,
+        "direction_pct": 89.5,
+        "ceiling_relative": 1.091,
+        "status": "Bonferroni-pass + top"
+      },
+      {
+        "channel": "MECH_AAC__F0:scr_pred_1s",
+        "fz_mean_rho": 0.3883,
+        "direction_pct": 89.5,
+        "ceiling_relative": 1.007,
+        "status": "Bonferroni-pass + 2nd"
+      },
+      {
+        "channel": "MECH_SRP__T0:tension",
+        "fz_mean_rho": 0.3193,
+        "direction_pct": 84.2,
+        "ceiling_relative": 0.828,
+        "status": "Bonferroni-pass + 3rd"
+      }
+    ],
+    "sign_pattern": {
+      "_description": "Sign-correct expectancy-violation pattern",
+      "positive_direction": ["AAC autonomic forecasts (F0/F1)", "SRP T0:tension"],
+      "negative_direction": ["SRP T1:prediction_match", "CDMR mismatch_signal", "SRP C2:prediction_error"],
+      "interpretation": "Tension increases when autonomic forecast rises and prediction match fails (Lehne 2014, Meyer 1956)"
+    }
+  },
+
+  "tolerance": {
+    "fz_mean_rho_abs": 0.01,
+    "ceiling_abs": 0.02,
+    "direction_pct_abs": 5.0,
+    "n_bonferroni_pass_min": 13,
+    "_note": "If local result deviates beyond tolerance, L9 reconciles as CAVEAT (not FAIL); diagnostic dump required."
+  }
+}

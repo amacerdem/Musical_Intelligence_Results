@@ -1,0 +1,57 @@
+{
+  "stage": "Phase 10 Audio-Native Upgrade \u2014 Angle 2",
+  "engine_pin_commit": "318eb2f529d7103e8b7d80b01228357fdc4e0217",
+  "rhythm_condition": 1,
+  "n_chord_rows": 1009,
+  "n_songs": 30,
+  "cheung_published_beta": -0.124,
+  "cheung_M2_idyom": {
+    "beta_interaction": -0.12360388471006485,
+    "se": 0.028644228435714608,
+    "cv_heldout_r": 0.5426534655225552,
+    "cv_per_fold": [
+      0.3437811600582227,
+      0.6808058479335046,
+      0.7206331819745708,
+      0.43567166233261856,
+      0.5323754753138594
+    ]
+  },
+  "engine_M2_native": {
+    "beta_interaction": -0.060267632498719165,
+    "se": 0.02664298895734125,
+    "bootstrap_n": 5000,
+    "bootstrap_mean": -0.059770767656647766,
+    "bootstrap_median": -0.05970036852767686,
+    "bootstrap_ci95": [
+      -0.11090924318196088,
+      -0.006800118947405999
+    ],
+    "cv_heldout_r": 0.4620076998185342,
+    "cv_per_fold": [
+      0.24464496902302652,
+      0.635110540766338,
+      0.6408055201705178,
+      0.3300321314882121,
+      0.4594453376445763
+    ]
+  },
+  "decision": {
+    "verdict": "INCONCLUSIVE_BORDERLINE",
+    "cheung_beta_inside_engine_bootstrap_CI": false,
+    "distance_outside_CI": 0.013090756818039118
+  },
+  "loso_relative_framing": {
+    "pleasure_ceiling": 0.21686172313444338,
+    "engine_M2_cv_r_div_ceiling": 2.1304252919364317,
+    "cheung_M2_cv_r_div_ceiling": 2.502301732547506
+  },
+  "library_versions": {
+    "python": "3.10.13",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "scipy": "1.15.3",
+    "statsmodels": "0.14.6",
+    "sklearn": "1.7.2"
+  }
+}

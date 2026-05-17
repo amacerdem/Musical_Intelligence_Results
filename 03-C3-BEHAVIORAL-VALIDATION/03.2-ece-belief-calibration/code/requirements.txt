@@ -1,0 +1,23 @@
+# V-Reproduction/ece — Python dependencies
+#
+# These mirror the engine's runtime requirements (Science/.venv used during V6 phase A2).
+# Engine is imported, not pip-installed; this file only lists deps for the calibration scripts themselves.
+
+# Core numerics
+numpy>=1.24,<3
+scipy>=1.10
+
+# Audio loading + transforms
+librosa>=0.10
+soundfile>=0.12
+
+# Engine substrate
+torch>=2.0
+torchaudio>=2.0
+
+# Plotting (figure generation)
+matplotlib>=3.7
+
+# Already in engine's Science/.venv. To verify:
+#   source Science/.venv/bin/activate
+#   python -c "import numpy, scipy, librosa, torch, torchaudio, matplotlib; print('all deps OK')"

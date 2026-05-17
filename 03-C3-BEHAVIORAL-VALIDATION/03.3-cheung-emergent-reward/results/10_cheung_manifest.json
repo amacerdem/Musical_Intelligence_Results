@@ -1,0 +1,78 @@
+{
+  "axis_id": "AXIS-10",
+  "axis_name": "Cheung 2019 Emergent Reward Interaction",
+  "engine_head": "318eb2f529d7103e8b7d80b01228357fdc4e0217",
+  "seed_registry": {
+    "primary": 2026050705,
+    "bootstrap": 42,
+    "B": 5000
+  },
+  "phase_close_date": "2026-05-07",
+  "git_commit_hash": "PENDING_AT_CLOSE",
+  "claims": [
+    {
+      "claim_id": "C-CHEUNG-01",
+      "claim_label": "\u03b2(IC \u00d7 ENTROPY) M2 OLS = \u22120.158",
+      "paper_value": "-0.158",
+      "reproduced_value": "-0.1578",
+      "tolerance": "abs <= 0.01",
+      "verdict": "PASS",
+      "iteration_count": 1
+    },
+    {
+      "claim_id": "C-CHEUNG-02",
+      "claim_label": "Bootstrap 95% CI = [\u22120.228, \u22120.084]",
+      "paper_value": "[-0.228, -0.084]",
+      "reproduced_value": "[-0.2277, -0.0839]",
+      "tolerance": "abs(endpoints) <= 0.01",
+      "verdict": "PASS",
+      "iteration_count": 1
+    },
+    {
+      "claim_id": "C-CHEUNG-03",
+      "claim_label": "Cheung published \u03b2=\u22120.124 inside bootstrap CI",
+      "paper_value": "-0.124 \u2208 [-0.228, -0.084]",
+      "reproduced_value": "-0.124 \u2208 [-0.2277, -0.0839]",
+      "tolerance": "exact_match",
+      "verdict": "PASS",
+      "iteration_count": 1
+    },
+    {
+      "claim_id": "C-CHEUNG-04",
+      "claim_label": "\u0394AIC (M2 \u2212 M1) = \u221233.5",
+      "paper_value": "-33.5",
+      "reproduced_value": "-33.54",
+      "tolerance": "abs <= 1.0",
+      "verdict": "PASS",
+      "iteration_count": 1
+    },
+    {
+      "claim_id": "C-CHEUNG-05",
+      "claim_label": "Held-out Pearson r (M3 Eq.5) = +0.615",
+      "paper_value": "+0.615",
+      "reproduced_value": "+0.6149",
+      "tolerance": "abs <= 0.01",
+      "verdict": "PASS",
+      "iteration_count": 1
+    },
+    {
+      "claim_id": "C-CHEUNG-06",
+      "claim_label": "Eq.5 reward formula additive (no IC\u00d7ENTROPY term)",
+      "paper_value": "additive=True",
+      "reproduced_value": "additive=True",
+      "tolerance": "additive=True (engine source inspection)",
+      "verdict": "PASS",
+      "iteration_count": 1
+    },
+    {
+      "claim_id": "C-CHEUNG-07-meta",
+      "claim_label": "N=39,351 trials, 1,009 chord-level rows, 39 subjects, 30 songs",
+      "paper_value": "39351 / 1009 / 39 / 30",
+      "reproduced_value": "39351 / 1009 / 39 / 30",
+      "tolerance": "exact_match",
+      "verdict": "PASS",
+      "iteration_count": 1
+    }
+  ],
+  "source_artefact": "Musical-Intelligence-Reproduction/datasets/paper-anchors/cheung-reward/results.json"
+}

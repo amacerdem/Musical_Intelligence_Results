@@ -1,0 +1,47 @@
+{
+  "paper_8_replication": {
+    "pooled_ece": 0.08407432436943053,
+    "pooled_brier": {
+      "brier": 0.012464702129364014,
+      "reliability": 0.008372322966600976,
+      "resolution": 0.004029992488355916,
+      "uncertainty": 0.09790772866921316,
+      "rel_minus_res_plus_unc": 0.10225005914745822
+    },
+    "median_per_cell_ece": 0.0831160597237093,
+    "iqr_per_cell_ece": [
+      0.05914624750047274,
+      0.10278341129005696
+    ],
+    "max_per_cell_ece": 0.1865443327111302,
+    "n_cells_below_010": 28,
+    "n_cells_total": 40,
+    "paper_published_pooled_ece": 0.079,
+    "deviation_from_paper": 0.005074324369430533
+  },
+  "extension_6_novel": {
+    "pooled_ece": 0.0988971471786499,
+    "pooled_brier": {
+      "brier": 0.013718497939407825,
+      "reliability": 0.012079838177710656,
+      "resolution": 0.002846114448929171,
+      "uncertainty": 0.09281479207184873,
+      "rel_minus_res_plus_unc": 0.10204851580063021
+    },
+    "median_per_cell_ece": 0.07787283350892873,
+    "max_per_cell_ece": 0.22247554608244702,
+    "n_cells_below_010": 20,
+    "n_cells_total": 30,
+    "outlier_belief": "F7_GrooveQuality"
+  },
+  "null_test_paper_8": {
+    "pooled_null_5th_percentile": 0.08407430052757264,
+    "pooled_observed_percentile_in_null": 48.86,
+    "rel_over_unc_ratio": 0.08551238069149114
+  },
+  "P1_median_paper_8_below_010": true,
+  "P2_pooled_below_null_5th": false,
+  "P3_reliability_below_uncertainty": "True",
+  "composite_pass": false,
+  "verdict": "FAIL"
+}

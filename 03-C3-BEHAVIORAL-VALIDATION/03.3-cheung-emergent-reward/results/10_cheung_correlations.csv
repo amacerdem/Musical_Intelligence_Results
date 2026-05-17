@@ -1,0 +1,8 @@
+claim_id,claim_label,paper_value,reproduced_value,tolerance,verdict,iteration_count
+C-CHEUNG-01,β(IC × ENTROPY) M2 OLS = −0.158,-0.158,-0.1578,abs <= 0.01,PASS,1
+C-CHEUNG-02,"Bootstrap 95% CI = [−0.228, −0.084]","[-0.228, -0.084]","[-0.2277, -0.0839]",abs(endpoints) <= 0.01,PASS,1
+C-CHEUNG-03,Cheung published β=−0.124 inside bootstrap CI,"-0.124 ∈ [-0.228, -0.084]","-0.124 ∈ [-0.2277, -0.0839]",exact_match,PASS,1
+C-CHEUNG-04,ΔAIC (M2 − M1) = −33.5,-33.5,-33.54,abs <= 1.0,PASS,1
+C-CHEUNG-05,Held-out Pearson r (M3 Eq.5) = +0.615,+0.615,+0.6149,abs <= 0.01,PASS,1
+C-CHEUNG-06,Eq.5 reward formula additive (no IC×ENTROPY term),additive=True,additive=True,additive=True (engine source inspection),PASS,1
+C-CHEUNG-07-meta,"N=39,351 trials, 1,009 chord-level rows, 39 subjects, 30 songs",39351 / 1009 / 39 / 30,39351 / 1009 / 39 / 30,exact_match,PASS,1

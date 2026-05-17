@@ -1,0 +1,389 @@
+{
+  "stage": "Phase 10 Audio-Native Upgrade \u2014 Angle 5",
+  "engine_pin_commit": "318eb2f529d7103e8b7d80b01228357fdc4e0217",
+  "engine_aggregate_sha256": "482ade45c50f5d3bf5c90c122e495b2c3230e6e6edc6542f72f22e3b5da37f88",
+  "n_stim": 30,
+  "rhythm_condition": 1,
+  "max_duration_s": 30.0,
+  "warmup_frames": 16,
+  "n_beliefs": 8,
+  "belief_list": [
+    {
+      "function": "F1",
+      "mech": "BCH",
+      "class": "HarmonicStability"
+    },
+    {
+      "function": "F1",
+      "mech": "PSCL",
+      "class": "PitchProminence"
+    },
+    {
+      "function": "F1",
+      "mech": "PCCR",
+      "class": "PitchIdentity"
+    },
+    {
+      "function": "F1",
+      "mech": "MIAA",
+      "class": "TimbralCharacter"
+    },
+    {
+      "function": "F2",
+      "mech": "HTP",
+      "class": "PredictionHierarchy"
+    },
+    {
+      "function": "F2",
+      "mech": "HTP",
+      "class": "PredictionAccuracy"
+    },
+    {
+      "function": "F2",
+      "mech": "SPH",
+      "class": "SequenceMatch"
+    },
+    {
+      "function": "F2",
+      "mech": "ICEM",
+      "class": "InformationContent"
+    }
+  ],
+  "per_belief_ece": {
+    "HarmonicStability": {
+      "n_frames_pooled": 154560,
+      "mean_pi_pred": 0.949895977973938,
+      "mean_y": 0.8640589714050293,
+      "mean_abs_pe": 0.13594108819961548,
+      "ece_equal_mass_10bin": 0.08583688139915466,
+      "brier_mi": 0.011427480727434158,
+      "brier_uniform": 0.13699641823768616,
+      "brier_ratio_uniform_to_mi": 11.988330718318027
+    },
+    "PitchProminence": {
+      "n_frames_pooled": 154560,
+      "mean_pi_pred": 0.9737280607223511,
+      "mean_y": 0.8834764957427979,
+      "mean_abs_pe": 0.11652346700429916,
+      "ece_equal_mass_10bin": 0.09093042612075805,
+      "brier_mi": 0.01281922496855259,
+      "brier_uniform": 0.15111732482910156,
+      "brier_ratio_uniform_to_mi": 11.788335503886872
+    },
+    "PitchIdentity": {
+      "n_frames_pooled": 154560,
+      "mean_pi_pred": 0.8671015501022339,
+      "mean_y": 0.7392103672027588,
+      "mean_abs_pe": 0.2607897222042084,
+      "ece_equal_mass_10bin": 0.14058064222335814,
+      "brier_mi": 0.03189671412110329,
+      "brier_uniform": 0.06665638089179993,
+      "brier_ratio_uniform_to_mi": 2.0897569774342113
+    },
+    "TimbralCharacter": {
+      "n_frames_pooled": 154560,
+      "mean_pi_pred": 0.9973952174186707,
+      "mean_y": 0.9032467007637024,
+      "mean_abs_pe": 0.09675325453281403,
+      "ece_equal_mass_10bin": 0.0941485345363617,
+      "brier_mi": 0.0097396494820714,
+      "brier_uniform": 0.16351322829723358,
+      "brier_ratio_uniform_to_mi": 16.788409952352627
+    },
+    "PredictionHierarchy": {
+      "n_frames_pooled": 154560,
+      "mean_pi_pred": 0.9899849891662598,
+      "mean_y": 0.8891978859901428,
+      "mean_abs_pe": 0.11080209910869598,
+      "ece_equal_mass_10bin": 0.10078716278076172,
+      "brier_mi": 0.012057247571647167,
+      "brier_uniform": 0.153348907828331,
+      "brier_ratio_uniform_to_mi": 12.718400855343942
+    },
+    "PredictionAccuracy": {
+      "n_frames_pooled": 154560,
+      "mean_pi_pred": 0.9999700784683228,
+      "mean_y": 0.9861276745796204,
+      "mean_abs_pe": 0.013872440904378891,
+      "ece_equal_mass_10bin": 0.013842636346817016,
+      "brier_mi": 0.0005535919917747378,
+      "brier_uniform": 0.23668253421783447,
+      "brier_ratio_uniform_to_mi": 427.53966411086196
+    },
+    "SequenceMatch": {
+      "n_frames_pooled": 154560,
+      "mean_pi_pred": 0.9907754063606262,
+      "mean_y": 0.898740291595459,
+      "mean_abs_pe": 0.10125984251499176,
+      "ece_equal_mass_10bin": 0.09203525781631469,
+      "brier_mi": 0.010893356055021286,
+      "brier_uniform": 0.16131006181240082,
+      "brier_ratio_uniform_to_mi": 14.808114321944434
+    },
+    "InformationContent": {
+      "n_frames_pooled": 154560,
+      "mean_pi_pred": 0.9942725300788879,
+      "mean_y": 0.9440749287605286,
+      "mean_abs_pe": 0.05592518672347069,
+      "ece_equal_mass_10bin": 0.050197654962539674,
+      "brier_mi": 0.004860941786319017,
+      "brier_uniform": 0.19963479042053223,
+      "brier_ratio_uniform_to_mi": 41.06915885773384
+    }
+  },
+  "pooled": {
+    "n_frames": 1236480,
+    "ece_equal_mass_10bin": 0.08187386393547058,
+    "brier_mi": 0.011781025677919388,
+    "brier_uniform": 0.15865746140480042,
+    "brier_ratio_uniform_to_mi": 13.467202749771142
+  },
+  "decision": {
+    "verdict": "POSITIVE_CHEUNG_CALIBRATED",
+    "rule_pos": "pooled ECE \u2264 0.10 AND Brier ratio \u2265 5\u00d7",
+    "rule_neg": "pooled ECE > 0.15 OR Brier ratio < 3\u00d7",
+    "phase5_paper_anchor_ece_DEAM": 0.079
+  },
+  "per_stim_records": [
+    {
+      "stim_id": "merged_wav_stim01_rhythm01",
+      "n_beliefs_ok": 8,
+      "n_frames_post_warmup": 5152,
+      "wall_engine_s": 6.052746057510376,
+      "wall_total_s": 35.74117708206177,
+      "traces_npz": "data/cheung_audio_outputs/belief_traces_rhythm1/merged_wav_stim01_rhythm01.npz"
+    },
+    {
+      "stim_id": "merged_wav_stim02_rhythm01",
+      "n_beliefs_ok": 8,
+      "n_frames_post_warmup": 5152,
+      "wall_engine_s": 2.3106460571289062,
+      "wall_total_s": 32.01800990104675,
+      "traces_npz": "data/cheung_audio_outputs/belief_traces_rhythm1/merged_wav_stim02_rhythm01.npz"
+    },
+    {
+      "stim_id": "merged_wav_stim03_rhythm01",
+      "n_beliefs_ok": 8,
+      "n_frames_post_warmup": 5152,
+      "wall_engine_s": 2.150050163269043,
+      "wall_total_s": 31.33035182952881,
+      "traces_npz": "data/cheung_audio_outputs/belief_traces_rhythm1/merged_wav_stim03_rhythm01.npz"
+    },
+    {
+      "stim_id": "merged_wav_stim04_rhythm01",
+      "n_beliefs_ok": 8,
+      "n_frames_post_warmup": 5152,
+      "wall_engine_s": 2.2803049087524414,
+      "wall_total_s": 32.56959795951843,
+      "traces_npz": "data/cheung_audio_outputs/belief_traces_rhythm1/merged_wav_stim04_rhythm01.npz"
+    },
+    {
+      "stim_id": "merged_wav_stim05_rhythm01",
+      "n_beliefs_ok": 8,
+      "n_frames_post_warmup": 5152,
+      "wall_engine_s": 2.4554381370544434,
+      "wall_total_s": 32.634735107421875,
+      "traces_npz": "data/cheung_audio_outputs/belief_traces_rhythm1/merged_wav_stim05_rhythm01.npz"
+    },
+    {
+      "stim_id": "merged_wav_stim06_rhythm01",
+      "n_beliefs_ok": 8,
+      "n_frames_post_warmup": 5152,
+      "wall_engine_s": 2.292057991027832,
+      "wall_total_s": 34.32006478309631,
+      "traces_npz": "data/cheung_audio_outputs/belief_traces_rhythm1/merged_wav_stim06_rhythm01.npz"
+    },
+    {
+      "stim_id": "merged_wav_stim07_rhythm01",
+      "n_beliefs_ok": 8,
+      "n_frames_post_warmup": 5152,
+      "wall_engine_s": 2.720435857772827,
+      "wall_total_s": 34.06287479400635,
+      "traces_npz": "data/cheung_audio_outputs/belief_traces_rhythm1/merged_wav_stim07_rhythm01.npz"
+    },
+    {
+      "stim_id": "merged_wav_stim08_rhythm01",
+      "n_beliefs_ok": 8,
+      "n_frames_post_warmup": 5152,
+      "wall_engine_s": 2.424474000930786,
+      "wall_total_s": 32.155909061431885,
+      "traces_npz": "data/cheung_audio_outputs/belief_traces_rhythm1/merged_wav_stim08_rhythm01.npz"
+    },
+    {
+      "stim_id": "merged_wav_stim09_rhythm01",
+      "n_beliefs_ok": 8,
+      "n_frames_post_warmup": 5152,
+      "wall_engine_s": 2.498094081878662,
+      "wall_total_s": 33.54120492935181,
+      "traces_npz": "data/cheung_audio_outputs/belief_traces_rhythm1/merged_wav_stim09_rhythm01.npz"
+    },
+    {
+      "stim_id": "merged_wav_stim10_rhythm01",
+      "n_beliefs_ok": 8,
+      "n_frames_post_warmup": 5152,
+      "wall_engine_s": 2.106290102005005,
+      "wall_total_s": 33.3913779258728,
+      "traces_npz": "data/cheung_audio_outputs/belief_traces_rhythm1/merged_wav_stim10_rhythm01.npz"
+    },
+    {
+      "stim_id": "merged_wav_stim11_rhythm01",
+      "n_beliefs_ok": 8,
+      "n_frames_post_warmup": 5152,
+      "wall_engine_s": 2.384366035461426,
+      "wall_total_s": 33.51179003715515,
+      "traces_npz": "data/cheung_audio_outputs/belief_traces_rhythm1/merged_wav_stim11_rhythm01.npz"
+    },
+    {
+      "stim_id": "merged_wav_stim12_rhythm01",
+      "n_beliefs_ok": 8,
+      "n_frames_post_warmup": 5152,
+      "wall_engine_s": 2.3395943641662598,
+      "wall_total_s": 33.437824010849,
+      "traces_npz": "data/cheung_audio_outputs/belief_traces_rhythm1/merged_wav_stim12_rhythm01.npz"
+    },
+    {
+      "stim_id": "merged_wav_stim13_rhythm01",
+      "n_beliefs_ok": 8,
+      "n_frames_post_warmup": 5152,
+      "wall_engine_s": 2.680997848510742,
+      "wall_total_s": 35.67375993728638,
+      "traces_npz": "data/cheung_audio_outputs/belief_traces_rhythm1/merged_wav_stim13_rhythm01.npz"
+    },
+    {
+      "stim_id": "merged_wav_stim14_rhythm01",
+      "n_beliefs_ok": 8,
+      "n_frames_post_warmup": 5152,
+      "wall_engine_s": 2.433791160583496,
+      "wall_total_s": 34.95028018951416,
+      "traces_npz": "data/cheung_audio_outputs/belief_traces_rhythm1/merged_wav_stim14_rhythm01.npz"
+    },
+    {
+      "stim_id": "merged_wav_stim15_rhythm01",
+      "n_beliefs_ok": 8,
+      "n_frames_post_warmup": 5152,
+      "wall_engine_s": 2.5633668899536133,
+      "wall_total_s": 35.285845041275024,
+      "traces_npz": "data/cheung_audio_outputs/belief_traces_rhythm1/merged_wav_stim15_rhythm01.npz"
+    },
+    {
+      "stim_id": "merged_wav_stim16_rhythm01",
+      "n_beliefs_ok": 8,
+      "n_frames_post_warmup": 5152,
+      "wall_engine_s": 3.2004013061523438,
+      "wall_total_s": 34.6206259727478,
+      "traces_npz": "data/cheung_audio_outputs/belief_traces_rhythm1/merged_wav_stim16_rhythm01.npz"
+    },
+    {
+      "stim_id": "merged_wav_stim17_rhythm01",
+      "n_beliefs_ok": 8,
+      "n_frames_post_warmup": 5152,
+      "wall_engine_s": 2.109496831893921,
+      "wall_total_s": 32.314703941345215,
+      "traces_npz": "data/cheung_audio_outputs/belief_traces_rhythm1/merged_wav_stim17_rhythm01.npz"
+    },
+    {
+      "stim_id": "merged_wav_stim18_rhythm01",
+      "n_beliefs_ok": 8,
+      "n_frames_post_warmup": 5152,
+      "wall_engine_s": 2.5715529918670654,
+      "wall_total_s": 33.49591898918152,
+      "traces_npz": "data/cheung_audio_outputs/belief_traces_rhythm1/merged_wav_stim18_rhythm01.npz"
+    },
+    {
+      "stim_id": "merged_wav_stim19_rhythm01",
+      "n_beliefs_ok": 8,
+      "n_frames_post_warmup": 5152,
+      "wall_engine_s": 2.615328788757324,
+      "wall_total_s": 33.86765384674072,
+      "traces_npz": "data/cheung_audio_outputs/belief_traces_rhythm1/merged_wav_stim19_rhythm01.npz"
+    },
+    {
+      "stim_id": "merged_wav_stim20_rhythm01",
+      "n_beliefs_ok": 8,
+      "n_frames_post_warmup": 5152,
+      "wall_engine_s": 2.312390089035034,
+      "wall_total_s": 32.07205295562744,
+      "traces_npz": "data/cheung_audio_outputs/belief_traces_rhythm1/merged_wav_stim20_rhythm01.npz"
+    },
+    {
+      "stim_id": "merged_wav_stim21_rhythm01",
+      "n_beliefs_ok": 8,
+      "n_frames_post_warmup": 5152,
+      "wall_engine_s": 2.435020685195923,
+      "wall_total_s": 31.967654705047607,
+      "traces_npz": "data/cheung_audio_outputs/belief_traces_rhythm1/merged_wav_stim21_rhythm01.npz"
+    },
+    {
+      "stim_id": "merged_wav_stim22_rhythm01",
+      "n_beliefs_ok": 8,
+      "n_frames_post_warmup": 5152,
+      "wall_engine_s": 2.276721954345703,
+      "wall_total_s": 31.997311115264893,
+      "traces_npz": "data/cheung_audio_outputs/belief_traces_rhythm1/merged_wav_stim22_rhythm01.npz"
+    },
+    {
+      "stim_id": "merged_wav_stim23_rhythm01",
+      "n_beliefs_ok": 8,
+      "n_frames_post_warmup": 5152,
+      "wall_engine_s": 2.2696750164031982,
+      "wall_total_s": 32.93070316314697,
+      "traces_npz": "data/cheung_audio_outputs/belief_traces_rhythm1/merged_wav_stim23_rhythm01.npz"
+    },
+    {
+      "stim_id": "merged_wav_stim24_rhythm01",
+      "n_beliefs_ok": 8,
+      "n_frames_post_warmup": 5152,
+      "wall_engine_s": 2.326111316680908,
+      "wall_total_s": 32.843475341796875,
+      "traces_npz": "data/cheung_audio_outputs/belief_traces_rhythm1/merged_wav_stim24_rhythm01.npz"
+    },
+    {
+      "stim_id": "merged_wav_stim25_rhythm01",
+      "n_beliefs_ok": 8,
+      "n_frames_post_warmup": 5152,
+      "wall_engine_s": 2.451563835144043,
+      "wall_total_s": 33.3319730758667,
+      "traces_npz": "data/cheung_audio_outputs/belief_traces_rhythm1/merged_wav_stim25_rhythm01.npz"
+    },
+    {
+      "stim_id": "merged_wav_stim26_rhythm01",
+      "n_beliefs_ok": 8,
+      "n_frames_post_warmup": 5152,
+      "wall_engine_s": 2.3395111560821533,
+      "wall_total_s": 33.42103123664856,
+      "traces_npz": "data/cheung_audio_outputs/belief_traces_rhythm1/merged_wav_stim26_rhythm01.npz"
+    },
+    {
+      "stim_id": "merged_wav_stim27_rhythm01",
+      "n_beliefs_ok": 8,
+      "n_frames_post_warmup": 5152,
+      "wall_engine_s": 3.7272982597351074,
+      "wall_total_s": 34.936439037323,
+      "traces_npz": "data/cheung_audio_outputs/belief_traces_rhythm1/merged_wav_stim27_rhythm01.npz"
+    },
+    {
+      "stim_id": "merged_wav_stim28_rhythm01",
+      "n_beliefs_ok": 8,
+      "n_frames_post_warmup": 5152,
+      "wall_engine_s": 2.2211458683013916,
+      "wall_total_s": 33.84055995941162,
+      "traces_npz": "data/cheung_audio_outputs/belief_traces_rhythm1/merged_wav_stim28_rhythm01.npz"
+    },
+    {
+      "stim_id": "merged_wav_stim29_rhythm01",
+      "n_beliefs_ok": 8,
+      "n_frames_post_warmup": 5152,
+      "wall_engine_s": 3.1852028369903564,
+      "wall_total_s": 32.92156195640564,
+      "traces_npz": "data/cheung_audio_outputs/belief_traces_rhythm1/merged_wav_stim29_rhythm01.npz"
+    },
+    {
+      "stim_id": "merged_wav_stim30_rhythm01",
+      "n_beliefs_ok": 8,
+      "n_frames_post_warmup": 5152,
+      "wall_engine_s": 2.3109819889068604,
+      "wall_total_s": 32.1234610080719,
+      "traces_npz": "data/cheung_audio_outputs/belief_traces_rhythm1/merged_wav_stim30_rhythm01.npz"
+    }
+  ]
+}

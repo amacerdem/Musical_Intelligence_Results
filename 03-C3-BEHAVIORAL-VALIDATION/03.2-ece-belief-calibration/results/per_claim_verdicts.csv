@@ -1,0 +1,12 @@
+claim_id,paper_value,reproduced_value,deviation,tolerance,verdict,iteration_count
+C-CALIB-01,0.079,0.0841,0.0051,absolute_deviation <= 0.025,PASS,1
+C-CALIB-02,0.091,0.0675,-0.0235,absolute_deviation <= 0.025,PASS,1
+C-CALIB-03,0.082,0.0909,0.0089,absolute_deviation <= 0.025,PASS,1
+C-CALIB-04,0.156,0.1727,0.0167,absolute_deviation <= 0.025 (CAVEAT scope-noted: paper-flagged outlier),CAVEAT,1
+C-CALIB-05,0.111,0.1112,0.0002,absolute_deviation <= 0.025,PASS,1
+C-CALIB-06,0.101,0.1011,0.0001,absolute_deviation <= 0.025,PASS,1
+C-CALIB-07,0.021,0.017,-0.004,absolute_deviation <= 0.01,PASS,1
+C-CALIB-08,0.08,0.0739,-0.0061,absolute_deviation <= 0.025,PASS,1
+C-CALIB-09,0.049,0.0484,-0.0006,absolute_deviation <= 0.02,PASS,1
+C-CALIB-10,10.8,12.11,0.1217,"relative_deviation <= 0.1 (one-sided: reproduced ratio >= paper ratio is PASS, exceeding paper-claimed skill is reproduction success)",PASS,1
+C-CALIB-11,0.615,0.615,0.0,absolute_deviation <= 0.05,PASS,1

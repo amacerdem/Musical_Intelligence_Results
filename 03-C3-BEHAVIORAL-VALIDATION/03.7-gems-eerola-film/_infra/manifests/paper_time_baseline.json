@@ -1,0 +1,64 @@
+{
+  "_schema": "24-h18-h25-eerola-film-gems paper-time baseline (frozen Tier-1 numbers)",
+  "_frozen_at": "2026-05-13",
+  "_engine_sha": "e537f90e6d14595a0cddb580ee3975f6f9a431151d5d18b09b4c80e1ffcb0098",
+  "_engine_commit": "318eb2f5",
+  "_source_doc": "Science/c3-cognitive-signals/results/H18_H25_eerola_film/H18_H25_summary_pilot.json",
+  "_paradigm_note": "Eerola 2011 Set 2 is T1 categorical with continuous mean ratings (n=110, more reliable per readme). Set 1 (n=360, pilot per readme) is supportive cross-clip replication. No per-rater data publicly deposited; LOSO inter-rater ceiling NOT computable. Bonferroni + R³-residual ablation are the load-bearing metrics.",
+
+  "primary_verdict_set2": {
+    "_description": "Eerola Set 2 (n=110, primary) — 8 GEMS emotion labels cross-clip Spearman + R³-residual ablation",
+    "n_clips": 110,
+    "n_labels": 8,
+    "ridge_alpha": 10.0,
+    "n_folds": 5,
+    "n_bonferroni_pass_count": 8,
+    "n_r3_residual_survivors_count": 7,
+    "labels": {
+      "sad":     {"pool": "SADNESS-15",    "top_channel": "MECH_NEMAC__M0:mpfc_activation",       "rho": 0.7408,  "p_bonf": 3.348e-19, "rho_residual": 0.4302,  "n_bonf_orig": 12, "n_bonf_res": 6, "r3_r2": 0.36, "verdict": "STRONG"},
+      "tender":  {"pool": "TENDERNESS-15", "top_channel": "MECH_DAP__P1:familiarity_warmth",      "rho": 0.7220,  "p_bonf": 8.296e-18, "rho_residual": 0.4473,  "n_bonf_orig": 13, "n_bonf_res": 9, "r3_r2": 0.22, "verdict": "STRONG"},
+      "tension": {"pool": "TENSION-15",    "top_channel": "MECH_CDMR__f01:mismatch_amplitude",    "rho": -0.6832, "p_bonf": 2.979e-15, "rho_residual": -0.5035, "n_bonf_orig": 7,  "n_bonf_res": 4, "r3_r2": 0.26, "verdict": "STRONG"},
+      "energy":  {"pool": "AROUSAL-19",    "top_channel": "MECH_AAC__A1:hr",                     "rho": 0.6719,  "p_bonf": 1.779e-14, "rho_residual": 0.3171,  "n_bonf_orig": 10, "n_bonf_res": 8, "r3_r2": 0.56, "verdict": "STRONG (acoustic-mediated)"},
+      "anger":   {"pool": "ANGER-16",      "top_channel": "MECH_PNH__M0:ratio_complexity_norm",   "rho": 0.6363,  "p_bonf": 1.287e-12, "rho_residual": 0.1459,  "n_bonf_orig": 8,  "n_bonf_res": 3, "r3_r2": 0.27, "verdict": "moderate residual"},
+      "fear":    {"pool": "FEAR-17",       "top_channel": "MECH_TAR__E0:therapeutic",            "rho": -0.5247, "p_bonf": 6.837e-08, "rho_residual": -0.3605, "n_bonf_orig": 9,  "n_bonf_res": 7, "r3_r2": 0.18, "verdict": "STRONG"},
+      "valence": {"pool": "VALENCE-15",    "top_channel": "MECH_SRP__P1:liking",                 "rho": 0.4236,  "p_bonf": 6.003e-05, "rho_residual": 0.3439,  "n_bonf_orig": 8,  "n_bonf_res": 4, "r3_r2": 0.09, "verdict": "STRONG (C³-dominant)"},
+      "happy":   {"pool": "HAPPY-16",      "top_channel": "MECH_SRP__P0:wanting",                "rho": 0.3971,  "p_bonf": 0.000279,  "rho_residual": 0.0911,  "n_bonf_orig": 2,  "n_bonf_res": 1, "r3_r2": 0.14, "verdict": "weak residual"}
+    }
+  },
+
+  "supportive_verdict_set1": {
+    "_description": "Eerola Set 1 (n=360, pilot) — supportive cross-clip replication of Set 2 top channels",
+    "n_clips": 360,
+    "channel_replication_identical_count": 4,
+    "channel_replication_cluster_count": 4,
+    "labels": {
+      "sad":     {"pool": "SADNESS-15",    "top_channel": "MECH_NEMAC__M0:mpfc_activation",       "rho": 0.6262,  "channel_match": "IDENTICAL", "n_bonf_orig": 15, "n_bonf_res": 0, "_caveat": "R³ collapses residual on n=360 pilot pool"},
+      "tender":  {"pool": "TENDERNESS-15", "top_channel": "MECH_DAP__P1:familiarity_warmth",      "rho": 0.6789,  "channel_match": "IDENTICAL", "n_bonf_orig": 14, "n_bonf_res": 3},
+      "tension": {"pool": "TENSION-15",    "top_channel": "MECH_CDMR__P0:mismatch_signal",        "rho": -0.7228, "channel_match": "SAME CDMR CLUSTER", "n_bonf_orig": 12, "n_bonf_res": 7},
+      "fear":    {"pool": "FEAR-17",       "top_channel": "MECH_TAR__E0:therapeutic",            "rho": -0.6560, "channel_match": "IDENTICAL", "n_bonf_orig": 13, "n_bonf_res": 10},
+      "energy":  {"pool": "AROUSAL-19",    "top_channel": "MECH_PUPF__U0:entropy_H",             "rho": 0.6981,  "channel_match": "SAME PUPF/AAC CLUSTER", "n_bonf_orig": 16, "n_bonf_res": 10},
+      "anger":   {"pool": "ANGER-16",      "top_channel": "MECH_SDNPS__E2:roughness_corr",       "rho": 0.6986,  "channel_match": "SAME R³-adjacent CLUSTER", "n_bonf_orig": 11, "n_bonf_res": 5},
+      "happy":   {"pool": "HAPPY-16",      "top_channel": "MECH_SRP__P1:liking",                 "rho": 0.3402,  "channel_match": "SAME SRP CLUSTER", "n_bonf_orig": 12, "n_bonf_res": 11},
+      "valence": {"pool": "VALENCE-15",    "top_channel": "MECH_SRP__P1:liking",                 "rho": 0.6526,  "channel_match": "SAME SRP CLUSTER", "n_bonf_orig": 12, "n_bonf_res": 12}
+    }
+  },
+
+  "tolerance": {
+    "rho_abs_set2": 0.05,
+    "rho_abs_set1": 0.08,
+    "n_bonferroni_pass_min_set2_total": 6,
+    "n_r3_residual_survivors_min_set2": 5,
+    "_note": "Set 2 (n=110) is paper-primary. Set 1 (n=360, pilot rating pool) is supportive replication only. If local Set 2 deviates beyond rho_abs_set2=0.05 on top channel, L9 reconciles as CAVEAT."
+  },
+
+  "stimulus_metadata": {
+    "dataset": "Eerola & Vuoskoski 2011 film soundtrack emotion model",
+    "n_clips_set1": 360,
+    "n_clips_set2": 110,
+    "annotation_type": "continuous mean ratings (Likert 1-9 per emotion dimension)",
+    "labels_set2": ["valence", "energy", "tension", "anger", "fear", "happy", "sad", "tender", "beauty", "liking"],
+    "per_rater_data_available": false,
+    "loso_ceiling_computable": false,
+    "engine_aggregation": "mean over clip duration (172-frame warm-up dropped)"
+  }
+}

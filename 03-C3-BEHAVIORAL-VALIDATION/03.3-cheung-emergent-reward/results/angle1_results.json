@@ -1,0 +1,325 @@
+{
+  "stage": "Phase 10 Audio-Native Upgrade \u2014 Angle 1",
+  "engine_pin_commit": "318eb2f529d7103e8b7d80b01228357fdc4e0217",
+  "engine_aggregate_sha256": "482ade45c50f5d3bf5c90c122e495b2c3230e6e6edc6542f72f22e3b5da37f88",
+  "rhythm_condition": 1,
+  "audio_records": [
+    {
+      "stim_id": "merged_wav_stim01_rhythm01",
+      "wav_sha256": "f0f3d7f87bd17e6068549da6b5f354ca029972c59da38bda0e494510c0f6c480",
+      "n_frames": 12404,
+      "n_samples": 3175200,
+      "wall_seconds": 10.774502992630005,
+      "cache_npz": "data/cheung_audio_outputs/mi_features_rhythm1/merged_wav_stim01_rhythm01.npz",
+      "song": 1
+    },
+    {
+      "stim_id": "merged_wav_stim02_rhythm01",
+      "wav_sha256": "0c7cc5d3d4223693d79f6551496c3f3a9b017feec63373d09827843a7ef81c20",
+      "n_frames": 13231,
+      "n_samples": 3386880,
+      "wall_seconds": 9.440222978591919,
+      "cache_npz": "data/cheung_audio_outputs/mi_features_rhythm1/merged_wav_stim02_rhythm01.npz",
+      "song": 2
+    },
+    {
+      "stim_id": "merged_wav_stim03_rhythm01",
+      "wav_sha256": "5d2da9560aae1db1ace4bd994433369390cc607afd8d11f4cc6c9202c42a9d3a",
+      "n_frames": 13644,
+      "n_samples": 3492720,
+      "wall_seconds": 10.506454944610596,
+      "cache_npz": "data/cheung_audio_outputs/mi_features_rhythm1/merged_wav_stim03_rhythm01.npz",
+      "song": 3
+    },
+    {
+      "stim_id": "merged_wav_stim04_rhythm01",
+      "wav_sha256": "ed146efceb08a2e078637cb99c9928f10edb59e570c053c4a588c95a3cd5c9f8",
+      "n_frames": 13644,
+      "n_samples": 3492720,
+      "wall_seconds": 8.59503698348999,
+      "cache_npz": "data/cheung_audio_outputs/mi_features_rhythm1/merged_wav_stim04_rhythm01.npz",
+      "song": 4
+    },
+    {
+      "stim_id": "merged_wav_stim05_rhythm01",
+      "wav_sha256": "1846e6af948d41b83faf992e62847a9a88410b5e8cc16d0732905e043d76f776",
+      "n_frames": 13231,
+      "n_samples": 3386880,
+      "wall_seconds": 8.249188899993896,
+      "cache_npz": "data/cheung_audio_outputs/mi_features_rhythm1/merged_wav_stim05_rhythm01.npz",
+      "song": 5
+    },
+    {
+      "stim_id": "merged_wav_stim06_rhythm01",
+      "wav_sha256": "426ef714a07e1738b4d13cec159c88ef0571606b07a8192d628d49fdd12a80e1",
+      "n_frames": 14057,
+      "n_samples": 3598560,
+      "wall_seconds": 9.75794506072998,
+      "cache_npz": "data/cheung_audio_outputs/mi_features_rhythm1/merged_wav_stim06_rhythm01.npz",
+      "song": 6
+    },
+    {
+      "stim_id": "merged_wav_stim07_rhythm01",
+      "wav_sha256": "f5cc1b66c281ef8ea93efff27f391f97c66e20ba196a8639630e54e33043a819",
+      "n_frames": 14884,
+      "n_samples": 3810240,
+      "wall_seconds": 10.816426038742065,
+      "cache_npz": "data/cheung_audio_outputs/mi_features_rhythm1/merged_wav_stim07_rhythm01.npz",
+      "song": 7
+    },
+    {
+      "stim_id": "merged_wav_stim08_rhythm01",
+      "wav_sha256": "bf4d61696476f88b05c28a3f5b788a11b5132a451625baa6c0c0a19e4a92d4ab",
+      "n_frames": 14471,
+      "n_samples": 3704400,
+      "wall_seconds": 10.46731686592102,
+      "cache_npz": "data/cheung_audio_outputs/mi_features_rhythm1/merged_wav_stim08_rhythm01.npz",
+      "song": 8
+    },
+    {
+      "stim_id": "merged_wav_stim09_rhythm01",
+      "wav_sha256": "7c04849ca4b9e9bb191e082d2a3ef32178ca53b7a2ce5cb05e68b90c140c9292",
+      "n_frames": 14057,
+      "n_samples": 3598560,
+      "wall_seconds": 9.00925898551941,
+      "cache_npz": "data/cheung_audio_outputs/mi_features_rhythm1/merged_wav_stim09_rhythm01.npz",
+      "song": 9
+    },
+    {
+      "stim_id": "merged_wav_stim10_rhythm01",
+      "wav_sha256": "c859d408d4f317a9f5bdf5f52e2f60d88fd085e3d618663120b4b70404af5b1e",
+      "n_frames": 13231,
+      "n_samples": 3386880,
+      "wall_seconds": 7.520192861557007,
+      "cache_npz": "data/cheung_audio_outputs/mi_features_rhythm1/merged_wav_stim10_rhythm01.npz",
+      "song": 10
+    },
+    {
+      "stim_id": "merged_wav_stim11_rhythm01",
+      "wav_sha256": "7c84af49b2a3c215fb5b50cf7f47e4fd9c2fbc7f18b004247fb4904030f45382",
+      "n_frames": 15298,
+      "n_samples": 3916080,
+      "wall_seconds": 11.254889249801636,
+      "cache_npz": "data/cheung_audio_outputs/mi_features_rhythm1/merged_wav_stim11_rhythm01.npz",
+      "song": 11
+    },
+    {
+      "stim_id": "merged_wav_stim12_rhythm01",
+      "wav_sha256": "6d17450156761cae3f4f0e3f9a27c577779709d581eafb683cdb0e7047a11eca",
+      "n_frames": 14057,
+      "n_samples": 3598560,
+      "wall_seconds": 9.254608869552612,
+      "cache_npz": "data/cheung_audio_outputs/mi_features_rhythm1/merged_wav_stim12_rhythm01.npz",
+      "song": 12
+    },
+    {
+      "stim_id": "merged_wav_stim13_rhythm01",
+      "wav_sha256": "dce68fa612b3aad63ae42f687793957df099ca9715ad60a1a0465ba7619cff92",
+      "n_frames": 14057,
+      "n_samples": 3598560,
+      "wall_seconds": 8.827579736709595,
+      "cache_npz": "data/cheung_audio_outputs/mi_features_rhythm1/merged_wav_stim13_rhythm01.npz",
+      "song": 13
+    },
+    {
+      "stim_id": "merged_wav_stim14_rhythm01",
+      "wav_sha256": "a7d0ad05ae886c8b0a5f367ba4a02e6429168b6fd263bc1015db293cdba801a4",
+      "n_frames": 15298,
+      "n_samples": 3916080,
+      "wall_seconds": 10.209675073623657,
+      "cache_npz": "data/cheung_audio_outputs/mi_features_rhythm1/merged_wav_stim14_rhythm01.npz",
+      "song": 14
+    },
+    {
+      "stim_id": "merged_wav_stim15_rhythm01",
+      "wav_sha256": "2d0ac560f15c92c4150183877e776e90500aabf8644c8f473ee09bba7ecad232",
+      "n_frames": 14057,
+      "n_samples": 3598560,
+      "wall_seconds": 9.026408910751343,
+      "cache_npz": "data/cheung_audio_outputs/mi_features_rhythm1/merged_wav_stim15_rhythm01.npz",
+      "song": 15
+    },
+    {
+      "stim_id": "merged_wav_stim16_rhythm01",
+      "wav_sha256": "ab378438e4274c38239852cb9b0830085d8e8472b47d784ac4a8101c25517853",
+      "n_frames": 15711,
+      "n_samples": 4021920,
+      "wall_seconds": 11.080594062805176,
+      "cache_npz": "data/cheung_audio_outputs/mi_features_rhythm1/merged_wav_stim16_rhythm01.npz",
+      "song": 16
+    },
+    {
+      "stim_id": "merged_wav_stim17_rhythm01",
+      "wav_sha256": "e599ec26d434886365e34be5fafb8f3207d41f803b9001826514da30b52f746d",
+      "n_frames": 15298,
+      "n_samples": 3916080,
+      "wall_seconds": 10.915838956832886,
+      "cache_npz": "data/cheung_audio_outputs/mi_features_rhythm1/merged_wav_stim17_rhythm01.npz",
+      "song": 17
+    },
+    {
+      "stim_id": "merged_wav_stim18_rhythm01",
+      "wav_sha256": "dd7e82c3505a9709da50e3d4bca15e26a55e522103d807c5b4ede04a564fc0b5",
+      "n_frames": 14471,
+      "n_samples": 3704400,
+      "wall_seconds": 10.034319162368774,
+      "cache_npz": "data/cheung_audio_outputs/mi_features_rhythm1/merged_wav_stim18_rhythm01.npz",
+      "song": 18
+    },
+    {
+      "stim_id": "merged_wav_stim19_rhythm01",
+      "wav_sha256": "3f4a74bb9671973e37a854badf84d90496403159e4dddec911525bacbb6470e7",
+      "n_frames": 15711,
+      "n_samples": 4021920,
+      "wall_seconds": 10.767299175262451,
+      "cache_npz": "data/cheung_audio_outputs/mi_features_rhythm1/merged_wav_stim19_rhythm01.npz",
+      "song": 19
+    },
+    {
+      "stim_id": "merged_wav_stim20_rhythm01",
+      "wav_sha256": "f5334b9a67550afe49c4b12f5ae214f372ba57334c26bd5795153b9ecfc31ba5",
+      "n_frames": 15298,
+      "n_samples": 3916080,
+      "wall_seconds": 9.439131021499634,
+      "cache_npz": "data/cheung_audio_outputs/mi_features_rhythm1/merged_wav_stim20_rhythm01.npz",
+      "song": 20
+    },
+    {
+      "stim_id": "merged_wav_stim21_rhythm01",
+      "wav_sha256": "1da23b09892e15a6dae46fcddddd0bf331f2148ceb7820717a63426055773c69",
+      "n_frames": 14471,
+      "n_samples": 3704400,
+      "wall_seconds": 9.828992128372192,
+      "cache_npz": "data/cheung_audio_outputs/mi_features_rhythm1/merged_wav_stim21_rhythm01.npz",
+      "song": 21
+    },
+    {
+      "stim_id": "merged_wav_stim22_rhythm01",
+      "wav_sha256": "46162d6df0c46569e5355fff5eae5bb5484befa054cff158b701b4c4e0c003da",
+      "n_frames": 12404,
+      "n_samples": 3175200,
+      "wall_seconds": 9.05469799041748,
+      "cache_npz": "data/cheung_audio_outputs/mi_features_rhythm1/merged_wav_stim22_rhythm01.npz",
+      "song": 22
+    },
+    {
+      "stim_id": "merged_wav_stim23_rhythm01",
+      "wav_sha256": "353897ea5635c016219aea2c4781b05e014bc68e4e1975faeb359ab73f7a55be",
+      "n_frames": 15298,
+      "n_samples": 3916080,
+      "wall_seconds": 14.073667049407959,
+      "cache_npz": "data/cheung_audio_outputs/mi_features_rhythm1/merged_wav_stim23_rhythm01.npz",
+      "song": 23
+    },
+    {
+      "stim_id": "merged_wav_stim24_rhythm01",
+      "wav_sha256": "1203557daf5163e1a43454411012d9e041c3934597514f29fc4523e1665c2f93",
+      "n_frames": 15298,
+      "n_samples": 3916080,
+      "wall_seconds": 13.784919738769531,
+      "cache_npz": "data/cheung_audio_outputs/mi_features_rhythm1/merged_wav_stim24_rhythm01.npz",
+      "song": 24
+    },
+    {
+      "stim_id": "merged_wav_stim25_rhythm01",
+      "wav_sha256": "1742a46bcca4e911554fd1a70c28cfce18cf460913856c5714a4dc33691dd064",
+      "n_frames": 13644,
+      "n_samples": 3492720,
+      "wall_seconds": 10.760149955749512,
+      "cache_npz": "data/cheung_audio_outputs/mi_features_rhythm1/merged_wav_stim25_rhythm01.npz",
+      "song": 25
+    },
+    {
+      "stim_id": "merged_wav_stim26_rhythm01",
+      "wav_sha256": "e09f2e0dbae3fb910168d6ccc1606678f3be878b5924f6d5d60ee231867c7075",
+      "n_frames": 14057,
+      "n_samples": 3598560,
+      "wall_seconds": 12.185012817382812,
+      "cache_npz": "data/cheung_audio_outputs/mi_features_rhythm1/merged_wav_stim26_rhythm01.npz",
+      "song": 26
+    },
+    {
+      "stim_id": "merged_wav_stim27_rhythm01",
+      "wav_sha256": "bc7a74ff3a74e2f9e2d0cf79cb727f63716036c3892951878f79be598de046d8",
+      "n_frames": 14884,
+      "n_samples": 3810240,
+      "wall_seconds": 12.541047096252441,
+      "cache_npz": "data/cheung_audio_outputs/mi_features_rhythm1/merged_wav_stim27_rhythm01.npz",
+      "song": 27
+    },
+    {
+      "stim_id": "merged_wav_stim28_rhythm01",
+      "wav_sha256": "00b50f09db19ab04bcbfcbcdc8c631044062fa50947a59772d24d802bce854d9",
+      "n_frames": 14471,
+      "n_samples": 3704400,
+      "wall_seconds": 11.30190110206604,
+      "cache_npz": "data/cheung_audio_outputs/mi_features_rhythm1/merged_wav_stim28_rhythm01.npz",
+      "song": 28
+    },
+    {
+      "stim_id": "merged_wav_stim29_rhythm01",
+      "wav_sha256": "400b46013c6a3132e1dd8e2130faea117c3cae36ffc088471ccd3bd0a011c6ae",
+      "n_frames": 14884,
+      "n_samples": 3810240,
+      "wall_seconds": 12.804680109024048,
+      "cache_npz": "data/cheung_audio_outputs/mi_features_rhythm1/merged_wav_stim29_rhythm01.npz",
+      "song": 29
+    },
+    {
+      "stim_id": "merged_wav_stim30_rhythm01",
+      "wav_sha256": "6f349d3f6204362154ec7ce54e0129d17bc4737b1f538f81771162aceca72527",
+      "n_frames": 14057,
+      "n_samples": 3598560,
+      "wall_seconds": 11.14264702796936,
+      "cache_npz": "data/cheung_audio_outputs/mi_features_rhythm1/merged_wav_stim30_rhythm01.npz",
+      "song": 30
+    }
+  ],
+  "aggregate": {
+    "n_stimuli": 30,
+    "alignment_window_ms": 200.0,
+    "channels": {
+      "MI_HTP_channel": "E0_high_level_lead",
+      "MI_ICEM_channel": "E0_information_content"
+    },
+    "r_HTP_ENT": {
+      "median": -0.1322329985869632,
+      "ci95": [
+        -0.3371678319730621,
+        -0.06340707686344674
+      ],
+      "min": -0.7345165610888661,
+      "max": 0.44848370712035385,
+      "iqr": [
+        -0.37775251425653633,
+        0.010995666452385346
+      ],
+      "n": 30
+    },
+    "r_ICEM_IC": {
+      "median": -0.03518148558624268,
+      "ci95": [
+        -0.12221071327048003,
+        0.03833922121439838
+      ],
+      "min": -0.5829281624226784,
+      "max": 0.21604194863925086,
+      "iqr": [
+        -0.13949595369710865,
+        0.07978050415702169
+      ],
+      "n": 30
+    },
+    "decision": {
+      "verdict": "NEGATIVE_SUBSTITUTION_INVALID",
+      "rule_pos": "median r(HTP,ENT) >= 0.5 AND median r(ICEM,IC) >= 0.5",
+      "rule_neg": "either median <= 0.2"
+    }
+  },
+  "library_versions": {
+    "python": "3.10.13",
+    "numpy": "1.26.4",
+    "pandas": "2.2.3",
+    "scipy": "1.15.3"
+  }
+}
