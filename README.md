@@ -22,7 +22,7 @@ Musical_Intelligence_Results/
 ├── _audits/                             ← constant-level provenance audit (16,248 sabit, 9 agent)
 ├── _infra/                              ← shared engine path resolver, helpers
 ├── datasets/paper-anchors/              ← paper-time reference intermediates (mech-region excluded — Zenodo)
-├── datasets/consonance/                 ← Bowling/Eerola/Marjieh/Harrison rating CSVs
+├── datasets/consonance/                 ← Eerola/Marjieh/Harrison Carillon rating CSVs
 └── datasets/emotion/DEAM/audio/         ← 5 DEAM held-out songs (Phase 5 ECE input)
 ```
 

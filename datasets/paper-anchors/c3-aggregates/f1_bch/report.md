@@ -46,9 +46,9 @@ F-layer [12:16]  Forecast  -> ['F0:consonance_forecast', 'F1:pitch_forecast', 'F
 
 ---
 
-## 2. Bowling 2018 Cross-Domain (N=13)
+## 2. 13-dyad anchor 2018 Cross-Domain (N=13)
 
-### All Dims x Bowling
+### All Dims x 13-dyad anchor
 
 | Dimension | rho | p | p(perm) | 95% CI | Pearson r | f2 | Power | Sig |
 |-----------|-----|---|---------|--------|-----------|-----|-------|-----|
@@ -71,7 +71,7 @@ F-layer [12:16]  Forecast  -> ['F0:consonance_forecast', 'F1:pitch_forecast', 'F
 
 **15/16 dimensions significant at p<0.05**
 
-### All Beliefs x Bowling
+### All Beliefs x 13-dyad anchor
 
 | Belief | rho | p | p(perm) | 95% CI | Pearson r | FDR |
 |--------|-----|---|---------|--------|-----------|-----|
@@ -354,7 +354,7 @@ F-layer [12:16]  Forecast  -> ['F0:consonance_forecast', 'F1:pitch_forecast', 'F
 
 - Static interval WAVs (2s) provide limited temporal context
 - Evidence tier: alpha (confidence (0.85, 0.95))
-- Bowling N=13 is adequate for depth-0 but not for complex interactions
+- 13-dyad N=13 is adequate for depth-0 but not for complex interactions
 
 ---
 

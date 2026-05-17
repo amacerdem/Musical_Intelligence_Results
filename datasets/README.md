@@ -25,7 +25,7 @@ datasets/
 │   ├── r3-oos/                 R³ out-of-sample consonance (~30 KB)
 │   └── neurochemicals/         Pharmacology 11/11 + accumulation 132/132 (~40 KB)
 ├── consonance/                 Public consonance fixtures (24 MB)
-│                                  Bowling 2018, Eerola 2021 Exp 3,
+│                                  Eerola 2021 Exp 3,
 │                                  Marjieh 2024, Harrison 2024 Carillon
 ├── emotion/
 │   └── DEAM/audio/MEMD_audio/  Five DEAM held-out songs used by Phase 5 ECE
@@ -63,7 +63,6 @@ bash _infra/download_datasets.sh --datasets deam     # specific
 | Paper-time anchors | PolyForm Noncommercial 1.0.0 | See `LICENSE.md` |
 | Vendored engine snapshot | PolyForm Noncommercial 1.0.0 | See `LICENSE.md` and `engine/HEAD.md` |
 | DEAM | CC BY-NC-SA 4.0 | Aljanaki, Yang, Soleymani 2017, *PLoS ONE* |
-| Bowling 2018 dyad ratings | CC BY 4.0 | Bowling, Hoeschele, Gill, Fitch 2018, *Sci. Rep.* |
 | Eerola 2021 Exp 3 | CC BY 4.0 | Eerola, Lahdelma 2021, *Music Perception* |
 | Marjieh 2024 data-csv | CC BY 4.0 | Marjieh et al. 2024, *Nature Communications* |
 | Harrison 2024 Carillon | CC BY 4.0 | Harrison et al. 2024, *iScience* |

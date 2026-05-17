@@ -27,7 +27,7 @@
 
 | Dataset | Source | Group | Type |
 |---------|--------|-------|------|
-| Bowling & Purves 2018 | PNAS | A | 13 dyads × 30 subjects |
+| 13-dyad anchor & Purves 2018 | PNAS | A | 13 dyads × 30 subjects |
 | Sethares 1993 | JASA | A | Dissonance curve (151 synth WAVs) |
 | Bidelman & Krishnan 2009 | J Neurosci | A | FFR neural consonance |
 | Schwartz et al. 2003 | J Neurosci | A | Speech harmonics |
@@ -69,7 +69,7 @@
 1. Does the Sethares dissonance model reproduce the 1993 published curve shape?
 2. Is the Plomp-Levelt critical bandwidth formula correctly implemented?
 3. Does ratio simplicity (helmholtz/stumpf) follow number-theoretic predictions?
-4. Do R³ physics features track human consonance perception (Bowling 2018)?
+4. Do R³ physics features track human consonance perception (13-dyad anchor 2018)?
 5. Do R³ features agree with neural (Bidelman FFR) and speech (Schwartz) data?
 6. Do features generalize to 45 real music genres without degeneracy?
 
@@ -86,7 +86,7 @@
 | T1_formula | 10 | 10 | Sethares constants, derived formulas, output ranges |
 | T2_pipeline | 14 | 14 | Metadata, shapes, NaN guards, determinism |
 | T3_stimulus | 13 | 13 | Real WAV: intervals, controls, triads, timbral invariance |
-| T4_ground_truth | 23 | 23 | Sethares curve (151pt), Plomp-Levelt CB, ratio simplicity, Bowling/Bidelman/Schwartz + bootstrap/permutation/FDR |
+| T4_ground_truth | 23 | 23 | Sethares curve (151pt), Plomp-Levelt CB, ratio simplicity, 13-dyad anchor/Bidelman/Schwartz + bootstrap/permutation/FDR |
 | T5_ecological | 8 | 8 | 45 real music genres: NaN, variance, intercorrelation, genre consistency |
 | **TOTAL** | **68** | **68** | |
 
@@ -108,7 +108,7 @@
 
 | Dataset | File | N | Type |
 |---------|------|---|------|
-| bowling_2018 | `bowling2018_dyad_ratings.csv` | 13 | behavioral pleasantness |
+| dyad_anchor_2018 | `dyad-anchor2018_dyad_ratings.csv` | 13 | behavioral pleasantness |
 | sethares_1993 | `sethares1993_dissonance.csv` | 13 | dissonance rank order |
 | bidelman_2009 | `bidelman2009_ffr.csv` | 6 | brainstem FFR neural |
 | schwartz_2003 | `schwartz2003_speech_harmonics.csv` | 13 | speech harmonics |
@@ -157,7 +157,7 @@ Expected ordering from number theory: P1 > P8 > P5 > P4 > M3
 | M3 | 0.2994 | 0.5655 |
 
 
-#### Result 4: Bowling 2018 (PNAS) — R³ Physics Level
+#### Result 4: 13-dyad anchor 2018 (PNAS) — R³ Physics Level
 
 Spearman ρ between Group A features (real WAV) and mean human ratings (N=13, 30 subjects).
 
@@ -178,7 +178,7 @@ Spearman ρ between Group A features (real WAV) and mean human ratings (N=13, 30
 
 | Dataset | Modality | Feature | ρ | p | N |
 |---------|----------|---------|---|---|---|
-| Bowling 2018 | Behavioral | stumpf_fusion | +0.885 | 0.0001 | 13 |
+| 13-dyad anchor 2018 | Behavioral | stumpf_fusion | +0.885 | 0.0001 | 13 |
 | Bidelman 2009 | Neural FFR | stumpf_fusion | +1.000 | 0.0000 | 6 |
 | Schwartz 2003 | Speech | stumpf_fusion | +0.852 | 0.0002 | 13 |
 

@@ -1,8 +1,8 @@
 """V-Reproduction audio helpers (vendored from Science/V1/conftest.py).
 
 Two pure functions for loading WAV stimuli into the engine's expected
-formats. Used by Phase 2 (R3 unit tests Bowling DEV reproduction) and
-any other phase that needs WAV → mel / raw waveform conversion.
+formats. Used by Phase 2 (R3 unit tests) and any other phase that needs
+WAV → mel / raw waveform conversion.
 
 Requires: soundfile, torch, torchaudio (already in V-Repro requirements).
 """

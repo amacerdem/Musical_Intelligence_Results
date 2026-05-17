@@ -45,7 +45,7 @@ echo "[vendor] paper-anchors → $ANCH"
 mkdir -p "$ANCH"
 
 # ─── r3-ground-truth ────────────────────────────────────────────────
-echo "[vendor] r3-ground-truth (V1 r3 per-group reports + intervals + Bowling)"
+echo "[vendor] r3-ground-truth (V1 r3 per-group reports + intervals)"
 mkdir -p "$ANCH/r3-ground-truth/r3-reports" "$ANCH/r3-ground-truth/intervals"
 rsync -a --exclude="__pycache__" "$S_V1/results/r3/" "$ANCH/r3-ground-truth/r3-reports/"
 rsync -a "$S_V1/stimuli/intervals/" "$ANCH/r3-ground-truth/intervals/"
@@ -159,12 +159,9 @@ if [ -d "$S_V1/results/neurochemicals" ]; then
 fi
 
 # ─── Consonance CSVs (Phase 6 + 7, redistributable public data) ─────
-echo "[vendor] datasets/consonance: bowling, eerola, marjieh, harrison-carillon CSVs"
+echo "[vendor] datasets/consonance: eerola, marjieh, harrison-carillon CSVs"
 mkdir -p "$VREPRO_ROOT/datasets/consonance/marjieh2024/data-csv"
 mkdir -p "$VREPRO_ROOT/datasets/consonance/harrison2024_carillon"
-[ -f "$SCIENCE_ROOT/datasets/consonance/bowling2018_dyad_ratings.csv" ] && \
-    cp "$SCIENCE_ROOT/datasets/consonance/bowling2018_dyad_ratings.csv" \
-       "$VREPRO_ROOT/datasets/consonance/"
 [ -f "$SCIENCE_ROOT/datasets/consonance/eerola2021_exp3.csv" ] && \
     cp "$SCIENCE_ROOT/datasets/consonance/eerola2021_exp3.csv" \
        "$VREPRO_ROOT/datasets/consonance/"

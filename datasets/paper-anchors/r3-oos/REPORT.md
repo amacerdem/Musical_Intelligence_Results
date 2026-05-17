@@ -1,6 +1,6 @@
 # Stumpf-relabel audit — engine-canonical re-correlation across 4 datasets
 
-**Goal**: Resolve the discrepancy between Table 1 (Group A row: stumpf +0.885*) and the body text (Bowling Stumpf fusion ρ = −0.797) in the current paper. Determine which feature physically corresponds to which value, using the frozen R³ engine as ground truth.
+**Goal**: Resolve the discrepancy between Table 1 (Group A row: stumpf +0.885*) and the body text (13-dyad anchor Stumpf fusion ρ = −0.797) in the current paper. Determine which feature physically corresponds to which value, using the frozen R³ engine as ground truth.
 
 **Engine truth** (`Musical_Intelligence/ear/r3/groups/a_consonance/group.py` L194–198):
 ```
@@ -14,7 +14,7 @@ feature_names = (
 
 ---
 
-## 1. Bowling 2018, N = 13 — DECISIVE (real WAVs from V1/stimuli/intervals)
+## 1. 13-dyad anchor 2018, N = 13 — DECISIVE (real WAVs from V1/stimuli/intervals)
 
 | Engine name | ρ (canonical) | p | 95% CI | Pearson r |
 |---|---:|---:|---:|---:|
@@ -88,7 +88,7 @@ Synthesis: lower bell + upper bell with idealised partial spectra (12 partials e
 
 My synthesis under-estimates here too. V1 likely used the carillon study's actual recorded bell samples (`bell-samples.csv` references real f0s for 30+ recorded bells); idealised additive synthesis from formatted partial spectra is a coarser approximation.
 
-**Critical observation for the paper**: Under my synthesis, |ρ_roughness Carillon| = 0.626 < |ρ_roughness Bowling| = 0.797 — the anti-overfitting headline ("OOS magnitude > DEV magnitude") **fails under my synthesis**. Under V1's synthesis (probably bell-sample-based), it succeeds at 0.824 > 0.797. The argument's strength depends on synthesis fidelity; this is a critical synthesis-faithfulness question that should be settled before publication.
+**Critical observation for the paper**: Under my synthesis, |ρ_roughness Carillon| = 0.626 < |ρ_roughness 13-dyad anchor| = 0.797 — the anti-overfitting headline ("OOS magnitude > DEV magnitude") **fails under my synthesis**. Under V1's synthesis (probably bell-sample-based), it succeeds at 0.824 > 0.797. The argument's strength depends on synthesis fidelity; this is a critical synthesis-faithfulness question that should be settled before publication.
 
 **Verdict**: Sign + rank order consistent with relabel theory. Magnitude depends on synthesis. Anti-overfitting claim needs the V1 synthesis pipeline (or recorded bell samples) to be reproducible.
 
@@ -96,7 +96,7 @@ My synthesis under-estimates here too. V1 likely used the carillon study's actua
 
 ## 5. Cross-dataset relabel correspondence (the load-bearing pattern)
 
-| V1 OOS report label | Engine-canonical name (from this audit) | Bowling Δ | Eerola Δ |
+| V1 OOS report label | Engine-canonical name (from this audit) | 13-dyad anchor Δ | Eerola Δ |
 |---|---|---:|---:|
 | "stumpf_fusion" | roughness | 0.000 | 0.040 |
 | "helmholtz_roughness" | sethares_dissonance | 0.000 | 0.011 |
@@ -106,26 +106,26 @@ My synthesis under-estimates here too. V1 likely used the carillon study's actua
 | "roughness_total" | inharmonicity | 0.000 | 0.074 |
 | "inharmonicity" | harmonic_deviation | 0.000 | 0.071 |
 
-Bowling matches are exact (same WAVs, deterministic engine). Eerola matches are within ±0.19 across 617 chords with independent synthesis. **The relabeling is a single, consistent permutation across two datasets.**
+13-dyad anchor matches are exact (same WAVs, deterministic engine). Eerola matches are within ±0.19 across 617 chords with independent synthesis. **The relabeling is a single, consistent permutation across two datasets.**
 
 ---
 
 ## 6. What this means for the paper
 
 **Confirmed:**
-- Engine-canonical `stumpf_fusion` Bowling N=13 = **+0.885**, not −0.797.
-- Body claims of "Stumpf fusion ρ = −0.797 / −0.581 / −0.769 / −0.824" across Bowling / Eerola / Marjieh / Carillon are actually engine `roughness` values, mis-labeled.
+- Engine-canonical `stumpf_fusion` 13-dyad N=13 = **+0.885**, not −0.797.
+- Body claims of "Stumpf fusion ρ = −0.797 / −0.581 / −0.769 / −0.824" across 13-dyad anchor / Eerola / Marjieh / Carillon are actually engine `roughness` values, mis-labeled.
 - Body claim "autocorrelation peak ρ = +0.912 / +0.518 / +0.890" are actually engine `sensory_pleasantness` values, mis-labeled.
 - Supplementary caption's "sign-flip convention" excuse is factually wrong (magnitudes differ; this is a label permutation, not a sign change).
 
 **Falsifiable but pending V1-synthesis recovery:**
-- Anti-overfitting headline "Carillon −0.824 > Bowling −0.797" actually applies to engine `roughness`, not `stumpf_fusion`. This **may still be a valid claim under the correct feature name**, but only if V1's synthesis (or original recorded bell samples) reproduces the magnitude. My approximate synthesis gives 0.626, not 0.824.
+- Anti-overfitting headline "Carillon −0.824 > 13-dyad anchor −0.797" actually applies to engine `roughness`, not `stumpf_fusion`. This **may still be a valid claim under the correct feature name**, but only if V1's synthesis (or original recorded bell samples) reproduces the magnitude. My approximate synthesis gives 0.626, not 0.824.
 
 **New strong claims now available for the paper (engine-canonical):**
-- Engine `stumpf_fusion` Bowling N=13: **ρ = +0.885, p = 5.9 × 10⁻⁵, 95% CI [+0.651, +0.965]** — direct positive prediction of consonance pleasantness from harmonicity ratio.
+- Engine `stumpf_fusion` 13-dyad N=13: **ρ = +0.885, p = 5.9 × 10⁻⁵, 95% CI [+0.651, +0.965]** — direct positive prediction of consonance pleasantness from harmonicity ratio.
 - Engine `sensory_pleasantness` Eerola Exp3 N=617: ρ = +0.530, p = 6.5 × 10⁻⁴⁶, CI [+0.470, +0.584] — strongest single feature on this OOS chord dataset.
 - Engine `roughness` Eerola Exp3 N=617: ρ = −0.541, p = 4.3 × 10⁻⁴⁸ — strongest single feature on the dissonance side.
-- Engine `inharmonicity = 1 − stumpf_fusion` mathematical complement is verifiable in the engine; both correlate at ±0.885 on Bowling — internal-consistency proof of engine determinism.
+- Engine `inharmonicity = 1 − stumpf_fusion` mathematical complement is verifiable in the engine; both correlate at ±0.885 on 13-dyad anchor — internal-consistency proof of engine determinism.
 
 ---
 
@@ -134,17 +134,17 @@ Bowling matches are exact (same WAVs, deterministic engine). Eerola matches are 
 1. **Body text**: replace every "Stumpf fusion ρ = X" (X ∈ {−0.797, −0.581, −0.769, −0.824}) with "Sethares roughness ρ = X". Replace every "autocorrelation peak ρ = +0.912 / +0.518 / +0.890" with "sensory pleasantness ρ = ..." or recompute with engine `autocorrelation_peak` (different feature in Group G/H — may not exist in Group A at all; verify).
 2. **Table 1 (Group A row)**: keep "stumpf +0.885***"; this is correct.
 3. **Supplementary caption** (`Amac-Erdem-Musical-Intelligence.tex` L522): delete the "sign-flip convention" sentence. It is false. Replace with a single sentence noting the feature naming derives from the engine source at `a_consonance/group.py` L194–198.
-4. **Add the new Stumpf headline to body**: `stumpf_fusion ρ = +0.885 vs Bowling pleasantness, p = 5.9 × 10⁻⁵` — this is a strictly stronger claim than the current −0.797 and aligns with Stumpf 1890 fusion theory (high harmonicity → high consonance).
-5. **Anti-overfitting claim**: rerun engine `roughness` on Carillon with V1-faithful synthesis (or original recorded bell samples) before claiming "Carillon ≥ Bowling". If V1 synthesis is unrecoverable, the strongest defensible form is: "engine roughness retains a substantial negative correlation with carillon pleasantness (|ρ| = 0.626 under approximate synthesis), demonstrating partial-pair generalisation to inharmonic timbres beyond harmonic calibration." Magnitude > Bowling is the optional stretch claim.
+4. **Add the new Stumpf headline to body**: `stumpf_fusion ρ = +0.885 vs 13-dyad anchor pleasantness, p = 5.9 × 10⁻⁵` — this is a strictly stronger claim than the current −0.797 and aligns with Stumpf 1890 fusion theory (high harmonicity → high consonance).
+5. **Anti-overfitting claim**: rerun engine `roughness` on Carillon with V1-faithful synthesis (or original recorded bell samples) before claiming "Carillon ≥ 13-dyad anchor". If V1 synthesis is unrecoverable, the strongest defensible form is: "engine roughness retains a substantial negative correlation with carillon pleasantness (|ρ| = 0.626 under approximate synthesis), demonstrating partial-pair generalisation to inharmonic timbres beyond harmonic calibration." Magnitude > 13-dyad anchor is the optional stretch claim.
 
 ---
 
 ## Provenance
 
 - Engine commit: same as paper-canonical (V1 frozen at Apr 1, 2026; V2 path uses `Science/Musical_Intelligence/`)
-- Bowling: 13 WAVs from `Science/V1/stimuli/intervals/`, ratings from `Science/datasets/consonance/bowling2018_dyad_ratings.csv`
+- 13-dyad anchor: 13 WAVs from `Science/V1/stimuli/intervals/`, ratings from `Science/datasets/consonance/dyad-anchor2018_dyad_ratings.csv`
 - Eerola: 617 chord rows from `Legacy/Final-Validation-V1/datasets/consonance/eerola2021_exp3.csv`, MIDI notes from `midi` column, harmonic synthesis (8 partials, −3 dB/oct)
 - Marjieh: 7,500 ratings from `Science/datasets/consonance/marjieh2024/data-csv/rating_dyh3dd.csv`, binned to 13 integer-semitone bins
 - Carillon: 1,499 interval points from `Science/datasets/consonance/harrison2024_carillon/carillon-behavioural-profile.csv`, binned to 13 integer-semitone bins; idealised partials from `idealised_bell_spectra_formatted.csv`
-- Scripts: `Science/V2/code/stumpf-relabel-audit/01_bowling_groupA_canonical.py`, `02_oos_groupA_canonical.py`
-- Outputs: `Science/V2/results/stumpf-relabel-audit/01_bowling_groupA_canonical.csv`, `02_oos_groupA_canonical.csv`
+- Scripts: `Science/V2/code/stumpf-relabel-audit/01_dyad-anchor_groupA_canonical.py`, `02_oos_groupA_canonical.py`
+- Outputs: `Science/V2/results/stumpf-relabel-audit/01_dyad-anchor_groupA_canonical.csv`, `02_oos_groupA_canonical.csv`

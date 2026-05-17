@@ -4,7 +4,7 @@
 **Source:** Science/results/ (all subdirectories, exhaustive extraction)
 **Engine:** R³ v1.0.0 FROZEN · H³ v1.0.0 FROZEN · C³ Kernel v4.0
 
-> **Important:** Each mechanism is reported against its **correct primary domain**. Bowling 2018 is only primary for F1 Sensory and F5 Emotion. Cross-domain Bowling scores are noted where available but not treated as primary evidence.
+> **Important:** Each mechanism is reported against its **correct primary domain**. 13-dyad anchor 2018 is only primary for F1 Sensory and F5 Emotion. Cross-domain 13-dyad anchor scores are noted where available but not treated as primary evidence.
 
 ---
 
@@ -23,8 +23,8 @@
 
 | Group | D | Tests | Pass | XF | Bugs | Best ρ | Primary Dataset |
 |-------|---|-------|------|----|------|--------|----------------|
-| A Consonance | 7 | 68 | 68 | 0 | 0 | stumpf +0.885*** | Bowling (N=13) |
-| B Energy | 5 | 48 | 48 | 0 | 3 | dynamics +1.000*** | Bowling + Stevens' |
+| A Consonance | 7 | 68 | 68 | 0 | 0 | stumpf +0.885*** | 13-dyad anchor (N=13) |
+| B Energy | 5 | 48 | 48 | 0 | 3 | dynamics +1.000*** | 13-dyad anchor + Stevens' |
 | C Timbre | 9 | 40 | 36 | 4 | 1 | warmth +0.402 (ns) | Grey 1977 |
 | D Change | 4 | 45 | 45 | 0 | 0 | entropy analytical | Information theory |
 | F Pitch | 16 | 33 | 33 | 0 | 0 | 7/12 keys ρ>0.40 | Krumhansl 1982 |
@@ -37,7 +37,7 @@
 
 | Dataset | Role | N | stumpf ρ | autocorr ρ | rough ρ | FDR dims |
 |---------|------|---|----------|------------|---------|----------|
-| Bowling 2018 | DEV | 13 | −0.797** | +0.912*** | −0.885*** | — |
+| 13-dyad anchor 2018 | DEV | 13 | −0.797** | +0.912*** | −0.885*** | — |
 | Eerola Exp3 | OOS | 617 | −0.581*** | +0.518*** | −0.433*** | 50/97 |
 | Marjieh 2024 | OOS | 7,500 | −0.769** | +0.890*** | −0.813*** | — |
 | Harrison Carillon | OOS | 113 | −0.824***† | +0.852*** | −0.731** | — |
@@ -64,7 +64,7 @@
 
 ## 3. C³ Functions — PRIMARY DOMAIN RESULTS
 
-### F1 Sensory (12 mech, 139D) — Primary: Bowling 2018
+### F1 Sensory (12 mech, 139D) — Primary: 13-dyad anchor 2018
 
 | Mechanism | Dims | Sig | FDR Bel | Best ρ | f² |
 |-----------|------|-----|---------|--------|-----|
@@ -84,7 +84,7 @@
 
 ### F2 Prediction (10 mech, 110D) — Primary: Mixed (correct per mechanism)
 
-| Mechanism | Dims | Primary Dataset | Primary Sig | Bowling Sig | Best ρ (primary) |
+| Mechanism | Dims | Primary Dataset | Primary Sig | 13-dyad anchor Sig | Best ρ (primary) |
 |-----------|------|----------------|-------------|-------------|-----------------|
 | HTP | 12 | IDyOMpy Bach | surprise tracking | 12/12 | +0.791 |
 | SPH | 14 | TenseMusic | tension ρ=0.292 | 14/14 | +0.951 |
@@ -102,7 +102,7 @@
 
 ### F3 Attention (12 mech, 122D) — Primary: groove_midi / attention stimuli
 
-| Mechanism | Dims | Primary Dataset | Primary FDR | Bowling Sig | Primary Best ρ |
+| Mechanism | Dims | Primary Dataset | Primary FDR | 13-dyad anchor Sig | Primary Best ρ |
 |-----------|------|----------------|-------------|-------------|---------------|
 | SNEM | 12 | groove_midi BPM | **5/5 (100%)** | 0/12 | +0.522 |
 | IACM | 11 | attention stimuli | **3/4 (75%)** | 11/11 | +0.951 |
@@ -118,11 +118,11 @@
 | PWSM | 9 | attention stimuli | **4/5 (80%)** | 4/9 | −0.879 |
 | **Total** | **122** | | **39/56 (70%)** | 48/122 (39%) | |
 
-**Note:** Bowling 39% is cross-domain artifact. Primary domain 70% is the correct number.
+**Note:** 13-dyad anchor 39% is cross-domain artifact. Primary domain 70% is the correct number.
 
 ### F4 Memory (15 mech, 159D) — Primary: DEAM dynamic tracking
 
-| Mechanism | Dims | DEAM Dynamic (30 songs) | Bowling Sig | Best Dynamic |ρ| |
+| Mechanism | Dims | DEAM Dynamic (30 songs) | 13-dyad anchor Sig | Best Dynamic |ρ| |
 |-----------|------|------------------------|-------------|----------------|
 | MEAMN | 12 | **30/30 PASS** | 11/12 | 0.475 (TenseMusic) |
 | MMP | 12 | **30/30 PASS** | 5/12 | **0.581** (highest) |
@@ -143,7 +143,7 @@
 
 **Primary result: 450/450 DEAM dynamic tests PASS (100%)**
 
-### F5 Emotion (12 mech, 142D) — Primary: Bowling + DEAM emotion
+### F5 Emotion (12 mech, 142D) — Primary: 13-dyad anchor + DEAM emotion
 
 | Mechanism | Dims | Sig | Best ρ | f² | DEAM sig |
 |-----------|------|-----|--------|-----|----------|
@@ -165,16 +165,16 @@
 
 ### F6 Reward (10 mech, 70D) — Primary: Pharmacological + DEAM
 
-| Mechanism | Dims | Primary Dataset | Primary Evidence | Bowling | Best ρ |
+| Mechanism | Dims | Primary Dataset | Primary Evidence | 13-dyad anchor | Best ρ |
 |-----------|------|----------------|-----------------|---------|--------|
 | DAED | 8 | **Salimpoor PET + Ferreri pharma** | caudate leads 52/56 (93%), levo>plac>risp | 8/8 | +0.912 |
 | MORMR | 7 | **Blood & Zatorre chills fMRI** | chills d=8.61, Putkinen 7/7 PET | 7/7 | +0.923 |
-| RPEM | 8 | **DEAM + Bowling** | RPE consonant vs dissonant d=3.59 | 8/8 | +0.896 |
+| RPEM | 8 | **DEAM + 13-dyad anchor** | RPE consonant vs dissonant d=3.59 | 8/8 | +0.896 |
 | IUCP | 6 | **DEAM complexity** | inverted-U confirmed | 6/6 | +0.912 |
 | MCCN | 7 | **B&Z chills + Chabin EEG** | theta prefrontal d=2.04 | 7/7 | +0.830 |
 | MEAMR | 6 | **DEAM familiarity** | nostalgia d=3.71 | 6/6 | +0.940 |
 | SSRI | 11 | **DEAM social** | synchrony d=4.21 | 11/11 | +0.912 |
-| LDAC | 6 | **Bowling + DEAM** | dual-domain | 6/6 | +0.912 |
+| LDAC | 6 | **13-dyad anchor + DEAM** | dual-domain | 6/6 | +0.912 |
 | IOTMS | 5 | **Putkinen PET** | MOR d=5.34 | 5/5 | +0.923 |
 | SSPS | 6 | **DEAM (Cheung/Gold)** | saddle d=3.05 | 6/6 | +0.797 |
 | **Total** | **70** | | | **70/70 (100%)** | |
@@ -187,7 +187,7 @@
 
 ### F7 Motor (12 mech, 132D) — Primary: groove_midi
 
-| Mechanism | Dims | groove_midi Primary | Bowling (cross-domain) | Best ρ (primary) |
+| Mechanism | Dims | groove_midi Primary | 13-dyad anchor (cross-domain) | Best ρ (primary) |
 |-----------|------|--------------------|-----------------------|-----------------|
 | PEOM | 11 | 4/5 FDR | 10/11 | +0.912 |
 | HMCE | 11 | **6/6 FDR** | 11/11 | +0.912 |
@@ -203,11 +203,11 @@
 | NSCP | 11 | strong | 10/11 | +0.945 |
 | **Total** | **132** | **15/17 FDR** | ~124/132 (94%) | |
 
-**Note:** Bowling 94% is misleadingly high — shared R³ upstream features inflate consonance correlation. groove_midi is the correct motor domain test.
+**Note:** 13-dyad anchor 94% is misleadingly high — shared R³ upstream features inflate consonance correlation. groove_midi is the correct motor domain test.
 
 ### F8 Learning (6 mech, 67D) — Primary: QM2020 + Musician Meta
 
-| Mechanism | Dims | Primary Dataset | Primary Evidence | Bowling | Best ρ |
+| Mechanism | Dims | Primary Dataset | Primary Evidence | 13-dyad anchor | Best ρ |
 |-----------|------|----------------|-----------------|---------|--------|
 | EDNR | 10 | Musician meta (N=3005) | Gray matter d=1.59, CC FA d=1.33 | 9/10 | +0.890 |
 | TSCP | 10 | Pantev 2001 (N=16) | Timbre N1m F=28.55, p=0.00008 | 10/10 | +0.945 |
@@ -290,19 +290,19 @@
 
 ## 7. Primary Dataset Audit Summary
 
-| Fn | Correct Primary | Bowling Primary? | Key Metric |
+| Fn | Correct Primary | 13-dyad anchor Primary? | Key Metric |
 |----|----------------|-----------------|-----------|
-| F1 | Bowling 2018 | **YES (12/12)** | 132/139 sig (95%) |
+| F1 | 13-dyad anchor 2018 | **YES (12/12)** | 132/139 sig (95%) |
 | F2 | Mixed (correct) | Partially | 107/110 sig (97%), 50/50 FDR |
 | F3 | groove_midi / attention | **NO (9/12)** | Primary FDR 39/56 (70%) |
 | F4 | DEAM dynamic | **NO (15/15)** | 450/450 dynamic (100%) |
-| F5 | Bowling + DEAM | **YES (11/12)** | 135/142 sig (95%) |
+| F5 | 13-dyad anchor + DEAM | **YES (11/12)** | 135/142 sig (95%) |
 | F6 | Pharma + DEAM | **Partially** | 70/70 sig, 11/11 pharma |
 | F7 | groove_midi | **NO (12/12)** | 15/17 FDR (groove) |
 | F8 | QM2020 / meta | **NO (6/6)** | d=1.84 mean, 14/14 FDR |
 
 ### Correctly Assessed: 51/89 (57%)
-### Bowling Misleading: 38/89 (43%) — report primary domain instead
+### 13-dyad anchor Misleading: 38/89 (43%) — report primary domain instead
 
 ---
 
@@ -312,12 +312,12 @@
 |-------|-------------|--------|
 | R³ | 415 unit tests + 5 OOS datasets | 410/415 (98.8%), OOS generalises |
 | H³ | 19 independent tests | 19/19 (100%) |
-| F1 Sensory | Bowling consonance | 132/139 sig (95%), 22/22 FDR |
+| F1 Sensory | 13-dyad anchor consonance | 132/139 sig (95%), 22/22 FDR |
 | F2 Prediction | Mixed domain | 107/110 sig (97%), 50/50 FDR |
 | F3 Attention | groove_midi + attention | 39/56 primary FDR (70%) |
 | F4 Memory | DEAM dynamic | 450/450 (100%) |
-| F5 Emotion | Bowling + DEAM | 135/142 sig (95%) |
-| F6 Reward | Pharmacological | 11/11 pharma, 70/70 Bowling |
+| F5 Emotion | 13-dyad anchor + DEAM | 135/142 sig (95%) |
+| F6 Reward | Pharmacological | 11/11 pharma, 70/70 13-dyad anchor |
 | F7 Motor | groove_midi | 15/17 FDR |
 | F8 Learning | QM2020 + meta | 14/14 FDR, d=1.84 |
 | RAM | 7 fMRI studies | 30/32 match (93.8%) |

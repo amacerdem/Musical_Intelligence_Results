@@ -16,7 +16,7 @@ Usage from any phase script:
     from _capture_path import science  # noqa: E402
 
     GT_0006 = science("V2", "results", "GT-0006", "test_registry.csv")
-    BOWLING = science("datasets", "consonance", "bowling2018_dyad_ratings.csv")
+    EEROLA  = science("datasets", "consonance", "eerola2021_exp3.csv")
 
 `science()` returns the vendored path if it exists, else the parent
 Science/ checkout path. Phase scripts work in both modes (vendored
