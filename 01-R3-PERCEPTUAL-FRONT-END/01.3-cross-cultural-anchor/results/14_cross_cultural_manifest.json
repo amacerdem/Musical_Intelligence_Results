@@ -1,0 +1,58 @@
+{
+  "axis_id": "AXIS-11",
+  "axis_name": "Cross-cultural V5 honest reproduction",
+  "engine_head": "318eb2f529d7103e8b7d80b01228357fdc4e0217",
+  "framing": "V5 NEGATIVE on bonang preserved as honest evidence; NHS+Mridangam out-of-scope verdicts preserved; V4 strong-pass anchors (Hindustani raga, inconMore breadth) reproduce paper-exact.",
+  "phase_close_date": "2026-05-07",
+  "git_commit_hash": "PENDING_AT_CLOSE",
+  "claims": [
+    {
+      "claim_id": "C-CROSS-CULT-01",
+      "label": "Hindustani raga (Saraga 1.5) \u03c1 \u2248 +0.565",
+      "paper": "+0.565",
+      "reproduced": "+0.5697",
+      "verdict": "PASS",
+      "notes": "V4 P2.composite top-7 ragas; 7/7 with \u03c1>0"
+    },
+    {
+      "claim_id": "C-CROSS-CULT-02",
+      "label": "inconMore breadth \u03c1 \u2248 +0.408 (V5 audit-fixed convention-corrected signed mean)",
+      "paper": "+0.408",
+      "reproduced": "+0.4076",
+      "verdict": "PASS",
+      "notes": "V5 P4.composite (audit-fixed); 6/7 datasets positive. V4 v3 P4=+0.505 was pre-audit; V5 audit fixed convention to +0.408 paper-exact"
+    },
+    {
+      "claim_id": "C-CROSS-CULT-03",
+      "label": "Bonang \u03c1 \u2248 +0.221 (calibration boundary, V5 NEGATIVE)",
+      "paper": "+0.221 (calibration boundary)",
+      "reproduced": "+0.2208",
+      "verdict": "PASS",
+      "notes": "\u03c1_bonang=+0.221, \u03c1_harmonic=+0.404, |bonang|/|harmonic|=0.55; PASS = sign+ AND \u03c1_bonang\u22650.4 AND ratio\u22650.5"
+    },
+    {
+      "claim_id": "C-CROSS-CULT-04",
+      "label": "Pakistan composite \u03c1 (V4: PASS, V5 audit: FAIL \u2014 disclosure preserved)",
+      "paper": "V4 +0.40 / V5 +0.07 (disclosed)",
+      "reproduced": "V4 +0.400 / V5 +0.074",
+      "verdict": "PASS",
+      "notes": "V5 audit identified n=16 included 8 arpeggios where BCH (Sethares-Plomp-Levelt) has no architectural signal. V4 v3 mode-aggregated n=4 was the correct test design. Disclosed in V5 INTEGRATION-LOG."
+    },
+    {
+      "claim_id": "C-CROSS-CULT-05",
+      "label": "NHS classification \u2248+0.398 (V4 P5 PASS but k/n\u22482 overfit-suspect, OUT-OF-SCOPE)",
+      "paper": "out-of-scope per V4 honest-scope \u00a7",
+      "reproduced": "V4 P5 +0.398 (228D LOSO across 86 societies, lda=0.398)",
+      "verdict": "PASS",
+      "notes": "V4 P5 PASS at threshold but classification at k/n\u22482 is overfit-suspect; OUT-OF-SCOPE per V4 honest-scope disclosure"
+    },
+    {
+      "claim_id": "C-CROSS-CULT-06",
+      "label": "Mridangam stroke 3-way classification (V4 P6 PASS but F7-only, OUT-OF-SCOPE for F1-F8)",
+      "paper": "out-of-scope (F7 calibration, F1-F8 scope of paper)",
+      "reproduced": "V4 P6 +0.979 (3-way logreg acc, threshold 1.5\u00d7chance)",
+      "verdict": "PASS",
+      "notes": "V4 P6 PASS at threshold but F7 calibration not part of paper's F1-F8 cognitive validation"
+    }
+  ]
+}
