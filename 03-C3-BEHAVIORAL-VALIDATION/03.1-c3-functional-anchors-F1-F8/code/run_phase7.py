@@ -38,7 +38,7 @@ import numpy as np
 import torch
 
 PHASE_DIR = Path(__file__).resolve().parent.parent
-V_REPRO   = PHASE_DIR.parent
+V_REPRO   = PHASE_DIR.parent.parent
 SCIENCE   = V_REPRO.parent
 
 # Engine: prefer vendored, fallback parent

@@ -19,7 +19,7 @@ import sys
 from pathlib import Path
 
 PHASE_DIR = Path(__file__).resolve().parent.parent
-V_REPRO   = PHASE_DIR.parent
+V_REPRO   = PHASE_DIR.parent.parent
 SCIENCE   = V_REPRO.parent
 
 # Paper anchor: cheung-reward (V2 T-R2-04)

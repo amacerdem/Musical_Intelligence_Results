@@ -18,7 +18,7 @@ import sys
 from pathlib import Path
 
 PHASE_DIR = Path(__file__).resolve().parent.parent
-V_REPRO   = PHASE_DIR.parent
+V_REPRO   = PHASE_DIR.parent.parent
 SCIENCE   = V_REPRO.parent
 
 # Paper anchor: cross-cultural (V4 NHS+Hindustani+Mridangam + V5 Pakistan+bonang+inconMore)
