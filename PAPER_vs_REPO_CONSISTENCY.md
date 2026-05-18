@@ -13,9 +13,9 @@
 
 **Paper BEHIND (still cites old/coarser numbers):** 7 paper passages — most are minor "stale count" wording (Phase 1, Phase 2, Phase 3, Phase 19, Phase 20) + one significant **internal inconsistency between 16,191 and 16,248** for total constant count.
 
-**Repo BEHIND (paper has content not in our migrated tree):** 4 items — Phase 10 Stage B Cheung audio-native upgrade (executed 2026-05-16, ~16h before paper PDF compile), Phase 16 paper-wide BB-FDR portfolio (deferred per project directive to 06.2 PENDING), Phase 17 Zenodo single-shell-command reproducer (99-ZENODO scaffold empty), and the Phase 28 Bowling row (paper retains, repo dropped per user "Zero Bowling" directive).
+**Repo BEHIND (paper has content not in our migrated tree):** ~~4~~ **3 items** (was 4 — Phase 10 Stage B Cheung audio-native upgrade **migrated 2026-05-18**, see §C.1 below). Remaining: Phase 16 paper-wide BB-FDR portfolio (deferred per project directive to 06.2 PENDING), Phase 17 Zenodo single-shell-command reproducer (99-ZENODO scaffold empty), and the Phase 28 Bowling row (paper retains, repo dropped per user "Zero Bowling" directive).
 
-**Net interpretation:** Paper is largely accurate. The 16,191/16,248 split, the 5/5 cardinality count, and the 410/415 R³ count are vestiges from pre-V3-audit drafts. The four Repo-BEHIND items are intentional (06.2 deferred) or pending migration (Stage B + Zenodo + Bowling-section revision).
+**Net interpretation:** Paper is largely accurate. The 16,191/16,248 split, the 5/5 cardinality count, and the 410/415 R³ count are vestiges from pre-V3-audit drafts. The three remaining Repo-BEHIND items are intentional (06.2 deferred + 28 Bowling dropped) or pending migration (99-ZENODO bundle).
 
 ---
 
@@ -160,7 +160,7 @@ Paper's "207 records" is roughly the sum of `phase × paragraph cells × CAVEAT 
 
 These items are intentional or pending migration. **Action: either migrate or finalize paper-side wording.**
 
-### C.1 — Phase 10 Stage B Cheung audio-native upgrade (executed 2026-05-16; not migrated)
+### C.1 — Phase 10 Stage B Cheung audio-native upgrade ✅ MIGRATED 2026-05-18 (closed item)
 
 **Paper §435 (Gold, Cheung Stage B):**
 - LOSO ceiling reproduces bit-exactly at ρ=+0.21686 vs paper-anchor +0.2169 (|Δ|=3.8×10⁻⁵)
@@ -175,9 +175,7 @@ These items are intentional or pending migration. **Action: either migrate or fi
 **Repo 03.3 (current):**
 - Only Stage A Cheung interaction reproduction (7/7 PASS): β=−0.158, Cheung's −0.124 in CI, ΔAIC=−33.5, Eq.5 r=+0.615
 
-**Gap:** Stage B (5 angles: LOSO ceiling, rhythm-invariance, engine-native CI, cross-corpus calibration, substitution-validity) is not migrated. Paper references `V-Reproduction/10-cheung-emergent-reward/AUDIO_NATIVE_UPGRADE.md` (CLOSED 2026-05-16) which we have NOT brought across.
-
-**Action:** Migrate `Musical-Intelligence-Reproduction/10-cheung-emergent-reward/AUDIO_NATIVE_UPGRADE.md` + Stage B artefacts into 03.3 as a parallel verdict.
+**Status (2026-05-18):** ✅ MIGRATED. Stage B 5-angle artefacts (`AUDIO_NATIVE_UPGRADE.md` + `angle1-5` JSON/CSV/NPY) were already in our 03.3 from the initial Section 03 migration; the gap was the absence of a verdict CSV aggregating the 5 angles into PASS/FAIL records. New verdict CSV created at `03-C3-BEHAVIORAL-VALIDATION/03.3-cheung-emergent-reward/results/10.B_cheung_audio_native_correlations.csv` with 10 verdict cells (8 PASS + 1 PASS-NEW surprise ceiling + 1 PASS-MIXED aggregate; sub-verdicts: 4 POSITIVE + 1 INCONCLUSIVE_BORDERLINE + 1 pre-registered NEGATIVE confirmed). README.md + CLAIMS_AND_EVIDENCE.md updated to reflect Stage A + Stage B both. Paper §435 (i)-(v) mapped to claim_id `C-CHEUNG-B1..B10`.
 
 ### C.2 — Phase 16 paper-wide BB-FDR portfolio (deferred per project directive)
 
@@ -250,7 +248,7 @@ Ordered by impact:
 | **4** | Update Phase 19 §478 from "all PASS" → "528/531 PASS + 3 list-equality test-tooling bugs on K-K 1982 reference profiles (pre-existing, not engine drift)" | §478 | trivial |
 | **5** | Consolidate Phase 2 + Phase 19 wording (410/415 vs 531) to single Phase 19 reference | §476, §478 | small |
 | **6** | Consolidate Phase 3 + Phase 20 wording (12/14 + 7+7) to single Phase 20 reference | §478, §491 | small |
-| **7** | Migrate Phase 10 Stage B Cheung audio-native upgrade into 03.3 (or formally re-cite paper passage as "Stage B documented in source repo `10-cheung-emergent-reward/AUDIO_NATIVE_UPGRADE.md`, deposited 2026-05-16, not in migrated Musical_Intelligence_Results/ tree") | repo migration | medium (script + verdict CSV) |
+| ~~7~~ | ~~Migrate Phase 10 Stage B Cheung audio-native upgrade into 03.3~~ | ~~repo migration~~ | ✅ **DONE 2026-05-18** (verdict CSV `10.B_cheung_audio_native_correlations.csv` + README + CLAIMS_AND_EVIDENCE updates) |
 | **8** | Migrate Phase 17 Zenodo bundle into `99-ZENODO-BUNDLE-MANIFEST/` | repo migration | medium |
 | **9** | Decide on Phase 28 Bowling row treatment (drop / footnote / restore) | §443, §529 | depends on choice |
 | **10** | Reconcile audit-verdict-surface counts: 207 paper records vs 1,120 atom repo verdicts (define canonical counting basis) | §363, §496 | medium |
@@ -262,7 +260,7 @@ Ordered by impact:
 
 **Paper accuracy: high.** 20 of 28 phase blocks match paper headlines bit-equality or within paper-declared tolerance. The 8 mismatches are mostly stale wording (Phase 1, 2, 3, 19, 20 counts) + one 16,191/16,248 internal inconsistency. None of the mismatches changes any load-bearing scientific claim — all are at the bookkeeping layer.
 
-**Repo accuracy: high.** 22 of 25 phases reproduce green end-to-end. The 3 Repo-BEHIND items (Phase 10 Stage B, Phase 17 Zenodo, Phase 28 Bowling row) are all intentional or pending migration.
+**Repo accuracy: high.** 22 of 25 phases reproduce green end-to-end. Phase 10 Stage B migrated 2026-05-18. The 2 remaining Repo-BEHIND items (Phase 17 Zenodo bundle, Phase 28 Bowling row) are intentional or pending migration.
 
 **Action required for paper revision:** Items #1-#6 are trivial sed-style edits. Items #7-#11 require either migration or paper-text rewriting.
 

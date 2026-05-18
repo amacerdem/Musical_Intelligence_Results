@@ -3,7 +3,7 @@
 **Repository:** `Musical_Intelligence_Results/`
 **Engine SHA:** `318eb2f529d7103e8b7d80b01228357fdc4e0217`
 **Engine aggregate SHA-256:** `482ade45c50f5d3bf5c90c122e495b2c3230e6e6edc6542f72f22e3b5da37f88`
-**Audit date:** 2026-05-17
+**Audit date:** 2026-05-17 (Stage A + initial migration) · **Updated:** 2026-05-18 (Phase 03.3 Stage B audio-native upgrade migrated)
 **Reproducibility runtime:** 6,277 s cumulative (1 h 44 m 37 s) on MacBook Air M2 8 GB
 **Status:** 22/25 phases runnable + green end-to-end; 1 deferred (Phase 06.2 portfolio aggregator); 1 EXEC-PENDING (Phase 05.7 audio fetch); 1 blocked on environment (Phase 04.1 live engine, CSV-cached verdict preserved)
 
@@ -13,9 +13,9 @@
 
 | Category | Count |
 |---|---|
-| **Claim-style CSV verdicts** | **202** |
+| **Claim-style CSV verdicts** | **212** (Stage A 202 + Stage B Cheung audio-native 10) |
 | **Pytest sub-tests** | **918** |
-| **Total verdict atoms** | **1,120** |
+| **Total verdict atoms** | **1,130** |
 | Phases migrated | 25 (3 of which deferred / EXEC-PENDING) |
 | Sections | 7 (00 → 06 + 99-Zenodo placeholder) |
 | Datasets exercised | 32 in registry; 6 paper-cited fMRI/PET ELIGIBLE; 13-corpus consonance battery; DEAM, Cheung, TenseMusic, PMEmo, Eerola GEMS, ChillsDB |
@@ -255,7 +255,9 @@ Source: `03-C3-BEHAVIORAL-VALIDATION/03.2-ece-belief-calibration/results/per_cla
 
 5 DEAM songs held out, N=206,080 (π_pred, PE) pairs across 8 Core beliefs. Cheung interaction r=+0.615, ρ=+0.556, R²=0.477 (M2 model, ΔAIC=−33.5).
 
-### 4.3. Phase 03.3 cheung-emergent-reward (7/7 PASS + 30 per-stim correlations)
+### 4.3. Phase 03.3 cheung-emergent-reward — Stage A (7/7) + Stage B audio-native (10 cells)
+
+#### 4.3a Stage A — Cheung interaction reproduction (7/7 PASS)
 
 Source: `03-C3-BEHAVIORAL-VALIDATION/03.3-cheung-emergent-reward/results/10_cheung_correlations.csv`
 
@@ -271,7 +273,28 @@ Source: `03-C3-BEHAVIORAL-VALIDATION/03.3-cheung-emergent-reward/results/10_cheu
 
 Plus 30 per-stimulus correlations (`angle1_per_stim_correlations.csv`) showing per-song HTP_ENT and ICEM_IC r values; subject-level + chord-level decomposition.
 
-**Significance:** Engine's Eq.5 reward (additive, no interaction term, fitted on V1 stored) shrinks Cheung's published interaction effect by ~25% in held-out test — the emergent-reward hypothesis. Confidence interval contains Cheung's value.
+#### 4.3b Stage B — audio-native upgrade (5 angles, frozen pre-registration CLOSED 2026-05-16)
+
+Source: `03-C3-BEHAVIORAL-VALIDATION/03.3-cheung-emergent-reward/results/10.B_cheung_audio_native_correlations.csv` + 5 angle JSON/CSV/NPY artefacts + `AUDIO_NATIVE_UPGRADE.md` (paper §435).
+
+**Trigger:** Discovery of Cheung 2024 OSF deposit (5fk2q) released the 90 stimulus WAVs + 30 chord-pitch TSVs + surprise-rating column — assets that were not available at Stage A closure (2026-05-07). Re-evaluation under a 5-angle frozen pre-registration; engine SHA aggregate verified.
+
+| Claim ID | Angle | Paper §435 ref | Paper value | Reproduced | Verdict |
+|---|---|---|---|---|---|
+| C-CHEUNG-B1 | 1 Substitution-validity NEGATIVE | (v) | median r(HTP, ENT) ≈ −0.13, r(ICEM, IC) ≈ −0.04 | −0.1322, −0.0352 | **PASS** (pre-registered NEGATIVE confirmed — MI channels architecturally distinct from IDyOM symbol-stream entropies) |
+| C-CHEUNG-B2 | 2 Engine-native β re-fit | (iii) | β=−0.060, CI [−0.111, −0.007]; Cheung −0.124 sits 0.013 outside | β=−0.0603, dist 0.0131 outside | **PASS** (verdict label: INCONCLUSIVE_BORDERLINE — same sign, half magnitude, 0.013 outside engine bootstrap CI) |
+| C-CHEUNG-B3 | 2 CV held-out r | (iii) supp | r=+0.462 = 2.13× LOSO ceiling | +0.4620, ratio 2.130× | **PASS** |
+| C-CHEUNG-B4 | 3 LOSO pleasure ceiling | (i) | ρ_LOSO=+0.21686 vs paper-anchor +0.2169 (\|Δ\|=3.8×10⁻⁵) | +0.21686 (\|Δ\|=3.83×10⁻⁵) | **PASS** (bit-exact reproduction) |
+| C-CHEUNG-B5 | 3 surprise ceiling | (i) supp | +0.481 (parallel surprise rating) | +0.4808 | **PASS-NEW** (out-of-scope vs paper — never published in Cheung 2019) |
+| C-CHEUNG-B6 | 4 Rhythm-invariance | (ii) | median r_HTP=+0.993, r_ICEM=+0.828 | +0.9932, +0.8276 | **PASS** (architectural prediction confirmed: HTP/ICEM are chord-level, not rhythm-driven) |
+| C-CHEUNG-B7 | 5 Pooled ECE | (iv) | ECE=0.082 (cross-corpus replication of DEAM ECE 0.079, \|Δ\|=0.003) | 0.0819 (\|Δ\|=0.0029) | **PASS** |
+| C-CHEUNG-B8 | 5 Brier ratio | (iv) supp | Brier 13.47× uniform baseline | 13.467× | **PASS** |
+| C-CHEUNG-B9 | 5 PitchIdentity outlier | (iv) caveat | ECE=0.141 (replicates Phase 03.2 monophonic-to-polyphonic disclosure) | 0.141 | **PASS** (outlier disclosure preserved) |
+| C-CHEUNG-B10-AGGR | all | §0 header | 5 angles closed under frozen pre-reg | 4 POSITIVE + 1 INCONCLUSIVE_BORDERLINE | **PASS-MIXED** |
+
+**Significance — Stage A:** Engine's Eq.5 reward (additive, no interaction term, fitted on V1 stored) shrinks Cheung's published interaction effect by ~25% in held-out test — the emergent-reward hypothesis. Confidence interval contains Cheung's value.
+
+**Significance — Stage B:** First audio-native test of MI's chord-level prediction channels on Cheung's data. Two architectural predictions confirmed: (a) **rhythm-invariance** — MI's HTP and ICEM are chord-level features by construction; identical pitch content under 3 rhythm conditions produces near-identical channel values (r=+0.99/+0.83); (b) **cross-corpus calibration generalisation** — Bayesian belief layer trained on DEAM (Phase 03.2 ECE=0.079) replicates within |Δ|=0.003 on independent Cheung 2024 audio (1.24M frames). One borderline finding honestly disclosed: engine-native interaction term has same sign as Cheung's but sits 0.013 outside the engine bootstrap CI (INCONCLUSIVE_BORDERLINE per paper §531-534). One pre-registered NEGATIVE substitution-validity test confirmed (MI channels are architecturally distinct from IDyOM features, not a re-substitution).
 
 ### 4.4. Phases 03.4-03.7 pytest layered audits (112 pytest)
 
@@ -481,7 +504,8 @@ Source: `06-PORTFOLIO-FALSIFIABILITY/06.3-ai-baseline-ablation/L9_verdict/REPORT
 | T³ 32 horizons × 24 morphs × 3 laws | 02.1 (207/207 pytest PASS) |
 | C³ 89 mechs across F1-F8 (132/139, 22/22 FDR, …) | 03.1 (26/26 PASS) |
 | Held-out ECE=0.079 + Brier 10.8× + Cheung r=+0.615 | 03.2 (10 PASS + 1 CAVEAT — paper-flagged outlier preserved) |
-| Cheung interaction β=−0.158 + Cheung's −0.124 inside CI | 03.3 (7/7 PASS) + 06.1 FT5-#3 |
+| Cheung interaction β=−0.158 + Cheung's −0.124 inside CI (Stage A statistical reanalysis) | 03.3 Stage A (7/7 PASS) + 06.1 FT5-#3 |
+| Cheung audio-native upgrade Stage B: LOSO ρ=+0.21686, rhythm-invariance HTP r=+0.993 ICEM r=+0.828, β_MI=−0.060 INCONCLUSIVE_BORDERLINE, ECE=0.082 cross-corpus replication, substitution-validity NEGATIVE confirmed (5 angles, paper §435) | 03.3 Stage B (8 PASS + 1 PASS-NEW + 1 PASS-MIXED aggregate) |
 | Phase 6 extended cycle 9-corpus consonance battery | 01.2 extended 63/63 PASS |
 | Cross-cultural V4+V5 6 anchors | 01.3 (6/6 PASS) |
 | ChillsDB chill + TenseMusic tension + PMEmo + Eerola GEMS | 03.4 + 03.5 + 03.6 + 03.7 (112 pytest PASS) |
