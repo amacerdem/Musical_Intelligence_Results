@@ -3,7 +3,7 @@
 **Repository:** `Musical_Intelligence_Results/`
 **Engine SHA:** `318eb2f529d7103e8b7d80b01228357fdc4e0217`
 **Engine aggregate SHA-256:** `482ade45c50f5d3bf5c90c122e495b2c3230e6e6edc6542f72f22e3b5da37f88`
-**Audit date:** 2026-05-17 (Stage A + initial migration) · **Updated:** 2026-05-18 (Phase 03.3 Stage B audio-native upgrade migrated)
+**Audit date:** 2026-05-17 (Stage A + initial migration) · **Updated:** 2026-05-18 (Phase 03.3 Stage B audio-native upgrade migrated + Phase 05.4 voxelwise MERT/CLAP/CKA verdict-CSV completion)
 **Reproducibility runtime:** 6,277 s cumulative (1 h 44 m 37 s) on MacBook Air M2 8 GB
 **Status:** 22/25 phases runnable + green end-to-end; 1 deferred (Phase 06.2 portfolio aggregator); 1 EXEC-PENDING (Phase 05.7 audio fetch); 1 blocked on environment (Phase 04.1 live engine, CSV-cached verdict preserved)
 
@@ -13,9 +13,9 @@
 
 | Category | Count |
 |---|---|
-| **Claim-style CSV verdicts** | **212** (Stage A 202 + Stage B Cheung audio-native 10) |
+| **Claim-style CSV verdicts** | **219** (Stage A 202 + Stage B Cheung audio-native 10 + 05.4 MERT/CLAP/CKA extensions 7) |
 | **Pytest sub-tests** | **918** |
-| **Total verdict atoms** | **1,130** |
+| **Total verdict atoms** | **1,137** |
 | Phases migrated | 25 (3 of which deferred / EXEC-PENDING) |
 | Sections | 7 (00 → 06 + 99-Zenodo placeholder) |
 | Datasets exercised | 32 in registry; 6 paper-cited fMRI/PET ELIGIBLE; 13-corpus consonance battery; DEAM, Cheung, TenseMusic, PMEmo, Eerola GEMS, ChillsDB |
@@ -30,7 +30,7 @@
 - **RAM topology** — 5/5 (28/31 ≤10mm, both nulls p<0.0001, 26/29 no-proxy, 8/10/12 mm radius-stable)
 - **Single-subject fMRI Mendelssohn pilot** — 5/6 PASS + 1 PARTIAL (paper's own Method A vs B disclosure)
 - **Mech×region encoding ds002725** — 11/12 PASS + 1 CAVEAT (paper L3 cross-subject 34 vs reproduced 59 — extra significant cells; preserved)
-- **Voxelwise routing ablation ds003720** — 11/11 (4/4 MI vs 1/4 MI-naive vs 0/4 Random-26; +96% lift; CKA=0.994)
+- **Voxelwise routing ablation ds003720** — 18/18 (4/4 MI vs 1/4 MI-naive vs 0/4 Random-26 vs 0/4 Random-768 vs 4/4 MERT vs 2/4 CLAP; MI ridge r=+0.165 vs MERT +0.221; +96% lift; CKA matrix MI-naive 0.994 / MERT 0.414 / CLAP 0.125; MI > MERT pairwise 3/4)
 - **Cross-cultural validation** — 6/6 (Hindustani raga +0.57; inconMore breadth +0.41; Bonang calibration-boundary +0.22)
 - **Falsifiable Table 5** — 5/5 pre-committed cells
 - **AI baseline ablation (same-data)** — 4/4 MI WINS on executed (Marjieh, Carillon, Cheung, TenseMusic); DEAM-5 deferred to v1.1
@@ -400,7 +400,7 @@ L1+L4+L5+L6+L9 layered pytest:
 - L6: Stage 9 cross-paradigm bridge ds002725 ↔ ds003720 (1 STRONG + 5 MIXED) (3 tests)
 - L9: All four paper-headline numbers locked (4 tests)
 
-### 6.4. Phase 05.4 voxelwise-ds003720 (11/11 PASS)
+### 6.4. Phase 05.4 voxelwise-ds003720 (18/18 PASS)
 
 Source: `05-FMRI-BRAIN-GROUNDING/05.4-voxelwise-ds003720/results/05.4_voxelwise_correlations.csv`
 
@@ -417,8 +417,17 @@ Source: `05-FMRI-BRAIN-GROUNDING/05.4-voxelwise-ds003720/results/05.4_voxelwise_
 | C-VOXEL-09 | MI vs MI-naive lift = +93% | +96% | **PASS** |
 | C-VOXEL-10 | MI-unique R² > 0 in 4/4 (banded-ridge, V6 A3) | 4/4 CI excludes 0 | **PASS** |
 | C-VOXEL-11 | Feature-level CKA(MI-full, MI-naive) = 0.994 | 0.994 | **PASS** |
+| C-VOXEL-12 | Shuffle-null pass: random_768d 0/4 (paper §388 dimensionality-matched random control) | 0/4 | **PASS** |
+| C-VOXEL-13 | Shuffle-null pass: mert_768d 4/4 (pretrained encoder reference upper-bound) | 4/4 | **PASS** |
+| C-VOXEL-14 | Shuffle-null pass: clap_music_512d 2/4 (paper §584 Discussion reference) | 2/4 | **PASS** |
+| C-VOXEL-15 | Feature-level CKA(MI-full, MERT-768d) = 0.414 | 0.4145 | **PASS** |
+| C-VOXEL-16 | Feature-level CKA(MI-naive, MERT-768d) = 0.410 | 0.4103 | **PASS** |
+| C-VOXEL-17 | Feature-level CKA(MI-full, CLAP-512d) = 0.125 | 0.1253 | **PASS** |
+| C-VOXEL-18 | Per-subject pairwise MI-RAM > MERT on top-5% voxel mean r | 3/4 sig at 95% bootstrap | **PASS** |
 
-**Routing-ablation evidence:** MI 4/4 vs MI-naive 1/4 vs Random-26 0/4 shuffle-null. MI's architectural prior (RAM routing) produces +93–96% lift over naive 26D readout from same engine — the routing is doing work.
+**Routing-ablation evidence:** MI 4/4 vs MI-naive 1/4 vs Random-26 0/4 vs Random-768 0/4 shuffle-null. MI's architectural prior (RAM routing) produces +93–96% lift over naive 26D readout from same engine — the routing is doing work, not dimensionality.
+
+**MERT/CLAP reference upper-bound:** MERT-768d (pretrained on >160k hours music) clears shuffle-null 4/4 with ridge held-out r=+0.221 (vs MI's +0.165); CLAP-512d clears 2/4 at +0.185. MI's per-subject pairwise comparison shows MI-RAM > MERT on top-5% voxel mean r in 3/4 subjects at 95% bootstrap CI. Structural CKA confirms MI and MERT are different architectural families: MI-full ↔ MERT CKA=0.414 (vs MI-full ↔ MI-naive 0.994 — same family with routing variation); MI-naive ↔ MERT 0.410 (near-identical to MI-full ↔ MERT, so the MI/MERT separation is *structural*, not dimensionality-driven); MI-full ↔ CLAP 0.125 (a *third* distinct cluster — paper §584 "different niche" framing).
 
 ### 6.5. Phase 05.5 ds003720-region-ceiling-N4 (11/11 PASS via run_all.py --quick)
 
@@ -514,7 +523,7 @@ Source: `06-PORTFOLIO-FALSIFIABILITY/06.3-ai-baseline-ablation/L9_verdict/REPORT
 | Mendelssohn r=+0.59 + N=17 ρ=−0.022 (illustrative + cross-subject) | 05.1 (5/6 PASS + 1 PARTIAL) |
 | Mech×region 16/22 + cluster claims | 05.2 (11/12 + 1 CAVEAT) |
 | ds002725 region ceiling 15/21 + 16/21 saturation | 05.3 (19/19 pytest PASS) |
-| Voxelwise 4/4 vs 1/4 vs 0/4 + +93% lift + CKA 0.994 | 05.4 (11/11 PASS) + 06.1 FT5-#2 |
+| Voxelwise 4/4 vs 1/4 vs 0/4 + +93% lift + CKA 0.994 | 05.4 (18/18 PASS — incl. Random-768 0/4, MERT 4/4 + r=+0.221, CLAP 2/4, MI-MERT CKA=0.414, MI-CLAP CKA=0.125, per-subject MI > MERT 3/4) + 06.1 FT5-#2 |
 | Mendelssohn rank 1/7 + 2.2× lift | 06.1 FT5-#4 |
 | Falsifiable Table 5 (5 pre-committed cells) | 06.1 (5/5 PASS) |
 | AI-baseline same-data ablation (Ceiling 3) | 06.3 (4/4 MI WINS on executed; DEAM-5 deferred) |

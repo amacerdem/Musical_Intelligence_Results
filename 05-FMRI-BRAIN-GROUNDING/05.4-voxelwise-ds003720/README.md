@@ -1,7 +1,7 @@
 # Phase 05.4 — Cross-Subject Voxelwise ds003720 (Routing-Ablation Test)
 
-**Status:** CLOSED 2026-05-07
-**Verdict:** **11/11 PASS** (paper-exact)
+**Status:** CLOSED 2026-05-07; verdict CSV extended 2026-05-18 (MERT/CLAP/CKA completeness)
+**Verdict:** **18/18 PASS** (was 11/11 — extended with 7 MERT/CLAP/Random-768/per-subject-pairwise paper sub-claims now enumerated)
 **Engine HEAD:** `318eb2f529d7103e8b7d80b01228357fdc4e0217`
 
 ## Framing
