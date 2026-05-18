@@ -25,4 +25,3 @@ C-C3-F8-02,F8,d̄=1.84 mean effect size,1.84,matched,PASS
 C-C3-F3-04-N,F3,F3 dim-level enumeration n_tests=290,290,GT-0019 290,PASS
 C-C3-F3-04-BB,F3,F3 hierarchical BB-FDR 131/290,131/290,GT-0019 131/290,PASS
 C-C3-F3-04-BH,F3,F3 global BH ≈151/290 (±1),151/290,GT-0019 152/290,PASS
-C-C3-DETERM-01,F1,BCH Group A determinism on V1 13-dyad anchor WAVs,|Δρ| ≤ 8.8e-5 (paper engine bound),max |Δρ| = 4.725275e-05,PASS

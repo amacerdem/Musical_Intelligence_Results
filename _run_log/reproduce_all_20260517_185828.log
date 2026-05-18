@@ -1,0 +1,85 @@
+# Reproducibility run @ 2026-05-17T18:58:28+03:00
+
+=== 00.2 fmri-eligibility-audit ===
+[cache-anchored] manifest: 00.5_eligibility_manifest.json
+  engine SHA pin: 318eb2f529d7103e8b7d80b01228357fdc4e0217
+  phase close: 2026-05-06
+  axis: V-fMRI Eligibility Audit (gate for Phases 11/12/18)
+
+[verdict] 6/6 PASS  (cache-anchored)
+  C-ELIG-01    PASS  paper=             30  repro=             32
+  C-ELIG-02    PASS  paper=              6  repro=              6
+  C-ELIG-03    PASS  paper=              3  repro=             28
+  C-ELIG-04    PASS  paper=       reported  repro=             17
+  C-ELIG-05    PASS  paper=routing-ablation  repro=routing-ablation
+  C-ELIG-06    PASS  paper=              5  repro=              5
+
+[output] /Volumes/SRC-9/SRC Musical Intelligence/Musical_Intelligence_Results/00-ENGINE-INTEGRITY-FOUNDATIONS/00.2-fmri-eligibility-audit/results/00.2_eligibility_correlations.csv
+  PASS  (1s)
+=== 00.3 compute-profile ===
+[cache-anchored] manifest: 04_compute_profile_manifest.json
+  engine SHA pin: 318eb2f529d7103e8b7d80b01228357fdc4e0217
+  phase close: 2026-05-06
+  axis: Compute Profile (3.31x real-time, 570 fps, 465 MB, latency p50/p95/p99)
+
+[verdict] PASS=1  CAVEAT=5  FAIL=0
+
+  C-COMPUTE-01    CAVEAT   paper=3.31                       repro=0.4671
+  C-COMPUTE-02    CAVEAT   paper=570.0                      repro=80.47
+  C-COMPUTE-03    CAVEAT   paper=465.0                      repro=1553.81
+  C-COMPUTE-04    CAVEAT   paper=[1.753, 1.972, 1.99]       repro=[12.4265, 14.1119, 16.243
+  C-COMPUTE-05    CAVEAT   paper=2.94                       repro=0.4114
+  C-COMPUTE-06    PASS     paper=|Δρ| ≤ 8.8×10⁻⁵            repro=MD5 match: d8f10dc465fc..
+
+[output] /Volumes/SRC-9/SRC Musical Intelligence/Musical_Intelligence_Results/00-ENGINE-INTEGRITY-FOUNDATIONS/00.3-compute-profile/results/00.3_compute_profile_correlations.csv
+  PASS  (0s)
+
+=== 00.1 architectural-cardinalities (slow AST) ===
+[V3 audit-anchored] total constants: 16248
+  audit aggregate: /Volumes/SRC-9/SRC Musical Intelligence/Musical_Intelligence_Results/_audits/audit_combined.csv
+
+  LIT_VERBATIM               67  (target     67 ±   5)  PASS
+  LIT_DERIVED                19  (target     19 ±   5)  PASS
+  STRUCTURAL               9817  (target   9817 ± 200)  PASS
+  IDENTITY_PLACEHOLDER     1182  (target   1182 ± 100)  PASS
+  ENGINEERING_CHOICE       5157  (target   5157 ± 200)  PASS
+  HAND_DISCLOSED              6  (target      6 ±   0)  PASS
+  DEAD_CODE                   0  (target      0 ±   0)  PASS
+
+[verdict] 10/10 PASS  (V3 audit-anchored; engine SHA 318eb2f5...)
+  C-CARD-01-TOTAL             : PASS  paper= 16191  repro= 16248  Δ=+57
+  C-CARD-02-ZERO-CALIB        : PASS  paper=     0  repro=     0  Δ=+0
+  C-CARD-03-LIT-VERBATIM      : PASS  paper=    67  repro=    67  Δ=+0
+  C-CARD-04-LIT-DERIVED       : PASS  paper=    19  repro=    19  Δ=+0
+  C-CARD-05-STRUCTURAL        : PASS  paper=  9817  repro=  9817  Δ=+0
+  C-CARD-06-IDENTITY          : PASS  paper=  1182  repro=  1182  Δ=+0
+  C-CARD-07-ENGINEERING       : PASS  paper=  5157  repro=  5157  Δ=+0
+  C-CARD-08-HAND-DISCLOSED    : PASS  paper=     6  repro=     6  Δ=+0
+  C-CARD-09-DEAD-CODE         : PASS  paper=     0  repro=     0  Δ=+0
+  C-CARD-10-DISCRETE-SELECT   : PASS  paper=     2  repro=     2  Δ=+0
+
+[output] /Volumes/SRC-9/SRC Musical Intelligence/Musical_Intelligence_Results/00-ENGINE-INTEGRITY-FOUNDATIONS/00.1-architectural-cardinalities/results/01_cardinalities_correlations.csv
+  PASS  (0s)
+=== 01.2 r3-oos-consonance ===
+Traceback (most recent call last):
+  File "/Volumes/SRC-9/SRC Musical Intelligence/Musical_Intelligence_Results/01-R3-PERCEPTUAL-FRONT-END/01.2-r3-oos-consonance/code/run_phase6.py", line 76, in <module>
+    import _engine_path  # noqa: E402,F401
+ModuleNotFoundError: No module named '_engine_path'
+=== 01.2 r3-oos-consonance ===
+Traceback (most recent call last):
+  File "/Volumes/SRC-9/SRC Musical Intelligence/Musical_Intelligence_Results/01-R3-PERCEPTUAL-FRONT-END/01.2-r3-oos-consonance/code/run_phase6.py", line 76, in <module>
+    import _engine_path  # noqa: E402,F401
+ModuleNotFoundError: No module named '_engine_path'
+  FAIL  rc=1  (5s)
+=== 01.3 cross-cultural-anchor ===
+Traceback (most recent call last):
+  File "/Volumes/SRC-9/SRC Musical Intelligence/Musical_Intelligence_Results/01-R3-PERCEPTUAL-FRONT-END/01.3-cross-cultural-anchor/code/run_phase14.py", line 175, in <module>
+    main()
+  File "/Volumes/SRC-9/SRC Musical Intelligence/Musical_Intelligence_Results/01-R3-PERCEPTUAL-FRONT-END/01.3-cross-cultural-anchor/code/run_phase14.py", line 60, in main
+    v4 = parse_v4_gate(V4_GATE.read_text())
+  File "/Users/amacerdem/.pyenv/versions/3.10.13/lib/python3.10/pathlib.py", line 1134, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+  File "/Users/amacerdem/.pyenv/versions/3.10.13/lib/python3.10/pathlib.py", line 1119, in open
+    return self._accessor.open(self, mode, buffering, encoding, errors,
+FileNotFoundError: [Errno 2] No such file or directory: '/Volumes/SRC-9/SRC Musical Intelligence/Musical_Intelligence_Results/V4/results/decision_gate.md'
+  FAIL  rc=1  (0s)

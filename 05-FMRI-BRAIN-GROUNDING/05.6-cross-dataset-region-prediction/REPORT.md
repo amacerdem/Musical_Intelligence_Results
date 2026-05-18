@@ -1,17 +1,17 @@
 # 05.6-cross-dataset-region-prediction — Run Report
 
-- **Started:**  2026-05-17T17:27:02
-- **Finished:** 2026-05-17T17:27:07
+- **Started:**  2026-05-17T19:06:41
+- **Finished:** 2026-05-17T19:06:44
 - **Headline:** ✅ ALL PASS
 
 ## Layer scorecard
 
 | Layer | Status | pytest summary | Coverage |
 |-------|--------|----------------|----------|
-| **L1** | ✅ PASS | 5 passed in 2.92s | Engine SHA + paper-baseline structural |
-| **L4** | ✅ PASS | 3 passed in 0.09s | C1+C2 paradigm-invariance within tolerance |
-| **L5** | ✅ PASS | 3 passed in 0.10s | B directional trend + A paradigm-specific + 3-way separation |
-| **L9** | ✅ PASS | 4 passed in 0.15s | Verdict + companion V-Repros untouched |
+| **L1** | ✅ PASS | 5 passed in 0.14s | Engine SHA + paper-baseline structural |
+| **L4** | ✅ PASS | 3 passed in 0.13s | C1+C2 paradigm-invariance within tolerance |
+| **L5** | ✅ PASS | 3 passed in 0.14s | B directional trend + A paradigm-specific + 3-way separation |
+| **L9** | ✅ PASS | 4 passed in 0.16s | Verdict + companion V-Repros untouched |
 
 ## Paper-time baseline
 
