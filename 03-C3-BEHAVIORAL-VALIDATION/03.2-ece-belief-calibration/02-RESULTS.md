@@ -186,7 +186,7 @@ ece/code/phase5_refine_verdicts.py            (new)
 ece/results/05_ece_calibration_manifest.json  (new, schema-VALID)
 ece/results/per_claim_verdicts.csv            (new, 11 rows)
 ece/results/phase5_reuse_notice.md            (new)
-ece/02-RESULTS-PHASE5.md                       (new — this file)
+ece/02-RESULTS.md                              (this file)
 ece/04-INTEGRATION-LOG.md                      (new)
 ```
 

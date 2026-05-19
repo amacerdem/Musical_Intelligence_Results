@@ -25,8 +25,8 @@ import json
 from pathlib import Path
 import numpy as np
 
-FEATURES = Path("/Volumes/SRC-9/SRC Musical Intelligence/Science/Bold-fMRI/ds003720/05_features")
-OUT = Path("/Volumes/SRC-9/SRC Musical Intelligence/Science/Bold-fMRI/ds003720/06_encoding")
+FEATURES = Path("<PAPER_TIME_SCIENCE_ROOT>/Science/Bold-fMRI/ds003720/05_features")
+OUT = Path("<PAPER_TIME_SCIENCE_ROOT>/Science/Bold-fMRI/ds003720/06_encoding")
 
 
 def centered_gram(X: np.ndarray) -> np.ndarray:

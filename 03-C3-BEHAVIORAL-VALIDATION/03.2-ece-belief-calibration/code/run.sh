@@ -1,5 +1,5 @@
 #!/bin/bash
-# V-Reproduction/05-ece-belief-calibration — Single-command reproduction
+# 03-C3-BEHAVIORAL-VALIDATION/03.2-ece-belief-calibration — Single-command reproduction
 #
 # Reproduces:
 #   - Pooled ECE = 0.0841 on paper's 8 beliefs (paper claim: 0.079, deviation +0.005)
@@ -7,7 +7,7 @@
 #
 # Engine pin: 318eb2f5 (V-Reproduction frozen HEAD, bit-identical |Δ|=0)
 # Engine path resolution (audit-grade, vendored-first):
-#   1) V-Reproduction/engine/Musical_Intelligence/  (vendored flat snapshot)
+#   1) _infra/engine/Musical_Intelligence/  (vendored flat snapshot)
 #   2) Science/Musical_Intelligence/  (parent-checkout fallback)
 #
 # Wall-clock: ~5 min extract + ~10 min compute_metrics on M2 8 GB
@@ -20,7 +20,7 @@ VREPRO_ROOT="$( cd "$ECE_ROOT/.." && pwd )"
 SCIENCE_ROOT="$( cd "$VREPRO_ROOT/.." && pwd )"
 
 echo "================================================================"
-echo "V-Reproduction/05-ece-belief-calibration — single-command reproduction"
+echo "03-C3-BEHAVIORAL-VALIDATION/03.2-ece-belief-calibration — single-command reproduction"
 echo "================================================================"
 echo "ECE_ROOT:     $ECE_ROOT"
 echo "VREPRO_ROOT:  $VREPRO_ROOT"

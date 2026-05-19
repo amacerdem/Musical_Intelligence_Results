@@ -36,7 +36,7 @@ from sklearn.linear_model import Ridge
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import KFold
 
-ROOT = Path("/Volumes/SRC-9/SRC Musical Intelligence/Science/Bold-fMRI/ds003720")
+ROOT = Path("<PAPER_TIME_SCIENCE_ROOT>/Science/Bold-fMRI/ds003720")
 FEATURES = ROOT / "05_features"
 ROI = ROOT / "04_roi_extraction"
 OUT = ROOT / "06_encoding"

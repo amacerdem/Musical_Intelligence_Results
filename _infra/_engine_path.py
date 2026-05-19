@@ -1,7 +1,7 @@
 """V-Reproduction engine path resolver.
 
 Audit-grade self-contained-first resolution: prefers the vendored engine
-snapshot at `V-Reproduction/engine/Musical_Intelligence/` (HEAD `318eb2f5`)
+snapshot at `_infra/engine/Musical_Intelligence/` (HEAD `318eb2f5`)
 and falls back to the parent-checkout `Science/Musical_Intelligence/` if
 the vendored copy is absent (dev-mode use).
 
@@ -19,7 +19,7 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-# This file: V-Reproduction/_infra/_engine_path.py
+# This file: _infra/_engine_path.py
 _VREPRO_ROOT = Path(__file__).resolve().parents[1]
 _VENDORED_PARENT = _VREPRO_ROOT / "engine"          # vendored flat snapshot
 _PARENT_SCIENCE = _VREPRO_ROOT.parent               # Science/ checkout

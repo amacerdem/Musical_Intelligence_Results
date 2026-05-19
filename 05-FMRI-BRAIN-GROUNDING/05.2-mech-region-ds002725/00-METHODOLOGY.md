@@ -46,7 +46,7 @@ re-verified by Phases 0/2/6/7/8/9 canaries.
 ## 4. Alignment-qualified N (C-MXREG-12)
 
 V3 used N=17 (dataset-level). Phase 0.5 V-fMRI eligibility audit
-(`Science/V-Reproduction/00.5-fmri-eligibility/`) classified ds002725 as
+(`00-ENGINE-INTEGRITY-FOUNDATIONS/00.2-fmri-eligibility-audit/`) classified ds002725 as
 `mi_compatible=True` with `n_alignment_qualified=17`. All 17 subjects pass
 alignment QC; M=N=17.
 

@@ -18,6 +18,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import sys
 import time
 from pathlib import Path
@@ -26,7 +27,8 @@ import numpy as np
 import pandas as pd
 from scipy import stats as scistats
 
-ENGINE_ROOT = Path("/Volumes/SRC-9/SRC Musical Intelligence")
+REPO_ROOT = Path(__file__).resolve().parents[3]
+ENGINE_ROOT = Path(os.environ.get("MI_ENGINE_ROOT", REPO_ROOT.parent))
 PIPELINE_DIR = ENGINE_ROOT / "Science" / "V-Reproduction" / "Musical_Intelligence_Outputs" / "_build"
 sys.path.insert(0, str(ENGINE_ROOT))
 sys.path.insert(0, str(PIPELINE_DIR))

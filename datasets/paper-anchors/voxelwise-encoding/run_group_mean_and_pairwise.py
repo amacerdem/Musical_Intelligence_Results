@@ -32,7 +32,7 @@ from sklearn.linear_model import Ridge
 from sklearn.model_selection import KFold
 
 SEED = 20260424
-BASE = Path("/Volumes/SRC-9/SRC Musical Intelligence/Science/Bold-fMRI")
+BASE = Path("<PAPER_TIME_SCIENCE_ROOT>/Science/Bold-fMRI")
 DS = BASE / "ds003720"
 FEAT = DS / "05_features"
 ROI = DS / "04_roi_extraction"

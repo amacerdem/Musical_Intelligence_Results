@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Vendor paper-time anchors from parent Science/ tree into V-Reproduction.
-# Run once by the maintainer (Amaç) to bootstrap the self-contained
+# Run once by the maintainer to bootstrap the self-contained
 # V-Repro snapshot.
 #
 # After running, V-Reproduction is independent of the parent Science/

@@ -217,8 +217,7 @@ Paper-side revision (master `.tex`) decision deferred until all 5 angles report.
 
 ## §6 Authorisation
 
-- **Drafted:** Claude Opus 4.7 (1M context) on behalf of A. Erdem
-- **Frozen:** A. Erdem 2026-05-16 (local sign-off)
+- **Frozen:** 2026-05-16
 - **Engine SHA at freeze:** `318eb2f529d7103e8b7d80b01228357fdc4e0217`
 - **Aggregate SHA-256 at freeze:** `482ade45c50f5d3bf5c90c122e495b2c3230e6e6edc6542f72f22e3b5da37f88`
 - **Audio data SHA-256 manifest:** populated post-Angle-1 in `01-PROVENANCE.md` revision

@@ -4,8 +4,8 @@
 sub-axes is contingent on external stimulus audio fetches. The other
 three sub-axes are NON-ELIGIBLE per the Phase 0.5 entry-gate.
 
-**Sub-axes:** 5 (18.1 studyforrest, 18.2 ds005880, 18.3 ds006583,
-18.4 ds006564, 18.5 ds000171)
+**Sub-axes:** 5 (05.7.1 studyforrest, 05.7.2 ds005880, 05.7.3 ds006583,
+05.7.4 ds006564, 05.7.5 ds000171)
 
 **Pre-registered target:** +148 fMRI subjects across 5 datasets
 
@@ -15,11 +15,11 @@ three sub-axes are NON-ELIGIBLE per the Phase 0.5 entry-gate.
 
 | Sub-axis | Dataset | N planned | Phase 0.5 entry-gate | Phase 05.7 status |
 |---|---|---|---|---|
-| 18.1 | studyforrest 7T music genres ext (ds000113-ext) | 20 | ELIGIBLE (audio fetch required) | PRE-REG-FROZEN, EXEC-PENDING |
-| 18.2 | ds005880 Diminished 7th chord | 20 | NON-ELIGIBLE (events.tsv TR-only) | NON-ELIGIBLE |
-| 18.3 | ds006583 Affective Transitions | 23 | NON-ELIGIBLE (events.tsv missing) | NON-ELIGIBLE |
-| 18.4 | ds006564 Naturalistic film with music | 41 | NON-ELIGIBLE (events.tsv missing) | NON-ELIGIBLE |
-| 18.5 | ds000171 Music + depression | 39 (19 MDD + 20 ND) | ELIGIBLE (audio fetch required) | PRE-REG-FROZEN, EXEC-PENDING |
+| 05.7.1 | studyforrest 7T music genres ext (ds000113-ext) | 20 | ELIGIBLE (audio fetch required) | PRE-REG-FROZEN, EXEC-PENDING |
+| 05.7.2 | ds005880 Diminished 7th chord | 20 | NON-ELIGIBLE (events.tsv TR-only) | NON-ELIGIBLE |
+| 05.7.3 | ds006583 Affective Transitions | 23 | NON-ELIGIBLE (events.tsv missing) | NON-ELIGIBLE |
+| 05.7.4 | ds006564 Naturalistic film with music | 41 | NON-ELIGIBLE (events.tsv missing) | NON-ELIGIBLE |
+| 05.7.5 | ds000171 Music + depression | 39 (19 MDD + 20 ND) | ELIGIBLE (audio fetch required) | PRE-REG-FROZEN, EXEC-PENDING |
 
 **Aggregate:** 0 sub-axes executed, 2 PRE-REG-FROZEN with EXEC-PENDING,
 3 NON-ELIGIBLE.
@@ -70,7 +70,7 @@ back to the Phase 0.5 audit.
 
 ## Resumption instructions for executors
 
-To complete sub-axis 18.1 (studyforrest 7T music genres):
+To complete sub-axis 05.7.1 (studyforrest 7T music genres):
 
 ```bash
 # 1. Fetch the 7T music stimulus archive (~40 WAVs, ~10 MB total)
@@ -82,7 +82,7 @@ cd ../../../..
 bash 05.7-independent-fmri/05.7.1-studyforrest/code/run.sh
 ```
 
-To complete sub-axis 18.5 (ds000171 Music + depression):
+To complete sub-axis 05.7.5 (ds000171 Music + depression):
 
 ```bash
 # 1. Acquire the Lepping et al. 2016 supplementary stimulus audio
@@ -98,11 +98,9 @@ bash 05.7-independent-fmri/05.7.5-ds000171/code/run.sh
 ```
 
 Both pre-registrations are frozen with seed registry entries
-`phase_18_1` and `phase_18_5`. Re-running is deterministic.
+`phase_05_7_1` and `phase_05_7_5`. Re-running is deterministic.
 
 ## Paper revision items triggered by Phase 05.7
 
-- **R5** (READY, recorded in `17-zenodo-bundle/PAPER-REVISIONS.md`) —
-  add a §Future directions hint about a prospective fMRI experiment.
-- **R11** (READY, recorded in `17-zenodo-bundle/PAPER-REVISIONS.md`) —
-  add a §Limitations footnote disclosing the Phase 05.7 freeze state.
+- Add a §Future directions hint about a prospective fMRI experiment.
+- Add a §Limitations footnote disclosing the Phase 05.7 freeze state.

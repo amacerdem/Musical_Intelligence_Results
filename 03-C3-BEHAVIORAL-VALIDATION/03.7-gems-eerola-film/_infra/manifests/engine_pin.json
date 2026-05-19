@@ -20,5 +20,5 @@
     "vmm_dims_min": 6,
     "srp_dims_min": 4
   },
-  "downstream_canonical_manifest": "Science/V-Reproduction/_infra/manifests/engine_head.json"
+  "downstream_canonical_manifest": "_infra/manifests/engine_head.json"
 }

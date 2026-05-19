@@ -29,6 +29,8 @@ __pycache__/
 *.pyd
 .Python
 *.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
 
 # macOS
 .DS_Store

@@ -26,7 +26,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
-# This file: V-Reproduction/_infra/_capture_path.py
+# This file: _infra/_capture_path.py
 _VREPRO_ROOT = Path(__file__).resolve().parents[1]
 _PARENT_SCIENCE = _VREPRO_ROOT.parent
 _VENDORED_CAPTURE = _VREPRO_ROOT / "datasets" / "paper-anchors"

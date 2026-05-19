@@ -168,7 +168,7 @@ To verify V6 against paper:
    ```
 2. Run V6 reproduction:
    ```bash
-   cd "Science/V-Reproduction/05-ece-belief-calibration/code"
+   cd "03-C3-BEHAVIORAL-VALIDATION/03.2-ece-belief-calibration/code"
    ./run.sh
    ```
 3. Compare `paper-evidence/original_ece_result.json` vs `results/A2_summary.json` per-belief and pooled ECE.

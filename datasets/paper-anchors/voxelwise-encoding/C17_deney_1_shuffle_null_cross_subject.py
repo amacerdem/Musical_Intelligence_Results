@@ -30,7 +30,7 @@ import numpy as np
 import pandas as pd
 from statsmodels.stats.multitest import multipletests
 
-ROOT = Path("/Volumes/SRC-9/SRC Musical Intelligence/Science/Bold-fMRI")
+ROOT = Path("<PAPER_TIME_SCIENCE_ROOT>/Science/Bold-fMRI")
 DS_DIR = ROOT / "ds003720"
 FEATURES = DS_DIR / "05_features"
 ROI = DS_DIR / "04_roi_extraction"

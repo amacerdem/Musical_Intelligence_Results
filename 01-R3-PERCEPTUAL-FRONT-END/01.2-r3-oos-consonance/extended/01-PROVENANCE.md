@@ -1,8 +1,8 @@
 # Phase 01.2 extended — Provenance (LOCKED 2026-05-16)
 
-Chain-of-custody for the nine input artefacts consumed by Phase 6 extended.
-All paths are relative to the project root
-`/Volumes/SRC-9/SRC Musical Intelligence/`.
+Chain-of-custody for the nine input artefacts consumed by Phase 01.2 extended.
+All paths are relative to the `Musical_Intelligence_Results/` repository root
+unless otherwise noted.
 
 ## Engine
 

@@ -8,18 +8,22 @@ Shared Python utilities used by all three C³ evidence segments:
 
 Each segment imports from this package; nothing in this package depends on a specific segment.
 
-## Planned files
+## Modules
 
 | File | Responsibility |
 |---|---|
-| `engine_pin_check.py` | Assert engine SHA matches `Musical_Intelligence_Outputs/_build/_engine_pin.json` before any analysis runs. First call of every script. |
-| `load_outputs.py` | Read `pooled.csv`, `pooled_pct.csv`, `targets.csv`, and (where built) per-rater long tables from `Musical_Intelligence_Outputs/<category>/<dataset>/`. Returns typed DataFrames. |
+| `engine_pin_check.py` | Assert engine SHA matches `_infra/manifests/engine_head.json` before any analysis runs. First call of every script. |
+| `load_outputs.py` | Read `pooled.csv`, `pooled_pct.csv`, `targets.csv`, and (where built) per-rater long tables from `engine_outputs/<category>/<dataset>/`. Returns typed DataFrames. |
+| `per_frame_loader.py` | Load per-frame `.npz` MI feature caches. |
+| `runner_io.py` | Shared I/O helpers for phase runners. |
 | `stats_core.py` | BH–FDR; Fisher-Z combination; label-permutation null; hierarchical Benjamini–Bogomolov FDR for cross-segment aggregation. |
 | `prereg_validator.py` | JSON-schema validator for the immutable `data/<dataset>/prereg_*.json` files. Halts on any post-hoc edit attempt. |
 
 ## Status
 
-**SCAFFOLD ONLY** — files are not yet implemented. Analysis scripts in the three segments will be written once the dataset cache is fully validated.
+All six modules are implemented and consumed by phase pipelines under
+`03-C3-BEHAVIORAL-VALIDATION/`, `04-C3-BIOLOGICAL-SUBSTRATE/`, and
+`05-FMRI-BRAIN-GROUNDING/`.
 
 ## Engine pin
 

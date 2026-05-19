@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""V-Reproduction/05-ece-belief-calibration — Reliability diagram + ECE heatmap figures.
+"""03-C3-BEHAVIORAL-VALIDATION/03.2-ece-belief-calibration — Reliability diagram + ECE heatmap figures.
 
 Inputs:
   ../results/A2_reliability_data.npz
@@ -112,7 +112,7 @@ def fig_reliability_per_belief():
             ax.set_ylabel("Mean y = 1−|PE| (bin)", fontsize=8)
             ax.legend(fontsize=7, loc="lower right")
 
-    fig.suptitle("V-Reproduction/05-ece-belief-calibration — Per-belief reliability diagrams\n"
+    fig.suptitle("03-C3-BEHAVIORAL-VALIDATION/03.2-ece-belief-calibration — Per-belief reliability diagrams\n"
                  "Blue: paper's 8 beliefs (V6 replicates ECE = 0.0841 vs paper's 0.079)\n"
                  "Red: V6 extension (6 novel beliefs F3-F8)",
                  fontsize=11, y=1.02)
@@ -152,7 +152,7 @@ def fig_ece_heatmap():
     cbar = fig.colorbar(im, ax=ax, label="ECE")
     cbar.ax.axhline(0.10, color="black", lw=1.5)
     cbar.ax.text(1.5, 0.10, "0.10\nthreshold", va="center", fontsize=8)
-    ax.set_title(f"ECE per (song × belief) cell — V-Reproduction/05-ece-belief-calibration\n"
+    ax.set_title(f"ECE per (song × belief) cell — 03-C3-BEHAVIORAL-VALIDATION/03.2-ece-belief-calibration\n"
                  f"40 paper cells: median 0.083, 28/40 below 0.10  •  "
                  f"30 extension cells: median 0.078, 20/30 below 0.10  •  outlier F7_GrooveQuality (0.22)",
                  fontsize=10)
@@ -200,7 +200,7 @@ def fig_extension_vs_paper():
                        rotation=35, ha="right", fontsize=8)
     ax.set_ylabel("Per-belief ECE (5-song mean)", fontsize=10)
     ax.set_ylim(0, max(max(paper_eces), max(ext_eces)) * 1.25)
-    ax.set_title("V-Reproduction/05-ece-belief-calibration — Paper's 8 beliefs vs V6 extension's 6\n"
+    ax.set_title("03-C3-BEHAVIORAL-VALIDATION/03.2-ece-belief-calibration — Paper's 8 beliefs vs V6 extension's 6\n"
                  "Replication: paper-8 within ±0.025; V6 extension: only F7_GrooveQuality fails",
                  fontsize=10)
     ax.legend(fontsize=8, loc="upper left", ncol=2)

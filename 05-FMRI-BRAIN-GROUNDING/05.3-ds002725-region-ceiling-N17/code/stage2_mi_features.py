@@ -30,10 +30,10 @@ from pathlib import Path
 import numpy as np
 from scipy.signal import butter, filtfilt, fftconvolve
 
-SCIENCE_ROOT = Path("/Volumes/SRC-9/SRC Musical Intelligence/Science")
-PHASE21_ROOT = SCIENCE_ROOT / "V8-Additional-fMRI/21-mi-fmri-rigorous-mapping"
+REPO_ROOT = Path(__file__).resolve().parents[3]
+PHASE_ROOT = Path(__file__).resolve().parents[1]
 
-MI_ENGINE_DS002725 = SCIENCE_ROOT / "V-Reproduction/Musical_Intelligence_Outputs/neuroimaging/ds002725/per_frame"
+MI_ENGINE_DS002725 = REPO_ROOT / "engine_outputs/neuroimaging/ds002725/per_frame"
 MENDELSSOHN_NPZ = MI_ENGINE_DS002725 / "classical_p5_mendelssohn-variations-serieuses-op54-larrard.npz"
 
 MI_FR = 44100.0 / 256.0  # 172.265625 Hz exact
@@ -70,9 +70,9 @@ def spm_canonical_hrf(tr_native_s: float, time_length_s: float = 32.0) -> np.nda
 
 def main():
     t_start = time.time()
-    data_dir = PHASE21_ROOT / "data"
+    data_dir = PHASE_ROOT / "data"
     data_dir.mkdir(parents=True, exist_ok=True)
-    log_path = PHASE21_ROOT / "results" / "_logs" / "stage2.log"
+    log_path = PHASE_ROOT / "results" / "_logs" / "stage2.log"
     log_path.parent.mkdir(parents=True, exist_ok=True)
     log_fp = open(log_path, "a")
     def log(msg=""):

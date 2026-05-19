@@ -62,7 +62,7 @@
 
 **Triggered: 0 times.**
 
-Per §3.4 Rule R3: "Eğer 3 search attempt sonrasında cited paper bulunamazsa: agent ASLA 'paper'da öyle olmalı' diye varsaymaz. Otomatik LOW confidence + escalation queue."
+Per §3.4 Rule R3: "If a cited paper cannot be located after 3 search attempts, the agent MUST NOT assume 'it must be in the paper'. Automatic LOW confidence + escalation queue."
 
 In F2/F3 scope, this protection was not needed because no constant was a candidate for LIT attribution that required verification. All 4 web searches above were prophylactic confirmations of the literature context referenced in docstrings, not verifications of bit-exact numeric values claimed in runtime constants.
 

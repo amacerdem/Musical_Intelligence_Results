@@ -1,7 +1,7 @@
 # Full reproducibility run @ 2026-05-17T19:00:03+03:00
 === 00.1 architectural-cardinalities ===
 [V3 audit-anchored] total constants: 16248
-  audit aggregate: /Volumes/SRC-9/SRC Musical Intelligence/Musical_Intelligence_Results/_audits/audit_combined.csv
+  audit aggregate: <REPO_ROOT>/_audits/audit_combined.csv
 
   LIT_VERBATIM               67  (target     67 ±   5)  PASS
   LIT_DERIVED                19  (target     19 ±   5)  PASS
@@ -23,7 +23,7 @@
   C-CARD-09-DEAD-CODE         : PASS  paper=     0  repro=     0  Δ=+0
   C-CARD-10-DISCRETE-SELECT   : PASS  paper=     2  repro=     2  Δ=+0
 
-[output] /Volumes/SRC-9/SRC Musical Intelligence/Musical_Intelligence_Results/00-ENGINE-INTEGRITY-FOUNDATIONS/00.1-architectural-cardinalities/results/01_cardinalities_correlations.csv
+[output] <REPO_ROOT>/00-ENGINE-INTEGRITY-FOUNDATIONS/00.1-architectural-cardinalities/results/01_cardinalities_correlations.csv
   PASS  (0s)
 === 00.2 fmri-eligibility-audit ===
 [cache-anchored] manifest: 00.5_eligibility_manifest.json
@@ -39,7 +39,7 @@
   C-ELIG-05    PASS  paper=routing-ablation  repro=routing-ablation
   C-ELIG-06    PASS  paper=              5  repro=              5
 
-[output] /Volumes/SRC-9/SRC Musical Intelligence/Musical_Intelligence_Results/00-ENGINE-INTEGRITY-FOUNDATIONS/00.2-fmri-eligibility-audit/results/00.2_eligibility_correlations.csv
+[output] <REPO_ROOT>/00-ENGINE-INTEGRITY-FOUNDATIONS/00.2-fmri-eligibility-audit/results/00.2_eligibility_correlations.csv
   PASS  (0s)
 === 00.3 compute-profile ===
 [cache-anchored] manifest: 04_compute_profile_manifest.json
@@ -56,7 +56,7 @@
   C-COMPUTE-05    CAVEAT   paper=2.94                       repro=0.4114
   C-COMPUTE-06    PASS     paper=|Δρ| ≤ 8.8×10⁻⁵            repro=MD5 match: d8f10dc465fc..
 
-[output] /Volumes/SRC-9/SRC Musical Intelligence/Musical_Intelligence_Results/00-ENGINE-INTEGRITY-FOUNDATIONS/00.3-compute-profile/results/00.3_compute_profile_correlations.csv
+[output] <REPO_ROOT>/00-ENGINE-INTEGRITY-FOUNDATIONS/00.3-compute-profile/results/00.3_compute_profile_correlations.csv
   PASS  (0s)
 === 01.2 r3-oos-consonance ===
 [engine] Initializing R3Extractor …
@@ -126,7 +126,7 @@
   PASS  (0s)
 === 01.1 r3-isolated-extended (531 pytest) ===
 === 03.2 ece-belief-calibration ===
-python3: can't open file '/Volumes/SRC-9/SRC Musical Intelligence/Musical_Intelligence_Results/03-C3-BEHAVIORAL-VALIDATION/03.2-ece-belief-calibration/code/run_phase5.py': [Errno 2] No such file or directory
+python3: can't open file '<REPO_ROOT>/03-C3-BEHAVIORAL-VALIDATION/03.2-ece-belief-calibration/code/run_phase5.py': [Errno 2] No such file or directory
   PASS  (0s)
 === 03.4 chillsdb chill (pytest) ===
 =========================== short test summary info ============================

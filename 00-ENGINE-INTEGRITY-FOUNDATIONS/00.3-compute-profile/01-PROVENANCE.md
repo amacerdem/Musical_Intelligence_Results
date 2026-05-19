@@ -27,7 +27,7 @@ The 2.94× p95-margin is the ratio of the real-time line over p95 latency, **not
 
 - **V1 baseline:** `Science/V1/scripts/` contains no canonical compute-profile script — paper number was generated post-V1 close on the same M2 8GB hardware. Phase 4 is the first formal reproduction.
 - **Engine HEAD pinned:** `318eb2f529d7103e8b7d80b01228357fdc4e0217` per `_infra/manifests/engine_head.json`.
-- **Runner:** `Science/V-Reproduction/_infra/engine/runner.py:run_engine()` is the canonical wrapper; this is the same wrapper used by Phase 0/2/3 closes and by V6 A2 ECE belief extraction.
+- **Runner:** `_infra/engine/runner.py:run_engine()` is the canonical wrapper; this is the same wrapper used by Phase 0/2/3 closes and by V6 A2 ECE belief extraction.
 
 ## Hardware verification
 

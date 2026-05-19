@@ -36,13 +36,17 @@ def main() -> int:
         HarmonicStability,
     )
 
+    import os
+
     SAMPLE_RATE = 44_100
     HOP_LENGTH = 256
     N_MELS = 128
     N_FFT = 2048
-    DEAM_AUDIO = (
-        Path("/Volumes/SRC-9/SRC Musical Intelligence/Science/datasets/emotion/DEAM/audio/MEMD_audio")
-    )
+    _REPO_ROOT = Path(__file__).resolve().parents[3]
+    DEAM_AUDIO = Path(os.environ.get(
+        "DEAM_AUDIO_DIR",
+        _REPO_ROOT / "datasets/emotion/DEAM/audio/MEMD_audio",
+    ))
     SONG_ID = 1034
     DURATION = 30.0  # 30s test, scale to full later
 

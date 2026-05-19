@@ -13,9 +13,10 @@
 
 | Category | Count |
 |---|---|
-| **Claim-style CSV verdicts** | **219** (Stage A 202 + Stage B Cheung audio-native 10 + 05.4 MERT/CLAP/CKA extensions 7) |
+| **Claim-style CSV verdicts** | **212** rows across 16 phase-canonical CSVs (200 Stage A + 10 Stage B Cheung audio-native + 2 additional 05.4 MERT/CLAP/CKA cells beyond Stage A) |
+| **Claim-style JSON manifest atoms** | **8** across Phase 05.7 (5 sub-axis manifests with 1 verdict each + 1 aggregate manifest with 3 atoms) |
 | **Pytest sub-tests** | **918** |
-| **Total verdict atoms** | **1,137** |
+| **Total verdict atoms** | **1,138** (212 CSV + 8 JSON + 918 pytest) |
 | Phases migrated | 25 (3 of which deferred / EXEC-PENDING) |
 | Sections | 7 (00 → 06 + 99-Zenodo placeholder) |
 | Datasets exercised | 32 in registry; 6 paper-cited fMRI/PET ELIGIBLE; 13-corpus consonance battery; DEAM, Cheung, TenseMusic, PMEmo, Eerola GEMS, ChillsDB |
@@ -138,7 +139,7 @@ Source: `01-R3-PERCEPTUAL-FRONT-END/01.2-r3-oos-consonance/results/06_r3_oos_cor
 | C-R3OOS-CARILLON-CANONICAL | Carillon | stumpf_fusion | +0.824 | +0.8297 | +0.006 | **PASS** |
 | C-R3OOS-CARILLON-ROUGH | Carillon | roughness | −0.731 | −0.6758 | +0.055 | **PARTIAL** |
 
-**Significance:** Marjieh +0.813 confirms bit-exact reproduction of Divan-Final §3.1 paper claim against Study 1A harmonic complex tones (paper text MISLABELS CSV as Study 4A.3 — R12 paper-revision item). Carillon anti-overfit invariant ρ_stumpf=−0.824 is THE strongest evidence against R³ being a fit-to-Marjieh artifact (real-bell partial timbre, no R³ tuning toward Carillon).
+**Significance:** Marjieh +0.813 confirms bit-exact reproduction of the paper's §3.1 claim against Study 1A harmonic complex tones (`rating_dyh3dd.csv`, N=7,500; an earlier paper draft labelled this CSV as Study 4A.3 — corrected in the revision). Carillon anti-overfit invariant ρ_stumpf=−0.824 is THE strongest evidence against R³ being a fit-to-Marjieh artifact (real-bell partial timbre, no R³ tuning toward Carillon).
 
 ### 2.3. Phase 01.2 r3-oos-consonance — extended 63/63 PASS (Phase 6 extended cycle)
 
@@ -472,9 +473,7 @@ Source: `06-PORTFOLIO-FALSIFIABILITY/06.1-falsifiable-table5/results/06.1_falsif
 
 Status: PENDING.md placeholder.
 
-**Reason for deferral:** Portfolio-level multiple-comparison aggregation is a terminal computation; pulling per-cell evidence from all Section verdict CSVs while migration is partial produces a misleading aggregate. Will be revisited after all Sections stable + paper §Results FDR-family-stratification rewrite (3 FDR families: Neural / Psychoacoustic+CrossCultural / Behavioural; 5 non-FDR audit classes reported separately).
-
-Paper's current "1,174/1,496 BB-FDR pass" headline needs restructure to match the per-family + cross-family BB hierarchy that §Methods already describes.
+**Reason for deferral:** Portfolio-level multiple-comparison aggregation is a terminal computation that requires homogeneous null structures within each FDR family. The flat 1,496-test universe described in earlier drafts mixed neural-encoding shuffle-nulls, psychoacoustic sign-invariance, behavioural continuous correlation, and pharmacology categorical agreement under a single hierarchy — violating BB-FDR exchangeability-within-family. The redesigned aggregator stratifies into 3 FDR families (Neural / Psychoacoustic+Cross-cultural / Behavioural) with within-family BH-FDR + cross-family BB-FDR, plus 5 separately-reported non-FDR audit classes (engine cardinality, determinism, pharmacology categorical, falsifiability cell-selection, AI-baseline margin). Execution scheduled after all Sections stable.
 
 ### 7.3. Phase 06.3 ai-baseline-ablation (4/4 MI WINS on executed; 1 DEFERRED)
 
@@ -495,10 +494,10 @@ Source: `06-PORTFOLIO-FALSIFIABILITY/06.3-ai-baseline-ablation/L9_verdict/REPORT
 
 **Aggregate verdict: PRELIMINARY POSITIVE.** MI WINS on 4/4 executed cells; no baseline matches or exceeds MI; closest margin Cheung Δr=+0.0498.
 
-**v1.1 commitments:**
+**v1.1 deferred extensions (out of v1.0 scope):**
 1. DEAM-5-song F4 MMP cell completion (re-pre-registration on song set + rating dimension + aggregation rule)
-2. Run remaining pre-reg baseline architectures (elastic net, MLP, CNN)
-3. Investigate whether deeper baseline closes the Cheung Δr=0.05 margin
+2. Remaining pre-registered baseline architectures (elastic net, MLP, CNN)
+3. Test whether deeper baselines close the Cheung Δr=0.05 margin
 
 ---
 
@@ -529,20 +528,7 @@ Source: `06-PORTFOLIO-FALSIFIABILITY/06.3-ai-baseline-ablation/L9_verdict/REPORT
 | AI-baseline same-data ablation (Ceiling 3) | 06.3 (4/4 MI WINS on executed; DEAM-5 deferred) |
 | Engine determinism \|Δρ\| ≤ 8.8×10⁻⁵ | 00.3 (MD5 bit-identical, stronger than paper bound) + 04.1 (\|Δ\|=0 on 4-channel neurochem) + 01.1 + 02.1 (all bit-deterministic) |
 | Pre-reg fMRI replication +148 subjects target | 05.7 (entry-gate + pre-reg PASS, exec PENDING per paper's own EXEC-PENDING disclosure) |
-| Portfolio 1,174/1,496 BB-FDR pass | **DEFERRED** to 06.2 — Phase 06.2 PENDING per project directive; paper §Results FDR-family rewrite pending |
-
-### 8.2. Paper revisions triggered by audit (R8 – R19)
-
-These are paper-side items, not repo-evidence items:
-- **R8:** RAM paper denominator wording (28/31 paper vs 26/29 no-proxy disclosure)
-- **R12:** Marjieh CSV mislabel correction (`rating_dyh3dd` = Study 1A harmonic complex, N=7,500 — paper text mistakenly says Study 4A.3)
-- **R14:** HTP-E3 / SPH-E3 framing (two-candidate formula-form structural selection, not 5-candidate; literature-anchored to de Vries-Wurm 2023 / Bonetti 2024)
-- **R15:** phi_fam_star clarification (mathematical kernel-peak identity of Berlyne 4f(1−f), not separately tunable code constant)
-- **R16:** NEMAC documentation (in §Mechanism appendix)
-- **R17:** ESME documentation
-- **R18:** brain/regions § wording — author-normalised Likert-style [0.40, 0.95] disclosure
-- **R19:** BB-FDR universe restructure (3 FDR families + 5 non-FDR audit classes)
-- **R20 (new from this audit):** RegionLink claim wording — "literature-anchored at edge-existence level; per-edge weights are author-normalised engineering choices, disclosed under HAND-SPECIFIED-DISCLOSED"
+| Portfolio 1,174/1,496 BB-FDR pass | **DEFERRED** to 06.2; FDR-family-stratified restructure pending (Phase 06.2 PENDING.md) |
 
 ---
 
@@ -553,10 +539,10 @@ These are paper-side items, not repo-evidence items:
 | Phase 04.1 live engine spot-check (verifies CSV-cached 11 claims via re-running engine) | CSV verdict preserved | Live WAV decode environment (requires `scipy.io.wavfile` + engine runtime); CSV record is the authoritative verdict |
 | Phase 05.7.1 studyforrest execution | PRE-REG-FROZEN | External audio fetch via `datalad get` (~10 MB; intentionally not vendored in the V-Reproduction default bundle) |
 | Phase 05.7.5 ds000171 execution | PRE-REG-FROZEN | Lepping 2016 Sci Rep supplementary fetch (~18 stimulus WAVs; intentionally not vendored) |
-| Phase 06.2 unified BB-FDR portfolio aggregator | PENDING.md placeholder | Project directive — terminal aggregator runs only after all Sections stable + paper §Results FDR-family-stratification rewrite |
+| Phase 06.2 unified BB-FDR portfolio aggregator | PENDING.md placeholder | Methodological revision pending — terminal aggregator runs after FDR-family-stratification redesign (3 FDR families + 5 non-FDR audit classes) and all Sections stable |
 | Phase 06.3 DEAM-5-song F4 MMP cell | DEFERRED to v1.1 | Scope ambiguity in original pre-reg (5-song vs 30-song MMP); re-pre-registration required |
 | Phase 06.3 elastic net + MLP + CNN baselines | DEFERRED to v1.1 | v1.0 verdict not blocked (4/4 MI WINS with available baselines); deeper baseline test belongs to v1.1 architecture-extension scope |
-| Phase 99 Zenodo bundle manifest | EMPTY scaffold | Zenodo upload happens at paper-submission gate; 141 GB engine_outputs to be 5-part split |
+| Phase 99 Zenodo bundle manifest | EMPTY scaffold | Paper-submission-gated; 141 GB engine_outputs to be 5-part split on Zenodo upload |
 
 ---
 
@@ -566,9 +552,9 @@ These are paper-side items, not repo-evidence items:
 
 - Commit: `318eb2f529d7103e8b7d80b01228357fdc4e0217`
 - Tree aggregate SHA-256: `482ade45c50f5d3bf5c90c122e495b2c3230e6e6edc6542f72f22e3b5da37f88`
-- Verification:
+- Verification (run from the directory containing the `Musical_Intelligence/` engine source):
 ```bash
-cd /Volumes/SRC-9/SRC\ Musical\ Intelligence/Musical_Intelligence
+cd Musical_Intelligence
 find . -name "*.py" -not -path "*/__pycache__/*" -type f -print0 | sort -z | xargs -0 shasum -a 256 | shasum -a 256
 ```
 
@@ -586,13 +572,10 @@ find . -name "*.py" -not -path "*/__pycache__/*" -type f -print0 | sort -z | xar
 - **Layered phases (L1-L9):** `run_all.py --quick` for fast smoke; `python3 -m pytest` for full
 - **Cache anchors:** `datasets/paper-anchors/<topic>/` vendored alongside the repo
 
-### 10.4. Source repo
+### 10.4. License
 
-- Origin: `Musical-Intelligence-Reproduction/` (flat layout, 28 phases)
-- Migrated to: `Musical_Intelligence_Results/` (Section-prefixed, 25 phases — retired duplicate sanity-only Bowling phase + deferred BH-FDR + scaffold for Zenodo)
-- Zero Bowling references repo-wide (project directive)
-- GitHub: `github.com/amacerdem/Musical_Intelligence_Results` (PolyForm Noncommercial 1.0.0)
+PolyForm Noncommercial 1.0.0. Repository deposit DOI assigned at Zenodo upload (paper-submission-gated).
 
 ---
 
-*Generated 2026-05-17 from `Musical_Intelligence_Results/` migrated tree. Engine pin and aggregate SHA-256 verified bit-stable across all reproducibility runs.*
+*Engine pin and aggregate SHA-256 verified bit-stable across all reproducibility runs.*

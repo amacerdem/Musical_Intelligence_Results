@@ -31,7 +31,7 @@ independent and reproduces exactly.
 ## Quick re-run
 
 ```sh
-cd Science/V-Reproduction/04-compute-profile
+cd 00-ENGINE-INTEGRITY-FOUNDATIONS/00.3-compute-profile
 bash code/run.sh
 python3 code/make_figures.py
 ```

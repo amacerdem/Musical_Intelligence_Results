@@ -17,8 +17,8 @@ import pandas as pd
 sys.path.insert(0, str(Path(__file__).parent))
 from _baseline_common import stft_mel_features, loo_ridge_regression, OUTPUT_DIR, MASTER_SEED
 
-SCIENCE_ROOT = Path("/Volumes/SRC-9/SRC Musical Intelligence/Science")
-MARJIEH_PER_BIN = SCIENCE_ROOT / "V-Reproduction/06-r3-oos-consonance/results/marjieh_r3.csv"
+REPO_ROOT = Path(__file__).resolve().parents[3]
+MARJIEH_PER_BIN = REPO_ROOT / "01-R3-PERCEPTUAL-FRONT-END/01.2-r3-oos-consonance/results/marjieh_r3.csv"
 
 np.random.seed(MASTER_SEED)
 

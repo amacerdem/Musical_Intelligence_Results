@@ -20,8 +20,8 @@ import pandas as pd
 sys.path.insert(0, str(Path(__file__).parent))
 from _baseline_common import load_audio_simple, OUTPUT_DIR, MASTER_SEED
 
-SCIENCE_ROOT = Path("/Volumes/SRC-9/SRC Musical Intelligence/Science")
-TM_DIR = SCIENCE_ROOT / "datasets/emotion/TenseMusic"
+REPO_ROOT = Path(__file__).resolve().parents[3]
+TM_DIR = REPO_ROOT / "datasets/emotion/TenseMusic"
 MUSIC = TM_DIR / "music_files"
 RAW = TM_DIR / "data_raw"
 

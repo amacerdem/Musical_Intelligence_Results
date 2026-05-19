@@ -2,7 +2,7 @@
 
 Fixtures
 --------
-* ``project_root``    — repo root path (``/Volumes/SRC-9/SRC Musical Intelligence``)
+* ``project_root``    — repo root containing ``Musical_Intelligence/`` engine source
 * ``engine_pin``      — parsed _infra/manifests/engine_pin.json dict
 * ``r3``              — ``R3Extractor`` instance (cached session-scope)
 * ``stim``            — module shortcut: ``from _infra import stimuli as stim``

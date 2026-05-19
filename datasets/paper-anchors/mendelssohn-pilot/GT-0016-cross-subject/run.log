@@ -120,6 +120,6 @@
   VERDICT: FAIL — Median Spearman ρ amyg=-0.0223 ≤ 0 → sub-08's +0.29 ρ was a selection effect
 [02:37:55] 
 [3] Save outputs
-[02:37:56]     CSV, JSON, report, figure saved to /Volumes/SRC-9/SRC Musical Intelligence/Science/V2/results/GT-0016-cross-subject
+[02:37:56]     CSV, JSON, report, figure saved to <PAPER_TIME_SCIENCE_ROOT>/Science/V2/results/GT-0016-cross-subject
 [02:37:56] 
 Done.

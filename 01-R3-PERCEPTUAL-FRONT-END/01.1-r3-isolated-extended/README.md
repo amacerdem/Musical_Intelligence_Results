@@ -7,7 +7,7 @@
 >
 > The paper's strength comes from R³'s function inside MI. That role demands an isolated validation that is **as strong as the role itself is load-bearing**. Six test categories cannot defend that. The thirteen layers below can.
 
-> **V-Reproduction note:** this copy under `Science/V-Reproduction/19-r3-isolated-validation/` is **decoupled from the paper tree** — it carries no `.tex` dependency. The doc-consistency audit (L14) exists only in the canonical source suite at `The Paper/R3-Paper/R3_Isolated_Validation/`. Engine, spec, code consistency are all still verified here; only "paper text ↔ code" cross-checks were intentionally omitted.
+> **V-Reproduction note:** this copy under `01-R3-PERCEPTUAL-FRONT-END/01.1-r3-isolated-extended/` is **decoupled from the paper tree** — it carries no `.tex` dependency. The doc-consistency audit (L14) exists only in the canonical source suite at `The Paper/R3-Paper/R3_Isolated_Validation/`. Engine, spec, code consistency are all still verified here; only "paper text ↔ code" cross-checks were intentionally omitted.
 
 ---
 
@@ -16,7 +16,7 @@
 After cloning the `SRC Musical Intelligence` repository:
 
 ```bash
-cd Science/V-Reproduction/19-r3-isolated-validation
+cd 01-R3-PERCEPTUAL-FRONT-END/01.1-r3-isolated-extended
 python3 run_all.py
 ```
 
@@ -355,4 +355,4 @@ This is the only quantitative claim the R³ paper makes about itself in isolatio
 
 ## Engine pin
 
-All tests run against engine HEAD `1f0f68e8…` per `Science/V-Reproduction/_infra/manifests/engine_head.json`.
+All tests run against engine HEAD `1f0f68e8…` per `_infra/manifests/engine_head.json`.

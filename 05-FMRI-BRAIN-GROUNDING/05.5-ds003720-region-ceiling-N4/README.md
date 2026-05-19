@@ -22,7 +22,7 @@
 ## Quick start
 
 ```bash
-cd /Volumes/SRC-9/SRC\ Musical\ Intelligence/Musical_Intelligence_Results/05.5-ds003720-region-ceiling-N4
+cd <REPO_ROOT>/05.5-ds003720-region-ceiling-N4
 python3 run_all.py --quick   # L1-L5 + L9 (< 3 sec, paper-baseline checks)
 # Full re-run (regenerates ceiling CSV from cycle-17 ckpt_bold):
 python3 code/run_phase05_5.py  # ~4-5 min on M2 base

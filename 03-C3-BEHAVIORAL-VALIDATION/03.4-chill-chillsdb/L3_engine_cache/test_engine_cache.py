@@ -38,7 +38,7 @@ def test_engine_cache_present(engine_outputs_root, variant, dataset_id):
         pytest.skip(
             f"Engine cache missing for {variant} ({dataset_id}).\n"
             f"  Expected at: {cache_root}\n"
-            f"  Build via: python3 Science/V-Reproduction/<engine_runner>.py --dataset {dataset_id}"
+            f"  Build via: python3 Musical_Intelligence_Results/<engine_runner>.py --dataset {dataset_id}"
         )
 
     per_frame = cache_root / "per_frame"

@@ -29,8 +29,8 @@ from typing import Dict, List, Tuple
 
 import numpy as np
 
-# V-Reproduction layout: this file lives at V-Reproduction/05-ece-belief-calibration/code/
-_REPRO_ROOT = Path(__file__).resolve().parents[1]  # V-Reproduction/05-ece-belief-calibration/
+# V-Reproduction layout: this file lives at 03-C3-BEHAVIORAL-VALIDATION/03.2-ece-belief-calibration/code/
+_REPRO_ROOT = Path(__file__).resolve().parents[1]  # 03-C3-BEHAVIORAL-VALIDATION/03.2-ece-belief-calibration/
 TRACES_DIR = _REPRO_ROOT / "results/traces"
 RESULTS_DIR = _REPRO_ROOT / "results"
 

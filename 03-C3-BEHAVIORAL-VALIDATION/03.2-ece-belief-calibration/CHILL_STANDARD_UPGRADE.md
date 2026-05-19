@@ -50,7 +50,7 @@ Phase 05's secondary claim of held-out Pearson r = +0.615 on Cheung 2019 pleasur
 - Cheung pleasure LOSO inter-rater ceiling: +0.2169 [95% CI 0.159, 0.270]
 - MI M3 held-out r / ceiling = **2.84× (≈ 284%)**
 
-See `Science/V-Reproduction/10-cheung-emergent-reward/CHILL_STANDARD_UPGRADE.md` for the full Phase 10 framing.
+See `03-C3-BEHAVIORAL-VALIDATION/03.3-cheung-emergent-reward/CHILL_STANDARD_UPGRADE.md` for the full Phase 10 framing.
 
 ## §4 No paper text change required
 

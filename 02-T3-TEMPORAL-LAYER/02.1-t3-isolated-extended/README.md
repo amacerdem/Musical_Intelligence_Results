@@ -7,7 +7,7 @@
 >
 > The paper's strength comes from T³'s function inside MI. That role demands an isolated validation that is **as strong as the role itself is load-bearing**. Mixing this with cognitive validation re-introduces the layer-leak we just removed.
 
-> **V-Reproduction note:** this copy under `Science/V-Reproduction/20-t3-isolated-validation/` is **decoupled from the paper tree** — no `.tex` dependency. The doc-consistency audit (L14), the heavy experiment-artefact folders (`phase_lag_32rate/`, `wilson_cowan/`, `determinism_canary/`, `_selectivity/`), and the standalone audit scripts under `_infra/audit_scripts/` (hardcoded absolute paths) all live only in the canonical source suite at `The Paper/T3-Paper/T3_Isolated_Validation/`. Engine, spec compliance, statelessness, determinism, output guarantees, robustness, operator correctness, and performance budget are still verified here.
+> **V-Reproduction note:** this copy under `02-T3-TEMPORAL-LAYER/02.1-t3-isolated-extended/` is **decoupled from the paper tree** — no `.tex` dependency. The doc-consistency audit (L14), the heavy experiment-artefact folders (`phase_lag_32rate/`, `wilson_cowan/`, `determinism_canary/`, `_selectivity/`), and the standalone audit scripts under `_infra/audit_scripts/` (hardcoded absolute paths) all live only in the canonical source suite at `The Paper/T3-Paper/T3_Isolated_Validation/`. Engine, spec compliance, statelessness, determinism, output guarantees, robustness, operator correctness, and performance budget are still verified here.
 
 > **Status at copy time:** runtime-tested layers are **Pin + L1 + L3 + L4 + L5 + L6 + L13** (7 layers, 207 tests, ✅ ALL PASS). Layers **L2, L7, L8, L9, L10, L11, L12** ship pre-computed audit artefacts (JSON + summary MD) but no pytest-side runtime tests yet — they appear in the scorecard as ⚪ EMPTY rather than silently disappearing.
 
@@ -18,7 +18,7 @@
 After cloning the `SRC Musical Intelligence` repository:
 
 ```bash
-cd Science/V-Reproduction/20-t3-isolated-validation
+cd 02-T3-TEMPORAL-LAYER/02.1-t3-isolated-extended
 python3 run_all.py
 ```
 

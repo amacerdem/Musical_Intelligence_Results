@@ -47,7 +47,7 @@
 ## Reproducibility
 
 Audit script: `../_infra/audit_scripts/h3_api_audit.py`.
-Re-run: `python3 _infra/audit_scripts/h3_api_audit.py`
+Re-run from the source suite at `The Paper/T3-Paper/T3_Isolated_Validation/_infra/audit_scripts/h3_api_audit.py`
 
 Audit is byte-deterministic against engine source; STATIC PASS holds as long as `extractor.py`, `__init__.py`, and `contracts/dataclasses/__init__.py` are unchanged.
 

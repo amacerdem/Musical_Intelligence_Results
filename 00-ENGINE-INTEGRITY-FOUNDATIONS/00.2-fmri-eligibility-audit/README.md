@@ -90,7 +90,7 @@ by the Phase 18 plan; re-audit is encouraged when downloads complete.
 ## Reproducibility
 
 ```bash
-cd "Science/V-Reproduction/00.5-fmri-eligibility"
+cd "00-ENGINE-INTEGRITY-FOUNDATIONS/00.2-fmri-eligibility-audit"
 python code/run_full_audit.py
 python code/render_supplementary_table.py
 python code/visualize_eligibility.py

@@ -161,6 +161,6 @@ echo
 echo "=================================================================="
 echo "DONE. Selected datasets fetched (or already present)."
 echo "After this completes, run:"
-echo "   bash 17-zenodo-bundle/reproduce_all.sh"
+echo "   python3 _infra/verify_all_phases.py"
 echo "to regenerate every paper claim against the local engine + datasets."
 echo "=================================================================="

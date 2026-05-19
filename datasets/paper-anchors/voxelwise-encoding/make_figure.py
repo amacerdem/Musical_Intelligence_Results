@@ -9,7 +9,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
-BASE = Path("/Volumes/SRC-9/SRC Musical Intelligence/Science/Bold-fMRI")
+BASE = Path("<PAPER_TIME_SCIENCE_ROOT>/Science/Bold-fMRI")
 OUT = BASE / "ds003720" / "06_encoding"
 FIG = BASE / "ds003720" / "09_reports" / "figures"
 FIG.mkdir(parents=True, exist_ok=True)

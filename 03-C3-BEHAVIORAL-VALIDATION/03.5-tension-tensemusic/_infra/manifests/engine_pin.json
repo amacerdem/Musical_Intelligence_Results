@@ -39,5 +39,5 @@
     "J_timbre_extended": {"slice": [63, 83], "stage": 1, "domain": "spectral"},
     "K_modulation":      {"slice": [83, 97], "stage": 1, "domain": "psychoacoustic"}
   },
-  "downstream_canonical_manifest": "Science/V-Reproduction/_infra/manifests/engine_head.json"
+  "downstream_canonical_manifest": "_infra/manifests/engine_head.json"
 }

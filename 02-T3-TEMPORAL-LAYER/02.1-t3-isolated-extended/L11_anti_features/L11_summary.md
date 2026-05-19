@@ -53,7 +53,7 @@ L11.1, L11.2, L11.5, L11.6 runtime test plans are skeletons within the README; t
 ## Reproducibility
 
 Audit script: `_infra/audit_scripts/h3_anti_features_audit.py`.
-Re-run: `python3 _infra/audit_scripts/h3_anti_features_audit.py`
+Re-run from the source suite at `The Paper/T3-Paper/T3_Isolated_Validation/_infra/audit_scripts/h3_anti_features_audit.py`
 
 Audit is byte-deterministic against engine source; PASS holds as long as no future commit introduces a PRNG, network, filesystem-write, or dynamic-code pattern in `ear/h3/`.
 

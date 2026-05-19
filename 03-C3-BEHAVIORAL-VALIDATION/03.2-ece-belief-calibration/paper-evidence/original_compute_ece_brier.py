@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """T-R3-08 Phase B — Frozen-engine capture of per-frame belief cycle traces.
 
-Authorized by Amaç 2026-04-22 (~30 min M2 Max compute). No engine edit;
+Capture executed 2026-04-22 (~30 min M2 Max compute). No engine edit;
 this script imports frozen MI modules and captures the return dict of
 ``CoreBelief.run_cycle()`` at the caller site. The engine code
 (``Musical_Intelligence/*``) is NOT modified.
@@ -174,7 +174,7 @@ def build_mechs_and_beliefs():
 def main() -> int:
     t0 = time.time()
     fh = open(LOG_FILE, "w")
-    log(f"T-R3-08 Phase B capture. Authorized by Amaç 2026-04-22.", fh)
+    log(f"T-R3-08 Phase B capture. Executed 2026-04-22.", fh)
     log(f"Output: {OUT_NPZ}", fh)
 
     # 1. Held-out DEAM selection

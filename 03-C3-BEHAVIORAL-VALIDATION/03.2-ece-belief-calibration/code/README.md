@@ -16,7 +16,7 @@ Self-contained reproduction pipeline. Engine is **not** copied here; assumed at 
 ## Quick start
 
 ```bash
-cd "/Volumes/SRC-9/SRC Musical Intelligence/Science/V-Reproduction/05-ece-belief-calibration/code"
+cd "<REPO_ROOT>/05-ece-belief-calibration/code"
 ./run.sh
 ```
 
@@ -53,7 +53,7 @@ python3 plot_reliability.py         # Phase 3: ~5 s
 
 All paths use `Path(__file__).resolve().parents[N]`:
 - `parents[3]` = Science/ (engine root)
-- `parents[1]` = V-Reproduction/05-ece-belief-calibration/ (this reproduction's root)
+- `parents[1]` = 03-C3-BEHAVIORAL-VALIDATION/03.2-ece-belief-calibration/ (this reproduction's root)
 
 If you move this reproduction directory, the path resolution will break — update `_PROJECT_ROOT` and `_REPRO_ROOT` in `extract_belief_traces.py` and `compute_metrics.py`.
 
@@ -63,7 +63,7 @@ The reproduction expects the engine at `Science/Musical_Intelligence/` with HEAD
 
 To verify engine HEAD:
 ```bash
-cd "/Volumes/SRC-9/SRC Musical Intelligence/Science"
+cd <PAPER_TIME_SCIENCE_ROOT>
 git rev-parse HEAD
 ```
 

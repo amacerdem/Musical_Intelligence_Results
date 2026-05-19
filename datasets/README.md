@@ -1,9 +1,10 @@
 # Datasets
 
-V-Reproduction is self-contained for default reproduction. Everything
-needed to run `bash 17-zenodo-bundle/reproduce_all.sh` end-to-end is
-vendored in this directory. No external download is required for the
-default ~25-second wall-clock run.
+The repository ships with the paper-time intermediates and small public
+fixtures needed to verify the recorded verdicts. The default reproduction
+verifier (`python3 _infra/verify_all_phases.py`) reads these vendored
+artefacts directly; no external download is required for the headline
+verdicts.
 
 ## Layout
 
@@ -43,11 +44,11 @@ level than the vendored intermediates allow:
 
 | Dataset | Size | Purpose | Phase |
 |---|---|---|---|
-| DEAM full corpus (1,802 songs) | ~27 GB | ECE extension to non-held-out songs | 5 |
-| ds002725 raw BIDS (N=21) | ~2 GB | Phase 11 from-BIDS raw rerun | 11 |
-| ds003720 raw BIDS (N=4) | ~20 GB | Phase 12 from-BIDS raw rerun | 12 |
-| studyforrest 7T music stimulus (40 WAVs) | ~10 MB | Phase 18.1 execution | 18.1 |
-| ds000171 raw BIDS + supplementary audio | ~4 GB | Phase 18.5 execution | 18.5 |
+| DEAM full corpus (1,802 songs) | ~27 GB | ECE extension to non-held-out songs | 03.2 |
+| ds002725 raw BIDS (N=21) | ~2 GB | Phase 05.2 from-BIDS raw rerun | 05.2 |
+| ds003720 raw BIDS (N=4) | ~20 GB | Phase 05.4 from-BIDS raw rerun | 05.4 |
+| studyforrest 7T music stimulus (40 WAVs) | ~10 MB | Phase 05.7.1 execution | 05.7.1 |
+| ds000171 raw BIDS + supplementary audio | ~4 GB | Phase 05.7.5 execution | 05.7.5 |
 
 To fetch any subset:
 
@@ -60,8 +61,8 @@ bash _infra/download_datasets.sh --datasets deam     # specific
 
 | Resource | Licence | Source |
 |---|---|---|
-| Paper-time anchors | PolyForm Noncommercial 1.0.0 | See `LICENSE.md` |
-| Vendored engine snapshot | PolyForm Noncommercial 1.0.0 | See `LICENSE.md` and `engine/HEAD.md` |
+| Paper-time anchors | PolyForm Noncommercial 1.0.0 | See repository-root `LICENSE` |
+| Vendored engine snapshot | PolyForm Noncommercial 1.0.0 | See repository-root `LICENSE`; engine SHA pin in `_infra/manifests/engine_head.json` |
 | DEAM | CC BY-NC-SA 4.0 | Aljanaki, Yang, Soleymani 2017, *PLoS ONE* |
 | Eerola 2021 Exp 3 | CC BY 4.0 | Eerola, Lahdelma 2021, *Music Perception* |
 | Marjieh 2024 data-csv | CC BY 4.0 | Marjieh et al. 2024, *Nature Communications* |

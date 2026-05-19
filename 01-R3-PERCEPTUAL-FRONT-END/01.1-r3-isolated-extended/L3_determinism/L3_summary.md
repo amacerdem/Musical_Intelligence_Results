@@ -93,5 +93,5 @@ how robust the pipeline is to dtype choice.
 | Cross-machine-reboot     | ⚪ Out of scope (CI ephemeral)         | paper §Limitations |
 
 The "out of scope" axes are not unaddressed — they are unaddressed
-**at this CI tier**. The V-Reproduction archive (`Science/V-Reproduction/`)
+**at this CI tier**. The V-Reproduction archive (`Musical_Intelligence_Results/`)
 exercises some of them in the paper's Phase-0 reproducibility runs.

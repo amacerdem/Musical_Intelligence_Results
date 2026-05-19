@@ -26,9 +26,9 @@ from pathlib import Path
 
 import numpy as np
 
-PHASE21_ROOT = Path("/Volumes/SRC-9/SRC Musical Intelligence/Science/V8-Additional-fMRI/21-mi-fmri-rigorous-mapping")
-DATA_DIR = PHASE21_ROOT / "data"
-LOGS_DIR = PHASE21_ROOT / "results" / "_logs"
+PHASE_ROOT = Path(__file__).resolve().parents[1]
+DATA_DIR = PHASE_ROOT / "data"
+LOGS_DIR = PHASE_ROOT / "results" / "_logs"
 
 STAGE3_CSV = DATA_DIR / "stage3_ceiling_ds002725.csv"  # ds002725 full-scan ceiling
 STAGE4_CSV = DATA_DIR / "stage4_encoder_ds002725.csv"  # ds002725 Mendelssohn encoder

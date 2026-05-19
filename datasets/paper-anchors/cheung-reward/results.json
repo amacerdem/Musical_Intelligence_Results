@@ -2,7 +2,7 @@
   "seed": 42,
   "bootstrap_B": 5000,
   "meta": {
-    "csv_path": "/Volumes/SRC-9/SRC Musical Intelligence/Science/datasets/reward/cheung2024/data_pleasure_2023.csv",
+    "csv_path": "<PAPER_TIME_SCIENCE_ROOT>/Science/datasets/reward/cheung2024/data_pleasure_2023.csv",
     "n_trials_raw": 39351,
     "n_trials_dropped_nan": 0,
     "n_trials_used": 39351,

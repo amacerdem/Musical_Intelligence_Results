@@ -21,6 +21,7 @@ held-out predictions and held-out rating_z, pooled across folds.
 """
 
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -30,8 +31,14 @@ import pandas as pd
 sys.path.insert(0, str(Path(__file__).parent))
 from _baseline_common import OUTPUT_DIR, MASTER_SEED
 
-SCIENCE_ROOT = Path("/Volumes/SRC-9/SRC Musical Intelligence/Science")
-CHEUNG_CSV = SCIENCE_ROOT / "datasets/reward/cheung2024/data_pleasure_2023.csv"
+REPO_ROOT = Path(__file__).resolve().parents[3]
+# Cheung 2024 raw data (data_pleasure_2023.csv) is gitignored. Either place it
+# at MI_Results/datasets/reward/cheung2024/, or set CHEUNG_2024_CSV to point
+# at your local copy.
+CHEUNG_CSV = Path(os.environ.get(
+    "CHEUNG_2024_CSV",
+    REPO_ROOT / "datasets/reward/cheung2024/data_pleasure_2023.csv",
+))
 
 np.random.seed(MASTER_SEED)
 

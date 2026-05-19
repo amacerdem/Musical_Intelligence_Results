@@ -77,5 +77,5 @@ applies R1–R5 to `MI-Paper/main.tex`.
 
 Phase 00.2 reads existing local datasets but **never writes to them**.
 Outputs of Phase 00.2 are limited to its own directory:
-`Science/V-Reproduction/00.5-fmri-eligibility/`. No engine source is
+`00-ENGINE-INTEGRITY-FOUNDATIONS/00.2-fmri-eligibility-audit/`. No engine source is
 modified (frozen-engine policy).

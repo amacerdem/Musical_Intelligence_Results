@@ -2,7 +2,7 @@
 
 All V-Reproduction phases import `run_engine` from here. The runner is a
 THIN wrapper around the frozen engine API used by the V6 A2 ECE pipeline
-(`Science/V-Reproduction/05-ece-belief-calibration/code/extract_belief_traces.py`); it performs
+(`03-C3-BEHAVIORAL-VALIDATION/03.2-ece-belief-calibration/code/extract_belief_traces.py`); it performs
 no statistics or scientific transformation of its own.
 
 Discovered API (from V6 A2 + Science/Musical_Intelligence/brain/executor.py):
@@ -30,13 +30,13 @@ import numpy as np
 
 
 # ── Path setup ───────────────────────────────────────────────────────
-# This file: Science/V-Reproduction/_infra/engine/runner.py
+# This file: _infra/engine/runner.py
 # Engine resolution order (audit-grade, self-contained-first):
-#   1) V-Reproduction/engine/Musical_Intelligence  (vendored flat snapshot at HEAD 318eb2f5)
+#   1) _infra/engine/Musical_Intelligence  (vendored flat snapshot at HEAD 318eb2f5)
 #   2) Science/Musical_Intelligence  (parent-checkout fallback for dev / external use)
 #
 # parents[0] = engine/, parents[1] = _infra/,
-# parents[2] = V-Reproduction/, parents[3] = Science/
+# parents[2] = Musical_Intelligence_Results/, parents[3] = Science/
 _VREPRO_ROOT = Path(__file__).resolve().parents[2]
 _VENDORED_ENGINE_PARENT = _VREPRO_ROOT / "engine"  # contains Musical_Intelligence/
 _SCIENCE_ROOT = Path(__file__).resolve().parents[3]

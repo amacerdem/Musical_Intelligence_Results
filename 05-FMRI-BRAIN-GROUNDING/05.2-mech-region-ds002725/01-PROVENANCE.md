@@ -11,7 +11,7 @@
 - `Science/V3/V3-comprehensive/results/comprehensive_summary.md` — L1/L2/L3 verdicts + key statistics
 
 ### Phase 0.5 dependency
-- `Science/V-Reproduction/00.5-fmri-eligibility/` — ds002725 mi_compatible=True, n_alignment_qualified=17
+- `00-ENGINE-INTEGRITY-FOUNDATIONS/00.2-fmri-eligibility-audit/` — ds002725 mi_compatible=True, n_alignment_qualified=17
 
 ### Paper anchor
 - §Pre-registered confirmatory test (Musical-Intelligence-corrected-evidence.tex)

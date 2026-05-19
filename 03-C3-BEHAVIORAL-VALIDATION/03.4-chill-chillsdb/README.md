@@ -1,4 +1,10 @@
-# 21-c3-chill-prediction — Standalone Chill-Marker Verdict
+# Phase 03.4 — Standalone Chill-Marker Verdict (ChillsDB v1)
+
+> **Current run status:** L4 TC005 fails on 2 of 5 cells under the current engine SHA
+> (see `REPORT.md`). L9 verdict reconciliation passes 3/3 at the directional level
+> (overall PASS at headline-effect level). This open SHA-divergence investigation is
+> disclosed in the paper §Limitations; both the failing cells and the directional
+> agreement are preserved in the audit trail.
 
 > **Purpose:** Reproduce the paper's Tier-1 chill-marker finding (`MMP P2:familiarity` Bonferroni-pass on ChillsDB v1 7-clean continuous-music subset) **from a fresh clone of the system**, in a single command.
 >
@@ -15,7 +21,7 @@
 After cloning the `SRC Musical Intelligence` repository **and** placing the ChillsDB v1 audio files at the expected location (see `L2_audio_integrity/README.md`):
 
 ```bash
-cd Science/V-Reproduction/21-c3-chill-prediction
+cd 03-C3-BEHAVIORAL-VALIDATION/03.4-chill-chillsdb
 python3 run_all.py
 ```
 
@@ -142,11 +148,11 @@ This phase is laser-focused on **one Tier-1 finding** so a reviewer can independ
 
 ---
 
-## Reviewer attestation pattern
+## Reviewer attestation pattern (target green-run output)
 
-When this passes for a reviewer:
+Example of a fully green third-party reproduction, on M2 16 GB / Ubuntu 22.04:
 ```
-✅ 21-c3-chill-prediction (3rd-party reproduction on M2 16 GB / Ubuntu 22.04)
+Phase 03.4 (3rd-party reproduction)
   L1 PASS — engine SHA matches 482ade45c...
   L2 PASS — 9/9 ChillsDB audio files present, correct duration
   L3 PASS — engine cache built (7 clips × 3 audio variants × 84 mechs)
@@ -160,4 +166,7 @@ When this passes for a reviewer:
 Total wallclock: 32m18s
 ```
 
-This is the contract: one command, one boolean output, full diagnostic trail.
+This is the contract: one command, one diagnostic trail. The current
+`REPORT.md` records the run state under the live engine SHA, which may
+differ from the green-run target above; see the §Current run status note
+at the top of this README and the paper §Limitations for context.

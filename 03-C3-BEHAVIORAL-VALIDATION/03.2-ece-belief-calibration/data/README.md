@@ -42,7 +42,7 @@ Seed 42 is the paper-time seed. Re-running with seed 42 will deterministically s
 ## Verifying inputs
 
 ```bash
-ls -la "/Volumes/SRC-9/SRC Musical Intelligence/Science/datasets/emotion/DEAM/audio/MEMD_audio/"{1034,1508,1777,1896,1923}.mp3
+ls -la "<PAPER_TIME_SCIENCE_ROOT>/datasets/emotion/DEAM/audio/MEMD_audio/"{1034,1508,1777,1896,1923}.mp3
 ```
 
 Should show 5 files, each ~720 KB.

@@ -25,9 +25,9 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-FEATURES = Path("/Volumes/SRC-9/SRC Musical Intelligence/Science/Bold-fMRI/ds003720/05_features")
-ROI = Path("/Volumes/SRC-9/SRC Musical Intelligence/Science/Bold-fMRI/ds003720/04_roi_extraction")
-OUT = Path("/Volumes/SRC-9/SRC Musical Intelligence/Science/Bold-fMRI/ds003720/06_encoding")
+FEATURES = Path("<PAPER_TIME_SCIENCE_ROOT>/Science/Bold-fMRI/ds003720/05_features")
+ROI = Path("<PAPER_TIME_SCIENCE_ROOT>/Science/Bold-fMRI/ds003720/04_roi_extraction")
+OUT = Path("<PAPER_TIME_SCIENCE_ROOT>/Science/Bold-fMRI/ds003720/06_encoding")
 
 SUBJECTS = ["sub-001", "sub-003", "sub-004", "sub-005"]
 

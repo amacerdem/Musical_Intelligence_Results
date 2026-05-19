@@ -15,7 +15,7 @@
 After cloning the repository:
 
 ```bash
-cd Science/V-Reproduction/22-h8-tensemusic-tension-prediction
+cd 03-C3-BEHAVIORAL-VALIDATION/03.5-tension-tensemusic
 python3 run_all.py
 ```
 
@@ -62,7 +62,7 @@ When the reviewer clones the repo, they must additionally place:
 
 2. **TenseMusic engine cache** at:
    ```
-   Science/V-Reproduction/Musical_Intelligence_Outputs/emotion/TenseMusic/per_frame/
+   engine_outputs/emotion/TenseMusic/per_frame/
        Ades.npz
        Bach.npz
        ...

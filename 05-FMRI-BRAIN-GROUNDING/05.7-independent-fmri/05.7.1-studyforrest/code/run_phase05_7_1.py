@@ -11,11 +11,12 @@ Any parameter change invalidates the pre-registration and the verdict.
 """
 from __future__ import annotations
 
+import os
 import sys
 from pathlib import Path
 
-V_REPRO = Path(__file__).resolve().parent.parent.parent
-sys.path.insert(0, str(V_REPRO))
+REPO_ROOT = Path(__file__).resolve().parents[4]
+sys.path.insert(0, str(REPO_ROOT))
 
 # Locked targets per pre-registration
 F1_MECHS = ["BCH", "PNH", "MIAA", "PCCR", "IIS"]
@@ -28,7 +29,12 @@ N_PERMS = 500
 HRF_MODEL = "spm12_double_gamma"
 TR_SECONDS = 1.4
 
-DATASET_ROOT = Path("/Volumes/SRC-9/SRC Musical Intelligence/Science/datasets/neuroimaging/studyforrest")
+# studyforrest 7T music perception stimulus directory. Default points at the
+# expected location inside MI_Results; set STUDYFORREST_STIM_DIR to override.
+DATASET_ROOT = Path(os.environ.get(
+    "STUDYFORREST_ROOT",
+    REPO_ROOT / "datasets" / "neuroimaging" / "studyforrest",
+))
 STIM_DIR = DATASET_ROOT / "studyforrest-data" / "artifact" / "7T_musicperception" / "stimulus"
 
 
@@ -36,13 +42,13 @@ def main():
     if not STIM_DIR.exists() or not any(STIM_DIR.glob("*.wav")):
         print(f"[EXEC-PENDING] {STIM_DIR} contains no WAVs.")
         print("Fetch with:")
-        print("  cd Science/datasets/neuroimaging/studyforrest/studyforrest-data")
+        print("  cd <STUDYFORREST_ROOT>/studyforrest-data")
         print("  datalad get artifact/7T_musicperception/stimulus/")
         sys.exit(2)  # exit 2 = waiting on data, not failure
 
     print("[ready] Stimuli present. Pipeline locked per pre-registration.")
-    print("[stub] Engine pass + ridge LOSO + null perms not yet implemented.")
-    print("[stub] Implementer must follow pre-reg parameters EXACTLY.")
+    print("[exec-pending] Engine pass + ridge LOSO + null perms not yet implemented.")
+    print("[exec-pending] Implementer must follow pre-reg parameters EXACTLY.")
     sys.exit(0)
 
 

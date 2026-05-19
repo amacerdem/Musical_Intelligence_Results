@@ -16,8 +16,8 @@ import pandas as pd
 sys.path.insert(0, str(Path(__file__).parent))
 from _baseline_common import stft_mel_features, loo_ridge_regression, OUTPUT_DIR, MASTER_SEED
 
-SCIENCE_ROOT = Path("/Volumes/SRC-9/SRC Musical Intelligence/Science")
-CARILLON_DATA = SCIENCE_ROOT / "V-Reproduction/datasets/consonance/harrison2024_carillon"
+REPO_ROOT = Path(__file__).resolve().parents[3]
+CARILLON_DATA = REPO_ROOT / "datasets/consonance/harrison2024_carillon"
 
 np.random.seed(MASTER_SEED)
 

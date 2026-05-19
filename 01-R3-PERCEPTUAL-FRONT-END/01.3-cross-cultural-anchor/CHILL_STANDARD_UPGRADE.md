@@ -58,7 +58,7 @@ Phase 14 results in the main paper (cross-cultural reach disclosure in §Limitat
 
 ## §5 Where the chill-standard DOES apply nearby
 
-Phase 06 R³ consonance (Marjieh, Harrison) — chill-standard LOSO ceiling applied at `Science/V-Reproduction/06-r3-oos-consonance/CHILL_STANDARD_UPGRADE.md`.
+Phase 06 R³ consonance (Marjieh, Harrison) — chill-standard LOSO ceiling applied at `01-R3-PERCEPTUAL-FRONT-END/01.2-r3-oos-consonance/CHILL_STANDARD_UPGRADE.md`.
 
 ## §6 Provenance
 

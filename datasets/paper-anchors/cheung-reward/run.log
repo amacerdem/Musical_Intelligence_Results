@@ -1,7 +1,7 @@
 /Users/amacerdem/.pyenv/versions/3.10.13/lib/python3.10/site-packages/statsmodels/regression/mixed_linear_model.py:1634: UserWarning: Random effects covariance is singular
   warnings.warn(msg)
 [T-R2-04] Loading Cheung 2024 pleasure data …
-  csv_path: /Volumes/SRC-9/SRC Musical Intelligence/Science/datasets/reward/cheung2024/data_pleasure_2023.csv
+  csv_path: <PAPER_TIME_SCIENCE_ROOT>/Science/datasets/reward/cheung2024/data_pleasure_2023.csv
   n_trials_raw: 39351
   n_trials_dropped_nan: 0
   n_trials_used: 39351
@@ -45,7 +45,7 @@
   entropy_beta: -0.06996732033344036
   converged: True
 
-[T-R2-04] Wrote results to /Volumes/SRC-9/SRC Musical Intelligence/Science/V2/reviewer-sims/divan-major-revision-2026-04-22/computing-phase/T-R2-04
+[T-R2-04] Wrote results to <PAPER_TIME_SCIENCE_ROOT>/Science/V2/reviewer-sims/divan-major-revision-2026-04-22/computing-phase/T-R2-04
 [T-R2-04] ΔAIC (M2 − M1) full-data = -33.54
 [T-R2-04] ΔAIC (M3 − M1) full-data = +56.13
 [T-R2-04] ΔAIC (M3 − M0) full-data = -121.52

@@ -2,11 +2,11 @@
 
 ## Source artefacts (read-only V-Reproduction phases)
 
-- `Science/V-Reproduction/06-r3-oos-consonance/results/06_r3_oos_correlations.csv`
-- `Science/V-Reproduction/10-cheung-emergent-reward/results/10_cheung_correlations.csv`
-- `Science/V-Reproduction/11-mech-region-encoding/results/11_mech_region_correlations.csv`
-- `Science/V-Reproduction/12-voxelwise-ds003720/results/12_voxelwise_correlations.csv`
-- `Science/V-Reproduction/13-mendelssohn-pilot/results/13_mendelssohn_correlations.csv`
+- `01-R3-PERCEPTUAL-FRONT-END/01.2-r3-oos-consonance/results/06_r3_oos_correlations.csv`
+- `03-C3-BEHAVIORAL-VALIDATION/03.3-cheung-emergent-reward/results/10_cheung_correlations.csv`
+- `05-FMRI-BRAIN-GROUNDING/05.2-mech-region-ds002725/results/11_mech_region_correlations.csv`
+- `05-FMRI-BRAIN-GROUNDING/05.4-voxelwise-ds003720/results/12_voxelwise_correlations.csv`
+- `05-FMRI-BRAIN-GROUNDING/05.1-mendelssohn-pilot/results/13_mendelssohn_correlations.csv`
 
 ## Paper anchor
 

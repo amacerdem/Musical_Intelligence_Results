@@ -14,7 +14,7 @@
     "mert_768d",
     "random_26d"
   ],
-  "bold_source": "/Volumes/SRC-9/SRC Musical Intelligence/Science/V2/reviewer-sims/divan-major-revision-2026-04-22/computing-phase/T-AP-v2-08-nakai/RunPod-Exp-01/ckpt_bold",
+  "bold_source": "<PAPER_TIME_SCIENCE_ROOT>/Science/V2/reviewer-sims/divan-major-revision-2026-04-22/computing-phase/T-AP-v2-08-nakai/RunPod-Exp-01/ckpt_bold",
   "atlas_note": "Harvard-Oxford labels + 4mm \u03b3-tier spheres (from RunPod ckpt_bold cache).",
   "n_runs_per_subject_cached": 15,
   "n_runs_per_subject_expected": 18,

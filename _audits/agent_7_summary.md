@@ -88,7 +88,7 @@ None of these is a fit parameter or empirically tuned weight. Audit conformance 
 
 ## Deliverable manifest
 
-1. `/Volumes/SRC-9/SRC Musical Intelligence/Musical_Intelligence_Results/_audits/agent_7_audit.csv` — 65 rows with full attribution chain
-2. `/Volumes/SRC-9/SRC Musical Intelligence/Musical_Intelligence_Results/_audits/agent_7_escalation.md` — 1 per-constant escalation + 2 scope notes
-3. `/Volumes/SRC-9/SRC Musical Intelligence/Musical_Intelligence_Results/_audits/agent_7_verification_log.md` — web-search log + scope reconciliation + category/confidence breakdown
-4. `/Volumes/SRC-9/SRC Musical Intelligence/Musical_Intelligence_Results/_audits/agent_7_summary.md` — this file
+1. `<REPO_ROOT>/_audits/agent_7_audit.csv` — 65 rows with full attribution chain
+2. `<REPO_ROOT>/_audits/agent_7_escalation.md` — 1 per-constant escalation + 2 scope notes
+3. `<REPO_ROOT>/_audits/agent_7_verification_log.md` — web-search log + scope reconciliation + category/confidence breakdown
+4. `<REPO_ROOT>/_audits/agent_7_summary.md` — this file

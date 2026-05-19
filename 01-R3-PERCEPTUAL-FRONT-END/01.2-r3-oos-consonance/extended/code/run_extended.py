@@ -50,7 +50,7 @@ import torchaudio.transforms as T_audio
 from scipy import stats
 
 # ── Paths ─────────────────────────────────────────────────────────────
-# Layout: V-Reproduction/06-r3-oos-consonance/extended/code/run_extended.py
+# Layout: 01-R3-PERCEPTUAL-FRONT-END/01.2-r3-oos-consonance/extended/code/run_extended.py
 EXTENDED_DIR = Path(__file__).resolve().parent.parent
 PARENT_PHASE = EXTENDED_DIR.parent
 V_REPRO = PARENT_PHASE.parent

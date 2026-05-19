@@ -34,15 +34,23 @@ import time
 from datetime import datetime
 from pathlib import Path
 
+import os
+
 import numpy as np
 import pandas as pd
 from scipy import stats as scistats
 
 
-SCIENCE_ROOT = Path("/Volumes/SRC-9/SRC Musical Intelligence/Science")
-PHASE21_ROOT = SCIENCE_ROOT / "V8-Additional-fMRI/21-mi-fmri-rigorous-mapping"
+REPO_ROOT = Path(__file__).resolve().parents[3]
+PHASE_ROOT = Path(__file__).resolve().parents[1]
 
-DS002725_BOLD = SCIENCE_ROOT / "Bold-fMRI/exp-02-cross-subject-17/checkpoints"
+# Bold-fMRI cross-subject checkpoints (paper-time fMRI intermediates) live
+# outside MI_Results. Place them at the default location or set
+# DS002725_BOLD_ROOT to override.
+DS002725_BOLD = Path(os.environ.get(
+    "DS002725_BOLD_ROOT",
+    REPO_ROOT / "datasets/neuroimaging/ds002725/checkpoints",
+))
 DS002725_COHORT = ["sub-01", "sub-02", "sub-03", "sub-05", "sub-06", "sub-07",
                    "sub-08", "sub-09", "sub-11", "sub-12", "sub-13", "sub-14",
                    "sub-15", "sub-17", "sub-18", "sub-19", "sub-20"]
@@ -230,8 +238,8 @@ def main():
     args = parser.parse_args()
 
     t_start = time.time()
-    data_dir = PHASE21_ROOT / "data"
-    logs_dir = PHASE21_ROOT / "results" / "_logs"
+    data_dir = PHASE_ROOT / "data"
+    logs_dir = PHASE_ROOT / "results" / "_logs"
     data_dir.mkdir(parents=True, exist_ok=True)
     logs_dir.mkdir(parents=True, exist_ok=True)
 

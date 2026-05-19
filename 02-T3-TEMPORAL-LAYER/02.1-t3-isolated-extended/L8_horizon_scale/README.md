@@ -41,7 +41,7 @@ All 6 are within ±4 frames of the formula at scales of 100,000+ frames (≈0.00
 ## Reproducibility
 
 Audit script: `_infra/audit_scripts/h3_horizon_audit.py`.
-Re-run: `python3 _infra/audit_scripts/h3_horizon_audit.py`
+Re-run from the source suite at `The Paper/T3-Paper/T3_Isolated_Validation/_infra/audit_scripts/h3_horizon_audit.py`
 
 Audit is byte-deterministic against engine source; PASS holds as long as `horizons.py` is unchanged (constants/ folder has been frozen since initial commit per L9.6 finding).
 

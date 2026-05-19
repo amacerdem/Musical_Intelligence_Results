@@ -23,7 +23,7 @@ from pathlib import Path
 import numpy as np
 
 SEED = 20260424
-BASE = Path("/Volumes/SRC-9/SRC Musical Intelligence/Science/Bold-fMRI")
+BASE = Path("<PAPER_TIME_SCIENCE_ROOT>/Science/Bold-fMRI")
 DS = BASE / "ds003720"
 FEAT_OUT = DS / "05_features"
 FEAT_OUT.mkdir(parents=True, exist_ok=True)

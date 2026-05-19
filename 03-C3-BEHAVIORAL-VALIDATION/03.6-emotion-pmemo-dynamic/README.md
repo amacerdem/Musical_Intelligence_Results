@@ -23,7 +23,7 @@
 ## Quick start
 
 ```bash
-cd /Volumes/SRC-9/SRC\ Musical\ Intelligence/Science/V-Reproduction/23-h4-h5-pmemo-dynamic-emotion
+cd <REPO_ROOT>/03-C3-BEHAVIORAL-VALIDATION/03.6-emotion-pmemo-dynamic
 python3 run_all.py --quick  # L1 + L4 + L5 only (~25-30 min)
 # Or fully:
 python3 run_all.py          # L1-L9 (~30-35 min)

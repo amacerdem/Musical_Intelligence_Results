@@ -34,7 +34,7 @@ SEED = 42
 BOOTSTRAP_B = 5000
 OUT_DIR = Path(__file__).parent
 DATA_CSV = Path(
-    "/Volumes/SRC-9/SRC Musical Intelligence/Science/datasets/reward/"
+    "<PAPER_TIME_SCIENCE_ROOT>/Science/datasets/reward/"
     "cheung2024/data_pleasure_2023.csv"
 )
 

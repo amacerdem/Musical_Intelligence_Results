@@ -5,4 +5,4 @@
 - `Science/Bold-fMRI/ds003720/06_encoding/C17_deney_3b_cka_vs_bold.csv` — Cycle 17 CKA vs BOLD
 - `Science/V6/results/A3_per_subject.csv` — V6 A3 banded-ridge variance partitioning
 - `Science/V6/results/A3_summary.json` — V6 A3 composite verdict
-- `Science/V-Reproduction/00.5-fmri-eligibility/` — ds003720 mi_compatible=True, n_alignment_qualified=4
+- `00-ENGINE-INTEGRITY-FOUNDATIONS/00.2-fmri-eligibility-audit/` — ds003720 mi_compatible=True, n_alignment_qualified=4

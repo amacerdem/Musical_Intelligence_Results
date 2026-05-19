@@ -34,7 +34,7 @@
 ## Quick start
 
 ```bash
-cd /Volumes/SRC-9/SRC\ Musical\ Intelligence/Science/V-Reproduction/24-h18-h25-eerola-film-gems
+cd <REPO_ROOT>/03-C3-BEHAVIORAL-VALIDATION/03.7-gems-eerola-film
 python3 run_all.py --quick   # L1 + L4 + L5 only (~5 min)
 # Or fully:
 python3 run_all.py           # L1-L9 (~5-10 min — eerola is fast, mean-ratings)

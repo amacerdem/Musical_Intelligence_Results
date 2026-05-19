@@ -3,7 +3,7 @@
 Phase 5 (V-Reproduction) — refine per-claim verdicts on existing ECE artefact.
 
 Reads the V6-A2 reproduction outputs that already live at
-``Science/V-Reproduction/05-ece-belief-calibration/results/`` and re-classifies them against the
+``03-C3-BEHAVIORAL-VALIDATION/03.2-ece-belief-calibration/results/`` and re-classifies them against the
 11 individual paper claims listed in the Phase 5 master plan, instead of
 the V6 composite "FAIL" which conflated three strict pass tests.
 
@@ -12,7 +12,7 @@ per-belief ECE values are the already-deterministic output of an engine call
 chain pinned at HEAD ``5b9aba41``; re-running would reproduce the same byte
 stream (per Phase 0's bit-identical determinism finding).
 
-Outputs (all under ``Science/V-Reproduction/05-ece-belief-calibration/results/``):
+Outputs (all under ``03-C3-BEHAVIORAL-VALIDATION/03.2-ece-belief-calibration/results/``):
 
   * ``05_ece_calibration_manifest.json`` — schema-validated against
     ``_infra/manifests/claim_schema.json`` (axis_id ``AXIS-04``,

@@ -7,12 +7,12 @@
   "_design": "21 non-brainstem regions × 4 cross-dataset metrics. For each metric, paired vector (ds002725, ds003720) over 21 regions, Pearson + Spearman correlation + permutation null (B=5000, seed=20260424).",
 
   "_source_data": {
-    "ds002725_ceiling": "V-Reproduction/25-c3-fmri-region-ceiling-saturation/data/stage3_ceiling_ds002725.csv (Stage 3 full-scan)",
-    "ds002725_encoder": "V-Reproduction/25-c3-fmri-region-ceiling-saturation/data/stage4_encoder_ds002725.csv (Stage 4 Mendelssohn)",
-    "ds003720_ceiling": "V-Reproduction/26-c3-fmri-ds003720-region-ceiling/data/26_ds003720_per_region_ceiling.csv (Phase 05.5 cycle-17 ckpt_bold)",
+    "ds002725_ceiling": "05-FMRI-BRAIN-GROUNDING/05.3-ds002725-region-ceiling-N17/data/stage3_ceiling_ds002725.csv (Stage 3 full-scan)",
+    "ds002725_encoder": "05-FMRI-BRAIN-GROUNDING/05.3-ds002725-region-ceiling-N17/data/stage4_encoder_ds002725.csv (Stage 4 Mendelssohn)",
+    "ds003720_ceiling": "05-FMRI-BRAIN-GROUNDING/05.5-ds003720-region-ceiling-N4/data/26_ds003720_per_region_ceiling.csv (Phase 05.5 cycle-17 ckpt_bold)",
     "ds003720_encoder": "Bold-fMRI/ds003720/06_encoding/per_subject_per_region_r.csv (cycle-17 mi_ram_26d)",
-    "ds002725_mi_features": "V-Reproduction/Musical_Intelligence_Outputs/neuroimaging/ds002725/per_frame/ (232 clips)",
-    "ds003720_mi_features": "V-Reproduction/Musical_Intelligence_Outputs/neuroimaging/ds003720/per_frame/ (720 clips)"
+    "ds002725_mi_features": "engine_outputs/neuroimaging/ds002725/per_frame/ (232 clips)",
+    "ds003720_mi_features": "engine_outputs/neuroimaging/ds003720/per_frame/ (720 clips)"
   },
 
   "headline_results": {

@@ -39,17 +39,17 @@ To build the missing cache manually:
 
 ```bash
 # For original audio (assumes audio_chillsdb1/ exists)
-python3 Science/V-Reproduction/<engine_runner>.py --dataset chillsdb1 \
+python3 Musical_Intelligence_Results/<engine_runner>.py --dataset chillsdb1 \
   --audio_root Science/datasets/emotion/chillsdb/audio_chillsdb1
 
 # For afftdn variant (build denoised audio first)
 ffmpeg -i input.wav -af afftdn=nr=12 output.wav  # for each clip
-python3 Science/V-Reproduction/<engine_runner>.py --dataset chillsdb1_denoised \
+python3 Musical_Intelligence_Results/<engine_runner>.py --dataset chillsdb1_denoised \
   --audio_root Science/datasets/emotion/chillsdb/audio_chillsdb1_denoised
 
 # For noisereduce variant
 python3 Science/c3-cognitive-signals/code/_true_calibration/denoise_noisereduce.py
-python3 Science/V-Reproduction/<engine_runner>.py --dataset chillsdb1_noisereduce \
+python3 Musical_Intelligence_Results/<engine_runner>.py --dataset chillsdb1_noisereduce \
   --audio_root Science/datasets/emotion/chillsdb/audio_chillsdb1_noisereduce
 ```
 

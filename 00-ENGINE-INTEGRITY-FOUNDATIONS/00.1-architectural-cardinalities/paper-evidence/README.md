@@ -38,4 +38,4 @@ For any cardinality C-CARD-NN:
 3. Re-run the corresponding script in `code/`.
 4. Compare against `results/01_cardinalities_manifest.json` claim entry.
 
-If divergence > tolerance, trigger debug protocol from `Science/V-Reproduction/02-ITERATION-POLICY.md`.
+If divergence > tolerance, trigger debug protocol from `_audits/INVESTIGATION-RULES.md`.

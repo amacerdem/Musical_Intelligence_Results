@@ -26,7 +26,7 @@
 ## Quick start
 
 ```bash
-cd /Volumes/SRC-9/SRC\ Musical\ Intelligence/Musical_Intelligence_Results/05.3-ds002725-region-ceiling-N17
+cd <REPO_ROOT>/05.3-ds002725-region-ceiling-N17
 python3 run_all.py --quick   # L1 + L4 + L5 + L6 + L9 (~12-15 min)
 # Or fully:
 python3 run_all.py           # L1-L9 (~15-20 min)

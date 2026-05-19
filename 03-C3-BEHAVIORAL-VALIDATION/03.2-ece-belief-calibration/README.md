@@ -3,7 +3,7 @@
 **Paper claim:** "Pooled expected-calibration error was ECE = 0.079, below the conventional 0.10 threshold" (paper §Bayesian beliefs are well-calibrated, S5).
 
 **Status:** **REPLICATED** by V6 independent measurement (0.0841, deviation +0.005, ~6.5% relative).
-**V-Reproduction Phase 03.2:** **CLOSED 2026-05-06**, 10/11 PASS + 1 CAVEAT (`pitch_identity` paper-flagged outlier). See `02-RESULTS-PHASE5.md` and `results/05_ece_calibration_manifest.json`.
+**Phase 03.2:** **CLOSED 2026-05-06**, 10/11 PASS + 1 CAVEAT (`pitch_identity` paper-flagged outlier). See `02-RESULTS.md` and `results/05_ece_calibration_manifest.json`.
 
 **Last verified:** 2026-05-05 (V6 phase A2 close); refined into per-claim verdicts 2026-05-06 (Phase 5).
 
@@ -67,7 +67,7 @@ ece/
 ## To reproduce
 
 ```bash
-cd "/Volumes/SRC-9/SRC Musical Intelligence/Science/V-Reproduction/05-ece-belief-calibration/code"
+cd <REPO_ROOT>/03-C3-BEHAVIORAL-VALIDATION/03.2-ece-belief-calibration/code
 ./run.sh
 ```
 

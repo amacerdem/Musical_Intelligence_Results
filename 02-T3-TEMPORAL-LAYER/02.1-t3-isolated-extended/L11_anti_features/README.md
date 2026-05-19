@@ -47,7 +47,7 @@ The combination of **L2.1** (zero non-init self-assigns) + **L9** (zero cognitiv
 ## Reproducibility
 
 Audit script: `../_infra/audit_scripts/h3_anti_features_audit.py`.
-Re-run: `python3 _infra/audit_scripts/h3_anti_features_audit.py`
+Re-run from the source suite at `The Paper/T3-Paper/T3_Isolated_Validation/_infra/audit_scripts/h3_anti_features_audit.py`
 
 Audit is byte-deterministic against engine source; STATIC PASS holds as long as no future commit introduces a PRNG, network, filesystem-write, or dynamic-code pattern in `ear/h3/`.
 

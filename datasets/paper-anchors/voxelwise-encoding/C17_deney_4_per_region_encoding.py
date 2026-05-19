@@ -44,7 +44,7 @@ from sklearn.model_selection import KFold
 from sklearn.preprocessing import StandardScaler
 from statsmodels.stats.multitest import multipletests
 
-BASE = Path("/Volumes/SRC-9/SRC Musical Intelligence/Science/Bold-fMRI")
+BASE = Path("<PAPER_TIME_SCIENCE_ROOT>/Science/Bold-fMRI")
 SHARED = BASE / "_shared"
 sys.path.insert(0, str(SHARED))
 from regions_mi_atlas import REGION_NAMES, BRAINSTEM_EXCLUDED  # noqa: E402

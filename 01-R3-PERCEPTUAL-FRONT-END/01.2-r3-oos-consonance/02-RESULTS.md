@@ -157,7 +157,7 @@ Paper text needs revision: replace "N=11,754 ratings, 5-equal-partial timbre" wi
 To reproduce Marjieh paper headlines from scratch on a fresh clone:
 
 ```bash
-cd Science/V-Reproduction/06-r3-oos-consonance
+cd 01-R3-PERCEPTUAL-FRONT-END/01.2-r3-oos-consonance
 bash run.sh  # → results/06_r3_oos_correlations.csv, results/marjieh_r3.csv
 ```
 

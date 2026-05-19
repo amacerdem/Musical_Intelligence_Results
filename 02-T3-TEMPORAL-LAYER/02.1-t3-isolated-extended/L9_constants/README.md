@@ -53,4 +53,4 @@ This layer tests T³'s **functional contract only**. No cognitive/listener data;
 
 ## Engine pin
 
-Audit run against engine HEAD per `Science/V-Reproduction/_infra/manifests/engine_head.json` at the time of the 2026-05-09 audit.
+Audit run against engine HEAD per `_infra/manifests/engine_head.json` at the time of the 2026-05-09 audit.

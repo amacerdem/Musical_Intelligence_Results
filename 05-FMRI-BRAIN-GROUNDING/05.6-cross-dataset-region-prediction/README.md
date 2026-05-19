@@ -34,7 +34,7 @@
 ## Quick start
 
 ```bash
-cd /Volumes/SRC-9/SRC\ Musical\ Intelligence/Musical_Intelligence_Results/05.6-cross-dataset-region-prediction
+cd <REPO_ROOT>/05.6-cross-dataset-region-prediction
 python3 run_all.py --quick   # L1-L9 (< 3 sec, paper-baseline checks)
 python3 code/run_phase05_6.py  # Full regenerate (~15 sec, recomputes correlations)
 ```

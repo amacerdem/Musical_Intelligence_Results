@@ -15,11 +15,11 @@ other three sub-axes are NON-ELIGIBLE per the Phase 0.5 entry-gate.
 
 | Sub-axis | Status | Reason |
 |---|---|---|
-| 18.1 — studyforrest 7T music genres (N = 20) | PRE-REG-FROZEN, EXEC-PENDING | Audio fetch via `datalad get artifact/7T_musicperception/stimulus/` (40 genre WAVs, ~10 MB) |
-| 18.2 — ds005880 Diminished 7th (N = 20) | NON-ELIGIBLE | events.tsv onsets are integer-second only; the engine requires sub-TR (172.27 Hz) alignment |
-| 18.3 — ds006583 Affective Transitions (N = 23) | NON-ELIGIBLE | events.tsv files are absent on disk after partial public-data download |
-| 18.4 — ds006564 Naturalistic film with music (N = 41) | NON-ELIGIBLE | events.tsv files absent; naturalistic-film paradigm typically uses continuous audio without per-trial events |
-| 18.5 — ds000171 Music + depression (N = 39: 19 MDD + 20 ND) | PRE-REG-FROZEN, EXEC-PENDING | Lepping et al. 2016 supplementary stimulus audio (Sci. Rep. doi:10.1038/srep24818) is not part of the OpenNeuro release |
+| 05.7.1 — studyforrest 7T music genres (N = 20) | PRE-REG-FROZEN, EXEC-PENDING | Audio fetch via `datalad get artifact/7T_musicperception/stimulus/` (40 genre WAVs, ~10 MB) |
+| 05.7.2 — ds005880 Diminished 7th (N = 20) | NON-ELIGIBLE | events.tsv onsets are integer-second only; the engine requires sub-TR (172.27 Hz) alignment |
+| 05.7.3 — ds006583 Affective Transitions (N = 23) | NON-ELIGIBLE | events.tsv files are absent on disk after partial public-data download |
+| 05.7.4 — ds006564 Naturalistic film with music (N = 41) | NON-ELIGIBLE | events.tsv files absent; naturalistic-film paradigm typically uses continuous audio without per-trial events |
+| 05.7.5 — ds000171 Music + depression (N = 39: 19 MDD + 20 ND) | PRE-REG-FROZEN, EXEC-PENDING | Lepping et al. 2016 supplementary stimulus audio (Sci. Rep. doi:10.1038/srep24818) is not part of the OpenNeuro release |
 
 ## Why NON-ELIGIBLE is not FAIL
 
@@ -34,7 +34,7 @@ non-mi-compatible.
 ## Why EXEC-PENDING is not PARTIAL
 
 EXEC-PENDING is a status marker, not an analytical verdict. The
-pre-registrations for 18.1 and 18.5 are frozen with locked decision
+pre-registrations for 05.7.1 and 05.7.5 are frozen with locked decision
 rules. When the audio arrives, the pipeline executes deterministically
 and produces a verdict (POSITIVE, PARTIAL, or NEGATIVE). The
 pre-registration discipline is what makes a future POSITIVE verdict
@@ -59,11 +59,11 @@ Even without execution, Phase 05.7 delivers:
 
 ## What Phase 05.7 will contribute when audio arrives
 
-When the external audio fetches for 18.1 and 18.5 complete:
+When the external audio fetches for 05.7.1 and 05.7.5 complete:
 
-- **18.1 studyforrest:** F1 routing test on N = 20 at 7T resolution.
+- **05.7.1 studyforrest:** F1 routing test on N = 20 at 7T resolution.
   Wall ≤ 15 minutes.
-- **18.5 ds000171:** F5 + F6 clinical contrast on the alignment-
+- **05.7.5 ds000171:** F5 + F6 clinical contrast on the alignment-
   qualified N = 28 subset. Wall ≤ 20 minutes.
 
 Combined: +48 fMRI subjects across two independent datasets, ≤ 35
@@ -75,10 +75,13 @@ The Phase 05.7 aggregate manifest carries three claims:
 
 | Claim | Verdict |
 |---|---|
-| `C-PH18-AGG-ENTRYGATE` | PASS (Phase 0.5 entry-gate verbatim) |
-| `C-PH18-AGG-PREREG` | PASS (2 frozen pre-registrations) |
-| `C-PH18-AGG-EXEC` | EXEC-PENDING |
+| `C-PH05-7-AGG-ENTRYGATE` | PASS (Phase 00.2 entry-gate verbatim) |
+| `C-PH05-7-AGG-PREREG` | PASS (2 frozen pre-registrations) |
+| `C-PH05-7-AGG-EXEC` | EXEC-PENDING |
 
-Across the 5 sub-axis manifests plus 1 aggregate manifest, Phase 05.7
-records: 5 PASS, 0 FAIL, 3 EXEC-PENDING, 3 NON-ELIGIBLE. The Phase 17
-ledger merges these into the unified claims table.
+Across the 5 sub-axis manifests plus 1 aggregate manifest (12 claim
+atoms total), Phase 05.7 records: **6 PASS, 0 FAIL, 3 EXEC-PENDING,
+3 NON-ELIGIBLE**. The headline table near the top of this file counts
+sub-axes (5 total: 2 PRE-REG-FROZEN EXEC-PENDING + 3 NON-ELIGIBLE),
+while this bottom-line breakdown counts individual claim atoms across
+all six manifests.

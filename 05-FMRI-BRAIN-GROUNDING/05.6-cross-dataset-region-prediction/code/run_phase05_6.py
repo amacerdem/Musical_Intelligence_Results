@@ -47,23 +47,28 @@ import time
 from datetime import datetime
 from pathlib import Path
 
+import os
+
 import numpy as np
 from scipy import stats as scistats
 
-SCIENCE_ROOT = Path("/Volumes/SRC-9/SRC Musical Intelligence/Science")
-PHASE27_ROOT = SCIENCE_ROOT / "V-Reproduction" / "05.6-cross-dataset-region-prediction"
+REPO_ROOT = Path(__file__).resolve().parents[3]
+PHASE_ROOT = Path(__file__).resolve().parents[1]
 
-# Inputs from V-Repro 25 (ds002725)
-DS002725_CEILING = SCIENCE_ROOT / "V-Reproduction/25-c3-fmri-region-ceiling-saturation/data/stage3_ceiling_ds002725.csv"
-DS002725_ENCODER = SCIENCE_ROOT / "V-Reproduction/25-c3-fmri-region-ceiling-saturation/data/stage4_encoder_ds002725.csv"
+# Inputs from Phase 05.3 (ds002725 ceiling + encoder)
+DS002725_CEILING = REPO_ROOT / "05-FMRI-BRAIN-GROUNDING/05.3-ds002725-region-ceiling-N17/data/stage3_ceiling_ds002725.csv"
+DS002725_ENCODER = REPO_ROOT / "05-FMRI-BRAIN-GROUNDING/05.3-ds002725-region-ceiling-N17/data/stage4_encoder_ds002725.csv"
 
-# Inputs from V-Repro 26 (ds003720)
-DS003720_CEILING = SCIENCE_ROOT / "V-Reproduction/26-c3-fmri-ds003720-region-ceiling/data/26_ds003720_per_region_ceiling.csv"
-DS003720_ENCODER = SCIENCE_ROOT / "Bold-fMRI/ds003720/06_encoding/per_subject_per_region_r.csv"
+# Inputs from Phase 05.5 (ds003720 ceiling) + external paper-time encoder CSV
+DS003720_CEILING = REPO_ROOT / "05-FMRI-BRAIN-GROUNDING/05.5-ds003720-region-ceiling-N4/data/26_ds003720_per_region_ceiling.csv"
+DS003720_ENCODER = Path(os.environ.get(
+    "DS003720_PER_REGION_R_CSV",
+    REPO_ROOT / "datasets/neuroimaging/ds003720/per_subject_per_region_r.csv",
+))
 
-# MI engine outputs per frame
-MI_DS002725 = SCIENCE_ROOT / "V-Reproduction/Musical_Intelligence_Outputs/neuroimaging/ds002725/per_frame"
-MI_DS003720 = SCIENCE_ROOT / "V-Reproduction/Musical_Intelligence_Outputs/neuroimaging/ds003720/per_frame"
+# MI engine per-frame outputs (vendored in engine_outputs/)
+MI_DS002725 = REPO_ROOT / "engine_outputs/neuroimaging/ds002725/per_frame"
+MI_DS003720 = REPO_ROOT / "engine_outputs/neuroimaging/ds003720/per_frame"
 
 REGION_NAMES = [
     "A1_HG", "STG", "STS", "IFG", "dlPFC", "vmPFC", "OFC", "ACC", "SMA", "PMC",
@@ -213,8 +218,8 @@ def cross_dataset_correlation(x, y, n_perm, log):
 
 def main():
     t_start = time.time()
-    data_dir = PHASE27_ROOT / "data"
-    logs_dir = PHASE27_ROOT / "results" / "_logs"
+    data_dir = PHASE_ROOT / "data"
+    logs_dir = PHASE_ROOT / "results" / "_logs"
     data_dir.mkdir(parents=True, exist_ok=True)
     logs_dir.mkdir(parents=True, exist_ok=True)
     log_fp = open(logs_dir / "phase05_6.log", "a")

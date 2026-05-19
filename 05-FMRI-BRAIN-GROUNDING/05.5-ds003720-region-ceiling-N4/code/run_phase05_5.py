@@ -44,14 +44,24 @@ import time
 from datetime import datetime
 from pathlib import Path
 
+import os
+
 import numpy as np
 from scipy import stats as scistats
 
-SCIENCE_ROOT = Path("/Volumes/SRC-9/SRC Musical Intelligence/Science")
-PHASE26_ROOT = SCIENCE_ROOT / "V-Reproduction" / "05.5-ds003720-region-ceiling-N4"
+REPO_ROOT = Path(__file__).resolve().parents[3]
+PHASE_ROOT = Path(__file__).resolve().parents[1]
 
-CKPT_BOLD = SCIENCE_ROOT / "V2/reviewer-sims/divan-major-revision-2026-04-22/computing-phase/T-AP-v2-08-nakai/RunPod-Exp-01/ckpt_bold"
-PER_REGION_R_CSV = SCIENCE_ROOT / "Bold-fMRI/ds003720/06_encoding/per_subject_per_region_r.csv"
+# Paper-time fMRI BOLD checkpoints and per-region encoding outputs live
+# outside MI_Results. Set DS003720_BOLD_ROOT to override defaults.
+CKPT_BOLD = Path(os.environ.get(
+    "DS003720_BOLD_ROOT",
+    REPO_ROOT / "datasets/neuroimaging/ds003720/checkpoints",
+))
+PER_REGION_R_CSV = Path(os.environ.get(
+    "DS003720_PER_REGION_R_CSV",
+    REPO_ROOT / "datasets/neuroimaging/ds003720/per_subject_per_region_r.csv",
+))
 
 # Subjects: all 5, but Phase 05.4 paper QC excludes sub-002
 # We compute ceiling on N=4 (paper-canonical QC) but expose N=5 figures for context
@@ -210,8 +220,8 @@ def saturation_verdict(r_mi: float, ceiling_ci: tuple) -> str:
 
 def main():
     t_start = time.time()
-    data_dir = PHASE26_ROOT / "data"
-    logs_dir = PHASE26_ROOT / "results" / "_logs"
+    data_dir = PHASE_ROOT / "data"
+    logs_dir = PHASE_ROOT / "results" / "_logs"
     data_dir.mkdir(parents=True, exist_ok=True)
     logs_dir.mkdir(parents=True, exist_ok=True)
 

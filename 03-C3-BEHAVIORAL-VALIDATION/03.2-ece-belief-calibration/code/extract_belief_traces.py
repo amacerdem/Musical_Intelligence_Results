@@ -35,15 +35,15 @@ from typing import Any, Dict, List, Set, Tuple
 import numpy as np
 import torch
 
-# V-Reproduction layout: file lives at V-Reproduction/05-ece-belief-calibration/code/
-# parents[1] = V-Reproduction/05-ece-belief-calibration/ (this phase's root)
-# parents[2] = V-Reproduction/  (vendored engine lives here under engine/)
+# V-Reproduction layout: file lives at 03-C3-BEHAVIORAL-VALIDATION/03.2-ece-belief-calibration/code/
+# parents[1] = 03-C3-BEHAVIORAL-VALIDATION/03.2-ece-belief-calibration/ (this phase's root)
+# parents[2] = Musical_Intelligence_Results/  (vendored engine lives here under engine/)
 # parents[3] = Science/ (parent-checkout engine fallback)
 _REPRO_ROOT = Path(__file__).resolve().parents[1]
 _VREPRO_ROOT = Path(__file__).resolve().parents[2]
 _PROJECT_ROOT = Path(__file__).resolve().parents[3]
 
-# Prefer vendored engine snapshot at V-Reproduction/engine/, fallback to parent.
+# Prefer vendored engine snapshot at _infra/engine/, fallback to parent.
 sys.path.insert(0, str(_VREPRO_ROOT / "_infra"))
 import _engine_path  # noqa: E402,F401  (side effect: prepends ENGINE_PARENT to sys.path)
 

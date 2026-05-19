@@ -38,13 +38,18 @@ import time
 from datetime import datetime
 from pathlib import Path
 
+import os
+
 import numpy as np
 from scipy import stats as scistats
 
 
-SCIENCE_ROOT = Path("/Volumes/SRC-9/SRC Musical Intelligence/Science")
-PHASE21_ROOT = SCIENCE_ROOT / "V8-Additional-fMRI/21-mi-fmri-rigorous-mapping"
-BOLD_CHECKPOINTS = SCIENCE_ROOT / "Bold-fMRI/exp-02-cross-subject-17/checkpoints"
+REPO_ROOT = Path(__file__).resolve().parents[3]
+PHASE_ROOT = Path(__file__).resolve().parents[1]
+BOLD_CHECKPOINTS = Path(os.environ.get(
+    "DS002725_BOLD_ROOT",
+    REPO_ROOT / "datasets/neuroimaging/ds002725/checkpoints",
+))
 
 DS002725_COHORT = ["sub-01", "sub-02", "sub-03", "sub-05", "sub-06", "sub-07",
                    "sub-08", "sub-09", "sub-11", "sub-12", "sub-13", "sub-14",
@@ -252,8 +257,8 @@ def compute_per_region_results(mi_feat, bold_window, region_idx, rng_seed_base, 
 
 def main():
     t_start = time.time()
-    data_dir = PHASE21_ROOT / "data"
-    logs_dir = PHASE21_ROOT / "results" / "_logs"
+    data_dir = PHASE_ROOT / "data"
+    logs_dir = PHASE_ROOT / "results" / "_logs"
     log_path = logs_dir / "stage4.log"
     log_fp = open(log_path, "a")
     def log(msg=""):

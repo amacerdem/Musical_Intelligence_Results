@@ -57,7 +57,7 @@ POOL_WIN_TR = 4
 CLIPS_PER_TRAINING_RUN = 40
 CLIPS_PER_TEST_RUN = 40  # each run has 40 events (10 unique × 4 repeats)
 
-BASE = Path("/Volumes/SRC-9/SRC Musical Intelligence/Science/Bold-fMRI")
+BASE = Path("<PAPER_TIME_SCIENCE_ROOT>/Science/Bold-fMRI")
 SHARED = BASE / "_shared"
 sys.path.insert(0, str(SHARED))
 from regions_mi_atlas import REGION_NAMES, REGION_TIERS  # noqa: E402
@@ -68,7 +68,7 @@ OUT = DS / "06_encoding"
 OUT.mkdir(parents=True, exist_ok=True)
 
 CKPT_BOLD = Path(
-    "/Volumes/SRC-9/SRC Musical Intelligence/Science/V2/reviewer-sims/"
+    "<PAPER_TIME_SCIENCE_ROOT>/Science/V2/reviewer-sims/"
     "divan-major-revision-2026-04-22/computing-phase/"
     "T-AP-v2-08-nakai/RunPod-Exp-01/ckpt_bold"
 )
