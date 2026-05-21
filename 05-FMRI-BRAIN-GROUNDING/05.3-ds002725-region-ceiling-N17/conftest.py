@@ -13,15 +13,12 @@ import pytest
 _THIS = Path(__file__).resolve()
 _PROJECT_ROOT = _THIS.parent
 for _ in range(8):
-    if (_PROJECT_ROOT / "Musical_Intelligence" / "ear" / "r3" / "extractor.py").exists():
-        break
-    # V-Reproduction fresh-clone fallback: engine vendored at <root>/engine/
-    if (_PROJECT_ROOT / "engine" / "Musical_Intelligence" / "ear" / "r3" / "extractor.py").exists():
-        _PROJECT_ROOT = _PROJECT_ROOT / "engine"
+    # Cache-only mode: MI_Results root has engine_outputs/ + _infra/
+    if (_PROJECT_ROOT / "engine_outputs").is_dir() and (_PROJECT_ROOT / "_infra").is_dir():
         break
     _PROJECT_ROOT = _PROJECT_ROOT.parent
 else:
-    raise RuntimeError(f"Could not locate Musical_Intelligence from {_THIS}")
+    raise RuntimeError(f"Could not locate MI_Results from {_THIS}")
 if str(_PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(_PROJECT_ROOT))
 
@@ -58,7 +55,7 @@ def ds002725_bold_cache(project_root) -> Path:
     """ds002725 N=17 paper-canonical ROI BOLD cache (per-subject *_bold_26.npz)."""
     candidates = [
         project_root / "Bold-fMRI" / "exp-02-cross-subject-17" / "checkpoints",
-        project_root / "Science" / "Bold-fMRI" / "exp-02-cross-subject-17" / "checkpoints",
+        project_root / "datasets" / "paper-anchors" / "mech-region" / "bold-26region" / "checkpoints",
     ]
     for c in candidates:
         if c.exists():
@@ -70,8 +67,8 @@ def ds002725_bold_cache(project_root) -> Path:
 def ds002725_mi_cache(project_root) -> Path:
     """ds002725 MI engine per-frame outputs."""
     candidates = [
-        project_root / "V-Reproduction" / "Musical_Intelligence_Outputs" / "neuroimaging" / "ds002725" / "per_frame",
-        project_root / "Science" / "V-Reproduction" / "Musical_Intelligence_Outputs" / "neuroimaging" / "ds002725" / "per_frame",
+        project_root / "engine_outputs" / "neuroimaging" / "ds002725" / "per_frame",
+        project_root / "engine_outputs" / "neuroimaging" / "ds002725" / "per_frame",
     ]
     for c in candidates:
         if c.exists():

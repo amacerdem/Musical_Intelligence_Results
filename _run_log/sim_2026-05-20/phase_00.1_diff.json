@@ -1,0 +1,35 @@
+{
+  "phase_id": "00.1",
+  "phase_path": "00-ENGINE-INTEGRITY-FOUNDATIONS/00.1-architectural-cardinalities",
+  "kind": "python",
+  "args": [
+    "code/run_phase1.py"
+  ],
+  "started_at": "2026-05-21T11:00:39Z",
+  "results_existed_before": true,
+  "baseline_file_count": 6,
+  "returncode": 0,
+  "stdout_tail": "[V3 audit-anchored] total constants: 16248\n  audit aggregate: /Volumes/SRC-9/SRC Musical Intelligence/Musical_Intelligence_Results/_audits/audit_combined.csv\n\n  LIT_VERBATIM               67  (target     67 \u00b1   5)  PASS\n  LIT_DERIVED                19  (target     19 \u00b1   5)  PASS\n  STRUCTURAL               9817  (target   9817 \u00b1 200)  PASS\n  IDENTITY_PLACEHOLDER     1182  (target   1182 \u00b1 100)  PASS\n  ENGINEERING_CHOICE       5157  (target   5157 \u00b1 200)  PASS\n  HAND_DISCLOSED              6  (target      6 \u00b1   0)  PASS\n  DEAD_CODE                   0  (target      0 \u00b1   0)  PASS\n\n[verdict] 10/10 PASS  (V3 audit-anchored; engine SHA 318eb2f5...)\n  C-CARD-01-TOTAL             : PASS  paper= 16191  repro= 16248  \u0394=+57\n  C-CARD-02-ZERO-CALIB        : PASS  paper=     0  repro=     0  \u0394=+0\n  C-CARD-03-LIT-VERBATIM      : PASS  paper=    67  repro=    67  \u0394=+0\n  C-CARD-04-LIT-DERIVED       : PASS  paper=    19  repro=    19  \u0394=+0\n  C-CARD-05-STRUCTURAL        : PASS  paper=  9817  repro=  9817  \u0394=+0\n  C-CARD-06-IDENTITY          : PASS  paper=  1182  repro=  1182  \u0394=+0\n  C-CARD-07-ENGINEERING       : PASS  paper=  5157  repro=  5157  \u0394=+0\n  C-CARD-08-HAND-DISCLOSED    : PASS  paper=     6  repro=     6  \u0394=+0\n  C-CARD-09-DEAD-CODE         : PASS  paper=     0  repro=     0  \u0394=+0\n  C-CARD-10-DISCRETE-SELECT   : PASS  paper=     2  repro=     2  \u0394=+0\n\n[output] /Volumes/SRC-9/SRC Musical Intelligence/Musical_Intelligence_Results/00-ENGINE-INTEGRITY-FOUNDATIONS/00.1-architectural-cardinalities/results/01_cardinalities_correlations.csv\n",
+  "stderr_tail": "",
+  "wall_seconds": 0.08,
+  "new_file_count": 6,
+  "match": [
+    "01_cardinalities_correlations.csv",
+    "belief_inventory.csv",
+    "mechanism_inventory.csv",
+    "neuro_links.csv",
+    "provenance_summary.csv",
+    "region_links.csv"
+  ],
+  "differ": [],
+  "new": [],
+  "missing": [],
+  "counts": {
+    "match": 6,
+    "differ": 0,
+    "new": 0,
+    "missing": 0
+  },
+  "restored_missing": [],
+  "finished_at": "2026-05-21T11:00:39Z"
+}

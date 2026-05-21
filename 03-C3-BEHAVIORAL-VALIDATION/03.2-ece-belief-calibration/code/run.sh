@@ -38,36 +38,39 @@ else
     echo "[run] WARNING: no .venv found; using system python"
 fi
 
-# 2. Verify engine present (vendored first, then parent fallback)
+# 2. Detect engine for live extraction (cache-only mode if absent)
+ENGINE_AVAILABLE=0
 if [ -d "$VREPRO_ROOT/engine/Musical_Intelligence" ]; then
     export PYTHONPATH="$VREPRO_ROOT/engine:${PYTHONPATH:-}"
     echo "[run] using vendored engine at $VREPRO_ROOT/engine/Musical_Intelligence (HEAD 318eb2f5)"
+    ENGINE_AVAILABLE=1
 elif [ -d "$SCIENCE_ROOT/Musical_Intelligence" ]; then
     export PYTHONPATH="$SCIENCE_ROOT:${PYTHONPATH:-}"
     echo "[run] using parent engine at $SCIENCE_ROOT/Musical_Intelligence"
+    ENGINE_AVAILABLE=1
 else
-    echo "[run] ERROR: engine not found at either $VREPRO_ROOT/engine/ or $SCIENCE_ROOT/" >&2
-    exit 1
+    echo "[run] cache-only mode: engine source not vendored; will reuse cached belief traces"
 fi
 
-# 3. Verify DEAM songs cached (datasets path: vendored datasets/ first, then Science fallback)
-if [ -d "$VREPRO_ROOT/datasets/emotion/DEAM/audio/MEMD_audio" ]; then
-    DEAM="$VREPRO_ROOT/datasets/emotion/DEAM/audio/MEMD_audio"
-else
-    DEAM="$SCIENCE_ROOT/datasets/emotion/DEAM/audio/MEMD_audio"
-fi
+# 3. Phase 1 — extract belief traces (skip if cached + cache-only mode)
+TRACES_DIR="$ECE_ROOT/results/traces"
+TRACES_PRESENT=1
 for sid in 1034 1508 1777 1896 1923; do
-    if [ ! -f "$DEAM/$sid.mp3" ]; then
-        echo "[run] ERROR: DEAM song $sid.mp3 missing at $DEAM" >&2
-        exit 1
+    if [ ! -f "$TRACES_DIR/song_$sid.npz" ]; then
+        TRACES_PRESENT=0; break
     fi
 done
-echo "[run] all 5 DEAM held-out songs verified"
-
-# 4. Phase 1 — extract belief traces
-echo
-echo "[run] Phase 1 — extracting (π_pred, PE) traces from 14 beliefs × 5 songs..."
-python3 "$HERE/extract_belief_traces.py"
+if [ "$TRACES_PRESENT" = "1" ]; then
+    echo
+    echo "[run] cached belief traces present at $TRACES_DIR/ — skipping live extraction"
+elif [ "$ENGINE_AVAILABLE" = "1" ]; then
+    echo
+    echo "[run] Phase 1 — extracting (π_pred, PE) traces from 14 beliefs × 5 songs..."
+    python3 "$HERE/extract_belief_traces.py"
+else
+    echo "[run] ERROR: no cached traces and no engine source — cannot proceed" >&2
+    exit 1
+fi
 
 # 5. Phase 2 — compute metrics
 echo

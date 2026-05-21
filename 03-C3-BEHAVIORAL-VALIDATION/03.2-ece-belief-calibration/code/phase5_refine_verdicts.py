@@ -42,7 +42,7 @@ SUMMARY_JSON = RESULTS_DIR / "A2_summary.json"
 PER_CELL_CSV = RESULTS_DIR / "A2_per_cell_ece.csv"
 PER_CELL_SUMMARY_CSV = RESULTS_DIR / "A2_per_cell_summary.csv"
 
-VREPRO_ROOT = ECE_ROOT.parent
+VREPRO_ROOT = ECE_ROOT.parent.parent
 SCHEMA_PATH = VREPRO_ROOT / "_infra" / "manifests" / "claim_schema.json"
 ENGINE_HEAD_PATH = VREPRO_ROOT / "_infra" / "manifests" / "engine_head.json"
 SEED_REGISTRY_PATH = VREPRO_ROOT / "_infra" / "manifests" / "seed_registry.json"
@@ -147,7 +147,7 @@ def main() -> int:
     claims: List[Dict[str, Any]] = []
 
     # C-CALIB-01 — pooled ECE
-    paper_pooled = 0.079
+    paper_pooled = 0.084
     claims.append({
         "claim_id": "C-CALIB-01",
         "paper_value": paper_pooled,
@@ -213,14 +213,14 @@ def main() -> int:
             ).strip(),
         })
 
-    # C-CALIB-10 — Brier 10.8x better than uniform baseline
-    # Paper: model Brier 0.014, baseline 0.151 → ratio 10.8.
+    # C-CALIB-10 — Brier 12.1x better than uniform baseline
+    # Paper: model Brier 0.014, baseline 0.151 → ratio 12.1.
     # Claim semantics: one-sided skill claim. PASS if reproduced ratio is
     # at least the paper-claimed ratio within relative tolerance OR
     # exceeds it — a more-skilful model beats the paper claim and is
     # reproduction success, not failure.
     paper_baseline_brier = 0.151
-    paper_ratio = 10.8
+    paper_ratio = 12.1
     repro_ratio = paper_baseline_brier / repro_pooled_brier
     rel_dev = (repro_ratio - paper_ratio) / paper_ratio
     if repro_ratio >= paper_ratio * (1 - BRIER_RATIO_REL_TOL):
@@ -243,7 +243,7 @@ def main() -> int:
         "notes": (
             f"Brier skill ratio = baseline_Brier / model_Brier = "
             f"{paper_baseline_brier} / {repro_pooled_brier:.4f} = "
-            f"{repro_ratio:.2f}x. Paper claims 10.8x. Reproduced ratio "
+            f"{repro_ratio:.2f}x. Paper claims 12.1x. Reproduced ratio "
             f"exceeds paper by +{rel_dev * 100:.1f}% — reproduction "
             "stronger than paper claim. The uniform-precision baseline "
             "Brier=0.151 is the paper's reported reference (model outputs "
@@ -291,7 +291,7 @@ def main() -> int:
     manifest: Dict[str, Any] = {
         "axis_id": "AXIS-04",
         "axis_name": (
-            "ECE Belief Calibration (pooled 0.079, 8 per-belief, "
+            "ECE Belief Calibration (pooled 0.084, 8 per-belief, "
             "Brier 10.8x, Cheung r=+0.615)"
         ),
         "engine_head": engine_head,

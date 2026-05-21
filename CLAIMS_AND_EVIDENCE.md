@@ -5,7 +5,7 @@
 **Engine aggregate SHA-256:** `482ade45c50f5d3bf5c90c122e495b2c3230e6e6edc6542f72f22e3b5da37f88`
 **Audit date:** 2026-05-17 (Stage A + initial migration) · **Updated:** 2026-05-18 (Phase 03.3 Stage B audio-native upgrade migrated + Phase 05.4 voxelwise MERT/CLAP/CKA verdict-CSV completion)
 **Reproducibility runtime:** 6,277 s cumulative (1 h 44 m 37 s) on MacBook Air M2 8 GB
-**Status:** 22/25 phases runnable + green end-to-end; 1 deferred (Phase 06.2 portfolio aggregator); 1 EXEC-PENDING (Phase 05.7 audio fetch); 1 blocked on environment (Phase 04.1 live engine, CSV-cached verdict preserved)
+**Status:** 23 phases runnable + green end-to-end; 1 EXEC-PENDING (Phase 05.7 audio fetch); 1 blocked on environment (Phase 04.1 live engine, CSV-cached verdict preserved). Phase 06.2 (paper-wide BB-FDR aggregator) and Phase 99 (Zenodo bundle scaffold) removed from scope — paper marks 06.2 DEFERRED and 99 is DOI-mint-gated; neither is a claim.
 
 ---
 
@@ -469,13 +469,7 @@ Source: `06-PORTFOLIO-FALSIFIABILITY/06.1-falsifiable-table5/results/06.1_falsif
 
 **Significance:** Five pre-committed falsifiable tests selected before execution, drawing from R³ (Carillon anti-overfit), Neural (voxelwise + mech×region), Behavioural (Cheung), Single-subject fMRI (Mendelssohn). Each is a falsifiability surface — if MI were random, the test would predictably fail. All 5 reproduce verbatim.
 
-### 7.2. Phase 06.2 unified-bb-fdr-aggregator (DEFERRED)
-
-Status: PENDING.md placeholder.
-
-**Reason for deferral:** Portfolio-level multiple-comparison aggregation is a terminal computation that requires homogeneous null structures within each FDR family. The flat 1,496-test universe described in earlier drafts mixed neural-encoding shuffle-nulls, psychoacoustic sign-invariance, behavioural continuous correlation, and pharmacology categorical agreement under a single hierarchy — violating BB-FDR exchangeability-within-family. The redesigned aggregator stratifies into 3 FDR families (Neural / Psychoacoustic+Cross-cultural / Behavioural) with within-family BH-FDR + cross-family BB-FDR, plus 5 separately-reported non-FDR audit classes (engine cardinality, determinism, pharmacology categorical, falsifiability cell-selection, AI-baseline margin). Execution scheduled after all Sections stable.
-
-### 7.3. Phase 06.3 ai-baseline-ablation (4/4 MI WINS on executed; 1 DEFERRED)
+### 7.2. Phase 06.3 ai-baseline-ablation (4/4 MI WINS on executed; 1 DEFERRED)
 
 Source: `06-PORTFOLIO-FALSIFIABILITY/06.3-ai-baseline-ablation/L9_verdict/REPORT.md`
 
@@ -528,7 +522,6 @@ Source: `06-PORTFOLIO-FALSIFIABILITY/06.3-ai-baseline-ablation/L9_verdict/REPORT
 | AI-baseline same-data ablation (Ceiling 3) | 06.3 (4/4 MI WINS on executed; DEAM-5 deferred) |
 | Engine determinism \|Δρ\| ≤ 8.8×10⁻⁵ | 00.3 (MD5 bit-identical, stronger than paper bound) + 04.1 (\|Δ\|=0 on 4-channel neurochem) + 01.1 + 02.1 (all bit-deterministic) |
 | Pre-reg fMRI replication +148 subjects target | 05.7 (entry-gate + pre-reg PASS, exec PENDING per paper's own EXEC-PENDING disclosure) |
-| Portfolio 1,174/1,496 BB-FDR pass | **DEFERRED** to 06.2; FDR-family-stratified restructure pending (Phase 06.2 PENDING.md) |
 
 ---
 
@@ -539,10 +532,8 @@ Source: `06-PORTFOLIO-FALSIFIABILITY/06.3-ai-baseline-ablation/L9_verdict/REPORT
 | Phase 04.1 live engine spot-check (verifies CSV-cached 11 claims via re-running engine) | CSV verdict preserved | Live WAV decode environment (requires `scipy.io.wavfile` + engine runtime); CSV record is the authoritative verdict |
 | Phase 05.7.1 studyforrest execution | PRE-REG-FROZEN | External audio fetch via `datalad get` (~10 MB; intentionally not vendored in the V-Reproduction default bundle) |
 | Phase 05.7.5 ds000171 execution | PRE-REG-FROZEN | Lepping 2016 Sci Rep supplementary fetch (~18 stimulus WAVs; intentionally not vendored) |
-| Phase 06.2 unified BB-FDR portfolio aggregator | PENDING.md placeholder | Methodological revision pending — terminal aggregator runs after FDR-family-stratification redesign (3 FDR families + 5 non-FDR audit classes) and all Sections stable |
 | Phase 06.3 DEAM-5-song F4 MMP cell | DEFERRED to v1.1 | Scope ambiguity in original pre-reg (5-song vs 30-song MMP); re-pre-registration required |
 | Phase 06.3 elastic net + MLP + CNN baselines | DEFERRED to v1.1 | v1.0 verdict not blocked (4/4 MI WINS with available baselines); deeper baseline test belongs to v1.1 architecture-extension scope |
-| Phase 99 Zenodo bundle manifest | EMPTY scaffold | Paper-submission-gated; 141 GB engine_outputs to be 5-part split on Zenodo upload |
 
 ---
 

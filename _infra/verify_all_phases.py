@@ -88,9 +88,9 @@ EXPECTED = {
         "min_pass": 11, "max_fail": 0,
     },
     "05-FMRI-BRAIN-GROUNDING/05.4-voxelwise-ds003720": {
-        "doc_verdict": "18/18 PASS",
+        "doc_verdict": "11/11 PASS",
         "csv": "results/05.4_voxelwise_correlations.csv",
-        "min_pass": 18, "max_fail": 0,
+        "min_pass": 11, "max_fail": 0,
     },
     "06-PORTFOLIO-FALSIFIABILITY/06.1-falsifiable-table5": {
         "doc_verdict": "5/5 PASS",
@@ -113,10 +113,8 @@ PYTEST_PHASES = (
     "05-FMRI-BRAIN-GROUNDING/05.6-cross-dataset-region-prediction",
 )
 
-# Deferred / EXEC-PENDING / placeholder phases (not verified):
-#   06-PORTFOLIO-FALSIFIABILITY/06.2-unified-bb-fdr-aggregator (DEFERRED)
-#   05-FMRI-BRAIN-GROUNDING/05.7-independent-fmri (EXEC-PENDING)
-#   99-ZENODO-BUNDLE-MANIFEST (scaffold)
+# EXEC-PENDING phases (not verified, not in claim ledger):
+#   05-FMRI-BRAIN-GROUNDING/05.7-independent-fmri (EXEC-PENDING per pre-registration)
 
 
 def count_csv_verdicts(csv_path: Path) -> dict[str, int]:

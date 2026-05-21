@@ -1,0 +1,28 @@
+{
+  "phase_id": "01.1",
+  "phase_path": "01-R3-PERCEPTUAL-FRONT-END/01.1-r3-isolated-extended",
+  "kind": "pytest_runall",
+  "args": [
+    "run_all.py"
+  ],
+  "started_at": "2026-05-21T11:51:17Z",
+  "results_existed_before": true,
+  "baseline_file_count": 0,
+  "returncode": 0,
+  "stdout_tail": "ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss [ 13%]\nssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss [ 27%]\nssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss [ 40%]\nssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss [ 54%]\nssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss [ 67%]\nssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss [ 81%]\nssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss [ 94%]\nsssssssssssssssssssssssssss                                              [100%]\n531 skipped in 0.23s\n",
+  "stderr_tail": "",
+  "wall_seconds": 2.42,
+  "new_file_count": 0,
+  "match": [],
+  "differ": [],
+  "new": [],
+  "missing": [],
+  "counts": {
+    "match": 0,
+    "differ": 0,
+    "new": 0,
+    "missing": 0
+  },
+  "restored_missing": [],
+  "finished_at": "2026-05-21T11:51:19Z"
+}

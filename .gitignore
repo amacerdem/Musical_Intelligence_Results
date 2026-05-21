@@ -1,3 +1,6 @@
+# Reproduction venv (pinned numpy 2.2.6 + _infra/requirements.txt)
+.venv/
+
 # Heavy data — vendored separately (Zenodo / R2)
 # 141 GB MI engine pre-compute (per_frame .npz feature caches)
 engine_outputs/

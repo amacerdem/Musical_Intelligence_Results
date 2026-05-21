@@ -9,15 +9,12 @@ import pytest
 _THIS = Path(__file__).resolve()
 _PROJECT_ROOT = _THIS.parent
 for _ in range(8):
-    if (_PROJECT_ROOT / "Musical_Intelligence" / "ear" / "r3" / "extractor.py").exists():
-        break
-    # V-Reproduction fresh-clone fallback: engine vendored at <root>/engine/
-    if (_PROJECT_ROOT / "engine" / "Musical_Intelligence" / "ear" / "r3" / "extractor.py").exists():
-        _PROJECT_ROOT = _PROJECT_ROOT / "engine"
+    # Cache-only mode: MI_Results root has engine_outputs/ + _infra/
+    if (_PROJECT_ROOT / "engine_outputs").is_dir() and (_PROJECT_ROOT / "_infra").is_dir():
         break
     _PROJECT_ROOT = _PROJECT_ROOT.parent
 else:
-    raise RuntimeError(f"Could not locate Musical_Intelligence from {_THIS}")
+    raise RuntimeError(f"Could not locate MI_Results from {_THIS}")
 if str(_PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(_PROJECT_ROOT))
 
@@ -53,7 +50,7 @@ def paper_baseline() -> dict:
 def ckpt_bold_dir(project_root) -> Path:
     candidates = [
         project_root / "V2/reviewer-sims/divan-major-revision-2026-04-22/computing-phase/T-AP-v2-08-nakai/RunPod-Exp-01/ckpt_bold",
-        project_root / "Science/V2/reviewer-sims/divan-major-revision-2026-04-22/computing-phase/T-AP-v2-08-nakai/RunPod-Exp-01/ckpt_bold",
+        project_root / "datasets/paper-anchors/voxelwise-encoding/ckpt_bold",
     ]
     for c in candidates:
         if c.exists():
@@ -65,7 +62,7 @@ def ckpt_bold_dir(project_root) -> Path:
 def per_subject_per_region_csv(project_root) -> Path:
     candidates = [
         project_root / "Bold-fMRI/ds003720/06_encoding/per_subject_per_region_r.csv",
-        project_root / "Science/Bold-fMRI/ds003720/06_encoding/per_subject_per_region_r.csv",
+        project_root / "datasets/paper-anchors/voxelwise-encoding/per_subject_per_region_r.csv",
     ]
     for c in candidates:
         if c.exists():

@@ -53,6 +53,7 @@ def _build_route(pool_channels, pooled_csv):
 
 def _load_pool(project_root, pool_name):
     candidates = [
+        project_root / "03-C3-BEHAVIORAL-VALIDATION" / "03.7-gems-eerola-film" / "_prereg" / "pools.json",
         project_root / "c3-cognitive-signals" / "_prereg" / "pools.json",
         project_root / "Science" / "c3-cognitive-signals" / "_prereg" / "pools.json",
     ]

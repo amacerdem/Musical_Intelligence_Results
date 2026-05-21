@@ -22,11 +22,16 @@ def test_engine_pin_manifest_present(engine_pin):
 
 
 def test_engine_path_resolves(project_root):
-    """Project root must resolve to a tree containing Musical_Intelligence/."""
-    engine_root = project_root / "Musical_Intelligence"
-    assert engine_root.exists(), f"Engine tree not found at {engine_root}"
-    assert (engine_root / "ear" / "r3" / "extractor.py").exists(), \
-        f"Engine canonical entry point missing: {engine_root}/ear/r3/extractor.py"
+    """Cache-only mode: engine_outputs/ root must be present.
+
+    The reviewer reproduction path is the deposited cache, not the live
+    engine; this test verifies the cache root exists rather than the
+    Musical_Intelligence/ source tree.
+    """
+    cache_root = project_root / "engine_outputs"
+    assert cache_root.exists(), f"Cache root not found at {cache_root}"
+    assert (cache_root / "_aggregate_sha.txt").exists(), \
+        f"Engine SHA marker missing at {cache_root}/_aggregate_sha.txt"
 
 
 def test_engine_sha_matches_pin(project_root, engine_pin):

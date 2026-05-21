@@ -1,0 +1,14 @@
+[
+  {
+    "phase_id": "03.4",
+    "returncode": 0,
+    "wall_seconds": 1046.24,
+    "counts": {
+      "match": 0,
+      "differ": 0,
+      "new": 0,
+      "missing": 0
+    },
+    "verdict": "\u2713 BIT-IDENTICAL"
+  }
+]

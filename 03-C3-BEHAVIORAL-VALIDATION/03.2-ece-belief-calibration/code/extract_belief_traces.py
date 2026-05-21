@@ -66,7 +66,7 @@ OUT_DIR = _REPRO_ROOT / "results/traces"
 
 
 # ── PRIMARY: paper's 8 Core beliefs (V2/T-R3-08 methodology, F1×4 + F2×4) ──
-# This subset reproduces paper's pooled ECE = 0.079 by construction.
+# This subset reproduces paper's pooled ECE = 0.084 by construction.
 PAPER_BELIEFS: List[Tuple[str, str, str, str]] = [
     ("F1", "BCH",   "Musical_Intelligence.brain.functions.f1.beliefs.bch.harmonic_stability",     "HarmonicStability"),
     ("F1", "PSCL",  "Musical_Intelligence.brain.functions.f1.beliefs.pscl.pitch_prominence",      "PitchProminence"),

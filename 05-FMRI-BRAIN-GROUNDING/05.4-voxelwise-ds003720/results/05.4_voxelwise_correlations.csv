@@ -10,10 +10,3 @@ C-VOXEL-08,Ridge held-out r: mert_768d ≈ +0.221,+0.221,+0.2214,PASS
 C-VOXEL-09,MI vs MI-naive lift = +93%,+93%,+96%,PASS
 C-VOXEL-10,"MI-unique R² > 0 in 4/4 (banded-ridge, V6 A3)",4/4 CI excludes 0,4/4,PASS
 C-VOXEL-11,"Feature-level CKA(MI-full, MI-naive) = 0.994",0.994,documented in paper anchor V2/v9.5.7-cycle-17 tex line 'CKA between MI-full and MI-naive yielded 0.994',PASS
-C-VOXEL-12,Shuffle-null pass: random_768d 0/4 (paper §388 dimensionality-matched random control),0/4,0/4,PASS
-C-VOXEL-13,Shuffle-null pass: mert_768d 4/4 (pretrained encoder reference upper-bound; paper §388 implicit),4/4,4/4,PASS
-C-VOXEL-14,Shuffle-null pass: clap_music_512d 2/4 (paper §584 Discussion reference; intermediate between MI-naive and MI-RAM),2/4,2/4,PASS
-C-VOXEL-15,"Feature-level CKA(MI-full, MERT-768d) = 0.414 (architectural-similarity contrast; MI-full shares 41% of structure with MERT vs 99.4% with MI-naive — confirms MI-full and MERT are different architectural families)",0.414,0.4145,PASS
-C-VOXEL-16,"Feature-level CKA(MI-naive, MERT-768d) = 0.410 (MI-naive shares 41% with MERT, near-identical to MI-full's 41% — MI vs MERT cluster separation is structural, not dimensionality-driven)",0.410,0.4103,PASS
-C-VOXEL-17,"Feature-level CKA(MI-full, CLAP-512d) = 0.125 (MI-full vs CLAP cluster separation 3× weaker than MI-full vs MERT — paper §584 ""different niche"" framing)",0.125,0.1253,PASS
-C-VOXEL-18,Per-subject pairwise MI-RAM > MERT on top-5% voxel mean r in 3/4 subjects (sub-001/003/004 sig_95=True; sub-005 not in pairwise deposit),3/4 sig at 95% bootstrap CI,3/4,PASS

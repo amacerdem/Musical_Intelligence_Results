@@ -5,7 +5,7 @@ Fixtures
 * ``project_root``    — repo root (auto-discovered upward from this file)
 * ``engine_pin``      — parsed _infra/manifests/engine_pin.json dict
 * ``chillsdb_root``   — ChillsDB v1 audio root path
-* ``engine_outputs``  — Musical_Intelligence_Outputs/emotion/<dataset>/ helper
+* ``engine_outputs``  — engine_outputs/emotion/<dataset>/ helper
 * ``paper_baseline``  — parsed _infra/paper_time_baseline.json (Tier-1 frozen numbers)
 
 Engine-pin integrity check
@@ -29,15 +29,12 @@ import pytest
 _THIS = Path(__file__).resolve()
 _PROJECT_ROOT = _THIS.parent
 for _ in range(8):
-    if (_PROJECT_ROOT / "Musical_Intelligence" / "ear" / "r3" / "extractor.py").exists():
-        break
-    # V-Reproduction fresh-clone fallback: engine vendored at <root>/engine/
-    if (_PROJECT_ROOT / "engine" / "Musical_Intelligence" / "ear" / "r3" / "extractor.py").exists():
-        _PROJECT_ROOT = _PROJECT_ROOT / "engine"
+    # Cache-only mode: MI_Results root has engine_outputs/ + _infra/
+    if (_PROJECT_ROOT / "engine_outputs").is_dir() and (_PROJECT_ROOT / "_infra").is_dir():
         break
     _PROJECT_ROOT = _PROJECT_ROOT.parent
 else:
-    raise RuntimeError(f"Could not locate Musical_Intelligence/ear/r3 from {_THIS}")
+    raise RuntimeError(f"Could not locate MI_Results from {_THIS}")
 if str(_PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(_PROJECT_ROOT))
 
@@ -94,8 +91,8 @@ def chillsdb_root(project_root) -> Path:
 @pytest.fixture(scope="session")
 def engine_outputs_root(project_root) -> Path:
     candidates = [
-        project_root / "V-Reproduction" / "Musical_Intelligence_Outputs" / "emotion",
-        project_root / "Science" / "V-Reproduction" / "Musical_Intelligence_Outputs" / "emotion",
+        project_root / "engine_outputs" / "emotion",
+        project_root / "engine_outputs" / "emotion",
     ]
     for c in candidates:
         if c.exists():

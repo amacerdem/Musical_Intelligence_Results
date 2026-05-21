@@ -1,17 +1,14 @@
 # 05.5-ds003720-region-ceiling-N4 — Run Report
 
-- **Started:**  2026-05-17T19:06:38
-- **Finished:** 2026-05-17T19:06:41
-- **Headline:** ✅ ALL PASS
+- **Started:**  2026-05-20T15:15:13
+- **Finished:** 2026-05-20T15:15:13
+- **Headline:** ⛔ ABORTED at L1 engine-pin gate
 
 ## Layer scorecard
 
 | Layer | Status | pytest summary | Coverage |
 |-------|--------|----------------|----------|
-| **L1** | ✅ PASS | 4 passed in 0.14s | Engine SHA + paper-baseline structural checks |
-| **L4** | ✅ PASS | 2 passed in 0.13s | Per-region ceiling matches paper baseline |
-| **L5** | ✅ PASS | 2 passed in 0.14s | Saturation verdict distribution within tolerance |
-| **L9** | ✅ PASS | 3 passed in 0.13s | Verdict reconciliation + V-Repro 12 untouched |
+| **L1** | ❌ FAIL | 4 errors in 0.01s | Engine SHA + paper-baseline structural checks |
 
 ## Paper-time baseline
 

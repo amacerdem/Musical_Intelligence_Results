@@ -1,0 +1,32 @@
+{
+  "phase_id": "05.3",
+  "phase_path": "05-FMRI-BRAIN-GROUNDING/05.3-ds002725-region-ceiling-N17",
+  "kind": "pytest_runall",
+  "args": [
+    "run_all.py"
+  ],
+  "started_at": "2026-05-21T11:42:17Z",
+  "results_existed_before": true,
+  "baseline_file_count": 3,
+  "returncode": 0,
+  "stdout_tail": "...........................                                              [100%]\n27 passed in 0.11s\n",
+  "stderr_tail": "",
+  "wall_seconds": 0.34,
+  "new_file_count": 3,
+  "match": [
+    "_logs/stage3_summary.json",
+    "_logs/stage4_summary.json",
+    "_logs/stage9_summary.json"
+  ],
+  "differ": [],
+  "new": [],
+  "missing": [],
+  "counts": {
+    "match": 3,
+    "differ": 0,
+    "new": 0,
+    "missing": 0
+  },
+  "restored_missing": [],
+  "finished_at": "2026-05-21T11:42:18Z"
+}

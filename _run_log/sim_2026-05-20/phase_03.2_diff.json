@@ -1,0 +1,42 @@
+{
+  "phase_id": "03.2",
+  "phase_path": "03-C3-BEHAVIORAL-VALIDATION/03.2-ece-belief-calibration",
+  "kind": "shell",
+  "args": [
+    "code/run.sh"
+  ],
+  "started_at": "2026-05-21T11:51:20Z",
+  "results_existed_before": true,
+  "baseline_file_count": 13,
+  "returncode": 0,
+  "stdout_tail": "CE:          0.0841   (paper published: 0.084, deviation: +0.0001)\n    median per-cell ECE: 0.0831   (IQR: 0.0591-0.1028, max: 0.1865)\n    cells with ECE<0.10: 28 / 40\n    pooled null 5th:     0.0841\n    rel/uncertainty:     0.0855\n\n  EXTENSION (V6 novel \u2014 6 beliefs F3-F8 NOT in paper's 8):\n    pooled ECE:          0.0989\n    median per-cell ECE: 0.0779 (max: 0.2225)\n    cells with ECE<0.10: 20 / 30\n    outlier belief:      F7_GrooveQuality\n\n  P1 median paper-8 ECE<0.10: PASS\n  P2 pooled<null 5th-pct:     PASS\n  P3 rel/unc<1:               PASS\n  COMPOSITE A2:               PASS\n======================================================================\n\n[run] Phase 3 \u2014 generating reliability diagrams...\n[plot] generating figures into /Volumes/SRC-9/SRC Musical Intelligence/Musical_Intelligence_Results/03-C3-BEHAVIORAL-VALIDATION/03.2-ece-belief-calibration/figures\n[fig] /Volumes/SRC-9/SRC Musical Intelligence/Musical_Intelligence_Results/03-C3-BEHAVIORAL-VALIDATION/03.2-ece-belief-calibration/figures/reliability_per_belief.png\n[fig] /Volumes/SRC-9/SRC Musical Intelligence/Musical_Intelligence_Results/03-C3-BEHAVIORAL-VALIDATION/03.2-ece-belief-calibration/figures/ece_per_cell_heatmap.png\n[fig] /Volumes/SRC-9/SRC Musical Intelligence/Musical_Intelligence_Results/03-C3-BEHAVIORAL-VALIDATION/03.2-ece-belief-calibration/figures/extension_vs_paper.png\n[plot] all 3 figures done.\n\n================================================================\nReproduction complete. Results at:\n  /Volumes/SRC-9/SRC Musical Intelligence/Musical_Intelligence_Results/03-C3-BEHAVIORAL-VALIDATION/03.2-ece-belief-calibration/results/A2_summary.json\n  /Volumes/SRC-9/SRC Musical Intelligence/Musical_Intelligence_Results/03-C3-BEHAVIORAL-VALIDATION/03.2-ece-belief-calibration/results/A2_per_cell_ece.csv\n  /Volumes/SRC-9/SRC Musical Intelligence/Musical_Intelligence_Results/03-C3-BEHAVIORAL-VALIDATION/03.2-ece-belief-calibration/figures/\n================================================================\n",
+  "stderr_tail": "",
+  "wall_seconds": 358.62,
+  "new_file_count": 13,
+  "match": [
+    "05_ece_calibration_manifest.json",
+    "A2_circular_null.csv",
+    "A2_per_cell_ece.csv",
+    "A2_per_cell_summary.csv",
+    "A2_reliability_data.npz",
+    "A2_summary.json",
+    "per_claim_verdicts.csv",
+    "phase5_reuse_notice.md",
+    "traces/song_1034.npz",
+    "traces/song_1508.npz",
+    "traces/song_1777.npz",
+    "traces/song_1896.npz",
+    "traces/song_1923.npz"
+  ],
+  "differ": [],
+  "new": [],
+  "missing": [],
+  "counts": {
+    "match": 13,
+    "differ": 0,
+    "new": 0,
+    "missing": 0
+  },
+  "restored_missing": [],
+  "finished_at": "2026-05-21T11:57:19Z"
+}

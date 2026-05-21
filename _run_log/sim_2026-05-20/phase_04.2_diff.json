@@ -1,0 +1,32 @@
+{
+  "phase_id": "04.2",
+  "phase_path": "04-C3-BIOLOGICAL-SUBSTRATE/04.2-ram-topology",
+  "kind": "python",
+  "args": [
+    "code/run_phase04_2.py"
+  ],
+  "started_at": "2026-05-21T11:42:17Z",
+  "results_existed_before": true,
+  "baseline_file_count": 3,
+  "returncode": 0,
+  "stdout_tail": "[anchor] literature_coords_32.csv has 31 peaks (31-row coord-eligible subset; 1 atlas-proxy pre-excluded)\n\n[headline] @10mm Null-1 coord-shuffle: 28/31, p=9.9990e-05\n[headline] @10mm Null-2 label-shuffle: 28/31, p=9.9990e-05\n[robust]   @10mm Null-1 no-proxy:       26/29, p=9.9990e-05\n[per-r]    @8mm: obs1=28 obs2=28 p1=1.00e-04 p2=1.00e-04  \u2713\n[per-r]    @10mm: obs1=28 obs2=28 p1=1.00e-04 p2=1.00e-04  \u2713\n[per-r]    @12mm: obs1=28 obs2=28 p1=1.00e-04 p2=1.00e-04  \u2713\n\n[verdict] 5/5 PASS\n  C-RAM-COORD-28-31         : PASS\n  C-RAM-NULL-1-CENTROID     : PASS\n  C-RAM-NULL-2-LABEL        : PASS\n  C-RAM-NO-PROXY-26-29      : PASS\n  C-RAM-RADIUS-ROBUST       : PASS\n",
+  "stderr_tail": "",
+  "wall_seconds": 0.02,
+  "new_file_count": 3,
+  "match": [
+    "04.2_ram_topology_correlations.csv",
+    "04.2_ram_topology_manifest.json",
+    "peak_match_per_row.csv"
+  ],
+  "differ": [],
+  "new": [],
+  "missing": [],
+  "counts": {
+    "match": 3,
+    "differ": 0,
+    "new": 0,
+    "missing": 0
+  },
+  "restored_missing": [],
+  "finished_at": "2026-05-21T11:42:17Z"
+}

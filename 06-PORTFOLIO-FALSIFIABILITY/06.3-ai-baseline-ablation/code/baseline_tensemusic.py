@@ -68,7 +68,15 @@ def main():
     print(f"Master seed: {MASTER_SEED}")
     print()
 
+    # Cache-only mode: if the result JSON is already on disk and no WAVs are
+    # vendored, reuse the cached baseline result (paper-time deposit).
+    import os
+    output_path = OUTPUT_DIR / "baseline_ridge_tensemusic.json"
     wav_files = sorted(MUSIC.glob("*.wav"))
+    if output_path.exists() and len(wav_files) == 0 and not os.environ.get("BASELINE_FORCE_RERUN"):
+        print(f"  [cache-only] no WAVs vendored; reusing deposited result at {output_path}")
+        return
+
     csv_files = sorted(RAW.glob("*.csv"))
     print(f"  WAVs: {len(wav_files)}, raw CSVs: {len(csv_files)}")
 

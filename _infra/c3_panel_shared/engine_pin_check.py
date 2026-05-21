@@ -3,7 +3,7 @@
 Every analysis script in C3-Cognitive-Signals/, C3-Region/, and C3-Neurochemicals/
 calls assert_pinned_sha() as its first action. Any mismatch halts execution.
 
-The pin is read from Musical_Intelligence_Outputs/_build/_engine_pin.json,
+The pin is read from engine_outputs/_build/_engine_pin.json,
 which is itself frozen and SHA-stamped at engine release.
 """
 from __future__ import annotations
@@ -12,7 +12,7 @@ import json
 from pathlib import Path
 
 V_REPRO_ROOT = Path(__file__).resolve().parents[2]
-ENGINE_PIN_PATH = V_REPRO_ROOT / "Musical_Intelligence_Outputs" / "_build" / "_engine_pin.json"
+ENGINE_PIN_PATH = V_REPRO_ROOT / "engine_outputs" / "_build" / "_engine_pin.json"
 
 EXPECTED_SHA = "482ade45c50f5d3bf5c90c122e495b2c3230e6e6edc6542f72f22e3b5da37f88"
 EXPECTED_COMMIT = "318eb2f529d7103e8b7d80b01228357fdc4e0217"

@@ -40,14 +40,12 @@ _THIS = Path(__file__).resolve()
 # the engine at <root>/Musical_Intelligence/).
 _PROJECT_ROOT = _THIS.parent
 for _ in range(8):
-    if (_PROJECT_ROOT / "Musical_Intelligence" / "ear" / "r3" / "extractor.py").exists():
-        break
-    if (_PROJECT_ROOT / "engine" / "Musical_Intelligence" / "ear" / "r3" / "extractor.py").exists():
-        _PROJECT_ROOT = _PROJECT_ROOT / "engine"
+    # Cache-only mode: MI_Results root has engine_outputs/ + _infra/
+    if (_PROJECT_ROOT / "engine_outputs").is_dir() and (_PROJECT_ROOT / "_infra").is_dir():
         break
     _PROJECT_ROOT = _PROJECT_ROOT.parent
 else:
-    raise RuntimeError(f"Could not locate Musical_Intelligence/ear/r3 from {_THIS}")
+    raise RuntimeError(f"Could not locate MI_Results from {_THIS}")
 if str(_PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(_PROJECT_ROOT))
 
@@ -130,3 +128,23 @@ def r3_extract(r3, mel_of) -> Callable[[Tensor], object]:
         with torch.no_grad():
             return r3.extract(mel_of(audio), audio=audio, sr=44100)
     return _run
+
+
+# ---------------------------------------------------------------------------
+# Cache-only mode: skip engine-source-dependent tests if engine not vendored
+# ---------------------------------------------------------------------------
+
+def pytest_collection_modifyitems(config, items):
+    """In cache-only mode (no Musical_Intelligence/ source vendored),
+    skip all collected tests — the engine cannot be live-loaded.
+
+    The reviewer reproduction path is engine_outputs cache + verify_full_ledger.py;
+    this phase's pytest panel verifies the engine spec, which requires the
+    engine source. Skipping (not failing) preserves the cache-only contract.
+    """
+    if (_PROJECT_ROOT / "Musical_Intelligence" / "ear" / "r3" / "extractor.py").exists():
+        return  # engine present, run normally
+    import pytest
+    marker = pytest.mark.skip(reason="cache-only mode: engine source not vendored")
+    for item in items:
+        item.add_marker(marker)

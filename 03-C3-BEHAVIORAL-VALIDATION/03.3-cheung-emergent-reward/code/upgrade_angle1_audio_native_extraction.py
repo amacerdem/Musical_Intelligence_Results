@@ -32,7 +32,7 @@ REPO_ROOT = Path(__file__).resolve().parents[3]
 # pipeline live outside MI_Results. Set MI_ENGINE_ROOT to point at the
 # directory containing ``Musical_Intelligence/`` (default: MI_Results parent).
 ENGINE_ROOT = Path(os.environ.get("MI_ENGINE_ROOT", REPO_ROOT.parent))
-PIPELINE_DIR = ENGINE_ROOT / "Science" / "V-Reproduction" / "Musical_Intelligence_Outputs" / "_build"
+PIPELINE_DIR = ENGINE_ROOT / "engine_outputs" / "_build"
 sys.path.insert(0, str(ENGINE_ROOT))
 sys.path.insert(0, str(PIPELINE_DIR))
 import _pipeline  # noqa: E402

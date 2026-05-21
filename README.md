@@ -18,7 +18,6 @@ Musical_Intelligence_Results/
 ├── 04-C3-BIOLOGICAL-SUBSTRATE/
 ├── 05-FMRI-BRAIN-GROUNDING/
 ├── 06-PORTFOLIO-FALSIFIABILITY/
-├── 99-ZENODO-BUNDLE-MANIFEST/
 ├── _audits/                             ← constant-level provenance audit (16,248 sabit, 9 agent)
 ├── _infra/                              ← shared engine path resolver, helpers
 ├── datasets/paper-anchors/              ← paper-time reference intermediates (mech-region excluded — Zenodo)

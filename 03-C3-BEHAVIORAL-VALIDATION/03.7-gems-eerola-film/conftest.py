@@ -13,15 +13,12 @@ import pytest
 _THIS = Path(__file__).resolve()
 _PROJECT_ROOT = _THIS.parent
 for _ in range(8):
-    if (_PROJECT_ROOT / "Musical_Intelligence" / "ear" / "r3" / "extractor.py").exists():
-        break
-    # V-Reproduction fresh-clone fallback: engine vendored at <root>/engine/
-    if (_PROJECT_ROOT / "engine" / "Musical_Intelligence" / "ear" / "r3" / "extractor.py").exists():
-        _PROJECT_ROOT = _PROJECT_ROOT / "engine"
+    # Cache-only mode: MI_Results root has engine_outputs/ + _infra/
+    if (_PROJECT_ROOT / "engine_outputs").is_dir() and (_PROJECT_ROOT / "_infra").is_dir():
         break
     _PROJECT_ROOT = _PROJECT_ROOT.parent
 else:
-    raise RuntimeError(f"Could not locate Musical_Intelligence from {_THIS}")
+    raise RuntimeError(f"Could not locate MI_Results from {_THIS}")
 if str(_PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(_PROJECT_ROOT))
 
@@ -80,8 +77,8 @@ def eerola_ratings_set1(project_root) -> Path:
 @pytest.fixture(scope="session")
 def engine_cache_set2(project_root) -> Path:
     candidates = [
-        project_root / "V-Reproduction" / "Musical_Intelligence_Outputs" / "emotion" / "eerola_film_set2" / "per_frame",
-        project_root / "Science" / "V-Reproduction" / "Musical_Intelligence_Outputs" / "emotion" / "eerola_film_set2" / "per_frame",
+        project_root / "engine_outputs" / "emotion" / "eerola_film_set2" / "per_frame",
+        project_root / "engine_outputs" / "emotion" / "eerola_film_set2" / "per_frame",
     ]
     for c in candidates:
         if c.exists():
@@ -92,8 +89,8 @@ def engine_cache_set2(project_root) -> Path:
 @pytest.fixture(scope="session")
 def engine_cache_set1(project_root) -> Path:
     candidates = [
-        project_root / "V-Reproduction" / "Musical_Intelligence_Outputs" / "emotion" / "eerola_film" / "per_frame",
-        project_root / "Science" / "V-Reproduction" / "Musical_Intelligence_Outputs" / "emotion" / "eerola_film" / "per_frame",
+        project_root / "engine_outputs" / "emotion" / "eerola_film" / "per_frame",
+        project_root / "engine_outputs" / "emotion" / "eerola_film" / "per_frame",
     ]
     for c in candidates:
         if c.exists():
@@ -104,8 +101,8 @@ def engine_cache_set1(project_root) -> Path:
 @pytest.fixture(scope="session")
 def pooled_csv_set2(project_root) -> Path:
     candidates = [
-        project_root / "V-Reproduction" / "Musical_Intelligence_Outputs" / "emotion" / "eerola_film_set2" / "pooled.csv",
-        project_root / "Science" / "V-Reproduction" / "Musical_Intelligence_Outputs" / "emotion" / "eerola_film_set2" / "pooled.csv",
+        project_root / "engine_outputs" / "emotion" / "eerola_film_set2" / "pooled.csv",
+        project_root / "engine_outputs" / "emotion" / "eerola_film_set2" / "pooled.csv",
     ]
     for c in candidates:
         if c.exists():

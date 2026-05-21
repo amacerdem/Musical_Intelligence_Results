@@ -1,0 +1,60 @@
+{
+  "phase_id": "06.3",
+  "phase_path": "06-PORTFOLIO-FALSIFIABILITY/06.3-ai-baseline-ablation",
+  "kind": "ai_ablation_loop",
+  "args": [
+    "code/baseline_marjieh.py",
+    "code/baseline_carillon.py",
+    "code/baseline_cheung.py",
+    "code/baseline_tensemusic.py"
+  ],
+  "started_at": "2026-05-21T12:15:45Z",
+  "results_existed_before": true,
+  "baseline_file_count": 4,
+  "sub_runs": [
+    {
+      "script": "code/baseline_marjieh.py",
+      "returncode": 0,
+      "stdout_tail": "# Phase 06.3 \u2014 Baseline 1 (Ridge on STFT-mel) \u2014 Marjieh 2024\nMaster seed: 20260513\nSynthesis: 5-equal-partial dyad at f0=261.63Hz\n\n  Loaded 13 binned intervals from marjieh_r3.csv\n\n## Synthesising 5-equal-partial dyads + extracting STFT-mel features ...\n  Shape: X=(13, 128), y=(13,)\n\n## Leave-one-out ridge regression ...\n  Predictions: [3.606, 3.716, 3.646, 3.521, 3.627, 3.634, 3.838, 3.623, 3.638, 3.641, 3.664, 3.714, 3.615]\n  Targets:     [3.961, 3.182, 3.435, 3.663, 3.862, 3.829, 3.496, 3.955, 3.748, 3.686, 3.504, 3.209, 3.874]\n\n## Result\n  Spearman \u03c1:  -0.7967  (p=0.0011)\n  Pearson r:   -0.5553\n\n## Comparison to MI Marjieh\n  MI |\u03c1| (roughness vs Marjieh):     0.7363\n  Ridge LOO |\u03c1|:                     0.7967\n  Per-dataset verdict:               AI WINS / TIE\n\nSaved: /Volumes/SRC-9/SRC Musical Intelligence/Musical_Intelligence_Results/06-PORTFOLIO-FALSIFIABILITY/06.3-ai-baseline-ablation/results/baseline_ridge_marjieh.json\n",
+      "stderr_tail": ""
+    },
+    {
+      "script": "code/baseline_carillon.py",
+      "returncode": 0,
+      "stdout_tail": " 06.3 \u2014 Baseline 1 (Ridge on STFT-mel) \u2014 Harrison Carillon\nMaster seed: 20260513\nSynthesis: real-bell SUSTAINED at f0=880Hz (A5), 13 semitone bins\n\n  Binned to 13 semitone bins (0\u201312)\n  Lower bell partials: 11, upper bell partials: 12\n\n## Synthesising real-bell dyads + extracting STFT-mel features ...\n  Shape: X=(13, 128), y=(13,)\n\n## Leave-one-out ridge regression ...\n  Predictions: [-0.252, 0.072, -0.038, -0.029, 0.026, -0.144, -0.189, 0.006, 0.046, 0.045, -0.057, 0.01, 0.165]\n  Targets:     [0.328, -0.929, -0.607, 0.198, 0.038, 0.216, 0.048, 0.157, 0.118, 0.232, 0.083, -0.076, 0.129]\n\n## Result\n  Spearman \u03c1:  -0.2802  (p=0.3538)\n  Pearson r:   -0.2874\n\n## Comparison to MI Carillon\n  MI |\u03c1| (stumpf_fusion vs Carillon):  0.8297\n  Ridge LOO |\u03c1|:                       0.2802\n  Per-dataset verdict:                 MI WINS\n\nSaved: /Volumes/SRC-9/SRC Musical Intelligence/Musical_Intelligence_Results/06-PORTFOLIO-FALSIFIABILITY/06.3-ai-baseline-ablation/results/baseline_ridge_carillon.json\n",
+      "stderr_tail": ""
+    },
+    {
+      "script": "code/baseline_cheung.py",
+      "returncode": 0,
+      "stdout_tail": "# Phase 06.3 \u2014 Baseline on Cheung 2019 (1,009 chord-level rows)\nMaster seed: 20260513\n\n  Chord-level rows: 1009\n  Unique songs:     30\n\n## B1 strict (IDyOM features only) \u2014 5-fold leave-songs-out ridge\n  Pearson r:  +0.5321  (p=7.82e-75)\n  Spearman \u03c1: +0.3822\n\n## B2 lenient (IDyOM + generic spectral) \u2014 5-fold leave-songs-out ridge\n  Pearson r:  +0.5652  (p=3.12e-86)\n  Spearman \u03c1: +0.4169\n\n## Comparison to MI Cheung\n  MI held-out r (Eq.5 vs rating):       +0.6150\n  Baseline B1 strict r:                 +0.5321\n  Baseline B2 lenient r:                +0.5652\n  Best baseline |r|:                    +0.5652\n  Per-dataset verdict:                  MI_WINS\n\nSaved: /Volumes/SRC-9/SRC Musical Intelligence/Musical_Intelligence_Results/06-PORTFOLIO-FALSIFIABILITY/06.3-ai-baseline-ablation/results/baseline_ridge_cheung.json\n",
+      "stderr_tail": ""
+    },
+    {
+      "script": "code/baseline_tensemusic.py",
+      "returncode": 0,
+      "stdout_tail": "# Phase 06.3 \u2014 Baseline on TenseMusic (38 pieces, continuous tension)\nMaster seed: 20260513\n\n  [cache-only] no WAVs vendored; reusing deposited result at /Volumes/SRC-9/SRC Musical Intelligence/Musical_Intelligence_Results/06-PORTFOLIO-FALSIFIABILITY/06.3-ai-baseline-ablation/results/baseline_ridge_tensemusic.json\n",
+      "stderr_tail": ""
+    }
+  ],
+  "returncode": 0,
+  "wall_seconds": 5.91,
+  "new_file_count": 4,
+  "match": [
+    "baseline_ridge_carillon.json",
+    "baseline_ridge_cheung.json",
+    "baseline_ridge_marjieh.json",
+    "baseline_ridge_tensemusic.json"
+  ],
+  "differ": [],
+  "new": [],
+  "missing": [],
+  "counts": {
+    "match": 4,
+    "differ": 0,
+    "new": 0,
+    "missing": 0
+  },
+  "restored_missing": [],
+  "finished_at": "2026-05-21T12:15:51Z"
+}

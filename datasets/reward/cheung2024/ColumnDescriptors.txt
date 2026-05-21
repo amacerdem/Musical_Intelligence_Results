@@ -1,0 +1,36 @@
+===Column descriptors===
+
+VPID = subject ID
+
+rating = chord surprise (Experiment 1)/pleasure (Experiment 2) ratings as given by the subject {0,...,1023}
+
+nonmusician = 1 if subject is a non-musician, 0 otherwise
+
+IC or IC1 = chord information content as computed by IDyOM (Pearce, 2005)
+
+ENTROPY = chord entropy as computed by IDyOM (Pearce, 2005)
+
+Leman1 = chord tonal dissimilarity as computed using the Periodicity-Pitch model (Leman, 2000) with GPI decay constant=1.5s, LPI decay constant=0.1s 
+Leman2 = chord tonal dissimilarity as computed using the Periodicity-Pitch model (Leman, 2000) with GPI decay constant=2.5s, LPI decay constant=0.1s 
+Leman3 = chord tonal dissimilarity as computed using the Periodicity-Pitch model (Leman, 2000) with GPI decay constant=4s, LPI decay constant=0.1s 
+Leman4 = chord tonal dissimilarity as computed using the Periodicity-Pitch model (Leman, 2000) with GPI decay constant=1.5s, LPI decay constant=0.5s 
+Leman5 = chord tonal dissimilarity as computed using the Periodicity-Pitch model (Leman, 2000) with GPI decay constant=2.5s, LPI decay constant=0.5s 
+Leman6 = chord tonal dissimilarity as computed using the Periodicity-Pitch model (Leman, 2000) with GPI decay constant=4s, LPI decay constant=0.5s 
+
+Milne = chord spectral distance as computed following Milne & Holland 2016
+
+Collins = predicted reaction times as given by the Tonal Expectation model (Collins, 2014)
+
+dissonance = sensory dissonance of chord as computed using Essentia
+spectralcentroid = spectral centroid of chord as computed using Essentia
+spectralcomplexity = spectral complexity of chord as computed using Essentia
+
+song = stimulus index {1,2,...,30}
+rhythm = rhythm index {1,2,3}
+chordnumber = chord index within the stimulus {1,...,38}
+presentorder = stimulus presentation order within the experiment {1,...,30}
+
+valence = overall valence rating of the stimulus {1,...,6}
+arousal = overall arousal rating of the stimulus {1,...,6}
+
+

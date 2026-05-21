@@ -1,4 +1,4 @@
-"""Cache loaders for Musical_Intelligence_Outputs/<category>/<dataset>/.
+"""Cache loaders for engine_outputs/<category>/<dataset>/.
 
 Per-dataset functions encapsulate the join-key contract between pooled.csv and
 targets.csv. No analysis script reimplements join logic.
@@ -12,7 +12,7 @@ import pandas as pd
 
 from .engine_pin_check import V_REPRO_ROOT, EXPECTED_SHA, assert_dataset_cache_sha
 
-CACHE_ROOT = V_REPRO_ROOT / "Musical_Intelligence_Outputs"
+CACHE_ROOT = V_REPRO_ROOT / "engine_outputs"
 
 # emotify-specific: targets.csv uses global int 1..400 with per-genre offsets,
 # while pooled.csv uses '<genre>_<stem>' strings (stem 1..100 within each genre).

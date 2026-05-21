@@ -1,4 +1,4 @@
-"""Per-frame npz loaders for Musical_Intelligence_Outputs/<category>/<dataset>/per_frame/.
+"""Per-frame npz loaders for engine_outputs/<category>/<dataset>/per_frame/.
 
 Each per_frame/<clip_id>.npz contains:
   - r3 (T, 97)

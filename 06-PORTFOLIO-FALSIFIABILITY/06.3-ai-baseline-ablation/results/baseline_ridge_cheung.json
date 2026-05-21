@@ -7,7 +7,7 @@
   "protocol": "5-fold leave-songs-out CV, chord-level aggregation",
   "n_chord_rows": 1009,
   "n_songs": 30,
-  "B1_strict_r": 0.5320828659676716,
+  "B1_strict_r": 0.5320828659676718,
   "B1_strict_rho": 0.3821529693012338,
   "B2_lenient_r": 0.56519289011506,
   "B2_lenient_rho": 0.41691700504608104,

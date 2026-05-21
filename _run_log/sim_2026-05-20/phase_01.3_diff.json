@@ -1,0 +1,31 @@
+{
+  "phase_id": "01.3",
+  "phase_path": "01-R3-PERCEPTUAL-FRONT-END/01.3-cross-cultural-anchor",
+  "kind": "python",
+  "args": [
+    "code/run_phase14.py"
+  ],
+  "started_at": "2026-05-21T11:00:55Z",
+  "results_existed_before": true,
+  "baseline_file_count": 2,
+  "returncode": 0,
+  "stdout_tail": "[V4 anchors]\n  P1.composite    \u03c1=+0.4000  per-group \u03c1: {'UK': 0.7999999999999999, 'Kalash': 0.7999999999999999, 'Khow': 0.\n  P2.composite    \u03c1=+0.5697  top-5 ragas, 5/5 with \u03c1>0\n  P3              \u03c1=+0.5508  sign_match=True, mag_pass=True, baseline=0.885\n  P4.composite    \u03c1=+0.5051  P4 PIVOTED v2: 7/8 datasets; mean |\u03c1|=0.505; 6/7 with |\u03c1|\u22650.3; signed mean \u03c1=0.1\n  P5              \u03c1=+0.3983  Rich-feature (228D) LOSO across 86 societies; all classifiers: {'logreg': 0.3728\n  P6              \u03c1=+0.9795  P6 PIVOTED: 3-way stroke classification, chance=0.333, best classifier=logreg ac\n\n[V5 anchors]\n  P1.composite    \u03c1=+0.0737  per-pop \u03c1: {'UK': 0.22516562387226202, 'Kalash': -0.13843903084444323, 'Khow': 0\n  P2.composite    \u03c1=+0.5652  top-7 ragas (data-limited from top-10), 7/7 with \u03c1>0; PASS = mean\u22650.4 AND \u22655/7 p\n  P3.composite    \u03c1=+0.2208  \u03c1_bonang=+0.221, \u03c1_harmonic=+0.404, |bonang|/|harmonic|=0.55; PASS = sign+ AND \u03c1\n  P4.composite    \u03c1=+0.4076  convention-corrected mean signed \u03c1 across 7 datasets; 6/7 positive; PASS = mean\u2265\n\n[verdict] PASS=6  PARTIAL=0  FAIL=0  total=6\n  \u2713 C-CROSS-CULT-01    paper=+0.565                              repro=+0.5697                             PASS\n  \u2713 C-CROSS-CULT-02    paper=+0.408                              repro=+0.4076                             PASS\n  \u2713 C-CROSS-CULT-03    paper=+0.221 (calibration boundary)       repro=+0.2208                             PASS\n  \u2713 C-CROSS-CULT-04    paper=V4 +0.40 / V5 +0.07 (disclosed)     repro=V4 +0.400 / V5 +0.074               PASS\n  \u2713 C-CROSS-CULT-05    paper=out-of-scope per V4 honest-scope \u00a7  repro=V4 P5 +0.398 (228D LOSO across 86 s PASS\n  \u2713 C-CROSS-CULT-06    paper=out-of-scope (F7 calibration, F1-F8 repro=V4 P6 +0.979 (3-way logreg acc, thr PASS\n",
+  "stderr_tail": "",
+  "wall_seconds": 0.03,
+  "new_file_count": 2,
+  "match": [
+    "14_cross_cultural_correlations.csv",
+    "14_cross_cultural_manifest.json"
+  ],
+  "differ": [],
+  "new": [],
+  "missing": [],
+  "counts": {
+    "match": 2,
+    "differ": 0,
+    "new": 0,
+    "missing": 0
+  },
+  "restored_missing": [],
+  "finished_at": "2026-05-21T11:00:55Z"
+}

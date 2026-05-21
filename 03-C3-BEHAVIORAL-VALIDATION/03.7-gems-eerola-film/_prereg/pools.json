@@ -1,0 +1,380 @@
+{
+  "_schema_version": "1.0",
+  "_frozen_at": "2026-05-12",
+  "_engine_sha": "e537f90e6d14595a0cddb580ee3975f6f9a431151d5d18b09b4c80e1ffcb0098",
+  "_engine_commit": "318eb2f5",
+  "_note": "Pre-registered MI engine channel pools. Locked before any test runs. verify_pools.py must validate each channel against engine dimension_names before testing; invalid channels are dropped (pool size k reduces accordingly for Bonferroni). Source: c3-cognitive-signals/_audit/related_pool_definitions_2026-05-12.md",
+
+  "pools": {
+    "CHILL-22": {
+      "size": 22,
+      "channels": [
+        "MECH_AAC__P0:current_intensity",
+        "MECH_AAC__I0:chills_intensity",
+        "MECH_AAC__I1:ans_composite",
+        "MECH_AAC__F0:scr_pred_1s",
+        "MECH_AAC__F1:hr_pred_2s",
+        "MECH_AAC__E0:emotional_arousal",
+        "MECH_AAC__E1:ans_response",
+        "MECH_AAC__P1:driving_signal",
+        "MECH_AAC__P2:perceptual_arousal",
+        "MECH_DAED__f01:anticipatory_da",
+        "MECH_DAED__f02:consummatory_da",
+        "MECH_DAED__f03:wanting_index",
+        "MECH_DAED__f04:liking_index",
+        "MECH_SSRI__P1:endorphin_proxy",
+        "MECH_MMP__P2:familiarity",
+        "MECH_SRP__M0:harmonic_tension",
+        "MECH_SRP__M2:peak_detection",
+        "MECH_SRP__P2:pleasure",
+        "MECH_BCH__P0:consonance_signal",
+        "MECH_PUPF__P0:surprise_pleasure",
+        "MECH_UDP__M1:pleasure_index",
+        "MECH_MORMR__f02:chills_count"
+      ],
+      "primary_expected": ["MECH_MMP__P2:familiarity", "MECH_AAC__E0:emotional_arousal"],
+      "used_in_hypotheses": ["H1"],
+      "literature_anchor": "Salimpoor 2011 anticipatory-vs-consummatory; Cheung 2019 reward; Putkinen 2025 μ-opioid",
+      "status_pre_lock": "TIER-1 CONFIRMED (TC005 MMP P2 p_bonf=0.009, TC006 cross-validated)"
+    },
+
+    "AROUSAL-19": {
+      "size": 19,
+      "channels": [
+        "MECH_AAC__E0:emotional_arousal",
+        "MECH_AAC__E1:ans_response",
+        "MECH_AAC__A0:scr",
+        "MECH_AAC__A1:hr",
+        "MECH_AAC__A2:respr",
+        "MECH_AAC__P0:current_intensity",
+        "MECH_AAC__P1:driving_signal",
+        "MECH_AAC__P2:perceptual_arousal",
+        "MECH_AAC__F0:scr_pred_1s",
+        "MECH_AAC__F1:hr_pred_2s",
+        "MECH_CSG__E0:salience_activation",
+        "MECH_CSG__E1:sensory_evidence",
+        "MECH_CSG__P0:salience_network",
+        "MECH_PUPF__E0:prediction_err",
+        "MECH_PUPF__E1:uncertainty",
+        "MECH_PUPF__U0:entropy_H",
+        "MECH_PUPF__U1:surprise_S",
+        "MECH_MCCN__E2:arousal_index",
+        "MECH_TAR__T0:arousal_mod_tgt"
+      ],
+      "primary_expected": ["MECH_AAC__E0:emotional_arousal", "MECH_AAC__A0:scr"],
+      "used_in_hypotheses": ["H2", "H4", "H25"],
+      "literature_anchor": "Trost 2017 amygdala arousal; Craig 2002 insula interoception"
+    },
+
+    "VALENCE-15": {
+      "size": 15,
+      "channels": [
+        "MECH_VMM__V0:valence",
+        "MECH_VMM__V1:mode_signal",
+        "MECH_VMM__R0:happy_pathway",
+        "MECH_VMM__R1:sad_pathway",
+        "MECH_CSG__E2:consonance_valence",
+        "MECH_CSG__M1:rt_valence_judgment",
+        "MECH_CSG__P1:affective_evaluation",
+        "MECH_CSG__F0:valence_pred",
+        "MECH_SRP__P0:wanting",
+        "MECH_SRP__P1:liking",
+        "MECH_SRP__P2:pleasure",
+        "MECH_CLAM__P1:valence_tracking",
+        "MECH_CMAT__S0:supramodal_valence",
+        "MECH_PUPF__G0:pleasure_P",
+        "MECH_UDP__M1:pleasure_index"
+      ],
+      "primary_expected": ["MECH_VMM__V0:valence", "MECH_SRP__P2:pleasure"],
+      "used_in_hypotheses": ["H3", "H5"],
+      "literature_anchor": "Russell 1980 circumplex; Salimpoor 2011 wanting/liking dissociation"
+    },
+
+    "HAPPY-16": {
+      "size": 16,
+      "channels": [
+        "MECH_VMM__R0:happy_pathway",
+        "MECH_VMM__P0:perceived_happy",
+        "MECH_DAED__f03:wanting_index",
+        "MECH_DAED__f04:liking_index",
+        "MECH_DAED__f01:anticipatory_da",
+        "MECH_DAED__f02:consummatory_da",
+        "MECH_SRP__P0:wanting",
+        "MECH_SRP__P1:liking",
+        "MECH_SRP__F0:reward_forecast",
+        "MECH_MORMR__f02:chills_count",
+        "MECH_MORMR__f04:reward_sensitivity",
+        "MECH_RPEM__f02:liking_signal",
+        "MECH_RPEM__f03:positive_rpe",
+        "MECH_UDP__M1:pleasure_index",
+        "MECH_PUPF__G0:pleasure_P",
+        "MECH_PUPF__G1:goldilocks_zone"
+      ],
+      "primary_expected": ["MECH_VMM__R0:happy_pathway", "MECH_DAED__f02:consummatory_da"],
+      "used_in_hypotheses": ["H9", "H17"],
+      "literature_anchor": "Green 2008 happy pathway; Salimpoor 2011; Cheung 2019 reward interaction"
+    },
+
+    "SADNESS-15": {
+      "size": 15,
+      "channels": [
+        "MECH_VMM__R1:sad_pathway",
+        "MECH_VMM__P1:perceived_sad",
+        "MECH_VMM__R2:parahippocampal",
+        "MECH_MAA__E1:familiarity_index",
+        "MECH_MAD__E0:anhedonia",
+        "MECH_NEMAC__E1:nostalgia",
+        "MECH_NEMAC__M0:mpfc_activation",
+        "MECH_NEMAC__M1:hippocampus_activ",
+        "MECH_NEMAC__M2:memory_vividness",
+        "MECH_NEMAC__P0:nostalgia_correl",
+        "MECH_DAP__P0:current_affect",
+        "MECH_MMP__P2:familiarity",
+        "MECH_STAI__M0:aesthetic_value",
+        "MECH_CSG__E0:salience_activation",
+        "MECH_RPEM__f04:negative_rpe"
+      ],
+      "primary_expected": ["MECH_VMM__R1:sad_pathway", "MECH_NEMAC__M1:hippocampus_activ"],
+      "used_in_hypotheses": ["H10", "H18"],
+      "literature_anchor": "Green 2008; Koelsch 2014 sadness-memory link"
+    },
+
+    "TENDERNESS-15": {
+      "size": 15,
+      "channels": [
+        "MECH_NEMAC__E1:nostalgia",
+        "MECH_NEMAC__P0:nostalgia_correl",
+        "MECH_NEMAC__W0:nostalgia_intens",
+        "MECH_NEMAC__W1:wellbeing_enhance",
+        "MECH_DAP__P0:current_affect",
+        "MECH_DAP__P1:familiarity_warmth",
+        "MECH_MMP__P2:familiarity",
+        "MECH_MEAMR__E0:familiarity_index",
+        "MECH_MEAMR__E3:positive_affect",
+        "MECH_MEAMR__P0:memory_activation_state",
+        "MECH_CLAM__P1:valence_tracking",
+        "MECH_AAC__P0:current_intensity",
+        "MECH_PUPF__G0:pleasure_P",
+        "MECH_SRP__P1:liking",
+        "MECH_STAI__M0:aesthetic_value"
+      ],
+      "primary_expected": ["MECH_NEMAC__W0:nostalgia_intens", "MECH_DAP__P1:familiarity_warmth"],
+      "used_in_hypotheses": ["H11", "H19"],
+      "literature_anchor": "Vachon 2015 tenderness as distinct cluster; Janata 2009 nostalgia; Koelsch 2014"
+    },
+
+    "PEACEFUL-15": {
+      "size": 15,
+      "channels": [
+        "MECH_BCH__P0:consonance_signal",
+        "MECH_SDED__P0:roughness_detection",
+        "MECH_SDNPS__P0:ffr_encoding",
+        "MECH_STAI__E0:spectral_integrity",
+        "MECH_STAI__E1:temporal_integrity",
+        "MECH_STAI__M0:aesthetic_value",
+        "MECH_STAI__P2:aesthetic_response",
+        "MECH_CSG__E2:consonance_valence",
+        "MECH_AAC__P2:perceptual_arousal",
+        "MECH_TAR__I1:rec_consonance",
+        "MECH_TAR__T2:anxiety_reduction",
+        "MECH_TAR__T0:arousal_mod_tgt",
+        "MECH_SRP__M0:harmonic_tension",
+        "MECH_PNH__P2:consonance_preference",
+        "MECH_PUPF__G1:goldilocks_zone"
+      ],
+      "primary_expected": ["MECH_BCH__P0:consonance_signal", "MECH_AAC__P2:perceptual_arousal"],
+      "used_in_hypotheses": ["H12", "H20"],
+      "literature_anchor": "Blood & Zatorre 2001 consonance→serotonin; Koelsch 2014"
+    },
+
+    "FEAR-17": {
+      "size": 17,
+      "channels": [
+        "MECH_AAC__E0:emotional_arousal",
+        "MECH_AAC__A0:scr",
+        "MECH_AAC__A1:hr",
+        "MECH_AAC__A2:respr",
+        "MECH_AAC__P2:perceptual_arousal",
+        "MECH_PUPF__E0:prediction_err",
+        "MECH_PUPF__E1:uncertainty",
+        "MECH_PUPF__U0:entropy_H",
+        "MECH_PUPF__U1:surprise_S",
+        "MECH_CSG__E0:salience_activation",
+        "MECH_CSG__M0:salience_response",
+        "MECH_CSG__P0:salience_network",
+        "MECH_TAR__E0:therapeutic",
+        "MECH_TAR__T2:anxiety_reduction",
+        "MECH_SRP__C2:prediction_error",
+        "MECH_SDED__E1:mmn_dissonance",
+        "MECH_PNH__H1:conflict_monitoring"
+      ],
+      "primary_expected": ["MECH_AAC__E0:emotional_arousal", "MECH_PUPF__U2:HS_interaction"],
+      "used_in_hypotheses": ["H21", "H23"],
+      "literature_anchor": "Koelsch 2014 anxiety; Trost 2017 amygdala; Cheung 2019 H×S"
+    },
+
+    "ANGER-16": {
+      "size": 16,
+      "channels": [
+        "MECH_AAC__E0:emotional_arousal",
+        "MECH_AAC__A0:scr",
+        "MECH_AAC__A1:hr",
+        "MECH_AAC__P0:current_intensity",
+        "MECH_AAC__P2:perceptual_arousal",
+        "MECH_SRP__M0:harmonic_tension",
+        "MECH_SRP__M1:dynamic_intensity",
+        "MECH_SRP__T0:tension",
+        "MECH_SRP__T2:reaction",
+        "MECH_SDED__P0:roughness_detection",
+        "MECH_SDNPS__E2:roughness_corr",
+        "MECH_BCH__E0:nps",
+        "MECH_CSG__E0:salience_activation",
+        "MECH_CSG__M0:salience_response",
+        "MECH_PNH__M0:ratio_complexity_norm",
+        "MECH_PUPF__E0:prediction_err"
+      ],
+      "primary_expected": ["MECH_SRP__M0:harmonic_tension", "MECH_SDED__P0:roughness_detection"],
+      "used_in_hypotheses": ["H22"],
+      "literature_anchor": "Huron 2006 anger=tension+disruption"
+    },
+
+    "TENSION-15": {
+      "size": 15,
+      "channels": [
+        "MECH_PUPF__E0:prediction_err",
+        "MECH_PUPF__E1:uncertainty",
+        "MECH_PUPF__U0:entropy_H",
+        "MECH_PUPF__U1:surprise_S",
+        "MECH_PUPF__U2:HS_interaction",
+        "MECH_PUPF__P0:surprise_pleasure",
+        "MECH_SRP__C2:prediction_error",
+        "MECH_SRP__T0:tension",
+        "MECH_SRP__T1:prediction_match",
+        "MECH_SRP__M0:harmonic_tension",
+        "MECH_AAC__F0:scr_pred_1s",
+        "MECH_AAC__F1:hr_pred_2s",
+        "MECH_CDMR__f01:mismatch_amplitude",
+        "MECH_CDMR__P0:mismatch_signal",
+        "MECH_RPEM__rpe_magnitude"
+      ],
+      "primary_expected": ["MECH_PUPF__U2:HS_interaction", "MECH_SRP__T0:tension"],
+      "used_in_hypotheses": ["H8", "H13", "H24"],
+      "literature_anchor": "Meyer 1956 expectancy violation; Cheung 2019 H×S; Lehne 2014"
+    },
+
+    "AMAZEMENT-16": {
+      "size": 16,
+      "channels": [
+        "MECH_PUPF__E0:prediction_err",
+        "MECH_PUPF__E1:uncertainty",
+        "MECH_PUPF__U0:entropy_H",
+        "MECH_PUPF__U1:surprise_S",
+        "MECH_PUPF__U2:HS_interaction",
+        "MECH_PUPF__P0:surprise_pleasure",
+        "MECH_PUPF__G0:pleasure_P",
+        "MECH_PUPF__G1:goldilocks_zone",
+        "MECH_AAC__E0:emotional_arousal",
+        "MECH_AAC__P2:perceptual_arousal",
+        "MECH_AAC__I0:chills_intensity",
+        "MECH_SRP__F0:reward_forecast",
+        "MECH_RPEM__f01:surprise_signal",
+        "MECH_RPEM__f02:liking_signal",
+        "MECH_RPEM__f03:positive_rpe",
+        "MECH_CLAM__E0:affective_mod"
+      ],
+      "primary_expected": ["MECH_PUPF__U2:HS_interaction", "MECH_RPEM__f03:positive_rpe"],
+      "used_in_hypotheses": ["H14"],
+      "literature_anchor": "Keltner & Haidt 2003 awe; Cheung 2019 H×S peak emotional response"
+    },
+
+    "SOLEMNITY-15": {
+      "size": 15,
+      "channels": [
+        "MECH_AAC__P2:perceptual_arousal",
+        "MECH_STAI__M0:aesthetic_value",
+        "MECH_STAI__E0:spectral_integrity",
+        "MECH_STAI__E1:temporal_integrity",
+        "MECH_CSG__E2:consonance_valence",
+        "MECH_CSG__M0:salience_response",
+        "MECH_CSG__P2:sensory_load",
+        "MECH_BCH__P0:consonance_signal",
+        "MECH_BCH__M0:consonance_memory",
+        "MECH_PNH__P0:ratio_encoding",
+        "MECH_SRP__M0:harmonic_tension",
+        "MECH_MMP__P2:familiarity",
+        "MECH_NEMAC__E1:nostalgia",
+        "MECH_NEMAC__M0:mpfc_activation",
+        "MECH_PUPF__G1:goldilocks_zone"
+      ],
+      "primary_expected": ["MECH_BCH__P0:consonance_signal", "MECH_STAI__M0:aesthetic_value"],
+      "used_in_hypotheses": ["H15"],
+      "literature_anchor": "Koelsch 2014 solemn=minor+slow+consonant+elevated"
+    },
+
+    "LIKING-16": {
+      "size": 16,
+      "channels": [
+        "MECH_DAED__f03:wanting_index",
+        "MECH_DAED__f04:liking_index",
+        "MECH_DAED__f01:anticipatory_da",
+        "MECH_DAED__f02:consummatory_da",
+        "MECH_DAED__caudate_activation",
+        "MECH_DAED__nacc_activation",
+        "MECH_SRP__P0:wanting",
+        "MECH_SRP__P1:liking",
+        "MECH_SRP__P2:pleasure",
+        "MECH_SRP__C0:vta_drive",
+        "MECH_SRP__C1:stg_nacc_coupling",
+        "MECH_RPEM__f02:liking_signal",
+        "MECH_RPEM__f03:positive_rpe",
+        "MECH_MORMR__f04:reward_sensitivity",
+        "MECH_UDP__M1:pleasure_index",
+        "MECH_PUPF__G0:pleasure_P"
+      ],
+      "primary_expected": ["MECH_DAED__f04:liking_index", "MECH_SRP__P2:pleasure"],
+      "used_in_hypotheses": ["H16"],
+      "literature_anchor": "Berridge 2007 wanting/liking; Salimpoor 2011"
+    },
+
+    "EDA-11": {
+      "size": 11,
+      "channels": [
+        "MECH_AAC__A0:scr",
+        "MECH_AAC__F0:scr_pred_1s",
+        "MECH_AAC__E0:emotional_arousal",
+        "MECH_AAC__E1:ans_response",
+        "MECH_AAC__I0:chills_intensity",
+        "MECH_PUPF__E0:prediction_err",
+        "MECH_PUPF__E1:uncertainty",
+        "MECH_PUPF__U0:entropy_H",
+        "MECH_PUPF__U1:surprise_S",
+        "MECH_SRP__C2:prediction_error",
+        "MECH_CSG__E0:salience_activation"
+      ],
+      "primary_expected": ["MECH_AAC__A0:scr", "MECH_AAC__F0:scr_pred_1s"],
+      "used_in_hypotheses": ["H6"],
+      "literature_anchor": "Dawson 2007 EDA handbook; Khalfa 2008 music+SCR",
+      "_critical_note": "ICEM M3:scr_pred should also be in this pool per chill methodology; verify and add if present in engine"
+    },
+
+    "HR-11": {
+      "size": 11,
+      "channels": [
+        "MECH_AAC__A1:hr",
+        "MECH_AAC__F1:hr_pred_2s",
+        "MECH_AAC__E0:emotional_arousal",
+        "MECH_AAC__E1:ans_response",
+        "MECH_PUPF__E0:prediction_err",
+        "MECH_PUPF__U0:entropy_H",
+        "MECH_PUPF__U1:surprise_S",
+        "MECH_PUPF__U2:HS_interaction",
+        "MECH_SRP__C2:prediction_error",
+        "MECH_AAC__P0:current_intensity",
+        "MECH_AAC__P2:perceptual_arousal"
+      ],
+      "primary_expected": ["MECH_AAC__A1:hr", "MECH_AAC__F1:hr_pred_2s"],
+      "used_in_hypotheses": ["H7"],
+      "literature_anchor": "Thayer & Lane 2000 neurovisceral integration"
+    }
+  }
+}

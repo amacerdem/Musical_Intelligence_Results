@@ -103,8 +103,8 @@ def h8_results(tensemusic_data_dir, engine_cache_dir, project_root):
     """Run H8 test inline and cache results."""
     # Build channel route from any pooled.csv
     pooled_candidates = [
-        project_root / "V-Reproduction" / "Musical_Intelligence_Outputs" / "emotion" / "TenseMusic" / "pooled.csv",
-        project_root / "Science" / "V-Reproduction" / "Musical_Intelligence_Outputs" / "emotion" / "TenseMusic" / "pooled.csv",
+        project_root / "engine_outputs" / "emotion" / "TenseMusic" / "pooled.csv",
+        project_root / "engine_outputs" / "emotion" / "TenseMusic" / "pooled.csv",
     ]
     pooled_path = next(p for p in pooled_candidates if p.exists())
     pooled_cols = pd.read_csv(pooled_path, nrows=1).columns.tolist()

@@ -1,0 +1,7 @@
+"threshold"	"type"
+1.57309884	"low.entropy"
+2.21065292	"high.entropy"
+0.634460668 "low.IC"
+1.86352607503 "high.IC"
+-0.454979982717506	"low.log.IC"
+0.622470432340513	"high.log.IC"

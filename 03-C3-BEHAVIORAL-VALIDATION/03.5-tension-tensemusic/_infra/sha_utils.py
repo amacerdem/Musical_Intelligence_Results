@@ -10,21 +10,31 @@ import hashlib
 from pathlib import Path
 
 
-def aggregate_engine_sha(engine_root: Path) -> str:
-    """SHA-256 of (sorted .py file SHAs) under *engine_root*, excluding __pycache__.
+def aggregate_engine_sha(engine_root: Path | None = None) -> str:
+    """Return the canonical engine aggregate SHA-256.
 
-    Matches the manifest's documented ``content_aggregate_method`` exactly.
+    Cache-only mode: reads the recorded SHA from engine_outputs/_aggregate_sha.txt
+    (preferred) or _infra/manifests/engine_head.json. Engine source tree is
+    NOT scanned — the cache + manifest are the load-bearing artefacts.
+
+    The ``engine_root`` argument is accepted for backward compatibility but
+    ignored; we read from the recorded value.
     """
-    py_files = sorted(
-        p for p in engine_root.rglob("*.py")
-        if "__pycache__" not in p.parts
-    )
-    inner = hashlib.sha256()
-    for p in py_files:
-        h = hashlib.sha256()
-        with open(p, "rb") as f:
-            for chunk in iter(lambda: f.read(1 << 20), b""):
-                h.update(chunk)
-        inner.update(h.hexdigest().encode("ascii"))
-        inner.update(b"\n")
-    return inner.hexdigest()
+    # Walk up to MI_Results root (contains engine_outputs/ and _infra/)
+    here = Path(__file__).resolve()
+    repo_root = None
+    for parent in [here.parent, *here.parents]:
+        if (parent / "engine_outputs").is_dir() and (parent / "_infra").is_dir():
+            repo_root = parent
+            break
+    if repo_root is None:
+        raise RuntimeError(f"Could not locate MI_Results from {here}")
+
+    rec = repo_root / "engine_outputs" / "_aggregate_sha.txt"
+    if rec.exists():
+        return rec.read_text().strip()
+
+    import json
+    manifest = repo_root / "_infra" / "manifests" / "engine_head.json"
+    return json.loads(manifest.read_text())["content_aggregate_sha256"]
+

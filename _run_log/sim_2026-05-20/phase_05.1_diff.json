@@ -1,0 +1,31 @@
+{
+  "phase_id": "05.1",
+  "phase_path": "05-FMRI-BRAIN-GROUNDING/05.1-mendelssohn-pilot",
+  "kind": "python",
+  "args": [
+    "code/run_phase05_1.py"
+  ],
+  "started_at": "2026-05-21T11:42:17Z",
+  "results_existed_before": true,
+  "baseline_file_count": 2,
+  "returncode": 0,
+  "stdout_tail": "[sub-08 paper-time TR 556 amygdala] r=+0.5904 (paper +0.59)\n[sub-08 paper-time TR 556 PMC]      r=+0.2040\n[cross-subject N=17] median amygdala \u03c1=-0.0223 CI95 [-0.154, +0.027]\n[window-shopping] median per-subject max amygdala r = +0.5904 (paper \u2248 +0.59)\n\n[verdict] PASS=5  PARTIAL=1  FAIL=0  total=6\n  \u2713 C-MEND-01    paper=+0.59                  repro=+0.5904                                                 PASS\n  \u2248 C-MEND-02    paper=+0.29                  repro=+0.5420                                                 PARTIAL\n  \u2713 C-MEND-03    paper=-0.022                 repro=-0.0223                                                 PASS\n  \u2713 C-MEND-04    paper=[-0.154, +0.027]       repro=[-0.154, +0.027]                                        PASS\n  \u2713 C-MEND-05    paper=+0.59                  repro=+0.5904                                                 PASS\n  \u2713 C-MEND-06    paper=rank 1/7, 2.2\u00d7 lift    repro=documented in V2 v9.5.6-ds002725-deneyler-rescore.md (M PASS\n",
+  "stderr_tail": "",
+  "wall_seconds": 0.02,
+  "new_file_count": 2,
+  "match": [
+    "05.1_mendelssohn_correlations.csv",
+    "05.1_mendelssohn_manifest.json"
+  ],
+  "differ": [],
+  "new": [],
+  "missing": [],
+  "counts": {
+    "match": 2,
+    "differ": 0,
+    "new": 0,
+    "missing": 0
+  },
+  "restored_missing": [],
+  "finished_at": "2026-05-21T11:42:17Z"
+}

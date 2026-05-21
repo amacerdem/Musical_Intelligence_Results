@@ -1,16 +1,14 @@
 # 22-h8-tensemusic-tension-prediction — Run Report
 
-- **Started:**  2026-05-13T14:52:49
-- **Finished:** 2026-05-13T14:54:13
-- **Headline:** ✅ ALL PASS
+- **Started:**  2026-05-20T15:14:49
+- **Finished:** 2026-05-20T15:14:49
+- **Headline:** ⛔ ABORTED at L1 engine-pin gate
 
 ## Layer scorecard
 
 | Layer | Status | pytest summary | Coverage |
 |-------|--------|----------------|----------|
-| **L1** | ✅ PASS | 3 passed in 0.35s | Engine SHA aggregate integrity |
-| **L4** | ✅ PASS | 1 passed, 38 warnings in 2.45s | LOSO inter-rater ceiling +0.386 [0.36, 0.41] reproduction |
-| **L5** | ✅ PASS | 4 passed in 80.48s (0:01:20) | PRIMARY — TENSION-15 lag-aware Spearman + Bonferroni |
+| **L1** | ❌ FAIL | 1 error in 0.07s | Engine SHA aggregate integrity |
 
 ## Paper-time baseline
 

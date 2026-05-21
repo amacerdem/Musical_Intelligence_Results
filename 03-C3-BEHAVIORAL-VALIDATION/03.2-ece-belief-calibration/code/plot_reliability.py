@@ -113,7 +113,7 @@ def fig_reliability_per_belief():
             ax.legend(fontsize=7, loc="lower right")
 
     fig.suptitle("03-C3-BEHAVIORAL-VALIDATION/03.2-ece-belief-calibration — Per-belief reliability diagrams\n"
-                 "Blue: paper's 8 beliefs (V6 replicates ECE = 0.0841 vs paper's 0.079)\n"
+                 "Blue: paper's 8 beliefs (V6 replicates ECE = 0.0841 vs paper headline 0.084)\n"
                  "Red: V6 extension (6 novel beliefs F3-F8)",
                  fontsize=11, y=1.02)
     out_path = FIG_DIR / "reliability_per_belief.png"
@@ -185,8 +185,8 @@ def fig_extension_vs_paper():
                label="Well-calibrated threshold (0.10)")
     ax.axhline(0.0841, color="#2c7bb6", lw=1.0, linestyle=":",
                label=f"V6 paper-8 pooled ECE (0.0841)")
-    ax.axhline(0.079, color="darkblue", lw=1.0, linestyle="-.",
-               label="Paper published pooled (0.079)")
+    ax.axhline(0.084, color="darkblue", lw=1.0, linestyle="-.",
+               label="Paper published pooled (0.084)")
 
     for x, y, name in zip(x_paper, paper_eces, PAPER_BELIEFS):
         ax.text(x, y + 0.005, f"{y:.3f}", ha="center", va="bottom",
