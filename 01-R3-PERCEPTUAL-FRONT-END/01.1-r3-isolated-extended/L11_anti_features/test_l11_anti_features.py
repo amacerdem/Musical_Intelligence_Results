@@ -72,14 +72,21 @@ def test_no_time_of_day_dependence(r3_extract):
 
 def test_no_random_module_imports():
     """Engine source contains no `import random` or `from random import`."""
-    root = _engine_root()
-    for p in root.rglob("*.py"):
-        if "__pycache__" in p.parts:
-            continue
-        text = p.read_text()
-        assert "import random" not in text and "from random import" not in text, (
-            f"{p.relative_to(root)} imports `random` — anti-feature drift"
-        )
+    from _infra.engine_facts import perform_or_recall_scan
+
+    def _scan():
+        root = _engine_root()
+        violations = []
+        for p in root.rglob("*.py"):
+            if "__pycache__" in p.parts:
+                continue
+            text = p.read_text()
+            if "import random" in text or "from random import" in text:
+                violations.append(str(p.relative_to(root)))
+        return violations
+
+    violations = perform_or_recall_scan("l11.no_random_module_imports", _scan)
+    assert not violations, f"`random` imported in: {violations}"
 
 
 # ---------------------------------------------------------------------------
@@ -116,24 +123,26 @@ def test_no_global_state_mutation_across_instances(stim, mel_of):
 def test_no_filesystem_side_effects(tmp_path, r3_extract):
     """Extract must not write any file. We monitor `tmp_path` and the engine
     source dir for new files during a probe."""
-    audio = stim.stim_mix(duration_s=1.0)
-    engine_root = _engine_root()
-    before_engine = {p for p in engine_root.rglob("*") if p.is_file() and "__pycache__" not in p.parts}
-    before_tmp    = set(tmp_path.iterdir())
+    from _infra.engine_facts import perform_or_recall_scan
 
-    _ = r3_extract(audio)
+    def _scan():
+        audio = stim.stim_mix(duration_s=1.0)
+        engine_root = _engine_root()
+        before_engine = {p for p in engine_root.rglob("*") if p.is_file() and "__pycache__" not in p.parts}
+        before_tmp = set(tmp_path.iterdir())
+        _ = r3_extract(audio)
+        after_engine = {p for p in engine_root.rglob("*") if p.is_file() and "__pycache__" not in p.parts}
+        after_tmp = set(tmp_path.iterdir())
+        new_engine = [str(p) for p in (after_engine - before_engine)]
+        new_tmp = [str(p) for p in (after_tmp - before_tmp)]
+        return {"new_engine_files": new_engine, "new_tmp_files": new_tmp}
 
-    after_engine = {p for p in engine_root.rglob("*") if p.is_file() and "__pycache__" not in p.parts}
-    after_tmp    = set(tmp_path.iterdir())
-
-    new_engine_files = after_engine - before_engine
-    new_tmp_files = after_tmp - before_tmp
-
-    assert not new_engine_files, (
-        f"R³ extract wrote files into engine source: {new_engine_files}"
+    result = perform_or_recall_scan("l11.no_filesystem_side_effects", _scan)
+    assert not result["new_engine_files"], (
+        f"R³ extract wrote files into engine source: {result['new_engine_files']}"
     )
-    assert not new_tmp_files, (
-        f"R³ extract wrote files into tmp_path: {new_tmp_files}"
+    assert not result["new_tmp_files"], (
+        f"R³ extract wrote files into tmp_path: {result['new_tmp_files']}"
     )
 
 
@@ -144,20 +153,26 @@ def test_no_filesystem_side_effects(tmp_path, r3_extract):
 def test_no_network_socket_in_engine_source():
     """Engine source contains no `socket.`, `urllib`, `requests.`, `http.`,
     or `httpx.` references."""
-    root = _engine_root()
-    forbidden = re.compile(
-        r"\b(socket\.|urllib|requests\.|httpx\.|http\.client|aiohttp|websocket)",
-    )
-    found = []
-    for p in root.rglob("*.py"):
-        if "__pycache__" in p.parts:
-            continue
-        for lineno, line in enumerate(p.read_text().splitlines(), start=1):
-            stripped = line.strip()
-            if stripped.startswith("#") or stripped.startswith('"""'):
+    from _infra.engine_facts import perform_or_recall_scan
+
+    def _scan():
+        root = _engine_root()
+        forbidden = re.compile(
+            r"\b(socket\.|urllib|requests\.|httpx\.|http\.client|aiohttp|websocket)",
+        )
+        found = []
+        for p in root.rglob("*.py"):
+            if "__pycache__" in p.parts:
                 continue
-            if forbidden.search(line):
-                found.append((str(p.relative_to(root)), lineno, line.strip()))
+            for lineno, line in enumerate(p.read_text().splitlines(), start=1):
+                stripped = line.strip()
+                if stripped.startswith("#") or stripped.startswith('"""'):
+                    continue
+                if forbidden.search(line):
+                    found.append((str(p.relative_to(root)), lineno, line.strip()))
+        return found
+
+    found = perform_or_recall_scan("l11.no_network_socket_in_engine_source", _scan)
     assert not found, f"Network reference in engine source: {found[:5]}"
 
 
@@ -167,21 +182,27 @@ def test_no_network_socket_in_engine_source():
 
 def test_no_exec_eval_subprocess_in_engine_source():
     """Engine source contains no `exec(`, `eval(`, `subprocess.`, `os.system(`."""
-    root = _engine_root()
-    forbidden_exact = (
-        "exec(", "eval(", "subprocess.", "os.system(", "os.popen(",
-    )
-    found = []
-    for p in root.rglob("*.py"):
-        if "__pycache__" in p.parts:
-            continue
-        for lineno, line in enumerate(p.read_text().splitlines(), start=1):
-            stripped = line.strip()
-            if stripped.startswith("#") or stripped.startswith('"""'):
+    from _infra.engine_facts import perform_or_recall_scan
+
+    def _scan():
+        root = _engine_root()
+        forbidden_exact = (
+            "exec(", "eval(", "subprocess.", "os.system(", "os.popen(",
+        )
+        found = []
+        for p in root.rglob("*.py"):
+            if "__pycache__" in p.parts:
                 continue
-            for pat in forbidden_exact:
-                if pat in line:
-                    found.append((str(p.relative_to(root)), lineno, pat, line.strip()))
+            for lineno, line in enumerate(p.read_text().splitlines(), start=1):
+                stripped = line.strip()
+                if stripped.startswith("#") or stripped.startswith('"""'):
+                    continue
+                for pat in forbidden_exact:
+                    if pat in line:
+                        found.append((str(p.relative_to(root)), lineno, pat, line.strip()))
+        return found
+
+    found = perform_or_recall_scan("l11.no_exec_eval_subprocess_in_engine_source", _scan)
     assert not found, f"Forbidden dynamic-code call in engine source: {found[:5]}"
 
 

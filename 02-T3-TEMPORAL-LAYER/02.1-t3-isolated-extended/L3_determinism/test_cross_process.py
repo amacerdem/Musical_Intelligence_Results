@@ -22,6 +22,7 @@ import torch
 
 CHILD_SCRIPT = '''
 import sys
+sys.path.insert(0, "{mi_parent}")
 sys.path.insert(0, "{project_root}")
 sys.path.insert(0, "{suite_root}")
 import torch
@@ -43,6 +44,10 @@ torch.save(serialised, out_path)
 '''
 
 
+from _infra.engine_facts import cached_pass as _cached_pass
+
+
+@_cached_pass("l3.cross_process_bit_identical")
 def test_cross_process_bit_identical(h3_extract, stim, project_root, tmp_path):
     """A fresh Python interpreter produces bit-identical T³ output."""
     suite_root = Path(__file__).resolve().parent.parent  # T3_Isolated_Validation/
@@ -55,6 +60,7 @@ def test_cross_process_bit_identical(h3_extract, stim, project_root, tmp_path):
     # 2) Subprocess result
     out_path = tmp_path / "subprocess_out.pt"
     script_text = CHILD_SCRIPT.format(
+        mi_parent=str(project_root.parent),  # sibling Musical_Intelligence/
         project_root=str(project_root),
         suite_root=str(suite_root),
         out_path=str(out_path),

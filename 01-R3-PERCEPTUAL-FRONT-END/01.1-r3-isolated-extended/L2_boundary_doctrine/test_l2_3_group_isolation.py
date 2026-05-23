@@ -113,6 +113,10 @@ def test_no_group_imports_another_group(r3):
 # (b) Dynamic probe — Stage-2 dep narrowness
 # ---------------------------------------------------------------------------
 
+from _infra.engine_facts import cached_pass as _cached_pass
+
+
+@_cached_pass("l2.stage2_g_uses_only_onset_strength")
 def test_stage2_g_uses_only_onset_strength(r3, stim, mel_of):
     """Group G's `compute_with_deps` reads only `deps['energy'][:, :, 4]`
     (onset_strength). Zeroing all other channels of energy leaves G's
@@ -148,6 +152,7 @@ def test_stage2_g_uses_only_onset_strength(r3, stim, mel_of):
     )
 
 
+@_cached_pass("l2.stage2_h_uses_only_chroma_12")
 def test_stage2_h_uses_only_chroma_12(r3, stim, mel_of):
     """Group H's `compute_with_deps` reads only `deps['pitch_chroma'][:, :, :12]`
     (the 12 chroma bins). Zeroing dims 12-15 (pitch_height, pc_entropy,

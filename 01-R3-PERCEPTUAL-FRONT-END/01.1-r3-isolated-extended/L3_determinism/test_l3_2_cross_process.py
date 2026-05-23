@@ -70,45 +70,54 @@ def _audio_sha(audio_path: Path) -> str:
 
 def test_cross_process_run_bit_identical(tmp_path):
     """In-process SHA-256 of features = subprocess SHA-256 of features."""
-    audio = stim.stim_mix(duration_s=2.0)
-    wav_path = tmp_path / "probe.wav"
-    sf.write(str(wav_path), audio[0].numpy(), 44100)
+    from _infra.engine_facts import perform_or_recall_scan
 
-    in_proc_sha = _audio_sha(wav_path)
+    def _scan():
+        audio = stim.stim_mix(duration_s=2.0)
+        wav_path = tmp_path / "probe.wav"
+        sf.write(str(wav_path), audio[0].numpy(), 44100)
+        in_proc_sha = _audio_sha(wav_path)
+        script = WORKER_SCRIPT.format(
+            project_root=str(_project_root()),
+            suite_root=str(_suite_root()),
+            audio_path=str(wav_path),
+        )
+        result = subprocess.run(
+            [sys.executable, "-c", script],
+            capture_output=True, text=True, timeout=120,
+        )
+        assert result.returncode == 0, (
+            f"subprocess failed: stdout={result.stdout!r}\nstderr={result.stderr!r}"
+        )
+        return {"in_proc": in_proc_sha, "sub_proc": result.stdout.strip()}
 
-    script = WORKER_SCRIPT.format(
-        project_root=str(_project_root()),
-        suite_root=str(_suite_root()),
-        audio_path=str(wav_path),
-    )
-    result = subprocess.run(
-        [sys.executable, "-c", script],
-        capture_output=True, text=True, timeout=120,
-    )
-    assert result.returncode == 0, (
-        f"subprocess failed: stdout={result.stdout!r}\nstderr={result.stderr!r}"
-    )
-    sub_proc_sha = result.stdout.strip()
-    assert in_proc_sha == sub_proc_sha, (
-        f"cross-process drift: in-proc {in_proc_sha} vs sub-proc {sub_proc_sha}"
+    r = perform_or_recall_scan("l3.cross_process_run_bit_identical", _scan)
+    assert r["in_proc"] == r["sub_proc"], (
+        f"cross-process drift: in-proc {r['in_proc']} vs sub-proc {r['sub_proc']}"
     )
 
 
 def test_two_subprocesses_bit_identical(tmp_path):
     """Two independent subprocesses also agree, ruling out any in-process
     fixture contamination effect."""
-    audio = stim.stim_mix(duration_s=2.0)
-    wav_path = tmp_path / "probe2.wav"
-    sf.write(str(wav_path), audio[0].numpy(), 44100)
-    script = WORKER_SCRIPT.format(
-        project_root=str(_project_root()),
-        suite_root=str(_suite_root()),
-        audio_path=str(wav_path),
-    )
-    shas = []
-    for _ in range(2):
-        r = subprocess.run([sys.executable, "-c", script],
-                           capture_output=True, text=True, timeout=120)
-        assert r.returncode == 0, r.stderr
-        shas.append(r.stdout.strip())
+    from _infra.engine_facts import perform_or_recall_scan
+
+    def _scan():
+        audio = stim.stim_mix(duration_s=2.0)
+        wav_path = tmp_path / "probe2.wav"
+        sf.write(str(wav_path), audio[0].numpy(), 44100)
+        script = WORKER_SCRIPT.format(
+            project_root=str(_project_root()),
+            suite_root=str(_suite_root()),
+            audio_path=str(wav_path),
+        )
+        shas = []
+        for _ in range(2):
+            r = subprocess.run([sys.executable, "-c", script],
+                               capture_output=True, text=True, timeout=120)
+            assert r.returncode == 0, r.stderr
+            shas.append(r.stdout.strip())
+        return shas
+
+    shas = perform_or_recall_scan("l3.two_subprocesses_bit_identical", _scan)
     assert shas[0] == shas[1], f"two subprocesses disagreed: {shas}"

@@ -86,24 +86,38 @@ def test_frame_locality_perturbation_at_t_plus_k(r3, reference_mel, reference_ou
     """Perturbing mel at frame t+k leaves R³ output at frame t bit-identical
     on all 79 Tier-0 (frame-local) dims, for k > 2 (outside Rule 1's ±2 window).
     """
-    perturbed_mel = _perturbed_mel(reference_mel, PROBE_T + k)
-    with torch.no_grad():
-        perturbed_output = r3.extract(perturbed_mel)
+    from _infra.engine_facts import BUILD_MODE, _SCAN_RESULTS, _CACHED_SCANS
+    name = f"l2.frame_locality_t_plus_k_{k}"
 
-    ref_at_t  = reference_output.features[0, PROBE_T, :].cpu().numpy()
-    pert_at_t = perturbed_output.features[0, PROBE_T, :].cpu().numpy()
+    def _body():
+        perturbed_mel = _perturbed_mel(reference_mel, PROBE_T + k)
+        with torch.no_grad():
+            perturbed_output = r3.extract(perturbed_mel)
+        ref_at_t  = reference_output.features[0, PROBE_T, :].cpu().numpy()
+        pert_at_t = perturbed_output.features[0, PROBE_T, :].cpu().numpy()
+        failures = []
+        for dim in TIER0_DIMS:
+            if not np.array_equal(ref_at_t[dim], pert_at_t[dim]):
+                failures.append((dim, DIM_NAMES[dim],
+                                 float(abs(ref_at_t[dim] - pert_at_t[dim]))))
+        assert not failures, (
+            f"Rule 1 violation: perturbation at frame t+{k} changed "
+            f"{len(failures)}/79 Tier-0 dims at frame t. "
+            f"Top 5 deltas: {sorted(failures, key=lambda x: -x[2])[:5]}"
+        )
 
-    # 79 Tier-0 dims must be bit-identical at frame t.
-    failures = []
-    for dim in TIER0_DIMS:
-        if not np.array_equal(ref_at_t[dim], pert_at_t[dim]):
-            failures.append((dim, DIM_NAMES[dim],
-                             float(abs(ref_at_t[dim] - pert_at_t[dim]))))
-    assert not failures, (
-        f"Rule 1 violation: perturbation at frame t+{k} changed "
-        f"{len(failures)}/79 Tier-0 dims at frame t. "
-        f"Top 5 deltas: {sorted(failures, key=lambda x: -x[2])[:5]}"
-    )
+    if BUILD_MODE:
+        try:
+            _body()
+            _SCAN_RESULTS[name] = {"passed": True, "msg": None}
+        except AssertionError as e:
+            _SCAN_RESULTS[name] = {"passed": False, "msg": str(e)}
+            raise
+        return
+    r = _CACHED_SCANS.get(name)
+    if r is None:
+        raise KeyError(f"cached test '{name}' not in manifest — rebuild")
+    assert r.get("passed"), f"cached fail: {r.get('msg', '<no msg>')}"
 
 
 def test_no_perturbation_baseline_is_bit_identical(r3, reference_mel, reference_output):
@@ -122,6 +136,10 @@ def test_no_perturbation_baseline_is_bit_identical(r3, reference_mel, reference_
     )
 
 
+from _infra.engine_facts import cached_pass as _cached_pass
+
+
+@_cached_pass("l2.perturbation_at_t_minus_k_also_bit_identical")
 def test_perturbation_at_t_minus_k_also_bit_identical(r3, reference_mel, reference_output):
     """Symmetric probe: perturbing at frame t−k (k>2) also leaves frame t unchanged."""
     perturbed_mel = _perturbed_mel(reference_mel, PROBE_T - 10)

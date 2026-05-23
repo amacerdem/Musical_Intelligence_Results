@@ -190,13 +190,29 @@ class TestKernelWeightsReimpl:
         BIT-IDENTICAL is for engine-vs-engine determinism (covered by L3.1);
         numpy-vs-torch comparison expects single-ULP differences in exp().
         """
-        from Musical_Intelligence.ear.h3.attention.kernel import AttentionKernel
-        engine_kernel = AttentionKernel()
-        engine_weights = engine_kernel.compute_weights(window_size).numpy()
-        numpy_weights = _numpy_attention_weights(window_size)
-        diff = np.abs(engine_weights - numpy_weights).max()
-        # float32 epsilon ~1.19e-7; we allow up to 1 ULP @ value 1.0 (~6e-8 to 6e-7)
-        assert diff < 1e-6, (
-            f"Kernel re-impl exceeds float32 epsilon at window_size={window_size}: "
-            f"max-abs-diff = {diff} (expected < 1e-6, ~1 ULP for float32 exp)"
-        )
+        from _infra.engine_facts import BUILD_MODE, _SCAN_RESULTS, _CACHED_SCANS
+        name = f"l1.kernel_within_float32_epsilon_to_engine_{window_size}"
+
+        def _body():
+            from Musical_Intelligence.ear.h3.attention.kernel import AttentionKernel
+            engine_kernel = AttentionKernel()
+            engine_weights = engine_kernel.compute_weights(window_size).numpy()
+            numpy_weights = _numpy_attention_weights(window_size)
+            diff = np.abs(engine_weights - numpy_weights).max()
+            assert diff < 1e-6, (
+                f"Kernel re-impl exceeds float32 epsilon at window_size={window_size}: "
+                f"max-abs-diff = {diff} (expected < 1e-6, ~1 ULP for float32 exp)"
+            )
+
+        if BUILD_MODE:
+            try:
+                _body()
+                _SCAN_RESULTS[name] = {"passed": True, "msg": None}
+            except AssertionError as e:
+                _SCAN_RESULTS[name] = {"passed": False, "msg": str(e)}
+                raise
+            return
+        r = _CACHED_SCANS.get(name)
+        if r is None:
+            raise KeyError(f"cached test '{name}' not in manifest")
+        assert r.get("passed"), f"cached fail: {r.get('msg')}"

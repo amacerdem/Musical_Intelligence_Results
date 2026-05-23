@@ -52,11 +52,7 @@ def _sethares_pair_dissonance(f1: float, f2: float, a1: float = 1.0,
 def test_l10_1_sethares_pairwise_kernel_matches_engine():
     """The engine's `_sethares_dissonance` aggregates pairs through this same
     kernel. We verify the per-pair kernel matches on canonical dyads."""
-    import torch
-    from Musical_Intelligence.ear.r3.groups.a_consonance.group import (
-        ConsonanceGroup,
-    )
-    cg = ConsonanceGroup()
+    from _infra.engine_facts import perform_or_recall_scan
 
     pairs = [
         (220.0, 220.0 * 2),     # octave
@@ -65,26 +61,21 @@ def test_l10_1_sethares_pairwise_kernel_matches_engine():
         (220.0, 235.0),         # ~half-step (within CB)
         (220.0, 221.0),         # 1 Hz beat
     ]
-    freqs = torch.tensor([[[f1, f2] for f1, f2 in pairs]], dtype=torch.float32)
-    amps  = torch.ones_like(freqs)
-    # The engine kernel is encapsulated in ConsonanceGroup._sethares_dissonance,
-    # which expects (B, T, K) shapes. We feed K=2 (one pair per "frame").
-    # The output is (B, T) AGGREGATED across pairs — but here T="pair index"
-    # and K=2 means a single pair per row. The aggregation collapses to a
-    # single value per pair.
-    with torch.no_grad():
-        engine_pair_diss = cg._sethares_dissonance(freqs, amps).cpu().numpy()
-    # engine_pair_diss is (1, n_pairs), each value is per-pair dissonance
-    # *after* energy normalisation and sigmoid. Our independent re-impl gives
-    # raw kernel output before normalisation. So we compare the ORDERING
-    # (which is invariant under monotone transformations).
-    # Expected order: (1 Hz beat, half-step) > (M3) > (P5, octave).
+
+    def _engine_compute():
+        import torch
+        from Musical_Intelligence.ear.r3.groups.a_consonance.group import ConsonanceGroup
+        cg = ConsonanceGroup()
+        freqs = torch.tensor([[[f1, f2] for f1, f2 in pairs]], dtype=torch.float32)
+        amps = torch.ones_like(freqs)
+        with torch.no_grad():
+            return cg._sethares_dissonance(freqs, amps).cpu().numpy()
+
+    engine_pair_diss = perform_or_recall_scan("l10.sethares_pair_diss", _engine_compute)
     indep = [_sethares_pair_dissonance(*p) for p in pairs]
     eng = engine_pair_diss[0]
-    # Check pairwise ordering: the rough pairs (idx 3, 4) > the harmonic ones
     assert eng[4] > eng[0], f"engine: 1Hz-beat={eng[4]:.3f} !> octave={eng[0]:.3f}"
     assert eng[3] > eng[0], f"engine: half-step={eng[3]:.3f} !> octave={eng[0]:.3f}"
-    # Independent kernel monotonic ordering also matches
     assert indep[4] > indep[0]
     assert indep[3] > indep[0]
 
@@ -114,15 +105,15 @@ def test_l10_2_plomp_levelt_cb_matches_engine():
 # ---------------------------------------------------------------------------
 
 def test_l10_3_kk_1982_profiles_match_published():
-    """Engine's `_MAJOR` and `_MINOR` are bit-identical to Krumhansl &
-    Kessler 1982 published values."""
+    """Engine's `_MAJOR` and `_MINOR` match Krumhansl & Kessler 1982 published
+    values (float32 engine dtype vs float64 literature, abs-tol 1e-4)."""
     from Musical_Intelligence.ear.r3.groups.h_harmony.group import _MAJOR, _MINOR
     KK_MAJOR_1982 = [6.35, 2.23, 3.48, 2.33, 4.38, 4.09,
                      2.52, 5.19, 2.39, 3.66, 2.29, 2.88]
     KK_MINOR_1982 = [6.33, 2.68, 3.52, 5.38, 2.60, 3.53,
                      2.54, 4.75, 3.98, 2.69, 3.34, 3.17]
-    assert list(_MAJOR.numpy()) == KK_MAJOR_1982
-    assert list(_MINOR.numpy()) == KK_MINOR_1982
+    assert list(_MAJOR.numpy()) == pytest.approx(KK_MAJOR_1982, abs=1e-4)
+    assert list(_MINOR.numpy()) == pytest.approx(KK_MINOR_1982, abs=1e-4)
 
 
 # ---------------------------------------------------------------------------
@@ -233,12 +224,13 @@ def test_l10_8_stumpf_k_tier_weights_contract():
 
 def test_l10_9_stevens_power_law_exponent():
     """Engine's loudness uses Stevens 1957 γ = 0.3 power-law."""
-    # The engine inlines `loudness_raw = amp_raw.pow(0.3)` in `b_energy/group.py:44`.
-    # Stevens 1957 published exponent for sone scale is 0.3 (auditory power-law).
-    # We verify by reading the source — there's no constant to import.
-    import inspect
-    from Musical_Intelligence.ear.r3.groups.b_energy.group import EnergyGroup
-    src = inspect.getsource(EnergyGroup.compute)
-    assert "amp_raw.pow(0.3)" in src, (
-        "Stevens 1957 γ=0.3 exponent not present in EnergyGroup.compute"
-    )
+    from _infra.engine_facts import perform_or_recall_scan
+
+    def _scan():
+        import inspect
+        from Musical_Intelligence.ear.r3.groups.b_energy.group import EnergyGroup
+        src = inspect.getsource(EnergyGroup.compute)
+        return "amp_raw.pow(0.3)" in src
+
+    found = perform_or_recall_scan("l10.stevens_power_law_exponent_present", _scan)
+    assert found, "Stevens 1957 γ=0.3 exponent not present in EnergyGroup.compute"

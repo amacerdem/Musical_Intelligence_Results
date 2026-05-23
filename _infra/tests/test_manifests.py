@@ -34,7 +34,7 @@ def test_engine_head_pinned():
     # NOTE: value mirrors manifests/engine_head.json — update both on engine HEAD bump
     manifest = json.loads((INFRA / "manifests/engine_head.json").read_text())
     assert manifest["pinned_commit"] == "318eb2f529d7103e8b7d80b01228357fdc4e0217"
-    assert manifest["pinned_date"] == "2026-05-06"
+    assert manifest["pinned_date"] == "2026-05-08"
     assert manifest["engine_path"] == "Science/Musical_Intelligence"
 
 

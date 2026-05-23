@@ -22,7 +22,11 @@ import sys
 from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
+# Prefer the .venv interpreter if it exists (developer mode); otherwise fall
+# back to the currently-running Python (reviewer mode — no .venv vendored).
 VENV_PY = REPO_ROOT / ".venv" / "bin" / "python"
+if not VENV_PY.exists():
+    VENV_PY = Path(sys.executable)
 
 # A) 14 CSV-verdict phases
 CSV_PHASES = [

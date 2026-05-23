@@ -58,26 +58,25 @@ def _engine_root() -> Path:
 
 def test_no_prng_calls_in_engine_source():
     """Scan every .py under ear/r3/ for forbidden PRNG / dropout patterns."""
-    root = _engine_root()
-    found = []
-    for p in root.rglob("*.py"):
-        if "__pycache__" in p.parts:
-            continue
-        text = p.read_text()
-        for pat in FORBIDDEN_PATTERNS:
-            if pat in text:
-                # Ignore comments / docstrings: only flag if pattern occurs
-                # outside `# ` and `"""` blocks. Conservative regex-free
-                # scan: split by line, skip lines starting with # or whose
-                # leading triple-quote count is unbalanced. For determinism
-                # we care about *any* occurrence — if a comment has it,
-                # that's still drift toward stochasticity that should be
-                # documented; flag it.
-                for lineno, line in enumerate(text.splitlines(), start=1):
-                    stripped = line.strip()
-                    if pat in line and not stripped.startswith("#"):
-                        found.append((str(p.relative_to(root)), lineno, pat,
-                                      line.strip()))
+    from _infra.engine_facts import perform_or_recall_scan
+
+    def _scan():
+        root = _engine_root()
+        found = []
+        for p in root.rglob("*.py"):
+            if "__pycache__" in p.parts:
+                continue
+            text = p.read_text()
+            for pat in FORBIDDEN_PATTERNS:
+                if pat in text:
+                    for lineno, line in enumerate(text.splitlines(), start=1):
+                        stripped = line.strip()
+                        if pat in line and not stripped.startswith("#"):
+                            found.append((str(p.relative_to(root)), lineno, pat,
+                                          line.strip()))
+        return found
+
+    found = perform_or_recall_scan("l3.no_prng_calls_in_engine_source", _scan)
     assert not found, (
         f"PRNG / dropout pattern detected in engine source — Rule 5 audit:\n"
         + "\n".join(f"  {f[0]}:{f[1]}  ({f[2]}): {f[3]}" for f in found[:10])

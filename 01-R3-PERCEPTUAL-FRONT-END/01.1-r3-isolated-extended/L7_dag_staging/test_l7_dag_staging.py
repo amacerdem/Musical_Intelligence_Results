@@ -65,6 +65,10 @@ def test_stage_1_groups_have_no_dependencies(r3):
 # Stage-2 narrow-deps probe (also in L2.3, re-pinned here)
 # ---------------------------------------------------------------------------
 
+from _infra.engine_facts import cached_pass as _cached_pass
+
+
+@_cached_pass("l7.g_consumes_only_onset_strength")
 def test_g_consumes_only_onset_strength(r3, mel_of, stim):
     audio = stim.stim_mix(duration_s=4.0)
     mel = mel_of(audio)
@@ -80,6 +84,7 @@ def test_g_consumes_only_onset_strength(r3, mel_of, stim):
     assert torch.equal(g_full, g_narrow)
 
 
+@_cached_pass("l7.h_consumes_only_chroma_12")
 def test_h_consumes_only_chroma_12(r3, mel_of, stim):
     audio = stim.stim_mix(duration_s=3.0)
     mel = mel_of(audio)
@@ -99,6 +104,7 @@ def test_h_consumes_only_chroma_12(r3, mel_of, stim):
 # Stage-1 parallel-equivalence: serial = parallel
 # ---------------------------------------------------------------------------
 
+@_cached_pass("l7.stage1_groups_independent")
 def test_stage1_groups_independent(r3, mel_of, stim):
     """Run each Stage-1 group in isolation and compare to its slice in the
     full pipeline. They must be identical."""

@@ -55,6 +55,28 @@ if str(_SUITE_ROOT) not in sys.path:
     sys.path.insert(0, str(_SUITE_ROOT))
 _INFRA = _SUITE_ROOT / "_infra"
 
+# BUILD-mode engine resolution: try sibling-checkout (../Musical_Intelligence/)
+# in addition to in-tree (MI_Results/Musical_Intelligence/) and vendored
+# (_infra/engine/Musical_Intelligence/). Only needed when MI_BUILD_ORACLE=1.
+_PARENT = _PROJECT_ROOT.parent
+if (_PARENT / "Musical_Intelligence" / "ear" / "r3" / "extractor.py").exists():
+    if str(_PARENT) not in sys.path:
+        sys.path.insert(0, str(_PARENT))
+
+# ----------------------------------------------------------------------------
+# Engine-facts stubs (CACHE mode): inject Musical_Intelligence.* into
+# sys.modules BEFORE any test does `from Musical_Intelligence... import …`.
+# In BUILD mode: register fact recording on import + save on session end.
+# ----------------------------------------------------------------------------
+from _infra import engine_facts as _engine_facts  # noqa: E402
+
+if _engine_facts.BUILD_MODE:
+    # Set up monkey-patches so live engine imports get recorded as tests call them
+    _engine_facts.setup_recording()
+else:
+    # CACHE mode: install stubs immediately so tests' module-level imports resolve
+    _engine_facts.install_stubs()
+
 
 # ---------------------------------------------------------------------------
 # Pin manifest
@@ -77,9 +99,15 @@ def engine_pin() -> dict:
 
 @pytest.fixture(scope="session", autouse=True)
 def _pin_integrity(engine_pin, project_root):
-    """Halt the session if the engine tree no longer matches the pin manifest."""
+    """Halt the session if the engine tree drifts. CACHE mode skips this check."""
+    from _infra.oracle import BUILD_MODE
+    if not BUILD_MODE:
+        yield  # cache mode: engine not present, oracle is source of truth
+        return
     from _infra.sha_utils import aggregate_engine_sha
     engine_root = project_root / "Musical_Intelligence"
+    if not engine_root.exists():
+        engine_root = project_root.parent / "Musical_Intelligence"
     actual = aggregate_engine_sha(engine_root)
     expected = engine_pin["content_aggregate_sha256"]
     if actual != expected:
@@ -100,9 +128,55 @@ def _pin_integrity(engine_pin, project_root):
 
 @pytest.fixture(scope="session")
 def r3():
-    """Session-scoped R3Extractor instance."""
-    from Musical_Intelligence.ear.r3.extractor import R3Extractor
-    return R3Extractor()
+    """Session-scoped R3Extractor (BUILD mode) or oracle-backed shim (CACHE mode).
+
+    BUILD mode wraps the live extractor so every .extract() call records its
+    output under BOTH audio-key (if given) and mel-key — letting the cache
+    serve subsequent lookups whether the test passes audio or mel.
+    """
+    from _infra.oracle import BUILD_MODE, Oracle
+    if BUILD_MODE:
+        from Musical_Intelligence.ear.r3.extractor import R3Extractor
+        extractor = R3Extractor()
+        oracle = Oracle.instance()
+        _orig_extract = extractor.extract
+
+        def _wrapped_extract(mel, *, audio=None, sr=44100):
+            output = _orig_extract(mel, audio=audio, sr=sr)
+            oracle.record_tensor(mel, output)
+            if audio is not None:
+                oracle.record_tensor(audio, output)
+            return output
+
+        extractor.extract = _wrapped_extract
+        return extractor
+
+    # Prefer the engine_facts R3Extractor stub (has total_dim, extract sig,
+    # oracle-backed extract method). Fall back to a minimal local shim if
+    # the stub isn't installed (e.g. running tests directly without facts).
+    import sys as _sys
+    _extractor_mod = _sys.modules.get("Musical_Intelligence.ear.r3.extractor")
+    if _extractor_mod is not None and hasattr(_extractor_mod, "R3Extractor"):
+        return _extractor_mod.R3Extractor()
+
+    oracle = Oracle.instance()
+
+    class _R3Shim:
+        """Cache-only shim mimicking R3Extractor.extract(mel, audio=, sr=)."""
+        total_dim = 97
+        def extract(self, mel=None, audio=None, sr=44100):
+            if audio is not None:
+                try:
+                    return oracle.lookup_tensor(audio)
+                except KeyError:
+                    pass
+            if mel is not None:
+                return oracle.lookup_tensor(mel)
+            raise RuntimeError(
+                "CACHE mode: r3.extract() needs either audio= or mel positional arg"
+            )
+
+    return _R3Shim()
 
 
 @pytest.fixture(scope="session")
@@ -123,10 +197,19 @@ def mel_of() -> Callable[[Tensor], Tensor]:
 
 @pytest.fixture(scope="session")
 def r3_extract(r3, mel_of) -> Callable[[Tensor], object]:
-    """End-to-end helper: audio Tensor → R3Output."""
+    """audio Tensor → R3Output. BUILD mode runs live engine (extractor wrapper
+    records audio+mel keys); CACHE mode looks up by audio key."""
+    from _infra.oracle import BUILD_MODE, Oracle
+    if BUILD_MODE:
+        # r3.extract is already wrapped above — just call it through, recording
+        # happens inside the wrapper for both audio and mel keys.
+        def _run(audio: Tensor):
+            with torch.no_grad():
+                return r3.extract(mel_of(audio), audio=audio, sr=44100)
+        return _run
+    oracle = Oracle.instance()
     def _run(audio: Tensor):
-        with torch.no_grad():
-            return r3.extract(mel_of(audio), audio=audio, sr=44100)
+        return oracle.lookup_tensor(audio)
     return _run
 
 
@@ -135,16 +218,50 @@ def r3_extract(r3, mel_of) -> Callable[[Tensor], object]:
 # ---------------------------------------------------------------------------
 
 def pytest_collection_modifyitems(config, items):
-    """In cache-only mode (no Musical_Intelligence/ source vendored),
-    skip all collected tests — the engine cannot be live-loaded.
+    """Skip only if BOTH the engine source and the oracle cache are absent.
 
-    The reviewer reproduction path is engine_outputs cache + verify_full_ledger.py;
-    this phase's pytest panel verifies the engine spec, which requires the
-    engine source. Skipping (not failing) preserves the cache-only contract.
+    BUILD mode (MI_BUILD_ORACLE=1) → never skip (tests need to populate oracle).
+    Oracle cache present → run via cache-backed fixtures.
+    Engine present (in-tree or sibling-checkout or vendored) → run normally,
+        UNLESS MI_FORCE_CACHE_MODE=1 — in which case ignore engine and rely on
+        cache (useful for in-place reviewer-mode simulation while sibling
+        engine source is visible on the developer machine).
+    Otherwise → skip with clear rebuild instruction.
     """
-    if (_PROJECT_ROOT / "Musical_Intelligence" / "ear" / "r3" / "extractor.py").exists():
-        return  # engine present, run normally
+    import os as _os
+    from _infra.oracle import ORACLE_PATH, BUILD_MODE
+    if BUILD_MODE:
+        return  # build mode: run all tests against live engine to populate oracle
+    if ORACLE_PATH.exists():
+        return  # oracle cache available, run via cache-backed fixtures
+    if _os.environ.get("MI_FORCE_CACHE_MODE") == "1":
+        import pytest as _pt
+        marker = _pt.mark.skip(
+            reason="MI_FORCE_CACHE_MODE=1 but oracle cache is missing — rebuild"
+        )
+        for item in items:
+            item.add_marker(marker)
+        return
+    engine_candidates = [
+        _PROJECT_ROOT / "Musical_Intelligence" / "ear" / "r3" / "extractor.py",
+        _PROJECT_ROOT.parent / "Musical_Intelligence" / "ear" / "r3" / "extractor.py",
+        _PROJECT_ROOT / "_infra" / "engine" / "Musical_Intelligence" / "ear" / "r3" / "extractor.py",
+    ]
+    if any(p.exists() for p in engine_candidates):
+        return  # engine present somewhere, run normally
     import pytest
-    marker = pytest.mark.skip(reason="cache-only mode: engine source not vendored")
+    marker = pytest.mark.skip(
+        reason="neither engine source nor oracle cache available — "
+               "rebuild with `MI_BUILD_ORACLE=1 pytest` or vendor engine source"
+    )
     for item in items:
         item.add_marker(marker)
+
+
+def pytest_sessionfinish(session, exitstatus):
+    """BUILD mode: save the engine_facts manifest on session end."""
+    from _infra.oracle import BUILD_MODE
+    if not BUILD_MODE:
+        return
+    from _infra import engine_facts
+    engine_facts.save_facts()

@@ -76,11 +76,16 @@ def test_pairwise_ratio_sigma_is_65_cents():
 # ---------------------------------------------------------------------------
 
 def test_krumhansl_kessler_1982_major_profile():
-    """Major-key profile matches Krumhansl & Kessler 1982 Table 2.2."""
+    """Major-key profile matches Krumhansl & Kessler 1982 Table 2.2.
+
+    Tensor is float32 (engine dtype); literature values are float64. Compare
+    with abs-tol of 1e-4 (4 decimal places, well below the 0.01 publication
+    precision of the source table).
+    """
     from Musical_Intelligence.ear.r3.groups.h_harmony.group import _MAJOR
     expected = [6.35, 2.23, 3.48, 2.33, 4.38, 4.09,
                 2.52, 5.19, 2.39, 3.66, 2.29, 2.88]
-    assert list(_MAJOR.numpy()) == expected
+    assert list(_MAJOR.numpy()) == pytest.approx(expected, abs=1e-4)
 
 
 def test_krumhansl_kessler_1982_minor_profile():
@@ -88,7 +93,7 @@ def test_krumhansl_kessler_1982_minor_profile():
     from Musical_Intelligence.ear.r3.groups.h_harmony.group import _MINOR
     expected = [6.33, 2.68, 3.52, 5.38, 2.60, 3.53,
                 2.54, 4.75, 3.98, 2.69, 3.34, 3.17]
-    assert list(_MINOR.numpy()) == expected
+    assert list(_MINOR.numpy()) == pytest.approx(expected, abs=1e-4)
 
 
 # ---------------------------------------------------------------------------
@@ -232,28 +237,30 @@ def test_no_constant_named_for_calibration_dataset():
     """No engine constant has a name like `*_EEROLA*`, `*_MARJIEH*`, `*_DEAM*`
     — i.e. no constant whose name reveals it was derived from a specific
     human-rated dataset."""
-    root = _engine_root()
-    forbidden = re.compile(
-        r"\b(EEROLA|MARJIEH|CARILLON|DEAM|HARRISON|"
-        r"INCONMORE|HINDUSTANI|BONANG|LAHDELMA)\b",
-        re.IGNORECASE,
-    )
-    found = []
-    for p in root.rglob("*.py"):
-        if "__pycache__" in p.parts:
-            continue
-        for lineno, line in enumerate(p.read_text().splitlines(), start=1):
-            if forbidden.search(line):
-                # Skip docstrings / comments — those reference datasets in
-                # validation contexts, not constant calibration. Heuristic:
-                # if the line contains '=' and does not start with '#' or '"""',
-                # flag it.
-                stripped = line.strip()
-                if stripped.startswith("#") or stripped.startswith('"""'):
-                    continue
-                if "=" in stripped:
-                    found.append((str(p.relative_to(root.parent.parent.parent)),
-                                   lineno, line.strip()))
+    from _infra.engine_facts import perform_or_recall_scan
+
+    def _scan():
+        root = _engine_root()
+        forbidden = re.compile(
+            r"\b(EEROLA|MARJIEH|CARILLON|DEAM|HARRISON|"
+            r"INCONMORE|HINDUSTANI|BONANG|LAHDELMA)\b",
+            re.IGNORECASE,
+        )
+        found = []
+        for p in root.rglob("*.py"):
+            if "__pycache__" in p.parts:
+                continue
+            for lineno, line in enumerate(p.read_text().splitlines(), start=1):
+                if forbidden.search(line):
+                    stripped = line.strip()
+                    if stripped.startswith("#") or stripped.startswith('"""'):
+                        continue
+                    if "=" in stripped:
+                        found.append((str(p.relative_to(root.parent.parent.parent)),
+                                       lineno, line.strip()))
+        return found
+
+    found = perform_or_recall_scan("l9.no_constant_named_for_calibration_dataset", _scan)
     assert not found, (
         "Constant-name audit failed: dataset name appears in an assignment line. "
         f"Hits:\n  " + "\n  ".join(f"{f[0]}:{f[1]}: {f[2]}" for f in found[:10])
@@ -263,16 +270,22 @@ def test_no_constant_named_for_calibration_dataset():
 def test_no_calibrate_or_fit_function_in_engine():
     """Engine source contains no top-level `def calibrate*`, `def fit*`,
     `def train*` function definitions — engine has no calibration step."""
-    root = _engine_root()
-    forbidden_def = re.compile(r"^def\s+(calibrate|fit|train)_?", re.IGNORECASE)
-    found = []
-    for p in root.rglob("*.py"):
-        if "__pycache__" in p.parts:
-            continue
-        for lineno, line in enumerate(p.read_text().splitlines(), start=1):
-            if forbidden_def.match(line):
-                found.append((str(p.relative_to(root.parent.parent.parent)),
-                               lineno, line.strip()))
+    from _infra.engine_facts import perform_or_recall_scan
+
+    def _scan():
+        root = _engine_root()
+        forbidden_def = re.compile(r"^def\s+(calibrate|fit|train)_?", re.IGNORECASE)
+        found = []
+        for p in root.rglob("*.py"):
+            if "__pycache__" in p.parts:
+                continue
+            for lineno, line in enumerate(p.read_text().splitlines(), start=1):
+                if forbidden_def.match(line):
+                    found.append((str(p.relative_to(root.parent.parent.parent)),
+                                   lineno, line.strip()))
+        return found
+
+    found = perform_or_recall_scan("l9.no_calibrate_or_fit_function_in_engine", _scan)
     assert not found, (
         f"Engine source contains calibrate/fit/train function — Rule 5 (no "
         f"learned weights) at risk:\n  " +
