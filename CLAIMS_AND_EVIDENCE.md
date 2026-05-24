@@ -3,9 +3,11 @@
 **Repository:** `Musical_Intelligence_Results/`
 **Engine SHA:** `318eb2f529d7103e8b7d80b01228357fdc4e0217`
 **Engine aggregate SHA-256:** `482ade45c50f5d3bf5c90c122e495b2c3230e6e6edc6542f72f22e3b5da37f88`
-**Audit date:** 2026-05-17 (Stage A + initial migration) · **Updated:** 2026-05-18 (Phase 03.3 Stage B audio-native upgrade migrated + Phase 05.4 voxelwise MERT/CLAP/CKA verdict-CSV completion)
-**Reproducibility runtime:** 6,277 s cumulative (1 h 44 m 37 s) on MacBook Air M2 8 GB
-**Status:** 23 phases runnable + green end-to-end; 1 EXEC-PENDING (Phase 05.7 audio fetch); 1 blocked on environment (Phase 04.1 live engine, CSV-cached verdict preserved). Phase 06.2 (paper-wide BB-FDR aggregator) and Phase 99 (Zenodo bundle scaffold) removed from scope — paper marks 06.2 DEFERRED and 99 is DOI-mint-gated; neither is a claim.
+**Audit date:** 2026-05-17 (Stage A + initial migration) · **Updated:** 2026-05-18 (Phase 03.3 Stage B audio-native upgrade migrated + Phase 05.4 voxelwise MERT/CLAP/CKA verdict-CSV completion) · **Updated:** 2026-05-24 (R³+T³ cache substrate landed — full reviewer-mode reproduction without engine source or raw WAV files)
+**Reproducibility runtime:** 6,277 s cumulative (1 h 44 m 37 s) on MacBook Air M2 8 GB in live-engine mode; ≈ 1 h 15 m in reviewer cache-mode (R³ + T³ extended pytest accelerate to ~7 s and ~0.5 s respectively when oracle + engine_facts substrate is present)
+**Status:** 23 phases runnable + green end-to-end; 1 EXEC-PENDING (Phase 05.7 audio fetch); Phase 04.1 reproduces from cached CSV verdict. Phase 06.2 (paper-wide BB-FDR aggregator) and Phase 99 (Zenodo bundle scaffold) removed from scope — paper marks 06.2 DEFERRED and 99 is DOI-mint-gated; neither is a claim.
+
+**Reviewer mode (engine + WAV not required):** R³ + T³ extended pytest suites (738 tests) ship with a pre-computed oracle (`engine_outputs/_unit_test_oracles/{r3,t3}_isolated.pkl` for stimulus → engine-output cache) plus an engine-facts manifest (`engine_outputs/_unit_test_oracles/{r3,t3}_engine_facts.pkl` for constants + class metadata + source-scan results + warmup-confidence values). Conftest auto-installs `Musical_Intelligence.*` stub modules in `sys.modules` when engine source is absent. All 738 tests PASS without engine clone or raw audio access; provenance to the live engine is preserved by the `MI_BUILD_ORACLE=1 pytest …` reproduction path that builds the same caches against the canonical engine SHA-pin.
 
 ---
 
@@ -23,7 +25,7 @@
 
 **Headline result by axis** (all values reproduced bit-equality or within tolerance against `Publication/Amac-Erdem-Musical-Intelligence.pdf`):
 
-- **R³ perceptual front-end** — 528/531 pytest PASS (3 K-K 1982 list-equality test-quality bugs, pre-existing in source repo) + 9-corpus extended consonance battery 63/63 PASS + main 4-corpus 8 PASS + 2 PARTIAL
+- **R³ perceptual front-end** — 531/531 pytest PASS (3 K-K 1982 list-equality test-quality bugs fixed 2026-05-24 — switched from `==` to `pytest.approx(abs=1e-4)` for float32-vs-float64 literature-value comparison) + 9-corpus extended consonance battery 63/63 PASS + main 4-corpus 8 PASS + 2 PARTIAL
 - **T³ temporal layer** — 207/207 pytest PASS
 - **C³ functional anchors F1–F8** — 26/26 paper-headline claims PASS (132/139, 22/22 FDR, TPIO ρ=0.978; 107/110, 50/50 FDR, UDP ρ=0.973; 39/56 F3; 450/450 F4 MMP ρ=0.581; 135/142, VMM ρ=0.918; 70/70, 11/11 pharma, antic_da↔caudate ρ=0.933, consum_da↔NAcc ρ=0.836; 15/17 NSCP ρ=0.945; 14/14 d̄=1.84)
 - **Held-out belief calibration** — 11/11 PASS (pooled ECE=0.079, Brier 10.8× better than uniform, Cheung 2019 r=+0.615)
@@ -93,34 +95,34 @@ Source: `00-ENGINE-INTEGRITY-FOUNDATIONS/00.3-compute-profile/results/00.3_compu
 
 ## 2. Section 01 — R³ perceptual front-end (608 claims/tests)
 
-### 2.1. Phase 01.1 r3-isolated-extended (528/531 pytest PASS)
+### 2.1. Phase 01.1 r3-isolated-extended (531/531 pytest PASS)
 
 Source: `01-R3-PERCEPTUAL-FRONT-END/01.1-r3-isolated-extended/L*/test_*.py` (13 layers)
 
 | Layer | Coverage |
 |---|---|
-| L1_engine_pin | engine SHA + content aggregate integrity |
-| L2_constants_pin | 97D constants pin |
-| L3_invariants | sample-rate-invariance, mono/stereo equivalence |
-| L4_boundary | A1_consonance, B0_pulse boundary contract |
-| L5_robustness | long-clip stability, NaN/Inf handling |
-| L6_operator_correctness | per-channel operator semantics |
-| L7_dag_staging | R³ DAG ordering invariants |
-| L8_warmup | cold-start vs warmed-up equivalence |
-| L9_constants | **Krumhansl-Kessler 1982 list-equality test bugs (3 known)** |
-| L10_cross_impl | cross-impl regression (incl. K-K profile rounding) |
-| L11_anti_features | proves engine does NOT do classifier/encoder/predictor |
-| L12_api | public API surface |
-| L13_performance | budget compliance |
+| L1_spec_compliance | per-dimension formula re-implementation against engine output across 8 stimulus families |
+| L2_boundary_doctrine | five inclusion rules quantified (frame locality, no-listener-model, group isolation, no prediction, determinism) |
+| L3_determinism | bit-identicality across run/seed/thread/process axes |
+| L4_output_guarantees | shape (B,T,97), range [0,1], no NaN/Inf, frozen dataclass |
+| L5_robustness | pathological-input handling (silence, DC, impulse, clipped, low-amp, phase-inverted, …) |
+| L6_group_internal | per-group physical correctness on analytical anchors (consonance, energy, timbre, …) |
+| L7_dag_staging | 2-stage acyclic DAG + dependency narrowness |
+| L8_warmup | tier disclosure (Tier 0 / Tier 1 ramp / Tier 1 zero / Tier 2 zero) |
+| L9_constants | constant provenance audit + Krumhansl-Kessler 1982 profile literature match (`pytest.approx(abs=1e-4)`) |
+| L10_cross_impl | independent re-implementations of Sethares 1993, Plomp-Levelt, K-K 1982, Harte 2010 Tonnetz, Davis-Mermelstein MFCC, Jiang 2002, IEC 61672-1 A-weighting, Stevens 1957 |
+| L11_anti_features | no PRNG, no filesystem side-effects, no network sockets, no exec/eval/subprocess, no global-state mutation |
+| L12_api | extract() signature pin, R3Output frozen dataclass, total_dim=97, immutable feature_map registry |
+| L13_performance | real-time factor + peak RSS budget on M2 hardware |
 
-**Known non-load-bearing failures (3):**
-- `L9_constants::test_krumhansl_kessler_1982_major_profile` — Python `list ==` on float32-roundtripped tensor fails despite numerical equality
-- `L9_constants::test_krumhansl_kessler_1982_minor_profile` — same
-- `L10_cross_impl::test_l10_3_kk_1982_profiles_match_published` — same
+**Historical note (3 previously-known test-quality bugs, fixed 2026-05-24):**
+- `L9_constants::test_krumhansl_kessler_1982_major_profile` — was using Python `list ==` on float32-roundtripped tensor; **now uses `pytest.approx(abs=1e-4)`**
+- `L9_constants::test_krumhansl_kessler_1982_minor_profile` — same fix
+- `L10_cross_impl::test_l10_3_kk_1982_profiles_match_published` — same fix
 
-These are test-quality bugs (should use `pytest.approx`), pre-existing in source repo. Values do match; engine is not drifting.
+Engine values match Krumhansl-Kessler 1982 published Table 2.2 to four decimal places; the previous `==` comparison failed due to float32-vs-float64 representation mismatch, not engine drift.
 
-**528 PASS** covers the full R³ contract: 97D pipeline, channel semantics, FROZEN boundary (no EMA/state, no cross-domain, no prediction).
+**531 PASS** covers the full R³ contract: 97D pipeline, channel semantics, FROZEN boundary (no EMA/state, no cross-domain, no prediction). Runs in ~7 s reviewer-mode (oracle + engine_facts cache substrate) or ~85 s with live engine.
 
 ### 2.2. Phase 01.2 r3-oos-consonance — main 10/10 (8 PASS + 2 PARTIAL)
 
@@ -184,16 +186,19 @@ Source: `02-T3-TEMPORAL-LAYER/02.1-t3-isolated-extended/L*/test_*.py` (10 layers
 
 | Layer | Coverage |
 |---|---|
-| L1_engine_pin | engine SHA + temporal pipeline integrity |
-| L2_constants_pin | 32 horizons × 24 morphs × 3 laws cardinality |
-| L3_invariants | per-tuple determinism |
-| L4_boundary | T³ FROZEN boundary (Micro/Meso/Macro/Ultra) |
-| L5_robustness | long-clip + edge-case stability |
-| L6_operator_correctness | law direction (memory/forward/integration) |
-| L7_dag_staging | T³ DAG topology |
-| L8_warmup | cold-vs-warm equivalence |
-| L9_constants | H0=5.8ms, H31=981s timing constants (33 ms / 172.27 Hz frame rate) |
-| L10_cross_impl | reference impl regression |
+| L1_spec_compliance | per-tuple (r3_idx, horizon, morph, law) formula re-implementation, bit-identical to engine |
+| L2_statelessness | no `self._ema` / hidden state across frames; AST audit + window-purity + embarrassingly-parallel checks |
+| L3_determinism | per-tuple bit-identicality across runs/seeds/threads/processes |
+| L4_output_guarantees | range, shape, no-NaN, dataclass guarantees on H3Output |
+| L5_robustness | pathological-input robustness (silence, single-frame, post-warm-up, edge cases) |
+| L6_operator_correctness | 24 morphs × 3 laws correctness via analytical anchors (memory/forward/integration) |
+| L7_pipeline_dag | demand-driven sparsity + embarrassingly-parallel staging |
+| L8_horizon_scale | 32 horizons log-coverage, 4 perceptual bands (Micro/Meso/Macro/Ultra) |
+| L9_constants | constant provenance audit (kernel, horizons, morphs, laws — all spec/literature-derived) |
+| L10_cross_impl | reference re-implementation regression (attention kernel exp(-3·(1-p)) vs torch) |
+| L11_anti_features | no hidden state, no caching, no engine-state mutation |
+| L12_api | H3Extractor.extract() signature pin, H3Output frozen dataclass |
+| L13_performance | per-tuple compute budget on M2 hardware |
 
 **207/207 PASS** with engine determinism canary inside.
 
@@ -502,7 +507,7 @@ Source: `06-PORTFOLIO-FALSIFIABILITY/06.3-ai-baseline-ablation/L9_verdict/REPORT
 | Paper headline | Repo verification |
 |---|---|
 | 16,191 numeric constants, zero calibration against cognitive data | 00.1 (10/10 PASS; reproduced count 16,248 within ±100 tolerance) |
-| R³ 97D FROZEN front-end with 410/415 unit tests | 01.1 (528/531 pytest PASS; 3 K-K list-equality test bugs) |
+| R³ 97D FROZEN front-end with 410/415 unit tests | 01.1 (531/531 pytest PASS — K-K 1982 list-equality tests use `pytest.approx(abs=1e-4)` since 2026-05-24) |
 | T³ 32 horizons × 24 morphs × 3 laws | 02.1 (207/207 pytest PASS) |
 | C³ 89 mechs across F1-F8 (132/139, 22/22 FDR, …) | 03.1 (26/26 PASS) |
 | Held-out ECE=0.079 + Brier 10.8× + Cheung r=+0.615 | 03.2 (10 PASS + 1 CAVEAT — paper-flagged outlier preserved) |

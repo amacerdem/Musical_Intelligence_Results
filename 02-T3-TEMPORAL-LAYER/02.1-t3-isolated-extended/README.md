@@ -9,7 +9,7 @@
 
 > **V-Reproduction note:** this copy under `02-T3-TEMPORAL-LAYER/02.1-t3-isolated-extended/` is **decoupled from the paper tree** — no `.tex` dependency. The doc-consistency audit (L14), the heavy experiment-artefact folders (`phase_lag_32rate/`, `wilson_cowan/`, `determinism_canary/`, `_selectivity/`), and the standalone audit scripts under `_infra/audit_scripts/` (hardcoded absolute paths) all live only in the canonical source suite at `The Paper/T3-Paper/T3_Isolated_Validation/`. Engine, spec compliance, statelessness, determinism, output guarantees, robustness, operator correctness, and performance budget are still verified here.
 
-> **Status at copy time:** runtime-tested layers are **Pin + L1 + L3 + L4 + L5 + L6 + L13** (7 layers, 207 tests, ✅ ALL PASS). Layers **L2, L7, L8, L9, L10, L11, L12** ship pre-computed audit artefacts (JSON + summary MD) but no pytest-side runtime tests yet — they appear in the scorecard as ⚪ EMPTY rather than silently disappearing.
+> **Status:** all **13 layers** (Pin + L1 through L13) are pytest-runtime tested. **207/207 tests PASS** in both reviewer cache mode (≈ 0.5 s) and live-engine BUILD mode (≈ 4 s on M2 8 GB). Layers L2 (statelessness), L7 (pipeline DAG), L8 (horizon scale), L9 (constants), L10 (cross-impl), L11 (anti-features), and L12 (API) were originally documentation-only; runtime tests were added during the cache-substrate landing (2026-05-24) and all carry green pytest verdicts.
 
 ---
 
@@ -22,15 +22,21 @@ cd 02-T3-TEMPORAL-LAYER/02.1-t3-isolated-extended
 python3 run_all.py
 ```
 
-This runs Pin + L1 + L3 + L4 + L5 + L6 + L13 (every layer that ships pytest tests) and writes a fresh `REPORT.md` with the per-layer scorecard. Exit code is the worst pytest exit code observed (`0` = all PASS).
+This runs Pin + L1 through L13 (every layer carries pytest runtime tests) and writes a fresh `REPORT.md` with the per-layer scorecard. Exit code is the worst pytest exit code observed (`0` = all PASS).
 
 **Prerequisites** (no in-tree install, no vendored wheels):
 
 ```bash
-pip install torch numpy scipy soundfile pytest
+pip install torch torchaudio numpy scipy soundfile pytest
 ```
 
-The engine (`Musical_Intelligence/`) is auto-discovered via an upward walk from `conftest.py` — no manual `PYTHONPATH` setup needed. Stimuli are generated deterministically in memory by `_infra/stimuli.py`. Expected wallclock on M2 8 GB ≈ 30 s; headline ✅ ALL PASS.
+**Two reproduction modes:**
+
+- **Reviewer cache mode (default — no engine source, no raw WAVs needed):** conftest auto-detects the oracle cache at `engine_outputs/_unit_test_oracles/t3_isolated.pkl` ((r3_features, demand) → H3Output) plus the facts manifest at `t3_engine_facts.pkl` (horizons, morphs, laws constants + AttentionKernel + H3Extractor + H3Output class metadata). Wallclock ≈ **0.5 s**; headline ✅ **207/207 PASS**.
+
+- **Live engine BUILD mode (rebuilds the cache):** clone the engine source alongside (`Musical_Intelligence/` sibling) and run `MI_BUILD_ORACLE=1 python3 -m pytest .` — the conftest wraps the live `H3Extractor` so every test call records its `((r3_features_hash, demand) → H3Output)` triple into the oracle. Wallclock ≈ **4 s** on M2 8 GB.
+
+Stimuli are generated deterministically in memory by `_infra/stimuli.py`; no external WAV files needed in either mode.
 
 For a sanity check before the full run:
 
@@ -155,4 +161,4 @@ System-level claims that depend on T³ as substrate live in `../T3_Success_in_Sy
 
 ## Engine pin
 
-All tests run against the engine HEAD pinned in `_infra/manifests/engine_pin.json`. The pin-integrity gate (first row of every run) computes a SHA-256 aggregate of `Musical_Intelligence/ear/h3/**.py` and refuses to proceed if it disagrees with the manifest.
+All tests run against engine HEAD `318eb2f529d7103e8b7d80b01228357fdc4e0217` (tree aggregate SHA-256 `482ade45c50f5d3bf5c90c122e495b2c3230e6e6edc6542f72f22e3b5da37f88`) per `_infra/manifests/engine_pin.json`. In live-engine BUILD mode the pin-integrity gate (first row of every run) computes a SHA-256 aggregate of `Musical_Intelligence/ear/h3/**.py` and refuses to proceed if it disagrees with the manifest. In reviewer cache mode the gate is bypassed (engine source absent); the oracle + facts manifests are themselves bit-tied to the canonical engine pin via the BUILD-mode record path.

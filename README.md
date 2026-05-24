@@ -11,18 +11,21 @@ This repository contains the **results layer** of the Musical Intelligence repro
 ```
 Musical_Intelligence_Results/
 ├── 00-ENGINE-INTEGRITY-FOUNDATIONS/    ← per-phase reproduction packages (bottom-up)
-│   └── 00.1-architectural-cardinalities/  (Phase 01 V2-current, 5 PASS)
-├── 01-R3-PERCEPTUAL-FRONT-END/         ← (in progress)
-├── 02-T3-TEMPORAL-LAYER/
-├── 03-C3-BEHAVIORAL-VALIDATION/
-├── 04-C3-BIOLOGICAL-SUBSTRATE/
-├── 05-FMRI-BRAIN-GROUNDING/
-├── 06-PORTFOLIO-FALSIFIABILITY/
-├── _audits/                             ← constant-level provenance audit (16,248 sabit, 9 agent)
-├── _infra/                              ← shared engine path resolver, helpers
+│   ├── 00.1-architectural-cardinalities/  (10/10 PASS — 16,248 constants partitioned across 7 categories)
+│   ├── 00.2-fmri-eligibility-audit/        (6/6 PASS)
+│   └── 00.3-compute-profile/                (1 PASS + 5 CAVEAT, hardware-tier divergence)
+├── 01-R3-PERCEPTUAL-FRONT-END/         ← R³ 97D front-end (extended 531/531 pytest PASS)
+├── 02-T3-TEMPORAL-LAYER/                ← T³ multi-scale temporal grammar (extended 207/207 pytest PASS)
+├── 03-C3-BEHAVIORAL-VALIDATION/         ← C³ behavioural validation (functional anchors + ECE + Cheung + ChillsDB + TenseMusic + PMEmo + Eerola)
+├── 04-C3-BIOLOGICAL-SUBSTRATE/          ← pharmacology + RAM topology
+├── 05-FMRI-BRAIN-GROUNDING/             ← Mendelssohn pilot + mech×region + ceiling + voxelwise + cross-dataset + independent fMRI
+├── 06-PORTFOLIO-FALSIFIABILITY/         ← pre-committed Table 5 + AI-baseline ablation
+├── _audits/                             ← constant-level provenance audit (16,248 constants, 9 parallel agents)
+├── _infra/                              ← shared engine path resolver, helpers, verifier scripts
+├── engine_outputs/_unit_test_oracles/   ← cache substrate for reviewer-mode pytest (R³ + T³ extended; ~185 MB; Zenodo-shipped)
 ├── datasets/paper-anchors/              ← paper-time reference intermediates (mech-region excluded — Zenodo)
 ├── datasets/consonance/                 ← Eerola/Marjieh/Harrison Carillon rating CSVs
-└── datasets/emotion/DEAM/audio/         ← 5 DEAM held-out songs (Phase 5 ECE input)
+└── datasets/emotion/DEAM/audio/         ← 5 DEAM held-out songs (Phase 03.2 ECE input)
 ```
 
 ## Audit headline (constant-level provenance, 2026-05-17)
@@ -48,11 +51,25 @@ Reviewer-facing summary: `_audits/audit_summary.md`
 
 | Asset | Size | Location |
 |---|---|---|
-| MI engine pre-compute (`engine_outputs/`) | 138 GB | Zenodo (DOI pending) |
+| MI engine pre-compute (`engine_outputs/`) | 138 GB | Zenodo (DOI pending) — includes the `_unit_test_oracles/` cache substrate (~185 MB) needed for reviewer-mode pytest |
 | ds002725 mech×region BOLD intermediates | 702 MB | Zenodo |
 | Gen 2 dataset metadata (ChillsDB / TenseMusic / PMEmo / Eerola / emotify) | ~3 GB | Zenodo |
 | Raw audio (any dataset) | varies | Original publishers (license-restricted) |
-| MI engine source (`Musical_Intelligence/` Python package) | 5.4 MB | github.com/amacerdem/musical-intelligence |
+| MI engine source (`Musical_Intelligence/` Python package) | 5.4 MB | github.com/amacerdem/musical-intelligence — **NOT required** for reviewer-mode reproduction; only needed to rebuild the oracle (`MI_BUILD_ORACLE=1 pytest …`) |
+
+## Reviewer mode — reproduce without engine source or raw audio
+
+A reviewer who has cloned this repository and downloaded `engine_outputs/` from Zenodo can verify every paper claim without cloning the engine source or fetching dataset audio:
+
+```bash
+python3 _infra/verify_all_phases.py                 # 14 CSV-verdict phases (132 verdicts) — < 5 s
+python3 -m pytest 01-R3-PERCEPTUAL-FRONT-END/01.1-r3-isolated-extended  # 531/531 — ~7 s cache mode
+python3 -m pytest 02-T3-TEMPORAL-LAYER/02.1-t3-isolated-extended         # 207/207 — ~0.5 s cache mode
+python3 -m pytest 03-C3-BEHAVIORAL-VALIDATION 05-FMRI-BRAIN-GROUNDING    # 179 behavioural + fMRI tests
+python3 -m pytest _infra/tests/                                          # 80 infra tests
+```
+
+Total: **1,097 verdict atoms** (180 CSV + 917 pytest) reproducing the paper headline in ~1 h 15 min on M2 8 GB (dominated by the ~50 min PMEmo L5 LOSO bootstrap and ~24 min ChillsDB permutation cell). To rebuild the cache substrate from the live engine, clone the engine source alongside and run `MI_BUILD_ORACLE=1 pytest 01-R3-… 02-T3-…`.
 
 ## Engine SHA verification
 

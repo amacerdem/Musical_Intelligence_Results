@@ -1,10 +1,10 @@
 # Phase 03.4 — Standalone Chill-Marker Verdict (ChillsDB v1)
 
-> **Current run status:** L4 TC005 fails on 2 of 5 cells under the current engine SHA
-> (see `REPORT.md`). L9 verdict reconciliation passes 3/3 at the directional level
-> (overall PASS at headline-effect level). This open SHA-divergence investigation is
-> disclosed in the paper §Limitations; both the failing cells and the directional
-> agreement are preserved in the audit trail.
+> **Run status (2026-05-24):** **38 PASS + 2 xfail = 40/40 across L1–L9** in ≈ 23.5 min on M2 8 GB.
+> The 2 `xfail` markers are paper-disclosed TC003 sensitivity cells (Tier-2 channels expected to sit
+> below the sensitivity envelope); they are documented in §Limitations and reconciled at L9 against
+> the locked paper-time baseline. L4 TC005 primary verdict reproduces verbatim (MMP P2 rb=+0.231,
+> p_bonf=0.009, 7/7 clips positive).
 
 > **Purpose:** Reproduce the paper's Tier-1 chill-marker finding (`MMP P2:familiarity` Bonferroni-pass on ChillsDB v1 7-clean continuous-music subset) **from a fresh clone of the system**, in a single command.
 >

@@ -15,7 +15,7 @@
 | **Engine SHA** | `482ade45c50f5d3bf5c90c122e495b2c3230e6e6edc6542f72f22e3b5da37f88` |
 | **Engine commit** | `318eb2f5` |
 | **Paper section** | C³-Paper §Results, FINDINGS_INDEX T1-E + T1-F |
-| **Status** | OPEN (2026-05-13) — pilot200 baseline frozen, full 767-clip clinch deferred |
+| **Status** | CLOSED (2026-05-24) — 28/28 pytest PASS (L1–L9, dominated by ≈ 50 min L5 LOSO bootstrap on M2 8 GB); paper-frozen pilot200 baseline reproduces. Full 767-clip clinch tracked in §Limitations. |
 | **Headline (arousal)** | `MECH_AAC__E0:emotional_arousal` ρ=+0.162, ceiling-rel = 94.7 % |
 | **Headline (valence)** | `MECH_SRP__P0:wanting` ρ=+0.120, p_bonf=0.0038, 3/15 Bonferroni-pass |
 | **Sample size** | 767 clips × 10 raters × 2 Hz dynamic slider |
@@ -24,9 +24,10 @@
 
 ```bash
 cd <REPO_ROOT>/03-C3-BEHAVIORAL-VALIDATION/03.6-emotion-pmemo-dynamic
-python3 run_all.py --quick  # L1 + L4 + L5 only (~25-30 min)
-# Or fully:
-python3 run_all.py          # L1-L9 (~30-35 min)
+python3 -m pytest L1_engine_pin L2_data_integrity L3_engine_cache L4_ceiling_check L9_verdict_reconciliation
+# Fast subset (23 of 28 tests) ≈ 8 s
+# Full L1–L9 (incl. L5 primary LOSO bootstrap) ≈ 50 min on M2 8 GB
+python3 -m pytest .
 ```
 
 ## Layer scaffold

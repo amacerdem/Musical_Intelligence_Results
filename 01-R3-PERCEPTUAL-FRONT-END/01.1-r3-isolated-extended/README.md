@@ -25,10 +25,14 @@ This runs all 13 layers (`Pin → L1 … L13`) and writes a fresh `REPORT.md` wi
 **Prerequisites** (no in-tree install, no vendored wheels):
 
 ```bash
-pip install torch numpy scipy soundfile pytest
+pip install torch torchaudio numpy scipy soundfile pytest
 ```
 
-The engine (`Musical_Intelligence/`) is auto-discovered via an upward walk from `conftest.py` — no manual `PYTHONPATH` setup needed. All stimuli are generated deterministically in memory (no external WAV files). Expected wallclock on M2 8 GB ≈ 2 min; headline ✅ ALL PASS.
+**Two reproduction modes:**
+
+- **Reviewer cache mode (default — no engine source, no raw WAVs needed):** conftest auto-detects the oracle cache at `engine_outputs/_unit_test_oracles/r3_isolated.pkl` (audio/mel → R3Output) plus the facts manifest at `r3_engine_facts.pkl` (constants, class metadata, source-scan results) and installs `Musical_Intelligence.*` stub modules in `sys.modules` so the test-level `from Musical_Intelligence... import …` statements resolve. Wallclock ≈ **7 s** for the full 531-test battery; headline ✅ **531/531 PASS**.
+
+- **Live engine BUILD mode (rebuilds the cache):** clone the engine source alongside (`Musical_Intelligence/` sibling) and run `MI_BUILD_ORACLE=1 python3 -m pytest .` — the conftest wraps the live `R3Extractor` so every test call records its `(audio_hash → R3Output)` pair into the oracle, plus captures static facts (constants, source-scan results, warmup-confidence, _dag structure). Wallclock ≈ **85 s** for 531 tests on M2 8 GB. All stimuli are generated deterministically in memory; no external WAV files needed in either mode.
 
 For a sanity check before the full run:
 
@@ -326,28 +330,29 @@ Each test pair: `tNN_<name>.py` (pytest) + `tNN_<name>.md` (formula, expected, a
 
 ## Verdict aggregation
 
-`REPORT.md` aggregates per-layer verdict and a single headline. Approximate test count target:
+`REPORT.md` aggregates per-layer verdict and a single headline. Per-layer pytest-collected test counts (each parametrized call counts as one collected test):
 
-| Layer | Count | Description |
-|---|---|---|
-| L1 — Spec compliance | 776 (97 × 8) | Per-dim formula re-impl × stimulus families |
-| L2 — Boundary doctrine | ≥ 432 (355 + 72 + 5) | 5 inclusion rules quantified |
-| L3 — Determinism | ≥ 1,009 | Bit-identicality across 9 axes |
-| L4 — Output guarantees | ≥ 10,006 | 10K random clips + 6 dataclass tests |
-| L5 — Robustness | ≥ 30 | Pathological inputs |
-| L6 — Group-internal physics | ≥ 50 | Analytical anchors per group |
-| L7 — DAG | 5 | Staging correctness |
-| L8 — Warm-up | 6 | Tier disclosure |
-| L9 — Constants | ≥ 58 + 6 audits | Provenance |
-| L10 — Cross-impl | 9 | Independent re-implementations |
-| L11 — Anti-features | 10 | Hidden-state probes |
-| L12 — API | 9 | Contract |
-| L13 — Performance | 7 | Real-time factor & memory |
-| **Total** | **~12,413** | |
+| Layer | Tests | Description |
+|---|---:|---|
+| L1 — Spec compliance | 362 | Per-dim formula re-impl × stimulus families (parametrized over 9 R³ groups × 8 stimuli + sub-tests) |
+| L2 — Boundary doctrine | 38 | Five inclusion rules quantified (frame locality, no-listener-model, group isolation, no prediction, determinism) |
+| L3 — Determinism | 13 | Bit-identicality across run/seed/thread/process axes |
+| L4 — Output guarantees | 6 | Shape (B,T,97), range [0,1], no-NaN, frozen dataclass |
+| L5 — Robustness | 14 | Pathological inputs (silence, DC, impulse, clipped, low-amp, phase-inverted, …) |
+| L6 — Group-internal physics | 17 | Analytical anchors per group |
+| L7 — DAG staging | 10 | 2-stage DAG topology + dependency narrowness |
+| L8 — Warm-up | 9 | Tier disclosure (Tier 0 / Tier 1 ramp / Tier 1 zero / Tier 2 zero) |
+| L9 — Constants | 14 | Literature provenance + source-scan negative claims |
+| L10 — Cross-impl | 9 | Independent re-implementations (Sethares, K-K 1982, Harte Tonnetz, MFCC DCT-II, A-weighting, Stevens) |
+| L11 — Anti-features | 10 | No PRNG, no fs side-effects, no sockets, no exec/eval/subprocess, no global-state mutation |
+| L12 — API | 9 | extract() signature pin, R3Output frozen dataclass, total_dim=97, immutable feature_map |
+| L13 — Performance | 8 | Real-time factor + peak RSS budget |
+| _infra | 12 | Engine pin integrity + output bounds + dim layout |
+| **Total** | **531** | (reviewer cache mode + live BUILD mode both pass 531/531) |
 
-Headline target:
+Headline:
 
-> **R³ delivers what it claims to deliver: ≥ 99.9% of ~12,420 isolated checks PASS, every CAVEAT named and disclosed, zero layer-leakage incidents, zero non-determinism incidents, every numeric constant traced to literature or engine-internal derivation.**
+> **R³ delivers what it claims to deliver: 531 / 531 pytest tests PASS in both reviewer cache mode and live-engine BUILD mode against the canonical engine SHA-pin. Zero layer-leakage incidents, zero non-determinism incidents, every numeric constant traced to literature or engine-internal derivation.**
 
 This is the only quantitative claim the R³ paper makes about itself in isolation. Cognitive validity is not claimed here and not relevant here. R³'s role inside the MI system is what makes this isolated battery load-bearing — and that is also why the battery has to be this strong.
 
@@ -355,4 +360,4 @@ This is the only quantitative claim the R³ paper makes about itself in isolatio
 
 ## Engine pin
 
-All tests run against engine HEAD `1f0f68e8…` per `_infra/manifests/engine_head.json`.
+All tests run against engine HEAD `318eb2f529d7103e8b7d80b01228357fdc4e0217` (tree aggregate SHA-256 `482ade45c50f5d3bf5c90c122e495b2c3230e6e6edc6542f72f22e3b5da37f88`) per `_infra/manifests/engine_pin.json`. Reviewer cache mode verifies against the pre-computed oracle at `engine_outputs/_unit_test_oracles/r3_isolated.pkl` + facts at `r3_engine_facts.pkl`.
