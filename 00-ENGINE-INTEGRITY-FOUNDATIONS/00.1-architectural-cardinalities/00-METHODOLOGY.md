@@ -76,7 +76,7 @@ After all 9 audit agents completed, Agent 10 merged the per-agent CSVs into `aud
 
 | Claim | Tolerance |
 |---|---|
-| C-CARD-01-TOTAL (16,191 paper) | abs ≤ 100 (accommodates AST-walker boundary effects across version-frozen engine) |
+| C-CARD-01-TOTAL (16,248 paper) | abs ≤ 100 (accommodates AST-walker boundary effects across version-frozen engine; current reproduction is an exact match) |
 | C-CARD-02-ZERO-CALIB | exact (= 0) |
 | C-CARD-03-LIT-VERBATIM (67) | abs ≤ 5 |
 | C-CARD-04-LIT-DERIVED (19) | abs ≤ 5 |

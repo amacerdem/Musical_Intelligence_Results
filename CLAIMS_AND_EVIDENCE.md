@@ -50,7 +50,7 @@ Source: `00-ENGINE-INTEGRITY-FOUNDATIONS/00.1-architectural-cardinalities/result
 
 | Claim | Label | Paper | Reproduced | Δ | Tolerance | Verdict |
 |---|---|---|---|---|---|---|
-| C-CARD-01-TOTAL | Total numeric constants | 16,191 | 16,248 | +57 | abs ≤ 100 | **PASS** |
+| C-CARD-01-TOTAL | Total numeric constants | 16,248 | 16,248 | +0 | abs ≤ 100 | **PASS** (exact) |
 | C-CARD-02-ZERO-CALIB | Calibrated against cognitive data | 0 | 0 | +0 | abs ≤ 0 | **PASS** |
 | C-CARD-03-LIT-VERBATIM | LIT-VERBATIM (literature bit-exact) | 67 | 67 | +0 | abs ≤ 5 | **PASS** |
 | C-CARD-04-LIT-DERIVED | LIT-DERIVED (literature-form deterministic) | 19 | 19 | +0 | abs ≤ 5 | **PASS** |
@@ -506,7 +506,7 @@ Source: `06-PORTFOLIO-FALSIFIABILITY/06.3-ai-baseline-ablation/L9_verdict/REPORT
 
 | Paper headline | Repo verification |
 |---|---|
-| 16,191 numeric constants, zero calibration against cognitive data | 00.1 (10/10 PASS; reproduced count 16,248 within ±100 tolerance) |
+| 16,248 numeric constants, zero calibration against cognitive data | 00.1 (10/10 PASS; reproduced count 16,248 — exact match to current paper revision) |
 | R³ 97D FROZEN front-end with 410/415 unit tests | 01.1 (531/531 pytest PASS — K-K 1982 list-equality tests use `pytest.approx(abs=1e-4)` since 2026-05-24) |
 | T³ 32 horizons × 24 morphs × 3 laws | 02.1 (207/207 pytest PASS) |
 | C³ 89 mechs across F1-F8 (132/139, 22/22 FDR, …) | 03.1 (26/26 PASS) |

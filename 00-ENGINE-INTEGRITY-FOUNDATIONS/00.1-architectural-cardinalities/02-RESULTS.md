@@ -22,7 +22,7 @@
 
 | ID | Claim | Paper value | Reproduced | Δ | Tolerance | Verdict |
 |---|---|---:|---:|---:|---|---|
-| C-CARD-01-TOTAL | Total numeric constants | 16,191 | 16,248 | +57 | abs ≤ 100 | **PASS** |
+| C-CARD-01-TOTAL | Total numeric constants | 16,248 | 16,248 | 0 | abs ≤ 100 | **PASS** |
 | C-CARD-02-ZERO-CALIB | Calibrated against cognitive data | 0 | 0 | 0 | exact | **PASS** |
 | C-CARD-03-LIT-VERBATIM | Literature-bit-exact constants | 67 | 67 | 0 | abs ≤ 5 | **PASS** |
 | C-CARD-04-LIT-DERIVED | Literature-form deterministic | 19 | 19 | 0 | abs ≤ 5 | **PASS** |

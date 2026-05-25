@@ -1,5 +1,5 @@
 claim_id,label,paper,reproduced,deviation,tolerance,verdict
-C-CARD-01-TOTAL,Total numeric constants,16191,16248,+57,abs <= 100,PASS
+C-CARD-01-TOTAL,Total numeric constants,16248,16248,+0,abs <= 100,PASS
 C-CARD-02-ZERO-CALIB,Calibrated against cognitive data,0,0,+0,abs <= 0,PASS
 C-CARD-03-LIT-VERBATIM,LIT-VERBATIM (literature-bit-exact),67,67,+0,abs <= 5,PASS
 C-CARD-04-LIT-DERIVED,"LIT-DERIVED (literature-form, deterministic)",19,19,+0,abs <= 5,PASS

@@ -12,7 +12,7 @@ This phase verifies the architectural inventory of the FROZEN engine against the
 
 | Claim | Paper | Reproduced | Tolerance | Verdict |
 |---|---|---|---|---|
-| C-CARD-01-TOTAL | 16,191 numeric constants | 16,248 | abs ≤ 100 | PASS |
+| C-CARD-01-TOTAL | 16,248 numeric constants | 16,248 | abs ≤ 100 | PASS (exact) |
 | C-CARD-02-ZERO-CALIB | 0 calibrated against cognitive data | 0 | exact | PASS |
 | C-CARD-03-LIT-VERBATIM | 67 literature-bit-exact | 67 | abs ≤ 5 | PASS |
 | C-CARD-04-LIT-DERIVED | 19 literature-form deterministic | 19 | abs ≤ 5 | PASS |

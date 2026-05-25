@@ -23,5 +23,5 @@ with realistic PE, precision, salience distributions.
 The reward formula is **robust to ±30% weight perturbation**: rank-order correlation 
 with baseline exceeds ρ=0.999 on average, with minimum ρ=0.995. 
 This means the relative ordering of frames by reward is preserved regardless of exact 
-weight values — confirming that hand-tuned weights capture qualitative structure rather 
-than being finely optimized to specific values.
+weight values — confirming that the 6 hand-specified-disclosed reward weights capture 
+qualitative structure rather than being finely optimized or calibrated to specific values.
