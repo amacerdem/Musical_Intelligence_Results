@@ -36,7 +36,7 @@ from scipy import stats as scistats
 THIS = Path(__file__).resolve()
 PROJECT_ROOT = THIS.parents[4]
 DATA_ROOT = PROJECT_ROOT / "Science/datasets/consonance"
-MARJIEH_CSV = DATA_ROOT / "marjieh2024/data-csv/rating_w3rdd.csv"
+MARJIEH_CSV = DATA_ROOT / "marjieh2024/data-csv/rating_dyh3dd.csv"  # R12-canonical Study 1A harmonic (was rating_w3rdd 5-equal; corrected 2026-05-27)
 HARRISON_RESPONSE_CSV = DATA_ROOT / "harrison2024_carillon/Response.csv"
 HARRISON_TRIAL_CSV = DATA_ROOT / "harrison2024_carillon/ConsonanceTrial.csv"
 
@@ -44,7 +44,7 @@ RESULTS_DIR = THIS.parent.parent / "results"
 RESULTS_DIR.mkdir(parents=True, exist_ok=True)
 
 # Paper-reported MI ρ values from Phase 06 results
-MI_RHO_MARJIEH_ROUGHNESS = -0.7363  # roughness × Marjieh 5_equal
+MI_RHO_MARJIEH_ROUGHNESS = -0.8352  # roughness × Marjieh Study 1A harmonic (dyh3dd); engine-confirmed 2026-05-27 (was stale -0.7363)
 MI_RHO_HARRISON_INHARMONICITY = -0.8297  # inharmonicity × Carillon
 MI_RHO_DYAD_ANCHOR_ROUGHNESS = -0.8846  # 13-dyad anchor DEV roughness (paper)
 

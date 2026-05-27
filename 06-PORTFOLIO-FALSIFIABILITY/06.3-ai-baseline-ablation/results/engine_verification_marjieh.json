@@ -1,0 +1,45 @@
+{
+  "engine_pin": "318eb2f529d7103e8b7d80b01228357fdc4e0217",
+  "harmonic_dyh3dd_study1A": {
+    "synthesis": "6-partial 1/n harmonic (V1-default)",
+    "channels_x_dyh3dd": {
+      "roughness": -0.8352,
+      "sethares_dissonance": -0.8132,
+      "helmholtz_kang": 0.3681,
+      "stumpf_fusion": 0.8132,
+      "sensory_pleasantness": 0.8901,
+      "inharmonicity": -0.8132,
+      "harmonic_deviation": 0.1264
+    }
+  },
+  "five_equal_w3rdd_study4A": {
+    "synthesis": "6-partial 2^(k/5) 1/(k+1) stretched",
+    "channels_x_w3rdd": {
+      "roughness": -0.6593,
+      "sethares_dissonance": -0.6813,
+      "helmholtz_kang": -0.5824,
+      "stumpf_fusion": 0.2143,
+      "sensory_pleasantness": 0.6923,
+      "inharmonicity": -0.2143,
+      "harmonic_deviation": 0.4231
+    }
+  },
+  "cross_ref": {
+    "harmonic_features_x_w3rdd_ratings (the old cross-wire)": {
+      "roughness": -0.8626,
+      "sethares_dissonance": -0.9451,
+      "helmholtz_kang": 0.2912,
+      "stumpf_fusion": 0.6209,
+      "sensory_pleasantness": 0.8956,
+      "inharmonicity": -0.6209,
+      "harmonic_deviation": 0.4176
+    }
+  },
+  "verification": {
+    "date": "2026-05-27",
+    "engine_root": "/Volumes/SRC-9/SRC Musical Intelligence/Musical_Intelligence",
+    "bitmatch_vs_committed_marjieh_r3_csv_maxabsdiff": 2.721e-08,
+    "aynideger_check": "PASS \u2014 engine harmonic dyh3dd reproduces committed marjieh_r3.csv bit-exact (max|\u0394|=2.7e-8) and the documented correlations (stumpf +0.813, roughness -0.835, pleasantness +0.890)",
+    "ceiling2_implication": "The Ceiling-2 / consonance_loso_ceilings MI roughness value 0.736 is incorrect: the proper 5-equal-synthesis roughness x w3rdd = -0.659; the R12-canonical dyh3dd harmonic roughness = -0.835. Neither equals 0.736 (a harmonic-features x old-w3rdd-aggregation cross-wire)."
+  }
+}

@@ -23,7 +23,7 @@ cd "<REPO_ROOT>/05-ece-belief-calibration/code"
 Expected output:
 ```
 PRIMARY (paper's 8 beliefs, F1×4 + F2×4):
-  pooled ECE:          0.0841   (paper published: 0.079, deviation: +0.0051)
+  pooled ECE:          0.0841   (paper published: 0.084, deviation: +0.0001)
   median per-cell ECE: 0.0831   (IQR: 0.0591-0.1028, max: 0.1865)
   cells with ECE<0.10: 28 / 40
   ...

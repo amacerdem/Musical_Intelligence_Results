@@ -44,7 +44,7 @@ load-bearing artefact for MASTER-VERDICT.md.
 
 | Claim | Paper | Reproduced | Deviation | Tolerance | Verdict |
 |---|---:|---:|---:|---|---|
-| C-CALIB-01 — Pooled ECE (N=206,080) | 0.079 | **0.0841** | +0.0051 | abs ≤ 0.025 | **PASS** |
+| C-CALIB-01 — Pooled ECE (N=206,080) | 0.084 | **0.0841** | +0.0001 | abs ≤ 0.025 | **PASS** (≈exact) |
 | C-CALIB-02 — harmonic_stability ECE | 0.091 | 0.0675 | -0.0235 | abs ≤ 0.025 | **PASS** |
 | C-CALIB-03 — pitch_prominence ECE | 0.082 | 0.0909 | +0.0089 | abs ≤ 0.025 | **PASS** |
 | C-CALIB-04 — pitch_identity ECE | 0.156 | 0.1727 | +0.0167 | abs ≤ 0.025 (paper-flagged outlier) | **CAVEAT** |
@@ -53,7 +53,7 @@ load-bearing artefact for MASTER-VERDICT.md.
 | C-CALIB-07 — prediction_accuracy ECE (strongest) | 0.021 | 0.0170 | -0.0040 | abs ≤ 0.010 | **PASS** |
 | C-CALIB-08 — sequence_match ECE | 0.080 | 0.0739 | -0.0061 | abs ≤ 0.025 | **PASS** |
 | C-CALIB-09 — information_content ECE | 0.049 | 0.0484 | -0.0006 | abs ≤ 0.020 | **PASS** (≈exact) |
-| C-CALIB-10 — Brier ratio vs uniform baseline | 10.8× | **12.11×** | +12.2% | rel ≤ 0.10 (one-sided) | **PASS** (exceeds paper) |
+| C-CALIB-10 — Brier ratio vs uniform baseline | 12.1× | **12.11×** | +0.1% | rel ≤ 0.10 (one-sided) | **PASS** (≈exact) |
 | C-CALIB-11 — Cheung 2019 held-out r | +0.615 | **+0.615** | 0.000 | abs ≤ 0.05 | **PASS** (verbatim) |
 
 **Tally:** 10 PASS / 1 CAVEAT / 0 PARTIAL / 0 FAIL.
@@ -62,16 +62,19 @@ load-bearing artefact for MASTER-VERDICT.md.
 
 ## Per-claim reasoning
 
-### C-CALIB-01 — Pooled ECE = 0.079, N = 206,080
+### C-CALIB-01 — Pooled ECE = 0.084, N = 206,080
 
-Reproduced 0.0841 against paper 0.079, |Δ| = 0.0051 (well inside ±0.025
-tolerance per iteration policy ECE schedule). Three plausible drivers of
-the small +0.005 drift documented in `01-PROVENANCE.md` §"Why V6
-deviates slightly": frame-count off-by-warmup-application (V6: 5,152
-vs paper-time: 5,168 frames/cell), H³ extra-tuple-set differences
-between paper-time hand-list and V6's `h3_out.features` dict
-end-to-end pass, and equal-frequency bin tie-break ordering. None
-change the qualitative conclusion.
+Reproduced 0.0841 against the corrected-evidence paper's 0.084,
+|Δ| = 0.0001 — ≈exact. The corrected-evidence paper reports the
+frozen-pin value (0.084); the original pre-correction computation
+(`paper-evidence/original_ece_brier_summary.md`, 2026-04-23) recorded
+ECE = 0.079 on an earlier engine HEAD. Three documented drivers of the
++0.005 difference between that original run and the frozen pin are in
+`01-PROVENANCE.md` §"Why V6 deviates slightly": frame-count
+off-by-warmup-application (V6: 5,152 vs original: 5,168 frames/cell),
+H³ extra-tuple-set differences between the original hand-list and V6's
+`h3_out.features` dict end-to-end pass, and equal-frequency bin
+tie-break ordering. None change the qualitative conclusion.
 
 Per iteration policy: a first-run reproduction WITHIN tolerance is
 already PASS; no debug protocol triggered.
@@ -106,17 +109,18 @@ faithfully into the V-Reproduction record. CAVEAT is the correct
 honest-reporting verdict per iteration policy §Forbidden Moves
 ("Suppressing CAVEAT verdicts").
 
-### C-CALIB-10 — Brier 10.8× better than uniform baseline (PASS, exceeds paper)
+### C-CALIB-10 — Brier 12.1× better than uniform baseline (PASS, ≈exact)
 
-Paper claims pooled model Brier = 0.014 vs uniform-precision baseline
-Brier = 0.151 → ratio 10.8×. V6 pooled Brier = 0.0125 (V6 measured
-0.012464702 in `A2_summary.json` `paper_8_replication.pooled_brier`),
-giving ratio 0.151 / 0.0125 = **12.11×**. The reproduced model is
-*more* skilful than paper claims, not less.
+The corrected-evidence paper reports pooled model Brier = 0.0125 vs
+uniform-precision baseline Brier = 0.151 → ratio 12.1×. V6 pooled
+Brier = 0.012464702 in `A2_summary.json` `paper_8_replication.pooled_brier`
+gives ratio 0.151 / 0.0125 = **12.11×** — ≈exact. (The original
+pre-correction computation recorded the more conservative 10.8× ratio
+on an earlier engine HEAD; see `paper-evidence/`.)
 
 Per iteration policy, this is reproduction success: the underlying
-claim is one-sided ("Brier is 10.8× better than uniform"), and the
-reproduced model demonstrably exceeds that. The relative-deviation
+claim is one-sided ("Brier is ≥ 12.1× better than uniform"), and the
+reproduced model meets or exceeds that. The relative-deviation
 tolerance is documented as one-sided in the manifest tolerance string.
 
 The uniform-baseline Brier = 0.151 is reused verbatim from the paper's

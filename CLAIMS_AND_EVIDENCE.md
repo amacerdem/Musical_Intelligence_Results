@@ -4,7 +4,7 @@
 **Engine SHA:** `318eb2f529d7103e8b7d80b01228357fdc4e0217`
 **Engine aggregate SHA-256:** `482ade45c50f5d3bf5c90c122e495b2c3230e6e6edc6542f72f22e3b5da37f88`
 **Audit date:** 2026-05-17 (Stage A + initial migration) · **Updated:** 2026-05-18 (Phase 03.3 Stage B audio-native upgrade migrated + Phase 05.4 voxelwise MERT/CLAP/CKA verdict-CSV completion) · **Updated:** 2026-05-24 (R³+T³ cache substrate landed — full reviewer-mode reproduction without engine source or raw WAV files)
-**Reproducibility runtime:** 6,277 s cumulative (1 h 44 m 37 s) on MacBook Air M2 8 GB in live-engine mode; ≈ 1 h 15 m in reviewer cache-mode (R³ + T³ extended pytest accelerate to ~7 s and ~0.5 s respectively when oracle + engine_facts substrate is present)
+**Reproducibility runtime:** 6,277 s cumulative (1 h 44 m 37 s) on MacBook Air M2 8 GB in live-engine mode; ≈ 55 m in reviewer cache-mode (measured 2026-05-27: ChillsDB 27m01s + PMEmo 25m43s dominate; R³ + T³ extended pytest accelerate to ~7 s and ~0.5 s respectively when oracle + engine_facts substrate is present)
 **Status:** 23 phases runnable + green end-to-end; 1 EXEC-PENDING (Phase 05.7 audio fetch); Phase 04.1 reproduces from cached CSV verdict. Phase 06.2 (paper-wide BB-FDR aggregator) and Phase 99 (Zenodo bundle scaffold) removed from scope — paper marks 06.2 DEFERRED and 99 is DOI-mint-gated; neither is a claim.
 
 **Reviewer mode (engine + WAV not required):** R³ + T³ extended pytest suites (738 tests) ship with a pre-computed oracle (`engine_outputs/_unit_test_oracles/{r3,t3}_isolated.pkl` for stimulus → engine-output cache) plus an engine-facts manifest (`engine_outputs/_unit_test_oracles/{r3,t3}_engine_facts.pkl` for constants + class metadata + source-scan results + warmup-confidence values). Conftest auto-installs `Musical_Intelligence.*` stub modules in `sys.modules` when engine source is absent. All 738 tests PASS without engine clone or raw audio access; provenance to the live engine is preserved by the `MI_BUILD_ORACLE=1 pytest …` reproduction path that builds the same caches against the canonical engine SHA-pin.
@@ -15,10 +15,9 @@
 
 | Category | Count |
 |---|---|
-| **Claim-style CSV verdicts** | **212** rows across 16 phase-canonical CSVs (200 Stage A + 10 Stage B Cheung audio-native + 2 additional 05.4 MERT/CLAP/CKA cells beyond Stage A) |
-| **Claim-style JSON manifest atoms** | **8** across Phase 05.7 (5 sub-axis manifests with 1 verdict each + 1 aggregate manifest with 3 atoms) |
-| **Pytest sub-tests** | **918** |
-| **Total verdict atoms** | **1,138** (212 CSV + 8 JSON + 918 pytest) |
+| **Claim-style verdict records** | **180** (A: 132 CSV rows across 14 phase CSVs + B: 6 Phase 05.7 manifest atoms + C: 4 Phase 06.3 baseline cells + D: 38 L9 reconciliation records) |
+| **Pytest sub-tests** | **917** (R³ 531 + T³ 207 + 03.4 40 + 03.5 19 + 03.6 28 + 03.7 24 + 05.3 27 + 05.5 18 + 05.6 23) |
+| **Total verdict atoms** | **1,097** (180 records + 917 pytest) — reproduced verbatim by `_infra/verify_full_ledger.py` |
 | Phases migrated | 25 (3 of which deferred / EXEC-PENDING) |
 | Sections | 7 (00 → 06 + 99-Zenodo placeholder) |
 | Datasets exercised | 32 in registry; 6 paper-cited fMRI/PET ELIGIBLE; 13-corpus consonance battery; DEAM, Cheung, TenseMusic, PMEmo, Eerola GEMS, ChillsDB |
@@ -28,7 +27,7 @@
 - **R³ perceptual front-end** — 531/531 pytest PASS (3 K-K 1982 list-equality test-quality bugs fixed 2026-05-24 — switched from `==` to `pytest.approx(abs=1e-4)` for float32-vs-float64 literature-value comparison) + 9-corpus extended consonance battery 63/63 PASS + main 4-corpus 8 PASS + 2 PARTIAL
 - **T³ temporal layer** — 207/207 pytest PASS
 - **C³ functional anchors F1–F8** — 26/26 paper-headline claims PASS (132/139, 22/22 FDR, TPIO ρ=0.978; 107/110, 50/50 FDR, UDP ρ=0.973; 39/56 F3; 450/450 F4 MMP ρ=0.581; 135/142, VMM ρ=0.918; 70/70, 11/11 pharma, antic_da↔caudate ρ=0.933, consum_da↔NAcc ρ=0.836; 15/17 NSCP ρ=0.945; 14/14 d̄=1.84)
-- **Held-out belief calibration** — 11/11 PASS (pooled ECE=0.079, Brier 10.8× better than uniform, Cheung 2019 r=+0.615)
+- **Held-out belief calibration** — 10/11 PASS + 1 CAVEAT (pooled ECE=0.084, Brier 12.1× better than uniform, Cheung 2019 r=+0.615)
 - **Pharmacology + neurochemistry** — 11/11 cross-validations + 4-channel determinism canary (max |Δ|=0)
 - **RAM topology** — 5/5 (28/31 ≤10mm, both nulls p<0.0001, 26/29 no-proxy, 8/10/12 mm radius-stable)
 - **Single-subject fMRI Mendelssohn pilot** — 5/6 PASS + 1 PARTIAL (paper's own Method A vs B disclosure)
@@ -247,7 +246,7 @@ Source: `03-C3-BEHAVIORAL-VALIDATION/03.2-ece-belief-calibration/results/per_cla
 
 | Claim | Paper | Reproduced | Verdict |
 |---|---|---|---|
-| C-CALIB-01 | pooled ECE 0.079 | 0.0841 | **PASS** |
+| C-CALIB-01 | pooled ECE 0.084 | 0.0841 | **PASS** |
 | C-CALIB-02 | per-belief ECE 1 | 0.0675 | **PASS** |
 | C-CALIB-03 | per-belief ECE 2 | 0.0909 | **PASS** |
 | C-CALIB-04 | per-belief ECE 3 (paper-flagged outlier) | 0.1727 | **CAVEAT** |
@@ -256,7 +255,7 @@ Source: `03-C3-BEHAVIORAL-VALIDATION/03.2-ece-belief-calibration/results/per_cla
 | C-CALIB-07 | per-belief ECE 6 | 0.0170 | **PASS** |
 | C-CALIB-08 | per-belief ECE 7 | 0.0739 | **PASS** |
 | C-CALIB-09 | per-belief ECE 8 | 0.0484 | **PASS** |
-| C-CALIB-10 | Brier 10.8× better than uniform | 12.11× | **PASS** (exceeds paper) |
+| C-CALIB-10 | Brier 12.1× better than uniform | 12.11× | **PASS** (≥ paper, one-sided) |
 | C-CALIB-11 | Cheung 2019 r=+0.615 held-out | +0.6149 | **PASS** |
 
 5 DEAM songs held out, N=206,080 (π_pred, PE) pairs across 8 Core beliefs. Cheung interaction r=+0.615, ρ=+0.556, R²=0.477 (M2 model, ΔAIC=−33.5).
@@ -293,7 +292,7 @@ Source: `03-C3-BEHAVIORAL-VALIDATION/03.3-cheung-emergent-reward/results/10.B_ch
 | C-CHEUNG-B4 | 3 LOSO pleasure ceiling | (i) | ρ_LOSO=+0.21686 vs paper-anchor +0.2169 (\|Δ\|=3.8×10⁻⁵) | +0.21686 (\|Δ\|=3.83×10⁻⁵) | **PASS** (bit-exact reproduction) |
 | C-CHEUNG-B5 | 3 surprise ceiling | (i) supp | +0.481 (parallel surprise rating) | +0.4808 | **PASS-NEW** (out-of-scope vs paper — never published in Cheung 2019) |
 | C-CHEUNG-B6 | 4 Rhythm-invariance | (ii) | median r_HTP=+0.993, r_ICEM=+0.828 | +0.9932, +0.8276 | **PASS** (architectural prediction confirmed: HTP/ICEM are chord-level, not rhythm-driven) |
-| C-CHEUNG-B7 | 5 Pooled ECE | (iv) | ECE=0.082 (cross-corpus replication of DEAM ECE 0.079, \|Δ\|=0.003) | 0.0819 (\|Δ\|=0.0029) | **PASS** |
+| C-CHEUNG-B7 | 5 Pooled ECE | (iv) | ECE=0.082 (cross-corpus replication of DEAM ECE 0.084, \|Δ\|=0.002) | 0.0819 (\|Δ\|=0.0022) | **PASS** |
 | C-CHEUNG-B8 | 5 Brier ratio | (iv) supp | Brier 13.47× uniform baseline | 13.467× | **PASS** |
 | C-CHEUNG-B9 | 5 PitchIdentity outlier | (iv) caveat | ECE=0.141 (replicates Phase 03.2 monophonic-to-polyphonic disclosure) | 0.141 | **PASS** (outlier disclosure preserved) |
 | C-CHEUNG-B10-AGGR | all | §0 header | 5 angles closed under frozen pre-reg | 4 POSITIVE + 1 INCONCLUSIVE_BORDERLINE | **PASS-MIXED** |
@@ -480,7 +479,7 @@ Source: `06-PORTFOLIO-FALSIFIABILITY/06.3-ai-baseline-ablation/L9_verdict/REPORT
 
 | # | Dataset | N | MI \|ρ\| / r | Best baseline | Baseline architecture | MI advantage | Verdict |
 |---|---|---|---|---|---|---|---|
-| 1 | Marjieh 2024 | 13 binned intervals | 0.7363 | 0.0549 | Ridge (5-equal synth + STFT-mel) | +0.6814 | **MI WINS** |
+| 1 | Marjieh 2024 (Study 1A harmonic) | 13 binned intervals | +0.8132 (stumpf) | −0.7143 (anti-predicts) | Ridge (harmonic 6p/1n + STFT-mel) | MI predicts, baseline backwards | **MI WINS** |
 | 2 | Harrison Carillon | 13 binned intervals | 0.8297 | 0.2802 | Ridge (real-bell SUSTAINED + STFT-mel) | +0.5495 | **MI WINS** |
 | 3 | Cheung 2019 reward | 1,009 chord rows / 30 songs | +0.6150 | +0.5652 | Ridge on IDyOM + generic spectral, 5-fold leave-songs-out | +0.0498 | **MI WINS** (thin) |
 | 4 | TenseMusic tension | 38 pieces | +0.4210 | +0.1012 | Ridge on frame-level descriptors (RMS, ZCR, centroid, rolloff, flatness, 5-band) | +0.3198 | **MI WINS** |
@@ -491,7 +490,9 @@ Source: `06-PORTFOLIO-FALSIFIABILITY/06.3-ai-baseline-ablation/L9_verdict/REPORT
 - NEGATIVE: ≥2 baselines reach or exceed MI on ≥2 datasets
 - OPEN: between
 
-**Aggregate verdict: PRELIMINARY POSITIVE.** MI WINS on 4/4 executed cells; no baseline matches or exceeds MI; closest margin Cheung Δr=+0.0498.
+**Aggregate verdict: PRELIMINARY POSITIVE.** MI WINS on 4/4 executed cells; no baseline matches or exceeds MI; closest |ρ| margin Cheung Δr=+0.0498.
+
+> **Marjieh correction (2026-05-27):** the v1.0 Marjieh row was recomputed on the canonical Study 1A harmonic study (`rating_dyh3dd`, per audit decision R12, which rescinded the earlier 5-equal `rating_w3rdd` interpretation). On the canonical study the from-scratch ridge **anti-predicts** consonance (ρ=−0.714) while MI's stumpf_fusion predicts it at +0.8132 — MI WINS decisively. The earlier "MI 0.7363 / baseline 0.0549 / Δ+0.68" derived from the rescinded 5-equal study and a stale MI constant. See `06.3/L9_verdict/REPORT.md` §Correction note.
 
 **v1.1 deferred extensions (out of v1.0 scope):**
 1. DEAM-5-song F4 MMP cell completion (re-pre-registration on song set + rating dimension + aggregation rule)
@@ -510,7 +511,7 @@ Source: `06-PORTFOLIO-FALSIFIABILITY/06.3-ai-baseline-ablation/L9_verdict/REPORT
 | R³ 97D FROZEN front-end with 410/415 unit tests | 01.1 (531/531 pytest PASS — K-K 1982 list-equality tests use `pytest.approx(abs=1e-4)` since 2026-05-24) |
 | T³ 32 horizons × 24 morphs × 3 laws | 02.1 (207/207 pytest PASS) |
 | C³ 89 mechs across F1-F8 (132/139, 22/22 FDR, …) | 03.1 (26/26 PASS) |
-| Held-out ECE=0.079 + Brier 10.8× + Cheung r=+0.615 | 03.2 (10 PASS + 1 CAVEAT — paper-flagged outlier preserved) |
+| Held-out ECE=0.084 + Brier 12.1× + Cheung r=+0.615 | 03.2 (10 PASS + 1 CAVEAT — paper-flagged outlier preserved) |
 | Cheung interaction β=−0.158 + Cheung's −0.124 inside CI (Stage A statistical reanalysis) | 03.3 Stage A (7/7 PASS) + 06.1 FT5-#3 |
 | Cheung audio-native upgrade Stage B: LOSO ρ=+0.21686, rhythm-invariance HTP r=+0.993 ICEM r=+0.828, β_MI=−0.060 INCONCLUSIVE_BORDERLINE, ECE=0.082 cross-corpus replication, substitution-validity NEGATIVE confirmed (5 angles, paper §435) | 03.3 Stage B (8 PASS + 1 PASS-NEW + 1 PASS-MIXED aggregate) |
 | Phase 6 extended cycle 9-corpus consonance battery | 01.2 extended 63/63 PASS |

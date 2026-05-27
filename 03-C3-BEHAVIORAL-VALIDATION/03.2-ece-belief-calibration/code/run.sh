@@ -2,7 +2,7 @@
 # 03-C3-BEHAVIORAL-VALIDATION/03.2-ece-belief-calibration — Single-command reproduction
 #
 # Reproduces:
-#   - Pooled ECE = 0.0841 on paper's 8 beliefs (paper claim: 0.079, deviation +0.005)
+#   - Pooled ECE = 0.0841 on paper's 8 beliefs (paper claim: 0.084, deviation +0.0001)
 #   - Extension test on 6 additional beliefs (F3-F8); F7 GrooveQuality is the only outlier
 #
 # Engine pin: 318eb2f5 (V-Reproduction frozen HEAD, bit-identical |Δ|=0)

@@ -1,8 +1,8 @@
 # ECE Reproduction — Pooled Bayesian Belief Calibration
 
-**Paper claim:** "Pooled expected-calibration error was ECE = 0.079, below the conventional 0.10 threshold" (paper §Bayesian beliefs are well-calibrated, S5).
+**Paper claim:** "Pooled expected-calibration error was ECE = 0.084, below the conventional 0.10 threshold" (paper §Bayesian beliefs are well-calibrated, S5).
 
-**Status:** **REPLICATED** by V6 independent measurement (0.0841, deviation +0.005, ~6.5% relative).
+**Status:** **REPLICATED** by V6 independent measurement (0.0841 — ≈exact vs the corrected-evidence paper's 0.084; +0.005 vs the original 2026-04-23 T-R3-08 computation).
 **Phase 03.2:** **CLOSED 2026-05-06**, 10/11 PASS + 1 CAVEAT (`pitch_identity` paper-flagged outlier). See `02-RESULTS.md` and `results/05_ece_calibration_manifest.json`.
 
 **Last verified:** 2026-05-05 (V6 phase A2 close); refined into per-claim verdicts 2026-05-06 (Phase 5).
@@ -11,7 +11,7 @@
 
 ## Quick verdict
 
-| Number | Paper (T-R3-08, 2026-04-23) | V6 (this archive, 2026-05-05) |
+| Number | Original computation (T-R3-08, 2026-04-23) | V6 (this archive, 2026-05-05) |
 |---|---:|---:|
 | Pooled ECE (8 beliefs × 5 songs) | 0.079 | **0.0841** |
 | Pooled Brier | 0.014 | 0.014 |

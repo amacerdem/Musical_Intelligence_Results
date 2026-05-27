@@ -23,17 +23,17 @@ Binning: 13 semitone bins (matches paper c3_r3_oos Marjieh protocol).
 
 ## §2 Results
 
-### §2.1 Marjieh 2024 (rating_w3rdd.csv, "5_equal" timbre)
+### §2.1 Marjieh 2024 (rating_dyh3dd.csv, Study 1A harmonic — R12-canonical)
 
 | Metric | Value |
 |---|---:|
-| N participants | 147 |
-| N ratings | 11,754 |
-| N LOSO trials | 147 |
-| **LOSO Fisher-Z mean ρ** | **+0.2795** |
-| 95% bootstrap CI | [0.2221, 0.3382] |
-| **MI engine roughness × Marjieh** | **−0.7363** (paper Phase 06) |
-| **|MI ρ| / LOSO ceiling** | **263.4%** |
+| N participants | 165 |
+| N ratings | 7,500 |
+| N LOSO trials | 158 |
+| **LOSO Fisher-Z mean ρ** | **+0.3031** |
+| 95% bootstrap CI | [0.2442, 0.3598] |
+| **MI engine roughness × Marjieh** | **−0.8352** (engine-confirmed 2026-05-27; was stale −0.7363 on rescinded w3rdd 5-equal) |
+| **|MI ρ| / LOSO ceiling** | **275.5%** |
 
 ### §2.2 Harrison 2024 Carillon
 

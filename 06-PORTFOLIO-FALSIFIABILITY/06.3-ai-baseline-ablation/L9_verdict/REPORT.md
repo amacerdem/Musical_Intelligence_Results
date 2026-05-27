@@ -23,11 +23,40 @@
 
 | # | Dataset | N | MI |ρ\|/r | Best baseline | Baseline architecture | MI advantage | Verdict |
 |---|---------|---|--------|--------------|----------------------|--------------|---------|
-| 1 | Marjieh 2024 | 13 binned intervals | **0.7363** | 0.0549 | Ridge (5-equal synth + STFT-mel) | +0.6814 | MI WINS |
+| 1 | Marjieh 2024 (Study 1A harmonic) | 13 binned intervals | **+0.8132** (stumpf) | −0.7143 (anti-predicts) | Ridge (harmonic 6p/1n + STFT-mel) | MI predicts, baseline backwards (+0.099 \|ρ\|) | MI WINS |
 | 2 | Harrison Carillon | 13 binned intervals | **0.8297** | 0.2802 | Ridge (real-bell SUSTAINED + STFT-mel) | +0.5495 | MI WINS |
 | 3 | Cheung 2019 reward | 1,009 chord rows / 30 songs | **+0.6150** | +0.5652 | Ridge on IDyOM + generic spectral, 5-fold leave-songs-out | +0.0498 | MI WINS (thin) |
 | 4 | TenseMusic tension | 38 pieces | **+0.4210** | +0.1012 (median per-piece) | Ridge on frame-level descriptors (RMS, ZCR, centroid, rolloff, flatness, 5-band) | +0.3198 | MI WINS |
 | 5 | DEAM-5-song F4 MMP | (deferred) | 0.581 | — | — | — | DEFERRED |
+
+## Correction note — Marjieh baseline (2026-05-27)
+
+The Marjieh row above was corrected on 2026-05-27 to the canonical Marjieh study.
+The original v1.0 run reported MI 0.7363 vs baseline 0.0549 (Δ +0.6814). Forensic
+trace found this was computed on a **different Marjieh study** than the paper's
+canonical headline:
+
+- **Audit decision R12 (01.2 §02-RESULTS) canonicalises Marjieh = Study 1A
+  harmonic complex tones (`rating_dyh3dd.csv`, N=7,500)** and **rescinds (R7)** the
+  5-equal-partial interpretation (`rating_w3rdd.csv`, N=11,754). MI's headline
+  Marjieh value (stumpf_fusion **+0.8132**) reproduces bit-exact on this set.
+- The original v1.0 baseline ran against the *rescinded* 5-equal study (w3rdd)
+  with 5-equal synthesis, comparing to a stale hardcoded MI value (0.7363 =
+  harmonic-roughness × w3rdd ratings, itself a timbre cross-wire). Valid for that
+  study, but not the canonical one.
+- When 01.2 was canonicalised to dyh3dd (R12), `marjieh_r3.csv` was regenerated to
+  the harmonic study; the baseline (which reads that file) then silently fed
+  harmonic ratings into 5-equal synthesis — the spurious ρ=−0.797 that first
+  surfaced this.
+
+Corrected to the canonical study: harmonic 6-partial 1/n synthesis (matching
+Study 1A and MI's own R3 synthesis), MI value computed live from `marjieh_r3.csv`.
+On the canonical data the from-scratch ridge **anti-predicts** consonance
+(ρ = −0.7143, p=0.006) — it orders intervals opposite to the ratings, i.e. it has
+not learned consonance — while MI's stumpf_fusion predicts it at **+0.8132**
+(roughness −0.8352). Verdict unchanged (**MI WINS**, decisively: MI predicts, the
+baseline is backwards). The earlier "+0.68" derived from the rescinded 5-equal
+study + stale MI constant and is not the canonical result.
 
 ## Aggregate verdict
 
@@ -108,7 +137,9 @@ These deferrals do not affect the v1.0 verdict because:
 
 On the four datasets executed, **no from-scratch AI baseline restricted to
 within-dataset learning matches MI's value**. Margins range from comfortable
-(Δr=0.32–0.68 on Marjieh / Carillon / TenseMusic) to thin (Δr=0.0498 on Cheung).
+(Δ|ρ|=0.32–0.55 on TenseMusic / Carillon) through moderate (Δ|ρ|=0.12 on Marjieh,
+where the from-scratch ridge anti-predicts consonance, ρ=−0.71) to thin
+(Δr=0.0498 on Cheung).
 The same-data learning-frontier hypothesis (Ceiling 3) is **preliminarily
 supported by v1.0 evidence**, conditional on:
 

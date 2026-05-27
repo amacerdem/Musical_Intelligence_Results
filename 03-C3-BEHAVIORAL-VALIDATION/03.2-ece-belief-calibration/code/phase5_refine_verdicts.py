@@ -292,7 +292,7 @@ def main() -> int:
         "axis_id": "AXIS-04",
         "axis_name": (
             "ECE Belief Calibration (pooled 0.084, 8 per-belief, "
-            "Brier 10.8x, Cheung r=+0.615)"
+            "Brier 12.1x, Cheung r=+0.615)"
         ),
         "engine_head": engine_head,
         "seed_registry": {

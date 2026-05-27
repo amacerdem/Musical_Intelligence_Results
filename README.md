@@ -69,7 +69,7 @@ python3 -m pytest 03-C3-BEHAVIORAL-VALIDATION 05-FMRI-BRAIN-GROUNDING    # 179 b
 python3 -m pytest _infra/tests/                                          # 80 infra tests
 ```
 
-Total: **1,097 verdict atoms** (180 CSV + 917 pytest) reproducing the paper headline in ~1 h 15 min on M2 8 GB (dominated by the ~50 min PMEmo L5 LOSO bootstrap and ~24 min ChillsDB permutation cell). To rebuild the cache substrate from the live engine, clone the engine source alongside and run `MI_BUILD_ORACLE=1 pytest 01-R3-… 02-T3-…`.
+Total: **1,097 verdict atoms** (180 CSV + 917 pytest) reproducing the paper headline in ~55 min on M2 8 GB (dominated by the ~27 min ChillsDB permutation cell and ~26 min PMEmo L5 LOSO bootstrap; measured 2026-05-27, cache mode). To rebuild the cache substrate from the live engine, clone the engine source alongside and run `MI_BUILD_ORACLE=1 pytest 01-R3-… 02-T3-…`.
 
 ## Engine SHA verification
 
