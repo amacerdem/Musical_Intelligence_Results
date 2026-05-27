@@ -182,23 +182,23 @@ Source: `01-R3-PERCEPTUAL-FRONT-END/01.3-cross-cultural-anchor/results/14_cross_
 
 ### 3.1. Phase 02.1 t3-isolated-extended (207/207 PASS)
 
-Source: `02-T3-TEMPORAL-LAYER/02.1-t3-isolated-extended/L*/test_*.py` (10 layers)
+Source: `02-T3-TEMPORAL-LAYER/02.1-t3-isolated-extended/L*/test_*.py`. The 207 runtime pytest tests live in **6 layers + Pin** (Pin 7, L1 20, L3 7, L4 125, L5 21, L6 22, L13 5). The remaining 7 layers (L2, L7–L12) ship pre-computed audit artefacts (JSON + `L*_summary.md`) with no pytest runtime tests — flagged ⚪ audit-only in the coverage table.
 
-| Layer | Coverage |
-|---|---|
-| L1_spec_compliance | per-tuple (r3_idx, horizon, morph, law) formula re-implementation, bit-identical to engine |
-| L2_statelessness | no `self._ema` / hidden state across frames; AST audit + window-purity + embarrassingly-parallel checks |
-| L3_determinism | per-tuple bit-identicality across runs/seeds/threads/processes |
-| L4_output_guarantees | range, shape, no-NaN, dataclass guarantees on H3Output |
-| L5_robustness | pathological-input robustness (silence, single-frame, post-warm-up, edge cases) |
-| L6_operator_correctness | 24 morphs × 3 laws correctness via analytical anchors (memory/forward/integration) |
-| L7_pipeline_dag | demand-driven sparsity + embarrassingly-parallel staging |
-| L8_horizon_scale | 32 horizons log-coverage, 4 perceptual bands (Micro/Meso/Macro/Ultra) |
-| L9_constants | constant provenance audit (kernel, horizons, morphs, laws — all spec/literature-derived) |
-| L10_cross_impl | reference re-implementation regression (attention kernel exp(-3·(1-p)) vs torch) |
-| L11_anti_features | no hidden state, no caching, no engine-state mutation |
-| L12_api | H3Extractor.extract() signature pin, H3Output frozen dataclass |
-| L13_performance | per-tuple compute budget on M2 hardware |
+| Layer | Runtime tests | Coverage |
+|---|---|---|
+| L1_spec_compliance | 20 | per-tuple (r3_idx, horizon, morph, law) formula re-implementation, bit-identical to engine |
+| L2_statelessness | ⚪ audit-only | no `self._ema` / hidden state across frames; AST audit + window-purity + embarrassingly-parallel checks |
+| L3_determinism | 7 | per-tuple bit-identicality across runs/seeds/threads/processes |
+| L4_output_guarantees | 125 | range, shape, no-NaN, dataclass guarantees on H3Output |
+| L5_robustness | 21 | pathological-input robustness (silence, single-frame, post-warm-up, edge cases) |
+| L6_operator_correctness | 22 | 24 morphs × 3 laws correctness via analytical anchors (memory/forward/integration) |
+| L7_pipeline_dag | ⚪ audit-only | demand-driven sparsity + embarrassingly-parallel staging |
+| L8_horizon_scale | ⚪ audit-only | 32 horizons log-coverage, 4 perceptual bands (Micro/Meso/Macro/Ultra) |
+| L9_constants | ⚪ audit-only | constant provenance audit (kernel, horizons, morphs, laws — all spec/literature-derived) |
+| L10_cross_impl | ⚪ audit-only | reference re-implementation regression (attention kernel exp(-3·(1-p)) vs torch) |
+| L11_anti_features | ⚪ audit-only | no hidden state, no caching, no engine-state mutation |
+| L12_api | ⚪ audit-only | H3Extractor.extract() signature pin, H3Output frozen dataclass |
+| L13_performance | 5 | per-tuple compute budget on M2 hardware |
 
 **207/207 PASS** with engine determinism canary inside.
 

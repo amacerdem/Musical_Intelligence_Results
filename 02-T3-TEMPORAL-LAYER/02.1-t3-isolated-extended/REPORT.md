@@ -10,21 +10,21 @@
 | Layer | Status | pytest summary | Coverage |
 |-------|--------|----------------|----------|
 | **Pin** | ✅ PASS | 7 passed | Engine SHA-256 aggregate integrity + H³ registry integrity |
-| **L1** | ✅ PASS | 18 passed | Per-tuple (r3_idx, horizon, morph, law) formula re-implementation, bit-identical to engine + attention kernel within float32 epsilon (≤ 1 ULP) |
-| **L2** | ✅ PASS | 17 passed | Statelessness: AST audit (no `self._ema`), window-purity, embarrassingly-parallel equivalence, no R³ frame-state leakage |
-| **L3** | ✅ PASS | 15 passed | Bit-identicality across run/seed/thread/process axes (cross-process via subprocess re-execution) |
-| **L4** | ✅ PASS | 33 passed | Range, shape, no-NaN, dataclass guarantees on H3Output (per-tuple bounds across 24 morphs × 32 horizons) |
+| **L1** | ✅ PASS | 20 passed | Per-tuple (r3_idx, horizon, morph, law) formula re-implementation, bit-identical to engine + attention kernel within float32 epsilon (≤ 1 ULP) |
+| **L2** | ⚪ audit-only | (audit artefacts, no runtime tests) | Statelessness: AST audit (no `self._ema`), window-purity, embarrassingly-parallel equivalence, no R³ frame-state leakage |
+| **L3** | ✅ PASS | 7 passed | Bit-identicality across run/seed/thread/process axes (cross-process via subprocess re-execution) |
+| **L4** | ✅ PASS | 125 passed | Range, shape, no-NaN, dataclass guarantees on H3Output (per-tuple bounds across 24 morphs × 32 horizons) |
 | **L5** | ✅ PASS | 21 passed | Pathological-input robustness (silence, single-frame, post-warm-up, edge cases) |
 | **L6** | ✅ PASS | 22 passed | 24 morphs × 3 laws (memory/forward/integration) correctness via analytical anchors (constant, ramp, sinusoid, silence) |
-| **L7** | ✅ PASS | 11 passed | Demand-driven sparsity (~644 mech-only / ~8,600 full registry of 223,488 theoretical) + embarrassingly-parallel staging |
-| **L8** | ✅ PASS | 14 passed | 32 horizons log-coverage (H0 = 5.8 ms → H31 = 981 s) across 4 perceptual bands (Micro / Meso / Macro / Ultra) |
-| **L9** | ✅ PASS | 18 passed | Constant provenance audit (zero-calibration): ATTENTION_DECAY=3.0, HORIZON_FRAMES, MORPH_SCALE, LAW_NAMES |
-| **L10** | ✅ PASS | 7 passed | Cross-implementation: attention kernel exp(−3·(1−p)) re-impl matches torch within float32 epsilon |
-| **L11** | ✅ PASS | 5 passed | Anti-features (no hidden state, no caching, no engine-state mutation) |
-| **L12** | ✅ PASS | 14 passed | API contract: H3Extractor.extract() signature, H3Output frozen dataclass, H3DemandSpec slot-restricted |
+| **L7** | ⚪ audit-only | (audit artefacts, no runtime tests) | Demand-driven sparsity (~644 mech-only / ~8,600 full registry of 223,488 theoretical) + embarrassingly-parallel staging |
+| **L8** | ⚪ audit-only | (audit artefacts, no runtime tests) | 32 horizons log-coverage (H0 = 5.8 ms → H31 = 981 s) across 4 perceptual bands (Micro / Meso / Macro / Ultra) |
+| **L9** | ⚪ audit-only | (audit artefacts, no runtime tests) | Constant provenance audit (zero-calibration): ATTENTION_DECAY=3.0, HORIZON_FRAMES, MORPH_SCALE, LAW_NAMES |
+| **L10** | ⚪ audit-only | (audit artefacts, no runtime tests) | Cross-implementation: attention kernel exp(−3·(1−p)) re-impl matches torch within float32 epsilon |
+| **L11** | ⚪ audit-only | (audit artefacts, no runtime tests) | Anti-features (no hidden state, no caching, no engine-state mutation) |
+| **L12** | ⚪ audit-only | (audit artefacts, no runtime tests) | API contract: H3Extractor.extract() signature, H3Output frozen dataclass, H3DemandSpec slot-restricted |
 | **L13** | ✅ PASS | 5 passed | T³-stage real-time-factor + memory budget on M2 |
 
-**Total: 207 passed** in either mode (≈ 4 s live BUILD on M2 8 GB; ≈ 0.5 s reviewer cache mode).
+**Total: 207 passed** (Pin 7 + L1 20 + L3 7 + L4 125 + L5 21 + L6 22 + L13 5) in either mode (≈ 4 s live BUILD on M2 8 GB; ≈ 0.5 s reviewer cache mode). Seven layers (L2, L7–L12) carry pre-computed audit artefacts only — no pytest runtime tests.
 
 ## Headline
 
@@ -48,4 +48,4 @@ MI_BUILD_ORACLE=1 python3 -m pytest .        # ≈ 4 s on M2 8 GB, 207/207 PASS
 
 ## Layer-completion history
 
-The 2026-05-24 cache-substrate landing also added pytest runtime tests for layers L2, L7, L8, L9, L10, L11, L12 that were originally documentation-only. All seven layers are now green; per-layer coverage is documented in their respective L*_summary.md files.
+Runtime pytest tests cover Pin + L1 + L3 + L4 + L5 + L6 + L13 (207 tests total). Layers L2, L7, L8, L9, L10, L11, L12 ship pre-computed audit artefacts (JSON + `L*_summary.md`) but carry no pytest runtime tests; their analytical verdicts are documented in their respective `L*_summary.md` files. The 2026-05-24 cache-substrate landing added the oracle + engine_facts cache so the existing runtime layers reproduce without engine source.

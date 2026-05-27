@@ -9,7 +9,7 @@
 
 > **V-Reproduction note:** this copy under `02-T3-TEMPORAL-LAYER/02.1-t3-isolated-extended/` is **decoupled from the paper tree** — no `.tex` dependency. The doc-consistency audit (L14), the heavy experiment-artefact folders (`phase_lag_32rate/`, `wilson_cowan/`, `determinism_canary/`, `_selectivity/`), and the standalone audit scripts under `_infra/audit_scripts/` (hardcoded absolute paths) all live only in the canonical source suite at `The Paper/T3-Paper/T3_Isolated_Validation/`. Engine, spec compliance, statelessness, determinism, output guarantees, robustness, operator correctness, and performance budget are still verified here.
 
-> **Status:** all **13 layers** (Pin + L1 through L13) are pytest-runtime tested. **207/207 tests PASS** in both reviewer cache mode (≈ 0.5 s) and live-engine BUILD mode (≈ 4 s on M2 8 GB). Layers L2 (statelessness), L7 (pipeline DAG), L8 (horizon scale), L9 (constants), L10 (cross-impl), L11 (anti-features), and L12 (API) were originally documentation-only; runtime tests were added during the cache-substrate landing (2026-05-24) and all carry green pytest verdicts.
+> **Status:** runtime pytest tests live in **Pin + L1 + L3 + L4 + L5 + L6 + L13** (**207/207 PASS** in both reviewer cache mode ≈ 0.5 s and live-engine BUILD mode ≈ 4 s on M2 8 GB — per-layer collected counts: Pin 7, L1 20, L3 7, L4 125, L5 21, L6 22, L13 5). Layers **L2 (statelessness), L7 (pipeline DAG), L8 (horizon scale), L9 (constants), L10 (cross-impl), L11 (anti-features), L12 (API)** ship pre-computed audit artefacts (JSON + summary `.md`) but carry no pytest-side runtime tests; they appear in the scorecard as audit-only rather than silently disappearing.
 
 ---
 
@@ -22,7 +22,7 @@ cd 02-T3-TEMPORAL-LAYER/02.1-t3-isolated-extended
 python3 run_all.py
 ```
 
-This runs Pin + L1 through L13 (every layer carries pytest runtime tests) and writes a fresh `REPORT.md` with the per-layer scorecard. Exit code is the worst pytest exit code observed (`0` = all PASS).
+This runs the runtime-tested layers (Pin + L1 + L3 + L4 + L5 + L6 + L13) and writes a fresh `REPORT.md` with the per-layer scorecard. Exit code is the worst pytest exit code observed (`0` = all PASS).
 
 **Prerequisites** (no in-tree install, no vendored wheels):
 
