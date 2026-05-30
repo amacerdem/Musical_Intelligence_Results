@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """MI_Results full claim ledger verifier (paper headline reproducer).
 
-Computes the paper's "1,137 pass/fail verdicts (219 claim-style CSV records
-+ 918 pytest sub-tests)" headline by counting:
+Computes the canonical "1,097 pass/fail verdicts (180 claim-style CSV records
++ 917 pytest sub-tests)" ledger by counting:
 
   CSV CLAIM ATOMS
     A) 14 CSV-verdict phase results/<phase>_correlations.csv (per-row)
@@ -131,8 +131,8 @@ def count_l9_test_fns(phase_path: Path) -> int:
 def main():
     print("=" * 70)
     print("MI_Results FULL CLAIM LEDGER VERIFIER")
-    print("Paper headline target: 1,137 pass/fail verdicts")
-    print("                       (219 claim-style CSV records + 918 pytest sub-tests)")
+    print("Canonical target: 1,097 pass/fail verdicts")
+    print("                  (180 claim-style CSV records + 917 pytest sub-tests)")
     print("=" * 70)
     print()
 
@@ -204,10 +204,10 @@ def main():
     print(f"  Pytest sub-tests:        {total_pyt}")
     print(f"  GRAND TOTAL:             {grand}")
     print()
-    print(f"  Paper headline: 219 CSV records + 918 pytest sub-tests = 1,137")
-    print(f"  Δ csv:   {csv_records - 219:+d}")
-    print(f"  Δ pyt:   {total_pyt - 918:+d}")
-    print(f"  Δ grand: {grand - 1137:+d}")
+    print(f"  Canonical: 180 CSV records + 917 pytest sub-tests = 1,097")
+    print(f"  Δ csv:   {csv_records - 180:+d}")
+    print(f"  Δ pyt:   {total_pyt - 917:+d}")
+    print(f"  Δ grand: {grand - 1097:+d}")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use this archive, please cite it as below."
+title: "Musical Intelligence Reproduction Archive — Results Layer"
+abstract: >-
+  Per-phase reproduction verdict ledger and constant-level provenance audit
+  for the Musical Intelligence (MI) system. Reproduces 1,097 pass/fail
+  verdicts (180 claim-style CSV records + 917 pytest sub-tests) on a frozen
+  engine pin (commit 318eb2f529d7103e8b7d80b01228357fdc4e0217; aggregate
+  SHA-256 482ade45c50f5d3bf5c90c122e495b2c3230e6e6edc6542f72f22e3b5da37f88).
+  Runs engine-free and audio-free in reviewer cache-mode in approximately
+  55 minutes on a MacBook Air M2 8 GB. Heavy artefacts (138 GB MI engine
+  pre-compute and ~3 GB Gen-2 dataset metadata) are vendored separately on
+  Zenodo; the cache substrate (~185 MB) needed for reviewer-mode pytest is
+  included alongside the Zenodo data deposit.
+type: software
+authors:
+  - family-names: Erdem
+    given-names: "Amaç"
+    email: amac.erdem@hotmail.com
+license: PolyForm-Noncommercial-1.0.0
+repository-code: "https://github.com/amacerdem/Musical_Intelligence_Results"
+url: "https://github.com/amacerdem/Musical_Intelligence_Results"
+version: "1.0.0"
+date-released: "2026-05-30"
+keywords:
+  - musical intelligence
+  - music cognition
+  - computational cognitive neuroscience
+  - reproducibility
+  - audit ledger
+  - frozen engine
+  - cache-mode reproduction
+  - R3 perceptual front-end
+  - T3 temporal layer
+  - C3 cognitive core
