@@ -1,10 +1,11 @@
 # Musical Intelligence — Results & Audit Archive
 
+**Cite this archive:** [10.5281/zenodo.20457643](https://doi.org/10.5281/zenodo.20457643) (v2.0.0) · concept-DOI [10.5281/zenodo.19744623](https://doi.org/10.5281/zenodo.19744623) (always resolves to latest version)
 **Engine SHA pin:** `318eb2f529d7103e8b7d80b01228357fdc4e0217`
 **Engine aggregate SHA-256:** `482ade45c50f5d3bf5c90c122e495b2c3230e6e6edc6542f72f22e3b5da37f88`
 **Audit status:** 9-agent parallel constant-level provenance audit complete (2026-05-17)
 
-This repository contains the **results layer** of the Musical Intelligence reproduction archive: per-phase verification reports, constant-level provenance audit, and paper revision evidence. Heavy artefacts (138 GB pre-computed MI engine output, ~3 GB dataset metadata, ds002725 BOLD intermediates) are vendored separately (Zenodo / R2 — DOI pending).
+This repository contains the **results layer** of the Musical Intelligence reproduction archive: per-phase verification reports, constant-level provenance audit, and paper revision evidence. Heavy artefacts (138 GB pre-computed MI engine output, ~3 GB dataset metadata, ds002725 BOLD intermediates) are deposited as separate Zenodo records (DOIs pending).
 
 ## Contents
 

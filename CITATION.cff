@@ -18,6 +18,14 @@ authors:
     given-names: "Amaç"
     email: amac.erdem@hotmail.com
 license: PolyForm-Noncommercial-1.0.0
+doi: 10.5281/zenodo.20457643
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.20457643
+    description: "Version DOI (v2.0.0 — as-evaluated in the paper)"
+  - type: doi
+    value: 10.5281/zenodo.19744623
+    description: "Concept DOI (always resolves to the latest version)"
 repository-code: "https://github.com/amacerdem/Musical_Intelligence_Results"
 url: "https://github.com/amacerdem/Musical_Intelligence_Results"
 version: "1.0.0"

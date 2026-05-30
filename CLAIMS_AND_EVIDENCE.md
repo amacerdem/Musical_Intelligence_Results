@@ -571,7 +571,7 @@ find . -name "*.py" -not -path "*/__pycache__/*" -type f -print0 | sort -z | xar
 
 ### 10.4. License
 
-PolyForm Noncommercial 1.0.0. Repository deposit DOI assigned at Zenodo upload (paper-submission-gated).
+PolyForm Noncommercial 1.0.0. Zenodo deposit: [10.5281/zenodo.20457643](https://doi.org/10.5281/zenodo.20457643) (v2.0.0) · concept-DOI [10.5281/zenodo.19744623](https://doi.org/10.5281/zenodo.19744623).
 
 ---
 
