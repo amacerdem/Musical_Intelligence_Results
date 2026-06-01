@@ -59,7 +59,7 @@ fall under the PolyForm-NC license of this archive:
 If you are an upstream author and prefer your dataset to be **removed** from
 future versions of this deposit, please contact:
 
-- **Amaç Erdem** — amac@bu.edu
+- **Amaç Erdem** — amace@bu.edu
 - Or open an issue at the MI_Results repository.
 
 Removal in the next version will be prompt and acknowledged in the version
