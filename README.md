@@ -5,7 +5,7 @@
 **Engine aggregate SHA-256:** `482ade45c50f5d3bf5c90c122e495b2c3230e6e6edc6542f72f22e3b5da37f88`
 **Audit status:** 9-agent parallel constant-level provenance audit complete (2026-05-17)
 
-This repository contains the **results layer** of the Musical Intelligence reproduction archive: per-phase verification reports, constant-level provenance audit, and paper revision evidence. Heavy artefacts (138 GB pre-computed MI engine output, ~3 GB dataset metadata, ds002725 BOLD intermediates) are deposited as separate Zenodo records (DOIs pending).
+This repository contains the **results layer** of the Musical Intelligence reproduction archive: per-phase verification reports, constant-level provenance audit, and paper revision evidence. Heavy artefacts (135 GB pre-computed MI engine output per-frame caches) are deposited as **6 separate Zenodo records** linked from v2.0.0 as `hasPart` related identifiers — listed in [§What's NOT in this repo](#whats-not-in-this-repo-vendored-separately) below.
 
 ## Contents
 
@@ -52,9 +52,13 @@ Reviewer-facing summary: `_audits/audit_summary.md`
 
 | Asset | Size | Location |
 |---|---|---|
-| MI engine pre-compute (`engine_outputs/`) | 138 GB | Zenodo (DOI pending) — includes the `_unit_test_oracles/` cache substrate (~185 MB) needed for reviewer-mode pytest |
-| ds002725 mech×region BOLD intermediates | 702 MB | Zenodo |
-| Gen 2 dataset metadata (ChillsDB / TenseMusic / PMEmo / Eerola / emotify) | ~3 GB | Zenodo |
+| MI engine pre-compute — `engine_outputs/neuroimaging/` (ds002725, ds003720, ds004007, ds006583) | 15 GB | [10.5281/zenodo.20476219](https://doi.org/10.5281/zenodo.20476219) |
+| MI engine pre-compute — `engine_outputs/beat_tempo/` (rhythm/groove channel) | 19 GB | [10.5281/zenodo.20476634](https://doi.org/10.5281/zenodo.20476634) |
+| MI engine pre-compute — `engine_outputs/emotion/DEAM/` Part A (tracks 2-1157 + `_analysis/`/`_meta/`) | 25 GB | [10.5281/zenodo.20477194](https://doi.org/10.5281/zenodo.20477194) |
+| MI engine pre-compute — `engine_outputs/emotion/DEAM/` Part B (tracks 1158-2058) | 25 GB | [10.5281/zenodo.20478159](https://doi.org/10.5281/zenodo.20478159) |
+| MI engine pre-compute — `engine_outputs/emotion/` PMEmo + Eerola Film (Sets 1+2) + TenseMusic | 25 GB | [10.5281/zenodo.20479000](https://doi.org/10.5281/zenodo.20479000) |
+| MI engine pre-compute — `engine_outputs/emotion/` Emotify + RAVDESS + ChillsDB family | 26 GB | [10.5281/zenodo.20479452](https://doi.org/10.5281/zenodo.20479452) |
+| `_unit_test_oracles/` cache substrate for reviewer-mode pytest | ~185 MB | Bundled in v2.0.0 archive (already present in this repo's tarball release) |
 | Raw audio (any dataset) | varies | Original publishers (license-restricted) |
 | MI engine source (`Musical_Intelligence/` Python package) | 5.4 MB | github.com/amacerdem/musical-intelligence — **NOT required** for reviewer-mode reproduction; only needed to rebuild the oracle (`MI_BUILD_ORACLE=1 pytest …`) |
 
